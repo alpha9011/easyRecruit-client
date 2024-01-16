@@ -1,7 +1,4 @@
-// RegistrationPage.jsx
-
-
-import { Button, Checkbox, Label, Modal, TextInput } from 'flowbite-react';
+import {  Checkbox, Label, TextInput } from 'flowbite-react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import 'tailwindcss/tailwind.css'; // Import Tailwind CSS
@@ -15,8 +12,6 @@ const Register = () => {
     };
 
 
-
-
     return (
         <div className="flex items-center justify-center h-screen">
             <div className="registration-form bg-white p-8 rounded shadow-md max-w-lg w-full text-left">
@@ -26,8 +21,8 @@ const Register = () => {
                     <button
                         onClick={() => handleTypeSelection('candidate')}
                         className={`${selectedType === 'candidate'
-                                ? 'border-green-500 border-2'
-                                : 'bg-gray-200 text-gray-700'
+                            ? 'border-green-500 border-2'
+                            : 'bg-gray-200 text-gray-700'
                             } px-12 py-2 rounded-full focus:outline-none`}
                     >
                         Candidate
@@ -36,8 +31,8 @@ const Register = () => {
                     <button
                         onClick={() => handleTypeSelection('employer')}
                         className={`${selectedType === 'employer'
-                                ? 'border-green-500 border-2 '
-                                : 'bg-gray-200 text-gray-700'
+                            ? 'border-green-500 border-2 '
+                            : 'bg-gray-200 text-gray-700'
                             } px-12 py-2 rounded-full focus:outline-none`}
                     >
                         Employer
@@ -89,8 +84,7 @@ const Register = () => {
                 <h4 className="text-xl text-center ">---- OR ---- </h4>
 
 
-
-{/* login  */}
+                {/* login  */}
                 <div className="flex mt-4 justify-center items-center">
                     <p>Have an account? </p>
                     <Login></Login>
