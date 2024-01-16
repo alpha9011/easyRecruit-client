@@ -10,6 +10,7 @@ const index = () => {
             <p>redwan branch</p>
             <h2>i am redwan</h2>
             <h3>I am sazzad</h3>
+            <h2>sazzad</h2>
         </div>
     );
 };
