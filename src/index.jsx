@@ -3,8 +3,7 @@
 const index = () => {
     return (
         <div>
-            <p>redwan branch</p>
-            <h2>i am redwan</h2>
+            <p>I am Farhan</p>
         </div>
     );
 };
