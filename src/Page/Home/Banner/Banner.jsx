@@ -1,4 +1,4 @@
-import { Button, FloatingLabel } from "flowbite-react";
+import { Button,  } from "flowbite-react";
 import bannerImg from "../../../assets/banner img.png";
 
 const Banner = () => {
