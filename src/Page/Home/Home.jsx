@@ -1,6 +1,8 @@
 import Navbars from "../../shared/Navbars/Navbars";
+import SocialIcon from "../../shared/SocialIcon/SocialIcon";
 import Banner from "./Banner/Banner";
-import Cards from "./Cards/Cards";
+import LatestJobs from "./LatestJob/LatestJobs";
+import Reviews from "./Reviews/Reviews";
 
 
 const Home = () => {
@@ -8,7 +10,9 @@ const Home = () => {
         <div>
             <Navbars></Navbars>
             <Banner />
-            <Cards></Cards>
+            <SocialIcon></SocialIcon>
+            <Reviews></Reviews>
+            <LatestJobs></LatestJobs>
         </div>
     );
 };
