@@ -1,0 +1,156 @@
+[
+    {
+      "id": 1,
+      "company": "Tech Co.",
+      "position": "Software Engineer",
+      "status": "Applied",
+      "dateApplied": "2024-02-01",
+      "shortDes": "Exciting opportunity in software development.",
+      "description": "Applied for the Software Engineer position at Tech Co. Submitted resume and cover letter. Looking forward to the opportunity to contribute to innovative projects.",
+      "img1": "https://i.ibb.co/GcKjbtC/software.jpg",
+      "img2": "url_to_img2_1.jpg"
+    },
+    {
+      "id": 2,
+      "company": "Data Solutions Inc.",
+      "position": "Data Analyst",
+      "status": "In Progress",
+      "dateApplied": "2024-02-10",
+      "shortDes": "Analyzing and interpreting data for meaningful insights.",
+      "description": "Currently in the interview process for the Data Analyst position at Data Solutions Inc. Scheduled a phone interview for next week. Excited about the prospect of working with diverse datasets.",
+      "img1": "https://i.ibb.co/HC47dSm/data-analytics.jpg",
+      "img2": "url_to_img2_2.jpg"
+    },
+    {
+      "id": 3,
+      "company": "Design Studio",
+      "position": "Graphic Designer",
+      "status": "Pending",
+      "dateApplied": "2024-02-15",
+      "shortDes": "Creative role in graphic design and visual communication.",
+      "description": "Application pending for the Graphic Designer position at Design Studio. Researching the company's portfolio to better understand its design aesthetic and prepare for a potential interview.",
+      "img1": "https://i.ibb.co/qy3cT4W/graphics.jpg",
+      "img2": "url_to_img2_3.jpg"
+    },
+    {
+      "id": 4,
+      "company": "Finance Innovations",
+      "position": "Financial Analyst",
+      "status": "Applied",
+      "dateApplied": "2024-02-05",
+      "shortDes": "Analyzing financial data for strategic decision-making.",
+      "description": "Recently applied for the Financial Analyst position at Finance Innovations. Highlighted experience in financial modeling and data analysis. Eager to contribute to the company's financial planning.",
+      "img1": "https://i.ibb.co/x7KDFb3/finaltial.png",
+      "img2": "url_to_img2_4.jpg"
+    },
+    {
+      "id": 5,
+      "company": "HealthTech Solutions",
+      "position": "Healthcare IT Specialist",
+      "status": "Applied",
+      "dateApplied": "2024-02-08",
+      "shortDes": "Technology role focused on healthcare systems.",
+      "description": "Applied for the Healthcare IT Specialist position at HealthTech Solutions. Emphasized experience in implementing and maintaining healthcare information systems. Excited about the intersection of technology and healthcare.",
+      "img1": "https://i.ibb.co/JBgdr1t/medical.jpg",
+      "img2": "url_to_img2_5.jpg"
+    },
+    {
+      "id": 6,
+      "company": "Marketing Dynamics",
+      "position": "Marketing Coordinator",
+      "status": "In Progress",
+      "dateApplied": "2024-02-12",
+      "shortDes": "Coordinating marketing campaigns and strategies.",
+      "description": "Currently in the interview process for the Marketing Coordinator position at Marketing Dynamics. Discussed previous experience in campaign planning and social media management during the initial interview.",
+      "img1": "https://i.ibb.co/QccJm8H/merketing.jpg",
+      "img2": "url_to_img2_6.jpg"
+    },
+    {
+      "id": 7,
+      "company": "Green Energy Solutions",
+      "position": "Environmental Scientist",
+      "status": "Pending",
+      "dateApplied": "2024-02-18",
+      "shortDes": "Applying scientific knowledge to address environmental challenges.",
+      "description": "Application pending for the Environmental Scientist position at Green Energy Solutions. Interested in leveraging scientific expertise to contribute to sustainable and eco-friendly initiatives.",
+      "img1": "url_to_img1_7.jpg",
+      "img2": "url_to_img2_7.jpg"
+    },
+    {
+      "id": 8,
+      "company": "EduTech Innovations",
+      "position": "Educational Technology Specialist",
+      "status": "In Progress",
+      "dateApplied": "2024-02-14",
+      "shortDes": "Integrating technology into educational environments.",
+      "description": "Currently in the interview process for the Educational Technology Specialist position at EduTech Innovations. Discussed experiences in implementing innovative educational technologies during the first interview.",
+      "img1": "url_to_img1_8.jpg",
+      "img2": "url_to_img2_8.jpg"
+    },
+    {
+      "id": 9,
+      "company": "Global Services Ltd.",
+      "position": "Project Manager",
+      "status": "Applied",
+      "dateApplied": "2024-02-03",
+      "shortDes": "Overseeing project lifecycles and ensuring successful delivery.",
+      "description": "Applied for the Project Manager position at Global Services Ltd. Highlighted leadership skills and successful project management experiences. Excited about the prospect of driving project success.",
+      "img1": "url_to_img1_9.jpg",
+      "img2": "url_to_img2_9.jpg"
+    },
+    {
+      "id": 10,
+      "company": "Social Impact Initiatives",
+      "position": "Community Outreach Coordinator",
+      "status": "Pending",
+      "dateApplied": "2024-02-20",
+      "shortDes": "Engaging with communities for positive social impact.",
+      "description": "Application pending for the Community Outreach Coordinator position at Social Impact Initiatives. Enthusiastic about connecting with communities and driving positive social change.",
+      "img1": "url_to_img1_10.jpg",
+      "img2": "url_to_img2_10.jpg"
+    },
+    {
+      "id": 11,
+      "company": "ArtTech Innovations",
+      "position": "Digital Artist",
+      "status": "Applied",
+      "dateApplied": "2024-02-07",
+      "shortDes": "Expressing creativity through digital art.",
+      "description": "Recently applied for the Digital Artist position at ArtTech Innovations. Shared a portfolio showcasing digital artwork and expressed excitement about contributing to creative projects.",
+      "img1": "url_to_img1_11.jpg",
+      "img2": "url_to_img2_11.jpg"
+    },
+    {
+      "id": 12,
+      "company": "Travel Adventures Ltd.",
+      "position": "Travel Consultant",
+      "status": "In Progress",
+      "dateApplied": "2024-02-11",
+      "shortDes": "Assisting clients in planning memorable travel experiences.",
+      "description": "Currently in the interview process for the Travel Consultant position at Travel Adventures Ltd. Discussed travel industry knowledge and customer service skills during the initial interview.",
+      "img1": "url_to_img1_12.jpg",
+      "img2": "url_to_img2_12.jpg"
+    },
+    {
+      "id": 13,
+      "company": "Fashion Trends Inc.",
+      "position": "Fashion Stylist",
+      "status": "Pending",
+      "dateApplied": "2024-02-17",
+      "shortDes": "Curating stylish and trendsetting looks.",
+      "description": "Application pending for the Fashion Stylist position at Fashion Trends Inc. Passionate about creating visually appealing and on-trend fashion ensembles.",
+      "img1": "url_to_img1_13.jpg",
+      "img2": "url_to_img2_13.jpg"
+    },
+    {
+      "id": 14,
+      "company": "Sports Dynamics",
+      "position": "Sports Analyst",
+      "status": "In Progress",
+      "dateApplied": "2024-02-13",
+      "shortDes": "Analyzing sports performance data for strategic insights.",
+      "description": "Currently in the interview process for the Sports Analyst position at Sports Dynamics. Discussed a passion for sports analytics and experience in interpreting performance data during the initial interview.",
+      "img1": "url_to_img1_14.jpg",
+      "img2": "url_to_img2_14.jpg"
+    }
+]
