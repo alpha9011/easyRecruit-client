@@ -11,13 +11,16 @@
   },
   "dependencies": {
     "flowbite-react": "^0.7.2",
+    "framer-motion": "^10.18.0",
     "localforage": "^1.10.0",
+    "lottie-react": "^2.4.0",
     "match-sorter": "^6.3.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^5.0.1",
     "react-router-dom": "^6.21.2",
-    "sort-by": "^1.2.0"
+    "sort-by": "^1.2.0", 
+    "swiper": "^11.0.5"
   },
   "devDependencies": {
     "@types/react": "^18.2.43",
