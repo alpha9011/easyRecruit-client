@@ -1,4 +1,5 @@
 import Navbars from "../../shared/Navbars/Navbars";
+
 import SocialIcon from "../../shared/SocialIcon/SocialIcon";
 import Banner from "./Banner/Banner";
 import LatestJobs from "./LatestJob/LatestJobs";
