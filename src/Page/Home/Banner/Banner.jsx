@@ -32,8 +32,7 @@ const Banner = () => {
               type="text"
               placeholder="search "
               className="rounded-full py-3 pl-10 flex-grow"
-            />
-      
+            />      
             <Button
               outline
               pill
