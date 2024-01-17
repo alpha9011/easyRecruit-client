@@ -1,0 +1,54 @@
+
+[
+    {
+      "id": 1,
+      "avatar": "https://i.ibb.co/9ttzwwQ/839.jpg",
+      "name": "Alice Johnson",
+      "profession": "Software Engineer",
+      "rating": "⭐⭐⭐⭐⭐",
+      "review": "Great experience using the ATS. It streamlined our hiring process efficiently."
+    },
+    {
+      "id": 2,
+      "avatar": "https://i.ibb.co/cgJW0X5/i1.jpg",
+      "name": "Bob Smith",
+      "profession": "Human Resources Specialist",
+      "rating": "⭐⭐⭐⭐",
+      "review": "User-friendly and effective ATS. Simplifies candidate tracking and communication."
+    },
+    {
+      "id": 3,
+      "avatar": "https://i.ibb.co/jGjPyzR/g4.jpg",
+      "name": "Charlie Brown",
+      "profession": "Recruitment Manager",
+      "rating": "⭐⭐⭐⭐⭐",
+      "review": "Highly recommended for managing large-scale recruitment. The interface is intuitive."
+    },
+    {
+      "id": 4,
+      "avatar": "https://i.ibb.co/BtNrmDD/g3.jpg",
+      "name": "David Miller",
+      "profession": "IT Recruiter",
+      "rating": "⭐⭐⭐⭐",
+      "review": "Efficient and customizable. It meets the specific needs of our IT recruitment team."
+    },
+    {
+      "id": 5,
+      "avatar": "https://i.ibb.co/9v9b0yH/g2.jpg",
+      "name": "Eva Martinez",
+      "profession": "Talent Acquisition Specialist",
+      "rating": "⭐⭐⭐⭐⭐",
+      "review": "Outstanding ATS! The reporting features are particularly useful for analytics."
+    },
+    {
+      "id": 6,
+      "avatar": "https://i.ibb.co/SdHcZtg/g1.jpg",
+      "name": "Frank Wilson",
+      "profession": "HR Coordinator",
+      "rating": "⭐⭐⭐⭐",
+      "review": "Saves time and enhances collaboration between hiring teams. A valuable tool."
+    }
+   
+  ]
+  
+  
