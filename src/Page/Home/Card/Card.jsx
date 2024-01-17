@@ -1,10 +1,21 @@
 
 import { FaCalendarDays } from "react-icons/fa6";
+import Aos from "aos";
+import'aos/dist/aos.css';
+import { useEffect } from "react";
+
 
 const Card = ({ job }) => {
+
+
+    useEffect(() => {
+        Aos.init()
+    },[])
+
+
     const { img1, position, dateApplied, shortDes } = job;
     return (
-        <div className=" w-96 shadow-xl p-12">
+        <div className=" w-96 shadow-xl p-12" data-aos="fade-up" data-aos-duration="1000">
 
             <img className="h-48 transition-transform duration-300 transform origin-center hover:scale-110 cursor-pointer rounded-sm w-fit" src={img1} alt="hi" />
 

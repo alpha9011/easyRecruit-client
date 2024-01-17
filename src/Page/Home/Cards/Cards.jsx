@@ -4,9 +4,9 @@ import Card from "../Card/Card";
 
 
 
-
 const Cards = () => {
 
+  
     const [jobs, setJobs] = useState([]);
 
   useEffect(() => {

@@ -50,6 +50,15 @@ const Register = () => {
 
                         <div>
                             <div className="mb-2 block">
+                                <Label htmlFor="image" value="Image*" />
+                            </div>
+                            <TextInput id="image" type="image" placeholder="Enter your image here" required shadow />
+                        </div>
+
+                        
+
+                        <div>
+                            <div className="mb-2 block">
                                 <Label htmlFor="email" value="Your email" />
                             </div>
                             <TextInput id="email2" type="email" placeholder="name@flowbite.com" required shadow />
