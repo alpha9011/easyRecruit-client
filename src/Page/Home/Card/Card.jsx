@@ -1,22 +1,24 @@
 
 import { FaCalendarDays } from "react-icons/fa6";
-import Aos from "aos";
-import'aos/dist/aos.css';
-import { useEffect } from "react";
-
+import { motion } from "framer-motion"
 
 const Card = ({ job }) => {
 
 
-    useEffect(() => {
-        Aos.init()
-    },[])
+   
 
 
     const { img1, position, dateApplied, shortDes } = job;
     return (
-        <div className=" w-96 shadow-xl p-12" data-aos="fade-up" data-aos-duration="1000">
 
+
+       <div className="  w-96 shadow-xl p-12  rounded-lg">
+         <motion.div
+         initial={{ opacity: 0, y: 50 }}
+         animate={{ opacity: 1, y: 0 }}
+         exit={{ opacity: 0, y: -50 }}
+         transition={{ duration: 0.9 }}
+         >
             <img className="h-48 transition-transform duration-300 transform origin-center hover:scale-110 cursor-pointer rounded-sm w-fit" src={img1} alt="hi" />
 
            <div className="space-y-3">
@@ -29,8 +31,10 @@ const Card = ({ job }) => {
             </p>
             <button className=" border-2 px-4 py-2"> Read more</button>
            </div>
-        </div>
-    );
+           </motion.div>
+  
+       </div>
+        );
 };
 
 export default Card;

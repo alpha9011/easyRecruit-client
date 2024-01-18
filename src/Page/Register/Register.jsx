@@ -1,10 +1,21 @@
-import {  Checkbox, Label, TextInput } from 'flowbite-react';
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import 'tailwindcss/tailwind.css'; // Import Tailwind CSS
+import { Checkbox, FileInput, Label, TextInput } from 'flowbite-react';
+import { useContext, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import 'tailwindcss/tailwind.css'; 
 import Login from '../Login/Login';
+import { AuthContext } from '../../AuthProvider/AuthProvider';
+import Toastify from 'toastify-js'
+import "toastify-js/src/toastify.css"
+import GoogleLogin from '../Login/GoogleLogin';
+
 
 const Register = () => {
+
+
+    const { createUser, handleUpdateProfile } = useContext(AuthContext);
+    const Navigate = useNavigate()
+
+
     const [selectedType, setSelectedType] = useState('candidate');
 
     const handleTypeSelection = (type) => {
@@ -12,10 +23,76 @@ const Register = () => {
     };
 
 
+    const handleSubmit = (event) => {
+        event.preventDefault();
+
+        const name = event.target.name.value;
+        const email = event.target.email.value;
+        const img = event.target.image.value;
+        const password = event.target.password.value;
+        console.log(name, email,img,password);
+
+
+
+
+
+         // validation 
+         if (password.length < 6) {
+            Toastify({
+                text: "Password must be at least 6 characters",
+                className: "info",
+                style: {
+                  background: "linear-gradient(to right, #b30000, #ff6666)",
+                }
+              }).showToast();
+
+            return;
+        }
+
+        else if (!/^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[A-Z]).{6,}$/.test(password)) {
+          
+          
+          Toastify({
+            text: "You should use valid password",
+            className: "info",
+            style: {
+              background: "linear-gradient(to right, #b30000, #ff6666)",
+            }
+          }).showToast();
+          return;
+        }
+
+
+        // creating a new user
+        createUser(email, password)
+            .then(res => {
+              console.log(res.user);
+                handleUpdateProfile(name,img)
+                    .then(() => {
+                        Toastify({
+                            text: "Register successful",
+                            className: "info",
+                            style: {
+                              background: "linear-gradient(to right, #00b09b, #96c93d)",
+                            }
+                          }).showToast();
+                        Navigate('/')
+
+                    })
+                })
+                .catch(error => {
+                    console.log(error);
+                })
+    
+
+    }
+
+
     return (
         <div className="flex items-center justify-center h-screen">
             <div className="registration-form bg-white p-8 rounded shadow-md max-w-lg w-full text-left">
                 <h2 className="text-3xl font-semibold text-center mb-4">Create Account</h2>
+                
 
                 <div className="registration-type-buttons text-center mb-4">
                     <button
@@ -40,41 +117,41 @@ const Register = () => {
                 </div>
 
                 {selectedType && (
-                    <form className="flex max-w-md flex-col gap-4">
+                    <form  onSubmit={handleSubmit} className="flex max-w-md flex-col gap-4">
                         <div>
                             <div className="mb-2 block">
                                 <Label htmlFor="userName" value="UserName*" />
                             </div>
-                            <TextInput id="userName" type="name" placeholder="John Doe" required shadow />
+                            <TextInput id="userName" name='name' type="name" placeholder="John Doe" required shadow />
                         </div>
 
                         <div>
-                            <div className="mb-2 block">
-                                <Label htmlFor="image" value="Image*" />
+                            <div>
+                                <Label htmlFor="multiple-file-upload" value="Image*" />
                             </div>
-                            <TextInput id="image" type="image" placeholder="Enter your image here" required shadow />
+                            <FileInput name='image' id="multiple-file-upload" multiple />
                         </div>
 
-                        
+
 
                         <div>
                             <div className="mb-2 block">
                                 <Label htmlFor="email" value="Your email" />
                             </div>
-                            <TextInput id="email2" type="email" placeholder="name@flowbite.com" required shadow />
+                            <TextInput id="email2" name='email' type="email" placeholder="name@flowbite.com" required shadow />
                         </div>
                         <div>
                             <div className="mb-2 block">
                                 <Label htmlFor="password" value="Your password*" />
                             </div>
-                            <TextInput id="password" type="password" placeholder="******" required shadow />
+                            <TextInput id="password" name='password' type="password" placeholder="******" required shadow />
                         </div>
 
                         <div className="flex items-center gap-2">
                             <Checkbox id="agree" />
                             <Label htmlFor="agree" className="flex">
                                 I agree with the&nbsp;
-                                <Link href="#" className="text-cyan-600 hover:underline dark:text-cyan-500">
+                                <Link href="" className="text-cyan-600 hover:underline dark:text-cyan-500">
                                     terms and conditions
                                 </Link>
                             </Label>
@@ -90,11 +167,12 @@ const Register = () => {
                 )}
 
                 {/* google login */}
-                <h4 className="text-xl text-center ">---- OR ---- </h4>
+                <h4 className="text-xl text-center my-4 ">---- OR ---- </h4>
+                <GoogleLogin/>
 
 
                 {/* login  */}
-                <div className="flex mt-4 justify-center items-center">
+                <div className="flex justify-center items-center mt-4">
                     <p>Have an account? </p>
                     <Login></Login>
                 </div>

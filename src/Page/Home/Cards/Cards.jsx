@@ -18,7 +18,7 @@ const Cards = () => {
 
   console.log(jobs);
     return (
-        <div className="grid grid-cols-3 gap-8 max-w-7xl mx-auto">
+        <div className="grid grid-cols-3 gap-8 max-w-7xl my-12 mx-auto">
             {
                 jobs.slice(0,6).map(job => <Card key={job.id} job={job}></Card>)
             }

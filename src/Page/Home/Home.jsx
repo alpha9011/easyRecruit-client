@@ -1,6 +1,5 @@
 import Navbars from "../../shared/Navbars/Navbars";
 import Banner from "./Banner/Banner";
-import Cards from "./Cards/Cards";
 import PopularCategoriy from "./PopularCategoriy/PopularCategoriy";
 
 
@@ -9,7 +8,7 @@ const Home = () => {
         <div>
             <Navbars></Navbars>
             <Banner />
-            <Cards></Cards>
+            {/* <Cards></Cards> */}
             <PopularCategoriy/>
         </div>
     );
