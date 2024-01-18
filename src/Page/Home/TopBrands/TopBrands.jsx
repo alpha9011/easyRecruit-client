@@ -12,7 +12,7 @@ import yahoo from "../../../../public/Image/yahoo.png";
 
 const TopBrands = () => {
   return (
-    <div className=" hidden md:block -mt-16 w-4/5  mx-auto p-5 shadow-[rgba(17,_17,_26,_0.1)_0px_0px_16px] z-10 ">
+    <div className=" hidden md:block -mt-16 w-4/5  mx-auto p-5 shadow-[rgba(17,_17,_26,_0.1)_0px_0px_16px] z-10 rounded-2xl">
       <div className="flex flex-col md:flex-row items-center justify-center h-28  w-full p-5 ">
        <div className="shadow-r-[5xl]">
          <h2 className=" md:w-1/5 text-3xl md:text-4xl lg:text-5xl font-bold">
