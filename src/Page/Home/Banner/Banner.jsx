@@ -22,6 +22,23 @@ const Banner = () => {
             }}
             whileHover={{ opacity: 0.5 }}
 
+
+          // import { motion } from "framer-motion";
+          // import TopBrands from "../TopBrands/TopBrands";
+          // const Banner = () => {
+          //   return (
+          //     <div className="mt-10">
+          //       {/* Banner section */}
+          //       <div className="relative flex flex-col md:flex-row gap-10 items-center h-[70vh] w-full p-5 pb-28 ">
+          //         <div className="md:w-1/2 ">
+          //           <motion.h2
+          //             className=" justify-center text-center text-4xl md:text-5xl lg:text-7xl font-bold "
+          //             animate={{ x: [-1000, 100, 0] }}
+          //             transition={{
+          //               duration: 2,
+          //               delay: 0.2,
+          //             }}
+          //             whileHover={{ opacity: 0.5 }}
           >
             Elevate Your Hiring Journey with Easy Recruit!
           </motion.h2>
@@ -48,10 +65,12 @@ const Banner = () => {
         </div>
       </div>
 
-      <TopBrands className="" />
+      {/* <TopBrands className="" />
 
+    </div> */}
+
+      <TopBrands />
     </div>
-
   );
 };
 
