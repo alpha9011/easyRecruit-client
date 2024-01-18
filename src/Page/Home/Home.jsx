@@ -1,11 +1,11 @@
-import Navbars from "../../shared/Navbars/Navbars";
+// import Navbars from "../../shared/Navbars/Navbars";
 import Banner from "./Banner/Banner";
 
 
 const Home = () => {
     return (
         <div>
-            <Navbars></Navbars>
+            {/* <Navbars></Navbars> */}
             <Banner />
         </div>
     );
