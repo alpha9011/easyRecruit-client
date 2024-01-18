@@ -13,6 +13,7 @@ const Home = () => {
             <SocialIcon></SocialIcon>
             <Reviews></Reviews>
             <LatestJobs></LatestJobs>
+            <HowToUse></HowToUse>
             <Countdown></Countdown>
             <Footers></Footers>
         </div>
