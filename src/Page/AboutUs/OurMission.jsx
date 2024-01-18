@@ -4,7 +4,7 @@ import { FaLeanpub, FaLocationCrosshairs } from "react-icons/fa6";
 const OurMission = () => {
     return (
         <div className="mx-5">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-14 max-w-screen-xl mx-auto my-5 shadow-2xl rounded-lg">
+            <div className="grid grid-cols-1 min-[600px]:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-14 max-w-screen-xl mx-auto my-5 shadow-2xl rounded-lg">
                 <div className="flex flex-col p-5 cursor-pointer hover:shadow-md">
                     <MdOutlineVideoLibrary className="text-9xl text-green-400 mb-3 hover:text-green-500" />
                     <h2 className="text-2xl font-medium mb-2">Our Philosophy</h2>

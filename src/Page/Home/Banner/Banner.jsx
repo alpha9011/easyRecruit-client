@@ -4,23 +4,41 @@ import { CiSearch } from "react-icons/ci";
 import Lottie from "lottie-react";
 
 import bannerAnimation from "../../../../public/Json/Animation-banner.json";
-
-import { motion } from "framer-motion";
+import { motion } from 'framer-motion'
 import TopBrands from "../TopBrands/TopBrands";
 const Banner = () => {
   return (
-    <div className="mt-10">
+    <div className="" >
       {/* Banner section */}
       <div className="relative flex flex-col md:flex-row gap-10 items-center h-[70vh] w-full p-5 pb-28 ">
+
         <div className="md:w-1/2 ">
-          <motion.h2
-            className=" justify-center text-center text-4xl md:text-5xl lg:text-7xl font-bold "
+          <motion.h2 className=" justify-center text-center text-4xl md:text-5xl lg:text-7xl font-bold "
+
             animate={{ x: [-1000, 100, 0] }}
             transition={{
               duration: 2,
-              delay: 0.2,
+              delay: 0.2
             }}
             whileHover={{ opacity: 0.5 }}
+
+
+          // import { motion } from "framer-motion";
+          // import TopBrands from "../TopBrands/TopBrands";
+          // const Banner = () => {
+          //   return (
+          //     <div className="mt-10">
+          //       {/* Banner section */}
+          //       <div className="relative flex flex-col md:flex-row gap-10 items-center h-[70vh] w-full p-5 pb-28 ">
+          //         <div className="md:w-1/2 ">
+          //           <motion.h2
+          //             className=" justify-center text-center text-4xl md:text-5xl lg:text-7xl font-bold "
+          //             animate={{ x: [-1000, 100, 0] }}
+          //             transition={{
+          //               duration: 2,
+          //               delay: 0.2,
+          //             }}
+          //             whileHover={{ opacity: 0.5 }}
           >
             Elevate Your Hiring Journey with Easy Recruit!
           </motion.h2>
@@ -46,6 +64,10 @@ const Banner = () => {
           <Lottie className="max-w-md" animationData={bannerAnimation} />
         </div>
       </div>
+
+      {/* <TopBrands className="" />
+
+    </div> */}
 
       <TopBrands />
     </div>
