@@ -15,7 +15,7 @@ const Reviews = () => {
 
   return (
     <div>
-      <h1 className="text-center mb-4">Reviews: {reviews.length}</h1>
+      <h1 className="text-center text-5xl font-extrabold mb-4">What Our client Said</h1>
       <div className="flex justify-center">
         {reviews.map(review => (
           <img
