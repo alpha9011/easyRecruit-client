@@ -3,7 +3,7 @@ import { CiEdit } from "react-icons/ci";
 import { NavLink } from 'react-router-dom';
 const Navbars = () => {
     return (
-        <Navbar fluid rounded className='px-10 mb-10'>
+        <Navbar fluid rounded className='px-10 '>
             <Navbar.Brand href="/">
                 <div className='flex flex-col items-center'>
                     <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">Easy<span className='text-yellow-400'>Recruit</span></span>
