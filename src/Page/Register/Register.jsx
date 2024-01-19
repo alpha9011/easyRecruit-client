@@ -1,7 +1,7 @@
 import { Checkbox, FileInput, Label, TextInput } from 'flowbite-react';
 import { useContext, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import 'tailwindcss/tailwind.css'; 
+import 'tailwindcss/tailwind.css';
 import Login from '../Login/Login';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import Toastify from 'toastify-js'
@@ -30,69 +30,69 @@ const Register = () => {
         const email = event.target.email.value;
         const img = event.target.image.value;
         const password = event.target.password.value;
-        console.log(name, email,img,password);
+        console.log(name, email, img, password);
 
 
 
 
 
-         // validation 
-         if (password.length < 6) {
+        // validation 
+        if (password.length < 6) {
             Toastify({
                 text: "Password must be at least 6 characters",
                 className: "info",
                 style: {
-                  background: "linear-gradient(to right, #b30000, #ff6666)",
+                    background: "linear-gradient(to right, #b30000, #ff6666)",
                 }
-              }).showToast();
+            }).showToast();
 
             return;
         }
 
         else if (!/^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[A-Z]).{6,}$/.test(password)) {
-          
-          
-          Toastify({
-            text: "You should use valid password",
-            className: "info",
-            style: {
-              background: "linear-gradient(to right, #b30000, #ff6666)",
-            }
-          }).showToast();
-          return;
+
+
+            Toastify({
+                text: "You should use valid password",
+                className: "info",
+                style: {
+                    background: "linear-gradient(to right, #b30000, #ff6666)",
+                }
+            }).showToast();
+            return;
         }
 
 
         // creating a new user
         createUser(email, password)
             .then(res => {
-              console.log(res.user);
-                handleUpdateProfile(name,img)
+                console.log(res.user);
+                handleUpdateProfile(name, img)
                     .then(() => {
                         Toastify({
                             text: "Register successful",
                             className: "info",
                             style: {
-                              background: "linear-gradient(to right, #00b09b, #96c93d)",
+                                background: "linear-gradient(to right, #00b09b, #96c93d)",
                             }
-                          }).showToast();
+                        }).showToast();
                         Navigate('/')
 
                     })
-                })
-                .catch(error => {
-                    console.log(error);
-                })
-    
+            })
+            .catch(error => {
+                console.log(error);
+            })
+
 
     }
 
 
     return (
-        <div className="flex items-center justify-center h-screen">
-            <div className="registration-form bg-white p-8 rounded shadow-md max-w-lg w-full text-left">
+        <div className="flex items-center justify-center">
+            <div className="    mt-12 px-8 pb-4 rounded shadow-md  text-left">
                 <h2 className="text-3xl font-semibold text-center mb-4">Create Account</h2>
-                
+
 
                 <div className="registration-type-buttons text-center mb-4">
                     <button
@@ -117,7 +117,7 @@ const Register = () => {
                 </div>
 
                 {selectedType && (
-                    <form  onSubmit={handleSubmit} className="flex max-w-md flex-col gap-4">
+                    <form onSubmit={handleSubmit} className="flex max-w-md flex-col gap-4">
                         <div>
                             <div className="mb-2 block">
                                 <Label htmlFor="userName" value="UserName*" />
@@ -166,20 +166,15 @@ const Register = () => {
                     </form>
                 )}
 
-                {/* google login */}
-                <h4 className="text-xl text-center my-4 ">---- OR ---- </h4>
-                <GoogleLogin/>
 
+                <div className="mt-4">
+                    <GoogleLogin />
+                </div>
 
-                {/* login  */}
                 <div className="flex justify-center items-center mt-4">
                     <p>Have an account? </p>
                     <Login></Login>
                 </div>
-
-
-
-
             </div>
         </div>
     );
