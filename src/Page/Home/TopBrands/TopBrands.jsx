@@ -14,12 +14,12 @@ const TopBrands = () => {
   return (
     <div className=" hidden md:block -mt-16 w-4/5  mx-auto p-5 shadow-[rgba(17,_17,_26,_0.1)_0px_0px_16px] z-10 rounded-2xl">
       <div className="flex flex-col md:flex-row items-center justify-center h-28  w-full p-5 ">
-       <div className="shadow-r-[5xl]">
-         <h2 className=" md:w-1/5 text-3xl md:text-4xl lg:text-5xl font-bold">
-           Top Brands
-         </h2>
-       </div>
-       
+        <div className="shadow-r-[5xl] border-r-4">
+          <h2 className=" md:w-1/5 text-3xl md:text-4xl lg:text-5xl font-bold">
+            Top Companies
+          </h2>
+        </div>
+
         <Swiper
           modules={[Autoplay, Navigation, Pagination]}
           spaceBetween={50}
@@ -27,12 +27,12 @@ const TopBrands = () => {
           centeredSlides={true}
           loop={true}
           breakpoints={{
-           
+
             640: {
-              slidesPerView: 3, 
+              slidesPerView: 3,
             },
             1024: {
-              slidesPerView: 5, 
+              slidesPerView: 5,
             },
           }}
           autoplay={{
@@ -40,7 +40,7 @@ const TopBrands = () => {
             disableOnInteraction: true,
           }}
           className="w-4/5 "
-        
+
         >
           <SwiperSlide className="flex items-center justify-center h-28">
             <img className="max-h-full" src={amazon} alt="" />
