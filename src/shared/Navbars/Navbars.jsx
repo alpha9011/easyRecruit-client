@@ -53,8 +53,9 @@ const Navbars = () => {
                 <Navbar.Link>
                     <NavLink to='/contact'>Contact</NavLink>
                 </Navbar.Link>
+              
                 <Navbar.Link>
-                    <NavLink to='/register'>register</NavLink>
+                    <NavLink to='/register'>Register</NavLink>
                 </Navbar.Link>
                 <Navbar.Link>
                     <NavLink className="text-white" to='/dashboard'>Dashbord</NavLink>
