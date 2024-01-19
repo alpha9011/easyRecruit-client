@@ -32,8 +32,8 @@ const GoogleLogin = () => {
         <div>
             <Link onClick={handleGoogleLogin}>
                 <div className="flex items-center gap-2 justify-center border shadow-xl px-4 py-2">
-                    <FcGoogle className="text-4xl"/>
-                    <p className="text-xl">Continue with Google</p>
+                    <FcGoogle className="text-4xl" />
+                    <p className="text-lg">Continue with Google</p>
                 </div>
 
             </Link>
