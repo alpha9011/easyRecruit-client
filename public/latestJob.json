@@ -1,0 +1,59 @@
+
+
+[
+    {
+      "id": 1,
+      "companyLogo": "https://i.ibb.co/27pH8Ss/company-Logo-3.jpg",
+      "jobTitle": "Software Engineer",
+      "jobCategory": "Information Technology",
+      "jobType": "Full Time",
+      "salary": "$80,000 - $100,000",
+      "jobLocation": "San Francisco, CA"
+    },
+    {
+      "id": 2,
+      "companyLogo": "https://i.ibb.co/wg06hDm/company-Logo-4.jpg",
+      "jobTitle": "Graphic Designer",
+      "jobCategory": "Design",
+      "jobType": "Part Time",
+      "salary": "$50,000 - $60,000",
+      "jobLocation": "New York, NY"
+    },
+    {
+      "id": 3,
+      "companyLogo": "https://i.ibb.co/2PWCYq3/company-Logo-5.jpg",
+      "jobTitle": "Data Scientist",
+      "jobCategory": "Data Science",
+      "jobType": "Full Time",
+      "salary": "$90,000 - $110,000",
+      "jobLocation": "Austin, TX"
+    },
+    {
+      "id": 4,
+      "companyLogo": "https://i.ibb.co/dJ9fLNp/company-Logo-6.jpg",
+      "jobTitle": "Marketing Specialist",
+      "jobCategory": "Marketing",
+      "jobType": "Contractual",
+      "salary": "$60,000 - $70,000",
+      "jobLocation": "Los Angeles, CA"
+    },
+    {
+      "id": 5,
+      "companyLogo": "https://i.ibb.co/4dH0stM/company-Logo-1.jpg",
+      "jobTitle": "Front-end Developer",
+      "jobCategory": "Information Technology",
+      "jobType": "Full Time",
+      "salary": "$70,000 - $90,000",
+      "jobLocation": "Seattle, WA"
+    },
+    {
+      "id": 6,
+      "companyLogo": "https://i.ibb.co/NtxQcQb/company-Logo-2.jpg",
+      "jobTitle": "Sales Representative",
+      "jobCategory": "Sales",
+      "jobType": "Full Time",
+      "salary": "$55,000 - $65,000",
+      "jobLocation": "Chicago, IL"
+    }
+  ]
+  
