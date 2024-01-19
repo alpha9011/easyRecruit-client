@@ -4,7 +4,8 @@ import { Button,  } from "flowbite-react";
 import { CiSearch } from "react-icons/ci";
 import Lottie from "lottie-react";
 
-import bannerAnimation from "../../../../public/Json/Animation-banner.json";
+// import bannerAnimation from "../../../../public/Json/Animation-banner.json";
+import bannerAnimation from "../../../Json/Animation-banner.json";
 import { motion } from 'framer-motion'
 import TopBrands from "../TopBrands/TopBrands";
 const Banner = () => {

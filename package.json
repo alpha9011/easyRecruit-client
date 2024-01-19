@@ -24,6 +24,8 @@
     "react-router-dom": "^6.21.2",
     "react-spring": "^9.7.3",
     "sort-by": "^1.2.0",
+    "swiper": "^11.0.5",
+    "swiper-react": "^1.0.0",
     "toastify-js": "^1.12.0"
   },
   "devDependencies": {
