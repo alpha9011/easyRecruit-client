@@ -2,10 +2,10 @@
 // import { GiProgression } from "react-icons/gi";
 // import { FaLeanpub, FaLocationCrosshairs } from "react-icons/fa6";
 import Lottie from "lottie-react";
-import phillosophy from "../../../public/Json/light.json"
-import mission from "../../../public/Json/mission.json"
-import vission from "../../../public/Json/vission.json"
-import progress from "../../../public/Json/progress.json"
+import phillosophy from "../../Json/light.json"
+import mission from "../../Json/mission.json"
+import vission from "../../Json/vission.json"
+import progress from "../../Json/progress.json"
 // import bgImage from "../../assets/mission.jpg"
 import bgImg from "../../assets/pattern.jpg"
 import { Parallax } from 'react-parallax';

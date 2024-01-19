@@ -1,5 +1,5 @@
 import Lottie from "lottie-react";
-import errorAnim from "../../../public/Json/coming.json"
+import errorAnim from "../../Json/coming.json"
 
 const ErrorPage = () => {
     return (
