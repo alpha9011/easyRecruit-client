@@ -1,6 +1,7 @@
 import { Avatar, Button, Dropdown, Navbar } from 'flowbite-react';
 import { CiEdit } from "react-icons/ci";
 import { NavLink } from 'react-router-dom';
+import user from "../../assets/user2.jpg"
 const Navbars = () => {
     return (
         <Navbar fluid rounded className='px-10'>
@@ -16,7 +17,7 @@ const Navbars = () => {
                     inline
                     label={
                         // here we will display user image and other info dynamically
-                        <Avatar alt="User settings" img="https://flowbite.com/docs/images/people/profile-picture-5.jpg" rounded />
+                        <Avatar alt="User settings" img={user} rounded />
                     }
                 >
                     <Dropdown.Header>
@@ -41,6 +42,9 @@ const Navbars = () => {
                     <NavLink to='/about'>About Us</NavLink>
                 </Navbar.Link>
                 <Navbar.Link>
+                    <NavLink to='/price'>Pricing</NavLink>
+                </Navbar.Link>
+                <Navbar.Link>
                     <NavLink to='/jobs'>Jobs</NavLink>
                 </Navbar.Link>
                 <Navbar.Link>
@@ -52,7 +56,7 @@ const Navbars = () => {
                 <Navbar.Link>
                     <NavLink to='/contact'>Contact</NavLink>
                 </Navbar.Link>
-              
+
                 <Navbar.Link>
                     <NavLink to='/register'>Register</NavLink>
                 </Navbar.Link>

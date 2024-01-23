@@ -11,9 +11,7 @@ const Login = () => {
 
     function onChange(value) {
         console.log("Captcha value:", value);
-      }
-
-       
+    }
     const [openModal, setOpenModal] = useState(false);
 
 
@@ -30,8 +28,6 @@ const Login = () => {
         const password = e.target.password.value
         console.log(email, password);
 
-
-
         login(email, password)
             .then(currentUser => {
                 console.log(currentUser.user);
@@ -39,9 +35,9 @@ const Login = () => {
                     text: "Login successful",
                     className: "info",
                     style: {
-                      background: "linear-gradient(to right, #00b09b, #96c93d)",
+                        background: "linear-gradient(to right, #00b09b, #96c93d)",
                     }
-                  }).showToast();
+                }).showToast();
 
                 navigate(location?.state ? location.state : "/")
 
@@ -54,18 +50,12 @@ const Login = () => {
                     text: "Login failed",
                     className: "info",
                     style: {
-                      background: "linear-gradient(to right, #b30000, #ff6666)",
+                        background: "linear-gradient(to right, #b30000, #ff6666)",
                     }
-                  }).showToast();
+                }).showToast();
 
             });
     }
-
-
-
-
-
-
 
 
     return (
@@ -93,24 +83,20 @@ const Login = () => {
                             </div>
 
 
-                            <div className="mb-2 block">
-                                <ReCAPTCHA
+                            <div>
+                                <ReCAPTCHA className="my-4"
                                     sitekey="6LdUVFUpAAAAAIFCUM-zZgHQXqStjUROmZiQWcWV"
                                     onChange={onChange}
                                 />
                             </div>
-                            </div>
+                        </div>
 
-
-
-
-                            <button
-                                type="submit"
-                                className="bg-green-500 text-white px-4 py-2 rounded w-full focus:outline-none"
-                            >
-                                LOGIN
-                            </button>
-
+                        <button
+                            type="submit"
+                            className="bg-green-500 text-white px-4 py-2 rounded w-full focus:outline-none"
+                        >
+                            LOGIN
+                        </button>
                     </form>
 
                     <label className="label">
@@ -119,16 +105,15 @@ const Login = () => {
                         </div>
                     </label>
 
-                    {/* google login */}
-                <h4 className="text-xl text-center ">---- OR ---- </h4>
-                <GoogleLogin/>
 
+                    <div className="my-4">
+                        <GoogleLogin />
+                    </div>
 
-                {/* login  */}
-                <div className="flex justify-center items-center mt-4">
-                    <p>Have an account? </p>
-                    <Login></Login>
-                </div>
+                    <div className="flex justify-center items-center mt-4">
+                        <p>Have an account? </p>
+                        <Login></Login>
+                    </div>
                 </Modal.Body>
             </Modal>
         </div>
