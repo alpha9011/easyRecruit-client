@@ -2,16 +2,16 @@ import { useContext } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import Toastify from 'toastify-js'
 import "toastify-js/src/toastify.css"
-import { FcGoogle } from "react-icons/fc";
 import { Link } from "react-router-dom";
+import fblogo from "../../assets/fb.png"
 
-const GoogleLogin = () => {
+const FacebookLogin = () => {
 
-    const { signInWithGoogle } = useContext(AuthContext)
+    const { signInWithFacebook } = useContext(AuthContext)
 
 
-    const handleGoogleLogin = () => {
-        signInWithGoogle()
+    const handleFacebookLogin = () => {
+        signInWithFacebook()
             .then(res => {
                 console.log(res.user);
                 Toastify({
@@ -30,10 +30,10 @@ const GoogleLogin = () => {
 
     return (
         <div>
-            <Link onClick={handleGoogleLogin}>
-                <div className="flex items-center gap-2 mb-2 justify-center border shadow-xl px-4 py-2">
+            <Link onClick={handleFacebookLogin}>
+                <div className="flex items-center gap-2 justify-center border shadow-xl px-4 py-2">
                     <p className="text-lg">Continue with</p>
-                    <FcGoogle className="text-4xl" />
+                    <img src={fblogo}  className="w-8" alt="" />
                 </div>
 
             </Link>
@@ -41,4 +41,4 @@ const GoogleLogin = () => {
     );
 };
 
-export default GoogleLogin;
+export default FacebookLogin;

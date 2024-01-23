@@ -1,7 +1,7 @@
-
-import {  GoogleAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
-import { createContext, useEffect, useState} from "react";
+import { FacebookAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
+import { createContext, useEffect, useState } from "react";
 import auth from "../firebase/firebase.config";
+
 
 export const AuthContext = createContext(null)
 
@@ -13,10 +13,16 @@ const AuthProvider = ({children}) => {
 
     
     //signInWithGoogle
-    const provider = new GoogleAuthProvider();
-    const signInWithGoogle  = () => {
+    const googleProvider = new GoogleAuthProvider();
+     const signInWithGoogle  = () => {
         setLoader(true)
-        return signInWithPopup(auth, provider)
+        return signInWithPopup(auth, googleProvider)
+    }
+    //signInWithGoogle
+    const facebookProvider = new FacebookAuthProvider();
+     const signInWithFacebook = () => {
+        setLoader(true)
+        return signInWithPopup(auth, facebookProvider)
     }
 
     // create user 
@@ -60,10 +66,18 @@ const handleUpdateProfile = (name, photo) => {
 
 
     } ,[])
+
+    // forgot pass 
+    const forgotPass = (email) => {
+        setLoader(true)
+        return sendPasswordResetEmail(auth, email)
+ 
+    }
+
 console.log(user);
 
     const authInfo = {
-        signInWithGoogle, createUser, login,logOut, user, loader,handleUpdateProfile
+        signInWithGoogle, createUser, login,logOut, user, loader,handleUpdateProfile, forgotPass,signInWithFacebook
     }
 
 
