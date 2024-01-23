@@ -30,7 +30,10 @@ const WhyUs = () => {
                         <FaCheck className="text-blue-600 text-lg"></FaCheck>
                         <p className="text-lg">Complete Solution</p>
                     </div>
-                    <Button className="bg-gradient-to-r from-yellow-400 to-yellow-300 border-r border-yellow-300 hover:text-gray-600">Contact Us</Button>
+                    <button className="px-4 py-2 text-white bg-blue-200 rounded-[.250rem] hover:bg-white">Contact Us</button>
+                    <button className="px-4 py-2 text-white bg-gradient-to-r from-[#457fca] to-[#5691c8] rounded-[.250rem] hover:bg-white">Contact Us</button>
+                    <Button className="bg-gradient-to-r from-[#4CA1AF] to-[#C4E0E5] border-none">Contact Us</Button>
+                    <Button className="bg-gradient-to-r from-[#457fca] to-[#5691c8] border-none rounded-[.250rem]">Contact Us</Button>
                 </div>
             </div>
 

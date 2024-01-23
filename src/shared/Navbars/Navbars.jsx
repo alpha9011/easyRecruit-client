@@ -42,6 +42,9 @@ const Navbars = () => {
                     <NavLink to='/about'>About Us</NavLink>
                 </Navbar.Link>
                 <Navbar.Link>
+                    <NavLink to='/price'>Pricing</NavLink>
+                </Navbar.Link>
+                <Navbar.Link>
                     <NavLink to='/jobs'>Jobs</NavLink>
                 </Navbar.Link>
                 <Navbar.Link>
@@ -53,7 +56,7 @@ const Navbars = () => {
                 <Navbar.Link>
                     <NavLink to='/contact'>Contact</NavLink>
                 </Navbar.Link>
-              
+
                 <Navbar.Link>
                     <NavLink to='/register'>Register</NavLink>
                 </Navbar.Link>
