@@ -1,24 +1,19 @@
-import {  FileInput, Label, TextInput } from 'flowbite-react';
-import { useContext, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Button, Label, Select, TextInput } from 'flowbite-react';
+import { useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 import 'tailwindcss/tailwind.css';
 import Login from '../Login/Login';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import Toastify from 'toastify-js';
 import "toastify-js/src/toastify.css";
-import GoogleLogin from '../Login/GoogleLogin';
-import FacebookLogin from '../Login/FacebookLogin';
+import { FaRegCircle } from "react-icons/fa";
 
 
+import bgRegister from '../../assets/women.jpg'
 const Register = () => {
+
     const { createUser, handleUpdateProfile } = useContext(AuthContext);
     const Navigate = useNavigate();
-    const [selectedType, setSelectedType] = useState('candidate');
-
-    const handleTypeSelection = (type) => {
-        setSelectedType(type);
-    };
-
     const handleSubmit = (event) => {
         event.preventDefault();
 
@@ -74,130 +69,118 @@ const Register = () => {
 
 
 
-    const getBackgroundImage = () => {
-        let gradient;
-        if (selectedType === 'candidate') {
-            gradient = 'linear-gradient(to right, #ff6b6b, #ffe066)';
-        } else if (selectedType === 'employer') {
-            gradient = 'linear-gradient(to right, #00b09b, #96c93d)';
-        } else {
-            gradient = 'linear-gradient(to right, #b30000, #ff6666)';
-        }
-
-        return `${gradient}`;
-    
-    };
-
-    const renderCandidateForm = () => (
-        <form onSubmit={handleSubmit} className="flex rounded p-10 bg-white max-w-md flex-col gap-4">
-            {/* Candidate form fields */}
-            <div>
-               
-                <TextInput id="userName" name='name' type="name" placeholder="User Name* " required shadow />
-            </div>
-
-            <div>
-                <div>
-                </div>
-                <FileInput name='image' id="multiple-file-upload" placeholder='profile'  />
-            </div>
-
-            <div>
-                            
-                            <TextInput id="email2" name='email' type="email" placeholder="Email*" required shadow />
-                        </div>
-                        <div>
-                
-                            <TextInput id="password" name='password' type="password" placeholder="password*" required shadow />
-                        </div>
-
-
-                       
-
-
-
-            <button
-                type="submit"
-                className="bg-gradient-to-r from-red-500 to-yellow-300 text-white px-4 py-2 rounded w-full focus:outline-none"
-            >
-                REGISTER
-            </button>
-        </form>
-    );
-
-    const renderEmployerForm = () => (
-        //  Employer Form
-        <form onSubmit={handleSubmit} className="flex rounded bg-white p-10 max-w-md flex-col gap-4">
-            <div>
-                
-                <TextInput id="companyName" name='companyName' type="text" placeholder=" ABC Company" required shadow />
-            </div>
-
-            <div>
-               
-                <FileInput name='companyLogo' id="company-logo-upload" multiple />
-            </div>
-
-            <div>
-                           
-                            <TextInput id="email2" name='email' type="email" placeholder="company@name.com" required shadow />
-                        </div>
-                        <div>
-                            
-                            <TextInput id="password" name='password' type="password" placeholder="Password*" required shadow />
-                        </div>
-
-                        
-
-            <button
-                type="submit"
-                className="bg-gradient-to-r from-teal-500 to-lime-400 text-white px-4 py-2 rounded w-full focus:outline-none"
-            >
-                REGISTER
-            </button>
-        </form>
-    );
-
     return (
-        <div style={{ backgroundImage: getBackgroundImage()}} className='h-[100vh]' >
-            <div className="flex items-center justify-center">
-                <div className="mt-12 px-8 pb-4 rounded shadow-md text-left">
-                    <h2 className="text-3xl font-semibold text-center mb-4">Create Account</h2>
 
-                    <div className="registration-type-buttons text-center mb-4">
-                        <button
-                            onClick={() => handleTypeSelection('candidate')}
-                            className={`${selectedType === 'candidate'
-                            ?'bg-gray-200 text-gray-700'
-                            :'border-green-500 border-2'
-                                } px-12 py-2 rounded-full focus:outline-none`}
-                        >
-                            Candidate
-                        </button>
+        <div style={{
+            backgroundImage: `linear-gradient(to right, rgba(255, 107, 107, 0.5), rgba(255, 224, 102, 0.5)), url(${bgRegister})`,
+            backgroundRepeat: 'no-repeat',
+            backgroundSize: 'cover',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+        }}
+            className='grid grid-cols-2 gap-16   p-24'>
+            <div className='w-1/2'>
 
-                        <button
-                            onClick={() => handleTypeSelection('employer')}
-                            className={`${selectedType === 'employer'
-                            ?'bg-gray-200 text-gray-700'
-                            :'border-green-500 border-2'
-                                } px-12 py-2 rounded-full focus:outline-none`}
-                        >
-                            Employer
-                        </button>
+                <div className='text-xl'>
+                    <h1 className='text-5xl font-semibold mb-4'>Try JazzHR for Free <br /> Today</h1>
+                    <p>Start a 14-day free trial today with unlimited users and no credit card required.*</p>
+                    <h3>Post your first job for free today and see why over 10,000 growing businesses trust JazzHR to power their hiring process.</h3>
+                    <ul className='mt-4'>
+                        <li className='flex items-center gap-2'><FaRegCircle className='text-sm'/>Voted #1 most user-friendly applicant tracking system</li>
+                        <li className='flex items-center gap-2'><FaRegCircle className='text-sm'/>Reduces time to hire by 50%</li>
+                        <li className='flex items-center gap-2'><FaRegCircle className='text-sm'/>Creates a lasting candidate experience</li>
+                        <li className='flex items-center gap-2'><FaRegCircle className='text-sm'/>Transparent pricing that is actually affordable</li>
+                    </ul>
+                </div>
+
+                <div className='mt-4' style={{fontStyle:'italic'}}>
+                <p>Note: Indeed access is restricted during the trial experience. To access Indeed, please purchase a JazzHR plan.
+
+.</p>
+
+<p className='mt-4'>*If you are looking for a job, we kindly request that you refrain from completing this form. The JazzHR free trial is exclusively available for businesses seeking to make new hires, and not intended for individual candidates. Thank you for your understanding</p>
+                </div>
+            </div>
+
+            <div className='bg-[#b9cdc6]  p-12  w-[500px]'>
+
+                <h2 className='text-2xl font-semibold mb-4 text-center'>Create a Free Account</h2>
+                <form onSubmit={handleSubmit} className="flex max-w-md flex-col  gap-4">
+
+                    <div>
+                        <div className="mb-2 block">
+                            <Label htmlFor="FirstName" value="*First name" />
+                        </div>
+                        <TextInput id="FirstName" type="text" required shadow />
                     </div>
 
-                    {selectedType === 'candidate' && renderCandidateForm()}
-                    {selectedType === 'employer' && renderEmployerForm()}
 
-                    <div className="mt-4">
-                        <GoogleLogin />
-                        <FacebookLogin/>
+                    <div>
+                        <div className="mb-2 block">
+                            <Label htmlFor="LastName" value="*Last name" />
+                        </div>
+                        <TextInput id="LastName" type="text" required shadow />
                     </div>
 
-                    <div className="flex justify-center items-center mt-4">
-                        <p>Have an account? </p>
-                        <Login></Login>
+                    <div>
+                        <div className="mb-2 block">
+                            <Label htmlFor="email2" value="*Work email address" />
+                        </div>
+                        <TextInput id="email2" type="email" placeholder="name@flowbite.com" required shadow />
                     </div>
+
+                    <div>
+                        <div className="mb-2 block">
+                            <Label htmlFor="PhoneNO" value="*Phone Number" />
+                        </div>
+                        <TextInput id="PhoneNO" type="number" placeholder='1+XXX-XXX-XXX' required shadow />
+                    </div>
+                    <div>
+                        <div className="mb-2 block">
+                            <Label htmlFor="password2" value="*Your password" />
+                        </div>
+                        <TextInput id="password2" type="password" required shadow />
+                    </div>
+
+
+
+                    <div className="max-w-md">
+                        <div className="mb-2 block">
+                            <Label htmlFor="company" value="*Company " />
+                        </div>
+                        <TextInput id="company" type="text" required shadow />
+
+                    </div>
+
+
+
+                    <div className="max-w-md">
+                        <div className="mb-2 block">
+                            <Label htmlFor="aboutUS" value="*How did you hear about us?:" />
+                        </div>
+                        <Select id="aboutUS" required>
+                            <option>  Select...</option>
+                            <option>Social Media</option>
+                            <option>Advertising</option>
+                            <option>Previous Customer</option>
+                            <option>I am looking for a job</option>
+
+                        </Select>
+                    </div>
+
+
+
+
+                    <Button type="submit">Register new account</Button>
+
+
+
+                </form>
+
+                <div className="flex justify-center items-center mt-4">
+                    <p>Have an account? </p>
+                    <Login></Login>
                 </div>
             </div>
         </div>
