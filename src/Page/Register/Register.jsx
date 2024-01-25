@@ -27,7 +27,7 @@ const Register = () => {
         const aboutUS = event.target.aboutUS.value;
         console.log(firstName, lastName, email,password, company, PhoneNO,aboutUS);
 
-
+        
 
         // validation 
         if (password.length < 6) {

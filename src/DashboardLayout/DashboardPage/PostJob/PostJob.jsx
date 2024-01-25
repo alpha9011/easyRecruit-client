@@ -1,13 +1,16 @@
 import { useForm } from "react-hook-form";
 import { GoCheckCircle } from "react-icons/go";
 import { FaGraduationCap } from "react-icons/fa";
-import axios from "axios";
+
+import useAxiosPublic from "../../../Hooks/useAxiosPublic";
+
 
 const PostJob = () => {
+    const axiospublic = useAxiosPublic()
     const { register, handleSubmit } = useForm()
     const onSubmit = (data) => {
         console.log(data);
-        axios.post('http://localhost:5000/postjob', data)
+        axiospublic.post('/postjob', data)
         .then(res => {
             console.log(res.data);
         })
