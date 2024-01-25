@@ -1,17 +1,19 @@
-import { Avatar, Button, Dropdown, Navbar } from 'flowbite-react';
-import { CiEdit } from "react-icons/ci";
-import { NavLink } from 'react-router-dom';
-import user from "../../assets/user2.jpg"
-const Navbars = () => {
+import {  Navbar } from 'flowbite-react';
+import { FiEdit } from "react-icons/fi";
+import { Link, NavLink } from 'react-router-dom';
+
+
+const DashboardNav = () => {
     return (
-        <Navbar fluid rounded className='px-10 mb-10'>
+        <div>
+                <Navbar fluid rounded className='px-10 '>
             <Navbar.Brand href="/">
                 <div className='flex flex-col items-center'>
                     <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">Easy<span className='text-yellow-400'>Recruit</span></span>
                     <span className='text-xs'>Simplify Hiring, Amplify Results.</span>
                 </div>
             </Navbar.Brand>
-            <div className="flex md:order-2">
+            {/* <div className="flex md:order-2">
                 <Dropdown
                     arrowIcon={false}
                     inline
@@ -39,7 +41,7 @@ const Navbars = () => {
                     </Dropdown.Item>
                 </Dropdown>
                 <Navbar.Toggle />
-            </div>
+            </div> */}
             <Navbar.Collapse>
                 <Navbar.Link>
                     <NavLink to='/'>Home</NavLink>
@@ -47,10 +49,11 @@ const Navbars = () => {
                 <Navbar.Link>
                     <NavLink to='/about'>About Us</NavLink>
                 </Navbar.Link>
+
                 <Navbar.Link>
                     <NavLink to='/jobs'>Jobs</NavLink>
                 </Navbar.Link>
-                <Navbar.Link>
+                {/* <Navbar.Link>
                     <NavLink to='/candidates'>Candidates</NavLink>
                 </Navbar.Link>
                 <Navbar.Link>
@@ -58,9 +61,9 @@ const Navbars = () => {
                 </Navbar.Link>
                 <Navbar.Link>
                     <NavLink to='/contact'>Contact</NavLink>
-                </Navbar.Link>
+                </Navbar.Link> */}
               
-                <Navbar.Link>
+                {/* <Navbar.Link>
                     <NavLink to='/register'>Register</NavLink>
                 </Navbar.Link>
                 <Navbar.Link>
@@ -68,10 +71,12 @@ const Navbars = () => {
                 </Navbar.Link>
                 <Navbar.Link>
                     <NavLink className="text-white" to='/login'>Login</NavLink>
-                </Navbar.Link>
+                </Navbar.Link> */}
             </Navbar.Collapse>
+            <Link to='postjob' className=" px-4 py-2 bg-blue-700 text-white  rounded-md hover:bg-blue-900 hover:-translate-y-[2px] duration-75 cursor-pointer flex items-center gap-2"> <FiEdit></FiEdit> Post Job</Link>
         </Navbar>
+        </div>
     );
 };
 
-export default Navbars;
+export default DashboardNav;
