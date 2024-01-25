@@ -126,7 +126,7 @@ const Login = () => {
 
                     <div>
 
-                        <div className="flex justify-center items-center gap-32">
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2  gap-8 md:gap-12 lg:gap-32">
                             <div  >
 
                                 <h3 className="text-3xl">Sign in to EasyRecruit</h3>
@@ -140,7 +140,7 @@ const Login = () => {
                                                     <Label htmlFor="email" value="Email" />
                                                 </div>
                                             </div>
-                                            <TextInput ref={emailRef} id="email2" name='email' type="email" placeholder="email" required shadow />
+                                            <TextInput ref={emailRef} id="email" type="email" placeholder="email" required shadow />
                                         </div>
 
                                         <div className="mt-4 mb-2">
@@ -150,7 +150,7 @@ const Login = () => {
                                                     <Label htmlFor="password" value="Password" />
                                                 </div>
                                             </div>
-                                            <TextInput id="password" name='password' type="password" placeholder="password" required shadow />
+                                            <TextInput id="password"  type="password" placeholder="password" required shadow />
                                         </div>
 
                                         <div >
@@ -161,7 +161,7 @@ const Login = () => {
 
 
                                         <div>
-                                            <ReCAPTCHA className="my-4"
+                                            <ReCAPTCHA className="my-4 "
                                                 sitekey="6LdUVFUpAAAAAIFCUM-zZgHQXqStjUROmZiQWcWV"
                                                 onChange={onChange}
                                             />
@@ -181,7 +181,7 @@ const Login = () => {
                                 <div className=" bg-gray-200">
                                     <GoogleLogin />
                                 </div>
-                                <p className="text-center mt-4">Still do not have an account? <Link className="text-cyan-600" to={'/register'}>Sign up</Link></p>
+                                <p className="text-center mt-4">Still do not have an account? <Link className="text-cyan-600" to={'/register'}>SIGN UP</Link></p>
                             </div>
 
 
