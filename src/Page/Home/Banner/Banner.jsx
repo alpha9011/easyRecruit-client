@@ -1,4 +1,5 @@
-import { Button } from "flowbite-react";
+import { Button,  } from "flowbite-react";
+
 
 import Lottie from "lottie-react";
 
@@ -49,7 +50,7 @@ const Banner = () => {
           <Lottie className="" animationData={bannerAnimation} />
         </div>
       </div>
-      {/* <TopBrands></TopBrands> */}
+
     </div>
   );
 };
