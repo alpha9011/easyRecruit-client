@@ -11,8 +11,13 @@ const PopularCategoriy = () => {
 
         <div className="max-w-7xl mx-auto bg-[#f2f9d8] p-4 my-4 lg:p-12 lg:my-12" >
             
+<<<<<<< HEAD
+            <div className="flex-col md:flex lg:flex gap-10">
+                <h1 className="text-6xl font-semibold text-[#254035]"> <span className="flex">Most Demanding <img className="-mt-12" src="https://jobi-nextjs.vercel.app/_next/static/media/shape_04.73aa37f7.svg" alt="" /></span>Categories.</h1>
+=======
             <div className=" lg:flex gap-56">
                 <h1 className="text-6xl font-semibold text-[#254035]"> <span className="flex">Most Demanding <img className="mt-12" src="https://jobi-nextjs.vercel.app/_next/static/media/shape_04.73aa37f7.svg" alt="" /></span>Categories.</h1>
+>>>>>>> 88d1e3a6c82e438bdba5a64a85d6a2bf68670c4c
                 <div>
                     <p className="text-lg">Together with useful notifications, collaboration, <br /> insights, and improvement tip lorem etc.</p>
                     <button className="border-b-2 flex items-center mt-2 lg:mt-4 text-[#98bd00]">Explore all fields <FaAngleRight /></button>
