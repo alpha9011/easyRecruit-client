@@ -12,7 +12,6 @@ const Home = () => {
     return (
         <div>
             <Banner />
-            {/* <Cards></Cards> */}
             <PopularCategoriy/>
             <SocialIcon></SocialIcon>
             <Reviews></Reviews>
