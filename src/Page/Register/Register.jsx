@@ -89,7 +89,7 @@ const Register = () => {
         }}
             >
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 p-8 md:p-10 lg:gap-16  lg:p-24'>
-            <div className='lg:w-1/2'>
+            <div>
 
 <div className='text-xl'>
     <h1 className='text-5xl font-semibold mb-4'>Try EasyRecruit for Free <br /> Today</h1>
