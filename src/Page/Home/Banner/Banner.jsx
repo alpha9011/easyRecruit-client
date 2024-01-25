@@ -1,77 +1,57 @@
 import { Button,  } from "flowbite-react";
 
 
-import { CiSearch } from "react-icons/ci";
 import Lottie from "lottie-react";
 
-
 import bannerAnimation from "../../../Json/Animation-banner.json";
-import { motion } from 'framer-motion'
-import TopBrands from "../TopBrands/TopBrands";
+// import bannerAnimation from "../../../../public/Json/Animation-banner.json";
+import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+
 const Banner = () => {
   return (
-    <div className="" >
+    <div className="pt-10 "> 
       {/* Banner section */}
-      <div className="relative flex flex-col md:flex-row gap-10 items-center h-[70vh] w-full p-5 pb-28 ">
-
-        <div className="md:w-1/2 ">
-          <motion.h2 className=" justify-center text-center text-4xl md:text-5xl lg:text-7xl font-bold "
-
+      <div className="container mx-auto flex flex-col-reverse md:flex-row gap-10 items-center h-[80vh] md:h-[70vh] w-full p-5 md:pb-28 ">
+        <div className="md:w-1/2">
+          <motion.h2
+            className=" text-center text-4xl md:text-5xl lg:text-6xl font-bold text-wrap"
             animate={{ x: [-1000, 100, 0] }}
             transition={{
               duration: 2,
-              delay: 0.2
+              delay: 0.2,
             }}
             whileHover={{ opacity: 0.5 }}
-
-
-          // import { motion } from "framer-motion";
-          // import TopBrands from "../TopBrands/TopBrands";
-          // const Banner = () => {
-          //   return (
-          //     <div className="mt-10">
-          //       {/* Banner section */}
-          //       <div className="relative flex flex-col md:flex-row gap-10 items-center h-[70vh] w-full p-5 pb-28 ">
-          //         <div className="md:w-1/2 ">
-          //           <motion.h2
-          //             className=" justify-center text-center text-4xl md:text-5xl lg:text-7xl font-bold "
-          //             animate={{ x: [-1000, 100, 0] }}
-          //             transition={{
-          //               duration: 2,
-          //               delay: 0.2,
-          //             }}
-          //             whileHover={{ opacity: 0.5 }}
           >
-            Elevate Your Hiring Journey with Easy Recruit!
+            Drive Success <br />
+            with Excellence
           </motion.h2>
+          <span className="flex justify-center ">
+            <p className="max-w-96 my-3 text-center leading-7">
+              Swap manual hiring tasks for efficient recruiting software
+              suitable for businesses of any size.
+            </p>
+          </span>
 
-          <div className="flex relative items-center mt-10  lg:w-2/3 mx-auto">
-            <CiSearch className="absolute top-2.5 left-2 text-3xl" />
-            <input
-              type="text"
-              placeholder="search "
-              className="rounded-full py-3 pl-10 flex-grow"
-            />
-            <Button
-              outline
-              pill
-              className="absolute top-1 right-2  text-black "
-              gradientDuoTone="pinkToOrange"
-            >
-              Go
+          <div className="flex justify-center">
+            <Button outline gradientDuoTone="pinkToOrange">
+              Request A Demo
             </Button>
           </div>
+          <div className="flex justify-center items-center ">
+            <Link>
+              <p className="text-center mt-3 border-b-2 w-48  hover:bg-gray-100 ">
+                Try EasyRecruit free
+              </p>
+            </Link>
+            <div className="border"></div>
+          </div>
         </div>
-        <div className="  md:w-1/2 flex justify-center items-center">
-          <Lottie className="max-w-md" animationData={bannerAnimation} />
+        <div className=" md:w-1/2 flex justify-center items-center w-64 ">
+          <Lottie className="" animationData={bannerAnimation} />
         </div>
       </div>
 
-      {/* <TopBrands className="" />
-
-    </div> */}
-
-      <TopBrands />
     </div>
   );
 };
