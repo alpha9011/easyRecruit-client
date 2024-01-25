@@ -13,7 +13,6 @@ const HrSystems = () => {
 
   return (
     <div>
-
       <PrimarySection
         title={title}
         subTitle={subTitle}

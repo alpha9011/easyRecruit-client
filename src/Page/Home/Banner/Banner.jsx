@@ -5,7 +5,7 @@ import Lottie from "lottie-react";
 import bannerAnimation from "../../../../public/Json/Animation-banner.json";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-// import TopBrands from "../TopBrands/TopBrands";
+
 const Banner = () => {
   return (
     <div className="pt-10 "> 
@@ -49,7 +49,6 @@ const Banner = () => {
           <Lottie className="" animationData={bannerAnimation} />
         </div>
       </div>
-
       {/* <TopBrands></TopBrands> */}
     </div>
   );

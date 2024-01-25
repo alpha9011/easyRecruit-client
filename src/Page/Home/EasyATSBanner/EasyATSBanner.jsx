@@ -1,6 +1,6 @@
 import { Button } from "flowbite-react";
 import EasyATSBannerImg from "../../../../public/Image/easyATS.jpg";
-import EasyATSBannerIcons from "../../../../public/Image/easyATSIcons.png";
+
 const EasyATSBanner = () => {
   return (
     <div className="relative ">

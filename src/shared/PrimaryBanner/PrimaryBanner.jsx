@@ -10,7 +10,6 @@ const backgroundStyle ={
 }
     return (
         <div className="" style={backgroundStyle}>
-            
         </div>
     );
 };
