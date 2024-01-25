@@ -4,6 +4,7 @@ import Home from "../Page/Home/Home";
 import AboutUs from "../Page/AboutUs/AboutUs";
 import Login from "../Page/Login/Login";
 import Register from "../Page/Register/Register";
+import Capabilities from "../Page/Capabilities/Capabilities";
 
 
 export const router = createBrowserRouter([
@@ -26,6 +27,10 @@ export const router = createBrowserRouter([
             {
                 path: "/about",
                 element: <AboutUs></AboutUs>
+            },
+            {
+                path:"/recruiting-software-capabilities",
+                element:<Capabilities></Capabilities>
             }
         ]
     }
