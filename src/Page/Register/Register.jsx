@@ -7,11 +7,13 @@ import { AuthContext } from '../../AuthProvider/AuthProvider';
 import Toastify from 'toastify-js'
 import "toastify-js/src/toastify.css"
 import GoogleLogin from '../Login/GoogleLogin';
+import useAxios from '../../hooks/useAxios';
+import Swal from 'sweetalert2';
 
 
 const Register = () => {
 
-
+    const axiosPublic = useAxios();
     const { createUser, handleUpdateProfile } = useContext(AuthContext);
     const Navigate = useNavigate()
 
@@ -30,6 +32,7 @@ const Register = () => {
         const email = event.target.email.value;
         const img = event.target.image.value;
         const password = event.target.password.value;
+        const userInfo = {name,email,img,password};
         console.log(name, email, img, password);
 
 
@@ -69,16 +72,34 @@ const Register = () => {
                 console.log(res.user);
                 handleUpdateProfile(name, img)
                     .then(() => {
-                        Toastify({
-                            text: "Register successful",
-                            className: "info",
-                            style: {
-                                background: "linear-gradient(to right, #00b09b, #96c93d)",
-                            }
-                        }).showToast();
-                        Navigate('/')
-
+                        // create user entry in the database
+                        axiosPublic.post('/users', userInfo)
+                            .then(res => {
+                                if (res.data.insertedId) {
+                                    console.log('user added to the database')
+                                    res();
+                                    Swal.fire({
+                                        position: 'top-end',
+                                        icon: 'success',
+                                        title: 'User created successfully.',
+                                        showConfirmButton: false,
+                                        timer: 1500
+                                    });
+                                    Navigate('/');
+                                }
+                            })
                     })
+                // .then(() => {
+                //     Toastify({
+                //         text: "Register successful",
+                //         className: "info",
+                //         style: {
+                //             background: "linear-gradient(to right, #00b09b, #96c93d)",
+                //         }
+                //     }).showToast();
+                //     Navigate('/')
+
+                // })
             })
             .catch(error => {
                 console.log(error);
