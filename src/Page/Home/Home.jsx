@@ -1,4 +1,4 @@
-import { Footer } from "flowbite-react";
+
 import Banner from "./Banner/Banner";
 
 import CustomersSlider from "./CustomersSlider/CustomersSlider";

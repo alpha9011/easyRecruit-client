@@ -17,6 +17,7 @@ import ApplyForm from "../DashboardLayout/ApplyForm/ApplyForm";
 
 
 
+import Pricing from "../Page/Pricing/Pricing";
 
 
 export const router = createBrowserRouter([
@@ -54,7 +55,10 @@ export const router = createBrowserRouter([
             element: <ApplyForm></ApplyForm>,
             loader: ({params})=> fetch(`http://localhost:5000/postjob/${params.id}`)
           },
-
+{
+                path: "/price",
+                element: <Pricing></Pricing>
+            }
         ]
     },
     {
