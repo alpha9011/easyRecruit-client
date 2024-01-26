@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 const PrimaryBanner = ({
   imageUrl,
   bgSize = "cover",
@@ -24,5 +26,10 @@ const PrimaryBanner = ({
     </div>
   );
 };
-
+PrimaryBanner.propTypes = {
+  imageUrl: PropTypes.string,
+  bgSize: PropTypes.string,
+  position: PropTypes.string,
+  imgHeight: PropTypes.string,
+};
 export default PrimaryBanner;
