@@ -11,18 +11,18 @@ const PrimarySection = ({
   alt,
   imgPosition,
 }) => {
-  const imgAlign =
-    imgPosition === "left"
-      ? "flex-row"
-      : imgPosition === "right"
-      ? "flex-row-reverse"
-      : "";
+  // const imgAlign =
+  //   imgPosition === "left"
+  //     ? "flex-row"
+  //     : imgPosition === "right"
+  //     ? "flex-row-reverse"
+  //     : "";
 
   return (
     <div className="p-5 my-10 container mx-auto">
       <div
         className={` flex flex-col 
-        md:${imgAlign}
+        md:${imgPosition === "right"? 'flex-row-reverse': imgPosition === "left" ? 'flex-row' : ''}
        justify-center items-center gap-10  `}
       >   
         <div className="md:w-1/2">
