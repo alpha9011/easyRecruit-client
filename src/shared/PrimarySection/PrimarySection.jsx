@@ -24,9 +24,9 @@ const PrimarySection = ({
         className={` flex flex-col 
         md:${imgAlign}
        justify-center items-center gap-10  `}
-      >
+      >   
         <div className="md:w-1/2">
-          <img className=" w-96 md:w-[700px]" src={image} alt={alt} />
+          <img className="w-full md:w-96 lg:w-[700px]" src={image} alt={alt} />
         </div>
         <div className="md:w-1/2 flex flex-col space-y-3 max-w-[370px] justify-center ">
           <h6 className="text-sky-500 font-semibold">{subTitle}</h6>
@@ -44,6 +44,7 @@ const PrimarySection = ({
     </div>
   );
 };
+
 PrimarySection.propTypes = {
   subTitle: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
