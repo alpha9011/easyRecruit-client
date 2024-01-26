@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import hrSystemImg from "../../../../public/Image/HrSystem.jpg";
-import PrimarySection from "../../../shared/PrimarySection/PrimarySection";
+
 
 const HrSystems = () => {
   const subTitle = "SYNC YOUR HR SYSTEMS";
@@ -14,16 +14,7 @@ const HrSystems = () => {
 
   return (
     <div className="flex  flex-row-reverse">
-      {/* <PrimarySection
-        title={title}
-        subTitle={subTitle}
-        content={content}
-        linkText={linkText}
-        linkUrl={linkUrl}
-        image={hrSystem}
-        alt={"Easy recruit"}
-        imgPosition="right"
-      ></PrimarySection> */}
+     
       <div className="p-5 my-10 container mx-auto">
         <div
           className={` flex flex-col 

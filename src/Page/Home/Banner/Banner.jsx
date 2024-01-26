@@ -1,11 +1,11 @@
-import { Button } from "flowbite-react";
+
 
 import Lottie from "lottie-react";
 
 import bannerAnimation from "../../../Json/Animation-banner.json";
 
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+"react-router-dom";
 import PrimaryButton from "../../../shared/PrimaryButton/PrimaryButton";
 
 const Banner = () => {
