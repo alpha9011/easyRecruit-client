@@ -18,6 +18,7 @@ import ApplyForm from "../DashboardLayout/ApplyForm/ApplyForm";
 
 
 import Pricing from "../Page/Pricing/Pricing";
+import WhyEasyRecruit from "../Page/WhyEasyRecruit/WhyEasyRecruit";
 
 
 export const router = createBrowserRouter([
@@ -58,6 +59,10 @@ export const router = createBrowserRouter([
 {
                 path: "/price",
                 element: <Pricing></Pricing>
+            },
+            {
+                path: '/whyEasyRecruit',
+                element: <WhyEasyRecruit></WhyEasyRecruit>
             }
         ]
     },

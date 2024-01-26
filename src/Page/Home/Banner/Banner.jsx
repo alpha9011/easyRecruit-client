@@ -1,16 +1,5 @@
 import { Button,  } from "flowbite-react";
-<<<<<<< HEAD
-=======
-
->>>>>>> e26995dbb63c028dd1dea1ff513e9ae4e50d8715
-
-
 import Lottie from "lottie-react";
-
-<<<<<<< HEAD
-=======
-
->>>>>>> e26995dbb63c028dd1dea1ff513e9ae4e50d8715
 import bannerAnimation from "../../../Json/Animation-banner.json";
 
 import { motion } from "framer-motion";
