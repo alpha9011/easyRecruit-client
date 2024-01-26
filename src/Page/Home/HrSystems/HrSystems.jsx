@@ -23,7 +23,6 @@ const HrSystems = () => {
         alt={"Easy recruit"}
         imgPosition="right"
       ></PrimarySection>
-
     
     </div>
   );
