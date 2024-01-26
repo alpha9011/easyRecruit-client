@@ -1,7 +1,7 @@
 import PageCover from "../../shared/PageCover/PageCover";
 import PriceCard from "./PriceCard";
 import PricingFAQ from "./PricingFAQ";
-import bgImg from "../../../src/assets/price.jpg"
+import bgImg from "../../../src/assets/priceBackgound1.jpg"
 
 const Pricing = () => {
     return (

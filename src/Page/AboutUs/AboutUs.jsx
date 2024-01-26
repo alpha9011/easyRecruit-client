@@ -1,3 +1,4 @@
+import Footers from "../../shared/Footer/Footers";
 import OurMission from "./OurMission";
 import Team from "./Team";
 import WhyUs from "./WhyUs";
@@ -9,6 +10,7 @@ const AboutUs = () => {
             <OurMission></OurMission>
             <WhyUs></WhyUs>
             <Team></Team>
+            <Footers></Footers>
         </div>
     );
 };

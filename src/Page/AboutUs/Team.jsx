@@ -9,7 +9,7 @@ import { CiLinkedin } from "react-icons/ci";
 import { RiTwitterXLine } from "react-icons/ri";
 const Team = () => {
     return (
-        <div className="max-w-screen-xl mx-auto my-14 px-5">
+        <div className="max-w-screen-xl mx-auto my-14 px-5" data-aos="fade-up" data-aos-duration="1000">
             <h1 className="text-center text-6xl font-bold mb-8">Meet Our <span className="text-yellow-400">Team</span></h1>
             <div className="grid grid-cols-1 min-[700px]:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 justify-center items-center">
                 <div className="flex justify-center">

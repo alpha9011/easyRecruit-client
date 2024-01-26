@@ -8,10 +8,10 @@ const PriceCard = () => {
     return (
         <div>
             {/* All Pricing Cards */}
-            <div className="w-full grid grid-cols-1 gap-5 lg:grid-cols-3 justify-center items-center max-w-screen-xl mx-auto">
+            <div className="w-full grid grid-cols-1 gap-8 lg:grid-cols-2 xl:grid-cols-3 justify-center items-center max-w-screen-xl mx-auto">
                 {/* Card 1 */}
-                <div className="flex justify-center">
-                    <Card className='max-w-sm h-[710px] transition-transform duration-500 transform origin-center hover:translate-y-[-1rem]'>
+                <div className="flex justify-center" data-aos="fade-up-right" data-aos-duration="1000">
+                    <Card className='max-w-sm h-[710px] transition-transform duration-500 transform origin-center hover:translate-y-[-2rem]'>
                         {/* name */}
                         <h2 className="text-black text-2xl -mb-3 font-bold -mt-14">Hero</h2>
                         <h5 className="mb-4 text-gray-500 dark:text-gray-400">Intuitive Recruiting for Small Teams</h5>
@@ -59,8 +59,8 @@ const PriceCard = () => {
                     </Card>
                 </div>
                 {/* Card 2 */}
-                <div className="flex justify-center">
-                    <Card className='max-w-sm h-[710px] transition-transform duration-500 transform origin-center hover:translate-y-[-1rem]'>
+                <div className="flex justify-center" data-aos="fade-up" data-aos-duration="1000">
+                    <Card className='max-w-sm h-[710px] transition-transform duration-500 transform origin-center hover:translate-y-[-2rem]'>
                         {/* name */}
                         <div className="flex justify-between">
                             <h2 className="text-black text-2xl -mb-3 font-bold">Plus</h2>
@@ -121,8 +121,8 @@ const PriceCard = () => {
                     </Card>
                 </div>
                 {/* card 3 */}
-                <div className="flex justify-center">
-                    <Card className='w-96 h-[710px] transition-transform duration-500 transform origin-center hover:translate-y-[-1rem]'>
+                <div className="flex justify-center" data-aos="fade-up-left" data-aos-duration="1000">
+                    <Card className='w-96 h-[710px] transition-transform duration-500 transform origin-center hover:translate-y-[-2rem]'>
                         {/* name */}
                         <h2 className="text-black text-2xl -mb-3 font-bold">Pro</h2>
                         <h5 className="mb-4 text-gray-500 dark:text-gray-400">Streamline Every Stage</h5>
@@ -187,7 +187,7 @@ const PriceCard = () => {
             </div>
 
             {/* Buttons */}
-            <div className="w-full flex flex-col justify-center items-center gap-5 my-5">
+            <div className="w-full flex flex-col justify-center items-center gap-5 my-16" data-aos="fade-up" data-aos-duration="1000">
                 <p className="text-2xl">Let’s transform how you hire.</p>
                 <div className="flex gap-3">
                     <button
