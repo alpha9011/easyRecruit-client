@@ -23,9 +23,9 @@ const Navbars = () => {
                     <Dropdown.Header>
                         <span className="block text-sm text-center">User Name</span>
                         <span className="block truncate text-sm font-medium">user_email@gmail.com</span>
-                        <div className='text-center text-lg'>
+                        <div className='text-center '>
                         <Navbar.Link>
-                    <NavLink  to='/dashboard/dashboardHome'>Dashboard</NavLink>
+                    <NavLink  to='/dashboard/dashboardHome' className='text-[15px]'>Dashboard</NavLink>
                 </Navbar.Link>
                         </div>
 
@@ -64,11 +64,9 @@ const Navbars = () => {
                     <NavLink to='/register'>Register</NavLink>
                 </Navbar.Link>
                 <Navbar.Link>
-                    <NavLink className="text-white" to='/dashboard'>Dashbord</NavLink>
+                    <NavLink to='/circular'>Circular</NavLink>
                 </Navbar.Link>
-                <Navbar.Link>
-                    <NavLink className="text-white" to='/login'>Login</NavLink>
-                </Navbar.Link>
+             
             </Navbar.Collapse>
         </Navbar>
     );

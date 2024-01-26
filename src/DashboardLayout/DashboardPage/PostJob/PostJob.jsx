@@ -28,9 +28,40 @@ const PostJob = () => {
                    <label >Job title<span className="text-red-600">*</span></label>
                     <input type="text" className="mt-1 input border-none w-full"  {...register("title", { required: true })} placeholder="e.g. Senior Product Designer" required />
                    </div>
+
+                   <div>
+                   <label >Company Name<span className="text-red-600">*</span></label>
+                    <input type="text" className="mt-1 input border-none w-full"  {...register("companyName", { required: true })} placeholder="your company name" required />
+                   </div>
+
                     <div>
-                    <label>Add your job description<span className="text-red-600">*</span></label>
-                    <textarea {...register("description", { required: true })} className="mt-1 input border-none w-full" id="" cols="30" rows="10" placeholder="Description" required></textarea>
+                    <label>About your Company<span className="text-red-600">*</span></label>
+                    <textarea {...register("aboutCompany", { required: true })} className="mt-1 input border-none w-full" id="" cols="30" rows="4" placeholder="About your Company" required></textarea>
+                    </div>
+
+                    <div>
+                    <label>Position Summary<span className="text-red-600">*</span></label>
+                    <textarea {...register("positionSummary", { required: true })} className="mt-1 input border-none w-full" id="" cols="30" rows="4" placeholder="Job Position summary" required></textarea>
+                    </div>
+
+                    <div>
+                    <label>Job Responsibilities<span className="text-red-600">*</span></label>
+                    <textarea {...register("responsibilities", { required: true })} className="mt-1 input border-none w-full" id="" cols="30" rows="4" placeholder="Job Responsibilities" required></textarea>
+                    </div>
+
+                    <div>
+                    <label>Qualifications<span className="text-red-600">*</span></label>
+                    <textarea {...register("qualifications", { required: true })} className="mt-1 input border-none w-full" id="" cols="30" rows="4" placeholder="Qualifications" required></textarea>
+                    </div>
+
+                    <div>
+                    <label>Education & Experience<span className="text-red-600">*</span></label>
+                    <textarea {...register("education", { required: true })} className="mt-1 input border-none w-full" id="" cols="30" rows="4" placeholder="Education & Experience" required></textarea>
+                    </div>
+
+                    <div>
+                    <label>Anything about job or employe benifits</label>
+                    <textarea {...register("benifits")} className="mt-1 input border-none w-full" id="" cols="30" rows="4" placeholder="Anything about job or employe benifits" ></textarea>
                     </div>
 
 
@@ -45,9 +76,9 @@ const PostJob = () => {
                         <label>Workplace Type<span className="text-red-600">*</span></label>
                         <select {...register("jobType")} className="mt-1 input border-none w-full">
                         <option selected disabled>select a type</option>
-                            <option value="remote">Remote</option>
-                            <option value="office">Office</option>
-                            <option value="onsite">Onsite</option>
+                            <option value="Remote">Remote</option>
+                            <option value="Office">Office</option>
+                            <option value="Onsite">Onsite</option>
                            
                         </select>
                     </div>
@@ -55,7 +86,7 @@ const PostJob = () => {
                  <div className="grid grid-cols-2 gap-3">
                  <div >
                         <label>Salary</label>
-                        <input type="text" {...register("salary")} className="mt-1 input border-none w-full" placeholder="$2000 - $3000 "  />
+                        <input type="text" {...register("salary")} className="mt-1 input border-none w-full" placeholder="2000 - 3000 "  />
 
                     </div >
                     <div >
