@@ -26,9 +26,11 @@ const Home = () => {
       <CustomersSlider></CustomersSlider>
       <MakingHiresBanner></MakingHiresBanner>
       <Footers></Footers>
+      
     </div>
   );
 };
+
 
 
 export default Home;

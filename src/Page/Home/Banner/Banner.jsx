@@ -4,11 +4,12 @@ import { Button,  } from "flowbite-react";
 import Lottie from "lottie-react";
 
 import bannerAnimation from "../../../Json/Animation-banner.json";
-// import bannerAnimation from "../../../../public/Json/Animation-banner.json";
+
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
 const Banner = () => {
+  
   return (
     <div className="pt-10 "> 
       {/* Banner section */}
