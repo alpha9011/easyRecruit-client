@@ -1,65 +1,42 @@
+import { useLoaderData } from "react-router-dom";
 import CandidateForm from "./CandidateForm";
 
 
 const ApplyForm = () => {
    
+    const {aboutCompany, benifits,companyName,education,positionSummary,qualifications,responsibilities,} = useLoaderData()
+  
+   
     return (
-        <div>
+        <div className="px-10">
             {/* company details */}
-            <div>
-                <h1 className="text-2xl font-semibold">Finance Director</h1>
-                <div className="flex gap-3">
-                <span> San Francisko</span>
-                <span>Full time</span>
-                <span>Finance </span>
-                <span>Executive </span>
-                </div>
-            </div>
+            <div className="grid grid-cols-9 gap-5">
+      
+               <div className="col-span-4">
+               <h2 className="font-semibold my-1 mt-3">About {companyName}</h2>
+               <p className="text-slate-600 text-sm">{aboutCompany}</p>
 
-            {/* post details and form */}
+               <h2 className="font-semibold my-1 mt-3">Postition summary</h2>
+               <p className="text-slate-600 text-sm">{positionSummary}</p>
 
-            <div className="grid grid-cols-2 gap-5">
-                {/* post details */}
-                <div>
-                    <h1>About Health</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis sapiente enim ex temporibus atque quae, dolores fugiat placeat corrupti. Optio ipsum maiores cum officia mollitia, necessitatibus laudantium error voluptate corporis.</p>
+               <h2 className="font-semibold my-1 mt-3">Responsibilites</h2>
+               <p className="text-slate-600 text-sm">{responsibilities}</p>
 
-                    <h1>Position summary</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem repellendus sed distinctio earum accusantium at quia deleniti? Soluta vel quos consequuntur, est laboriosam possimus error illum culpa illo facilis natus.</p>
+               <h2 className="font-semibold my-1 mt-3">Qualifications</h2>
+               <p className="text-slate-600 text-sm">{qualifications}</p>
 
-                    <h1>Responsibilities</h1>
-                    <ul>
-                        <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</li>
-                        <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</li>
-                        <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</li>
-                        <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</li>
-                        <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</li>
-                        <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</li>
-                        <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</li>
-                    </ul>
+               <h2 className="font-semibold my-1 mt-3">Education & Experience</h2>
+               <p className="text-slate-600 text-sm">{education}</p>
 
-                    <h1>Qualification</h1>
-                    <ul>
-                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
-                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
-                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
-                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
-                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
-                    </ul>
+               <h2 className="font-semibold my-1 mt-3">Benifits</h2>
+               <p className="text-slate-600 text-sm">{benifits}</p>
+              
+               </div>
 
-                    <h1>Education and experience</h1>
-                    <ul>
-                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
-                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
-                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
-                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
-                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
-                    </ul>
-                </div>
 
                 {/* apply form */}
-                <div>
-                    <h1>Apply for this position</h1>
+                <div className="col-span-5">
+                    <h1 className="font-semibold mb-5">Apply for this position</h1>
                     <CandidateForm></CandidateForm>
 
                 </div>

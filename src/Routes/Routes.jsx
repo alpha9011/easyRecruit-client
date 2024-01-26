@@ -11,6 +11,9 @@ import DashboardHome from "../DashboardLayout/DashboardPage/DashboardHome/Dashbo
 import Candidates from "../DashboardLayout/DashboardPage/Candidates/Candidates";
 import MyJobs from "../DashboardLayout/DashboardPage/MyJobs/MyJobs";
 import PostJob from "../DashboardLayout/DashboardPage/PostJob/PostJob";
+import Circular from "../Page/Circular/Circular";
+import ApplyForm from "../DashboardLayout/ApplyForm/ApplyForm";
+
 
 
 
@@ -41,7 +44,17 @@ export const router = createBrowserRouter([
             {
                 path:"/recruiting-software-capabilities",
                 element:<Capabilities></Capabilities>
-            }
+            },
+          {
+            path: "/circular", 
+            element: <Circular></Circular>
+          },
+          {
+            path: "/jobapply/:id", 
+            element: <ApplyForm></ApplyForm>,
+            loader: ({params})=> fetch(`http://localhost:5000/postjob/${params.id}`)
+          },
+
         ]
     },
     {

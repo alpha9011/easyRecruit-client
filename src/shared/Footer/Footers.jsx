@@ -4,8 +4,8 @@ import { BsDribbble, BsFacebook, BsGithub, BsInstagram, BsTwitter } from 'react-
 
 const Footers = () => {
     return (
-        <Footer container>
-      <div className="w-full mx-auto p-7 bg-black text-white">
+        <Footer  className='w-full mt-14'>
+      <div className="w-full mx-auto p-7 bg-blue-300 text-black">
         <div className="grid w-full justify-between sm:flex sm:justify-between md:flex md:grid-cols-1">
           <div>
             <Footer.Brand
@@ -24,7 +24,7 @@ const Footers = () => {
               </Footer.LinkGroup>
             </div>
             
-            <div>
+            <div className=''>
               <Footer.Title title="Legal" />
               <Footer.LinkGroup col>
                 <Footer.Link href="#">Privacy Policy</Footer.Link>

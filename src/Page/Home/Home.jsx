@@ -1,3 +1,4 @@
+import { Footer } from "flowbite-react";
 import Banner from "./Banner/Banner";
 
 import CustomersSlider from "./CustomersSlider/CustomersSlider";
@@ -11,6 +12,7 @@ import PartnerProgram from "./PartnerProgram/PartnerProgram";
 import RecruitingResult from "./RecruitingResult/RecruitingResult";
 
 import WhyToUse from "./WhyToUse/WhyToUse";
+import Footers from "../../shared/Footer/Footers";
 
 const Home = () => {
   return (
@@ -23,6 +25,7 @@ const Home = () => {
       <PartnerProgram></PartnerProgram>
       <CustomersSlider></CustomersSlider>
       <MakingHiresBanner></MakingHiresBanner>
+      <Footers></Footers>
       
     </div>
   );

@@ -29,6 +29,8 @@ const Register = () => {
 
         
 
+
+
         // validation 
         if (password.length < 6) {
             Toastify({
