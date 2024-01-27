@@ -54,7 +54,7 @@ export const router = createBrowserRouter([
           {
             path: "/jobapply/:id", 
             element: <ApplyForm></ApplyForm>,
-            loader: ({params})=> fetch(`http://localhost:5000/postjob/${params.id}`)
+            loader: ({params})=> fetch(`./postjob.json/postjob/${params.id}`)
           },
 {
                 path: "/price",

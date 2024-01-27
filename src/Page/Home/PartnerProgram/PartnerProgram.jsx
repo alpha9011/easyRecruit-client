@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+
 import PartnerProgramImg from "../../../../public/Image/Partner-Program.jpg";
 import PrimarySection from "../../../shared/PrimarySection/PrimarySection";
 const PartnerProgram = () => {

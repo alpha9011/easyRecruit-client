@@ -1,14 +1,16 @@
-import { Button,  } from "flowbite-react";
+
+
 import Lottie from "lottie-react";
 import bannerAnimation from "../../../Json/Animation-banner.json";
 
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+"react-router-dom";
+import PrimaryButton from "../../../shared/PrimaryButton/PrimaryButton";
 
 const Banner = () => {
-  
+
   return (
-    <div className="pt-10 "> 
+    <div className="pt-10 ">
       {/* Banner section */}
       <div className="container mx-auto flex flex-col-reverse md:flex-row gap-10 items-center h-[80vh] md:h-[70vh] w-full p-5 md:pb-28 ">
         <div className="md:w-1/2">
@@ -32,16 +34,17 @@ const Banner = () => {
           </span>
 
           <div className="flex justify-center">
-            <Button outline gradientDuoTone="pinkToOrange">
-              Request A Demo
-            </Button>
+            <PrimaryButton buttonText="Request A Demo"></PrimaryButton>
           </div>
+
           <div className="flex justify-center items-center ">
-            <Link>
+            {/* <Link>
               <p className="text-center mt-3 border-b-2 w-48  hover:bg-gray-100 ">
                 Try EasyRecruit free
               </p>
-            </Link>
+            </Link> */}
+
+           
             <div className="border"></div>
           </div>
         </div>
@@ -49,7 +52,6 @@ const Banner = () => {
           <Lottie className="" animationData={bannerAnimation} />
         </div>
       </div>
-
     </div>
   );
 };

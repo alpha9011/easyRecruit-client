@@ -1,17 +1,17 @@
 import { useEffect, useState } from "react";
-import useAxiosPublic from "../../Hooks/useAxiosPublic";
 import JobCard from "./JobCard";
+import axios from "axios";
 
 
 const Circular = () => {
-    const axiosPublic = useAxiosPublic()
+    // const axiosPublic = useAxiosPublic()
     const [postJobs, setPostJob] = useState([])
     useEffect(() => {
-        axiosPublic('/postjob')
+        axios.get('./postjob.json')
             .then(res => {
                 setPostJob(res.data)
             })
-    }, [axiosPublic])
+    }, [])
     console.log(postJobs);
     return (
         <div>

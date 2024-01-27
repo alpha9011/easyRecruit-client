@@ -11,6 +11,7 @@ const PrimarySection = ({
   alt,
   imgPosition,
 }) => {
+
   // const imgAlign =
   //   imgPosition === "left"
   //     ? "flex-row"
@@ -23,12 +24,13 @@ const PrimarySection = ({
       <div
         className={` flex flex-col 
         md:${imgPosition === "right"? 'flex-row-reverse': imgPosition === "left" ? 'flex-row' : ''}
-       justify-center items-center gap-10  `}
+       justify-center items-center gap-10 `}
+       
       >   
-        <div className="md:w-1/2">
+        <div className="md:w-1/2" data-aos="zoom-in-up">
           <img className="w-full md:w-96 lg:w-[700px]" src={image} alt={alt} />
         </div>
-        <div className="md:w-1/2 flex flex-col space-y-3 max-w-[370px] justify-center ">
+        <div className="md:w-1/2 flex flex-col space-y-3 max-w-[370px] justify-center " data-aos="zoom-in-up">
           <h6 className="text-sky-500 font-semibold">{subTitle}</h6>
           <h3 className="text-xl md:text-3xl font-semibold">{title}</h3>
           <p className="text-wrap leading-7">{content}</p>

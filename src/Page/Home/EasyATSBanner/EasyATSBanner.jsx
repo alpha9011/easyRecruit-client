@@ -11,7 +11,7 @@ const EasyATSBanner = () => {
             “Lightweight and Easy ATS”
           </h3>
           <p className="leading-7 text-wrap text-white font-bold">
-            EasyRecruit is perfect for small companies. I love that you can see when
+            EasyRecruit is perfect for  companies. I love that you can see when
             an email was sent and opened by the candidate. I also like that it
             can integrate with other vendors to automatically feed into a
             background check company without having to fill anything out!”
@@ -25,7 +25,7 @@ const EasyATSBanner = () => {
         src={EasyATSBannerImg}
         alt="EasyATSBanner"
       />
-      <div className="absolute inset-0  bg-gradient-to-r from-transparent to-blue-600 "></div>
+      <div className="absolute inset-0  bg-gradient-to-r from-transparent to-blue-500 "></div>
 
       <div className="flex flex-col md:flex-row justify-center items-center bg-sky-500 p-5 ">
         <h4 className="md:w-4/5 text-white font-semibold text-xl md:text-2xl lg:text-3xl z-10">

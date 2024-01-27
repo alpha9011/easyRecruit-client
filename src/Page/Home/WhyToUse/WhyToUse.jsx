@@ -1,10 +1,11 @@
-import { Button } from "flowbite-react";
+
 import jobsUsersImg from "../../../../public/Image/easy_home_unlimited.png";
 import fastImplementationImg from "../../../../public/Image/fast_implementation.png";
 import configurableImg from "../../../../public/Image/higly_Configurable.png";
+import PrimaryButton from "../../../shared/PrimaryButton/PrimaryButton";
 const WhyToUse = () => {
   return (
-    <div className="container mx-auto my-20">
+    <div className="container mx-auto my-28">
       <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 m-5 gap-5">
         <div className="relative border border-sky-500 p-5">
           <img
@@ -18,7 +19,7 @@ const WhyToUse = () => {
           </h4>
           <p className="text-justify leading-7">
             EasyRecruit recruiting software is easy-to-use and highly flexible
-            for your small business. Take advantage of unlimited jobs and users
+            for your business. Take advantage of unlimited jobs and users
             without any added fees or channel restrictions.
           </p>
         </div>
@@ -35,7 +36,7 @@ const WhyToUse = () => {
           </h4>
           <p className="text-justify leading-7">
             Embark on your journey with a specialized applicant tracking system
-            designed for small businesses. Streamline manual tasks and engage
+            designed for your businesses. Streamline manual tasks and engage
             with candidates ready to contribute to your company immediately.
           </p>
         </div>
@@ -52,16 +53,15 @@ const WhyToUse = () => {
           </h4>
           <p className="text-justify leading-7">
             EasyRecruit recruiting software is easy-to-use and highly flexible
-            for your small business. Take advantage of unlimited jobs and users
+            for your company&apos;s. Take advantage of unlimited jobs and users
             without any added fees or channel restrictions.
           </p>
         </div>
       </div>
       <div>
         <div className="flex justify-center mt-5">
-          <Button outline gradientDuoTone="pinkToOrange">
-            Learn More
-          </Button>
+        
+          <PrimaryButton buttonText={'Learn More'}></PrimaryButton>
         </div>
       </div>
     </div>
