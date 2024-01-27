@@ -17,6 +17,8 @@ import ApplyForm from "../DashboardLayout/ApplyForm/ApplyForm";
 
 
 
+import Pricing from "../Page/Pricing/Pricing";
+import WhyEasyRecruit from "../Page/WhyEasyRecruit/WhyEasyRecruit";
 
 
 export const router = createBrowserRouter([
@@ -52,9 +54,16 @@ export const router = createBrowserRouter([
           {
             path: "/jobapply/:id", 
             element: <ApplyForm></ApplyForm>,
-            loader: ({params})=> fetch(`http://localhost:5000/postjob/${params.id}`)
+            loader: ({params})=> fetch(`./postjob.json/postjob/${params.id}`)
           },
-
+{
+                path: "/price",
+                element: <Pricing></Pricing>
+            },
+            {
+                path: '/whyEasyRecruit',
+                element: <WhyEasyRecruit></WhyEasyRecruit>
+            }
         ]
     },
     {

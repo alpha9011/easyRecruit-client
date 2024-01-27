@@ -1,7 +1,6 @@
 
 
 import Lottie from "lottie-react";
-
 import bannerAnimation from "../../../Json/Animation-banner.json";
 
 import { motion } from "framer-motion";
