@@ -54,7 +54,7 @@ const Navbars = () => {
                     <NavLink to='/blog'>Blog</NavLink>
                 </Navbar.Link> */}
                 <Navbar.Link>
-                    <NavLink to='/contact'>Why Us</NavLink>
+                    <NavLink to='/whyEasyRecruit'>Why Us</NavLink>
                 </Navbar.Link>
                 <Navbar.Link>
                     <NavLink to='/contact'>Contact</NavLink>
