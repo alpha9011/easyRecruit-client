@@ -1,12 +1,19 @@
 import { useForm } from "react-hook-form";
+import useAxiosPublic from "../../../Hooks/useAxiosPublic";
+
 
 const CandidateForm = () => {
+    const axiosPublic = useAxiosPublic()
     const { register, handleSubmit } = useForm()
     const onSubmit = (data) => {
         console.log(data);
+        axiosPublic.post('/applicantCV', data)
+        .then(res => {
+            console.log(res.data);
+        })
     }
     return (
-        <div>
+        <div className="px-10">
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
 
                 <div>
