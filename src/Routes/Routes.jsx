@@ -12,13 +12,14 @@ import Candidates from "../DashboardLayout/DashboardPage/Candidates/Candidates";
 import MyJobs from "../DashboardLayout/DashboardPage/MyJobs/MyJobs";
 import PostJob from "../DashboardLayout/DashboardPage/PostJob/PostJob";
 import Circular from "../Page/Circular/Circular";
-import ApplyForm from "../DashboardLayout/ApplyForm/ApplyForm";
+import ApplyForm from "../Page/Circular/ApplyForm/ApplyForm";
 
 
 
 
 import Pricing from "../Page/Pricing/Pricing";
 import WhyEasyRecruit from "../Page/WhyEasyRecruit/WhyEasyRecruit";
+import CandidateForm from "../Page/Circular/ApplyForm/CandidateForm";
 
 
 export const router = createBrowserRouter([
@@ -52,9 +53,14 @@ export const router = createBrowserRouter([
             element: <Circular></Circular>
           },
           {
-            path: "/jobapply/:id", 
+            path: "/jobdetails/:id", 
             element: <ApplyForm></ApplyForm>,
-            loader: ({params})=> fetch(`./postjob.json/postjob/${params.id}`)
+            loader: ({params})=> fetch(`http://localhost:5000/postjob/${params.id}`)
+          },
+          {
+            path: "/applyform/:id", 
+            element: <CandidateForm></CandidateForm>,
+            loader: ({params})=> fetch(`http://localhost:5000/postjob/${params.id}`)
           },
 {
                 path: "/price",
