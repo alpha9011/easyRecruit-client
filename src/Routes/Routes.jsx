@@ -45,24 +45,24 @@ export const router = createBrowserRouter([
                 element: <AboutUs></AboutUs>
             },
             {
-                path:"/recruiting-software-capabilities",
-                element:<Capabilities></Capabilities>
+                path: "/recruiting-software-capabilities",
+                element: <Capabilities></Capabilities>
             },
-          {
-            path: "/circular", 
-            element: <Circular></Circular>
-          },
-          {
-            path: "/jobdetails/:id", 
-            element: <ApplyForm></ApplyForm>,
-            loader: ({params})=> fetch(`http://localhost:5000/postjob/${params.id}`)
-          },
-          {
-            path: "/applyform/:id", 
-            element: <CandidateForm></CandidateForm>,
-            loader: ({params})=> fetch(`http://localhost:5000/postjob/${params.id}`)
-          },
-{
+            {
+                path: "/circular",
+                element: <Circular></Circular>
+            },
+            {
+                path: "/jobdetails/:id",
+                element: <ApplyForm></ApplyForm>,
+                loader: ({ params }) => fetch(`http://localhost:5000/postjob/${params.id}`)
+            },
+            {
+                path: "/applyform/:id",
+                element: <CandidateForm></CandidateForm>,
+                loader: ({ params }) => fetch(`http://localhost:5000/postjob/${params.id}`)
+            },
+            {
                 path: "/price",
                 element: <Pricing></Pricing>
             },
@@ -73,7 +73,7 @@ export const router = createBrowserRouter([
         ]
     },
     {
-        path:'/dashboard',
+        path: '/dashboard',
         element: <Dashboard></Dashboard>,
         children: [
             {
