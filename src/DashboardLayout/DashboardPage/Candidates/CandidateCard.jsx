@@ -1,9 +1,39 @@
-import { Card, Dropdown } from "flowbite-react";
+import { Button, Card, Dropdown } from "flowbite-react";
+import Swal from "sweetalert2";
 
 const CandidateCard = (candidate) => {
     console.log(candidate);
-    const { name, address, salary, phone, email, resume, coverLetter } = candidate.candidate || {};
+    const { name, address, salary, phone, email, resume, coverLetter, _id } = candidate.candidate || {};
     console.log(name);
+    const handleDelete = _id => {
+        console.log(_id);
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                fetch(`http://localhost:5000/applicantCV/${_id}`, {
+                    method: 'DELETE'
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data);
+                        if (data.deletedCount > 0) {
+                            Swal.fire({
+                                title: "Deleted!",
+                                text: "This candidate has been deleted.",
+                                icon: "success"
+                            });
+                        }
+                    })
+            }
+        });
+    }
     return (
         <div className="flex justify-center border">
             <Card className="max-w-xs border transition-transform hover:border-cyan-200 duration-500 transform origin-center hover:translate-y-[-.5rem]">
@@ -26,12 +56,9 @@ const CandidateCard = (candidate) => {
                             </a>
                         </Dropdown.Item>
                         <Dropdown.Item>
-                            <a
-                                href="#"
-                                className="block px-4 py-2 text-sm text-red-600 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
-                            >
-                                Delete
-                            </a>
+                            <Button
+                                onClick={() => handleDelete(_id)}
+                                color="failure" className="w-full">Delete</Button>
                         </Dropdown.Item>
                     </Dropdown>
                 </div>
