@@ -2,12 +2,20 @@ import { Footer } from 'flowbite-react';
 import { BsDribbble, BsFacebook, BsGithub, BsInstagram, BsTwitter } from 'react-icons/bs';
 
 const Footers = () => {
+<<<<<<< HEAD
   return (
     <Footer container>
       <div className="w-full mx-auto p-7 bg-black text-white">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
           {/* Logo */}
           <div className="col-span-1 md:col-span-1">
+=======
+    return (
+        <Footer  className='w-full mt-14'>
+      <div className="w-full mx-auto p-7 bg-blue-300 text-black">
+        <div className="grid w-full justify-between sm:flex sm:justify-between md:flex md:grid-cols-1">
+          <div>
+>>>>>>> 05564e9b520035036c995fbadb6570ee08d8cf21
             <Footer.Brand
               href="http://localhost:5173/"
               src="https://i.ibb.co/qRW8DM6/hiring-8852986.png"
@@ -26,9 +34,14 @@ const Footers = () => {
                 <Footer.Link href="#">Our Team</Footer.Link>
               </Footer.LinkGroup>
             </div>
+<<<<<<< HEAD
 
             {/* Legal Section */}
             <div>
+=======
+            
+            <div className=''>
+>>>>>>> 05564e9b520035036c995fbadb6570ee08d8cf21
               <Footer.Title title="Legal" />
               <Footer.LinkGroup col>
                 <Footer.Link href="#">Privacy Policy</Footer.Link>
