@@ -25,6 +25,7 @@ const Countdown = () => {
   };
 
   const animateNumber = (value) =>
+    // eslint-disable-next-line react-hooks/rules-of-hooks
     useSpring({
       number: value,
       from: { number: 0 },
