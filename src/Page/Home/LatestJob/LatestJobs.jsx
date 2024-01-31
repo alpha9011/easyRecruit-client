@@ -21,8 +21,8 @@ const LatestJobs = () => {
             className="bg-white  shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] "
           >
             
-            <div className="flex items-start mb-4">
-              <div className="">
+            <div className="flex items-start mb-4 p-5">
+              <div>
                 <img
                   src={job.companyLogo}
                   alt="Company Logo"
