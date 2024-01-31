@@ -10,7 +10,10 @@ import { FaRegCircle } from "react-icons/fa";
 
 
 import bgRegister from '../../assets/women.jpg'
+import useAxios from '../../hooks/useAxios';
+
 const Register = () => {
+    const axiosPublic = useAxios();
 
     const { createUser, handleUpdateProfile } = useContext(AuthContext);
     const Navigate = useNavigate();
@@ -25,7 +28,9 @@ const Register = () => {
         const company = event.target.company.value;
         const PhoneNO = event.target.PhoneNO.value;
         const aboutUS = event.target.aboutUS.value;
-        console.log(firstName, lastName, email,password, company, PhoneNO,aboutUS);
+        const canPostJob = 2;
+        const userInfo = {firstName,lastName,email,img,password,company,PhoneNO,aboutUS,canPostJob}
+        console.log(userInfo);
 
         
 
@@ -55,25 +60,31 @@ const Register = () => {
             return;
         }
 
-        // creating a new user
-        createUser(email, password)
-            .then(res => {
-                console.log(res.user);
-                handleUpdateProfile(name, img)
-                    .then(() => {
-                        Toastify({
-                            text: "Register successful",
-                            className: "info",
-                            style: {
-                                background: "linear-gradient(to right, #00b09b, #96c93d)",
-                            }
-                        }).showToast();
-                        Navigate('/')
-                    })
-            })
-            .catch(error => {
-                console.log(error);
-            });
+        axiosPublic.post('/users', {
+            firstName,lastName,email,img,password,company,PhoneNO,aboutUS,canPostJob
+        })
+        .then((response) => {
+            console.log(response.data);
+
+            handleUpdateProfile(userInfo.firstName, userInfo.img)
+                .then(() => {
+                    Toastify({
+                        text: "Register successful",
+                        className: "info",
+                        style: {
+                            background: "linear-gradient(to right, #00b09b, #96c93d)",
+                        }
+                    }).showToast();
+                    Navigate('/');
+                })
+                .catch((error) => {
+                    console.error(error);
+                });
+        })
+        .catch((error) => {
+            console.error(error);
+        });
+
     };
 
 
