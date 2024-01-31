@@ -22,7 +22,7 @@ const Circular = () => {
 
             <div className="grid grid-cols-3 gap-4">
                 {
-                    postJobs.map( jobs => <JobCard key={jobs._id} jobs={jobs}></JobCard>)
+                    postJobs.map(jobs => <JobCard key={jobs._id} jobs={jobs}></JobCard>)
                 }
             </div>
 
