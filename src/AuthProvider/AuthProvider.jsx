@@ -1,4 +1,4 @@
-import {GoogleAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
+import { FacebookAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
 import auth from "../firebase/firebase.config";
 
@@ -19,12 +19,7 @@ const AuthProvider = ({ children }) => {
         setLoader(true)
         return signInWithPopup(auth, googleProvider)
     }
-    //signInWithGoogle
-    // const facebookProvider = new FacebookAuthProvider();
-    // const signInWithFacebook = () => {
-    //     setLoader(true)
-    //     return signInWithPopup(auth, facebookProvider)
-    // }
+   
 
     // create user 
     const createUser = (email, password) => {
@@ -47,17 +42,12 @@ const AuthProvider = ({ children }) => {
 
     }
 
-    // update 
-    const handleUpdateProfile = (name, photo) => {
-        return updateProfile(auth.currentUser, {
-            displayName: name, photoURL: photo
-        })
-    }
 
     // save user 
     useEffect(() => {
         const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
             setUser(currentUser)
+            console.log("currentUser", currentUser);
             setLoader(false)
         });
 
@@ -83,15 +73,11 @@ const AuthProvider = ({ children }) => {
         login, logOut,
         user,
         loader,
-        handleUpdateProfile,
         forgotPass,
         selectedPlan,
         setSelectedPlan,
         productLimit,
-        setProductLimit
-
-    }
-
+        setProductLimit}
 
     return (
         <div>

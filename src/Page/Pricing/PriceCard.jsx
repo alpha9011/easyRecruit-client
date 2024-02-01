@@ -30,7 +30,7 @@ const PriceCard = () => {
                         {/* pricing */}
                         <div className="flex items-baseline text-gray-900 dark:text-white">
                             <span className="text-3xl font-semibold">$</span>
-                            <span className="text-7xl font-semibold italic tracking-tight">75</span>
+                            <span className="text-7xl font-semibold italic tracking-tight">79</span>
                             <span className="ml-1 font-normal text-gray-500 dark:text-gray-400">/month <p>when billed annually*</p></span>
                         </div>
                         {/* border */}

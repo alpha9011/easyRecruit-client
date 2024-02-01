@@ -1,11 +1,11 @@
 import { Avatar, Dropdown, Navbar } from 'flowbite-react';
 import { CiEdit } from "react-icons/ci";
 import { NavLink } from 'react-router-dom';
-import user from "../../assets/user2.jpg"
-import useAuth from '../../Hooks/useAuth';
+// import users from "../../assets/user2.jpg"
+import { useContext } from 'react';
+import { AuthContext } from '../../AuthProvider/AuthProvider';
 const Navbars = () => {
-    const users= useAuth();
-    console.log(users);
+    const {user, logOut} = useContext(AuthContext)
     return (
         <Navbar fluid rounded className='px-10 mb-10'>
             <Navbar.Brand href="/">
@@ -20,16 +20,23 @@ const Navbars = () => {
                     inline
                     label={
                         // here we will display user image and other info dynamically
-                        <Avatar alt="User settings" img={user} rounded />
+                        <Avatar alt="User settings" img={user?.photoURL} rounded />
                     }
                 >
                     <Dropdown.Header>
-                        <span className="block text-sm text-center">User Name</span>
-                        <span className="block truncate text-sm font-medium">user_email@gmail.com</span>
+                        {
+                            user && 
+
+                        <div>
+                                <span className="block text-sm text-center">{user?.displayName}</span>
+                        <span className="block truncate text-sm font-medium">{user?.email}</span>
+                        <button onClick={()=> logOut()} className='inline-block w-full text-center text-xl'>logout</button>
+                        </div>
+                        }
                         <div className='text-center '>
-                        <Navbar.Link>
-                    <NavLink  to='/dashboard/dashboardHome' className='text-[15px]'>Dashboard</NavLink>
-                </Navbar.Link>
+                            <Navbar.Link>
+                                <NavLink to='/dashboard/dashboardHome' className='text-[15px]'>Dashboard</NavLink>
+                            </Navbar.Link>
                         </div>
 
                     </Dropdown.Header>
@@ -74,7 +81,7 @@ const Navbars = () => {
                 <Navbar.Link>
                     <NavLink to='/circular'>Circular</NavLink>
                 </Navbar.Link>
-             
+
             </Navbar.Collapse>
         </Navbar>
     );
