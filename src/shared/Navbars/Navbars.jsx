@@ -2,7 +2,10 @@ import { Avatar, Dropdown, Navbar } from 'flowbite-react';
 import { CiEdit } from "react-icons/ci";
 import { NavLink } from 'react-router-dom';
 import user from "../../assets/user2.jpg"
+import useAuth from '../../Hooks/useAuth';
 const Navbars = () => {
+    const users= useAuth();
+    console.log(users);
     return (
         <Navbar fluid rounded className='px-10 mb-10'>
             <Navbar.Brand href="/">

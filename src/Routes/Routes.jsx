@@ -20,6 +20,7 @@ import ApplyForm from "../Page/Circular/ApplyForm/ApplyForm";
 import Pricing from "../Page/Pricing/Pricing";
 import WhyEasyRecruit from "../Page/WhyEasyRecruit/WhyEasyRecruit";
 import CandidateForm from "../Page/Circular/ApplyForm/CandidateForm";
+import Payment from "../Payment/Payment";
 
 
 export const router = createBrowserRouter([
@@ -91,6 +92,10 @@ export const router = createBrowserRouter([
             {
                 path: 'postjob',
                 element: <PostJob></PostJob>
+            },
+            {
+                path: 'payments',
+                element: <Payment></Payment>
             },
 
         ]

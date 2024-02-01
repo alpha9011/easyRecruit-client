@@ -3,8 +3,20 @@ import { FaRegCircleUser } from "react-icons/fa6";
 import { BiBriefcaseAlt2 } from "react-icons/bi";
 import { GoDotFill } from "react-icons/go";
 import { GrFireball } from "react-icons/gr";
+import { useNavigate } from "react-router-dom";
+import useAuth from "../../Hooks/useAuth";
 
 const PriceCard = () => {
+    const navigate = useNavigate()
+    const { selectedPlan,
+        setSelectedPlan,
+        productLimit,
+        setProductLimit } = useAuth();
+    const handlePurchase = (plan, limit) => {
+        setSelectedPlan(plan);
+        setProductLimit(limit);
+        navigate('/')
+    };
     return (
         <div>
             {/* All Pricing Cards */}
@@ -51,6 +63,7 @@ const PriceCard = () => {
                         </div>
                         {/* button */}
                         <button
+                            onClick={() => handlePurchase(79, 3)}
                             type="button"
                             className="inline-flex w-full justify-center rounded-lg bg-cyan-500 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-white hover:text-cyan-500 border-2 duration-500 border-cyan-500 focus:outline-none focus:ring-4 focus:ring-cyan-200 dark:focus:ring-cyan-900"
                         >
@@ -113,6 +126,7 @@ const PriceCard = () => {
                         </div>
                         {/* button */}
                         <button
+                        onClick={() => handlePurchase(269, 200)}
                             type="button"
                             className="inline-flex w-full justify-center rounded-lg bg-cyan-500 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-white hover:text-cyan-500 border-2 duration-500 border-cyan-500 focus:outline-none focus:ring-4 focus:ring-cyan-200 dark:focus:ring-cyan-900"
                         >
@@ -132,6 +146,8 @@ const PriceCard = () => {
                             <span className="text-7xl font-semibold italic tracking-tight">420</span>
                             <span className="ml-1 font-normal text-gray-500 dark:text-gray-400">/month <p>on an annual plan</p></span>
                         </div>
+
+
                         {/* border */}
                         <div className="bg-gradient-to-r from-[#2379d0] to-[#01addf] p-[2.6px] my-6"></div>
                         {/* features in box */}
@@ -177,6 +193,7 @@ const PriceCard = () => {
                         </div>
                         {/* button */}
                         <button
+                        onClick={() => handlePurchase(420, )}
                             type="button"
                             className="inline-flex w-full justify-center rounded-lg bg-cyan-500 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-white hover:text-cyan-500 border-2 duration-500 border-cyan-500 focus:outline-none focus:ring-4 focus:ring-cyan-200 dark:focus:ring-cyan-900"
                         >
