@@ -3,9 +3,8 @@ import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import 'tailwindcss/tailwind.css';
 import Login from '../Login/Login';
+import Toastify from 'toastify-js'
 import { AuthContext } from '../../AuthProvider/AuthProvider';
-
-import "toastify-js/src/toastify.css";
 import { FaRegCircle } from "react-icons/fa";
 import bgRegister from '../../assets/women.jpg'
 import useAxiosPublic from '../../Hooks/useAxiosPublic';
@@ -19,12 +18,12 @@ const Register = () => {
     const {
         register,
         handleSubmit,
-        
+        reset,
         formState: { errors },
       } = useForm()
 
       const onSubmit = (data) => {
-       console.log(data);
+    
        createUser(data.email, data.password)
         .then( result => {
                   
@@ -40,13 +39,22 @@ const Register = () => {
                       image: data.photo,
                       number: data.number,
                       company:data.company,
-                      workPlace:data.workPlace
+                      workPlace:data.workPlace,
+                      jpLimit: 0,
+                      userRole: 'free-user'
                     }
                     axiospublic.post('/users', usersInfo)
                     .then( res => {
                       console.log( 'users added in database',res.data);
                       if(res.data.insertedId){
-                        alert('sign up succesfully')
+                        Toastify({
+                            text: "Job Posted succesfully",
+                            className: "info",
+                            style: {
+                                background: "linear-gradient(to right, #00b09b, #96c93d)",
+                            }
+                        }).showToast();
+                        reset()
                       }
                     })
                    
