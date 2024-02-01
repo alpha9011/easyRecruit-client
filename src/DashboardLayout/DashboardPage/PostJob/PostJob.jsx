@@ -1,18 +1,28 @@
 import { useForm } from "react-hook-form";
 import { GoCheckCircle } from "react-icons/go";
 import { FaGraduationCap } from "react-icons/fa";
-
+import Toastify from 'toastify-js'
 import useAxiosPublic from "../../../Hooks/useAxiosPublic";
 
 
 const PostJob = () => {
     const axiospublic = useAxiosPublic()
-    const { register, handleSubmit } = useForm()
+    const { register, handleSubmit, reset } = useForm()
     const onSubmit = (data) => {
         console.log(data);
         axiospublic.post('/postjob', data)
         .then(res => {
             console.log(res.data);
+            if(res.data.insertedId){
+                Toastify({
+                    text: "Job Posted succesfully",
+                    className: "info",
+                    style: {
+                        background: "linear-gradient(to right, #00b09b, #96c93d)",
+                    }
+                }).showToast();
+                reset()
+              }
         })
     }
 
