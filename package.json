@@ -29,11 +29,7 @@
     "react-router-dom": "^6.21.2",
     "react-spring": "^9.7.3",
     "sort-by": "^1.2.0",
-<<<<<<< HEAD
-    "sweetalert": "^2.1.2",
-=======
     "sweetalert2": "^11.10.4",
->>>>>>> 993e2044e92f0108744ac3e5f418dac4ffaefb44
     "swiper": "^11.0.5",
     "swiper-react": "^1.0.0",
     "toastify-js": "^1.12.0"
