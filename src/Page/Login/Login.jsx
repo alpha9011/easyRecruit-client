@@ -1,5 +1,5 @@
 import { Label, Modal, TextInput } from "flowbite-react";
-import { useContext, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import ReCAPTCHA from "react-google-recaptcha";
@@ -9,10 +9,19 @@ import GoogleLogin from "./GoogleLogin";
 import { MdOutlineMail } from "react-icons/md";
 import { MdKey } from "react-icons/md";
 // import bgRegister from '../../assets/women.jpg'
-import referImg from '../../assets/refer.webp'
+import refer from "../../../public/refer.json";
+import gift from "../../../public/gift.json";
+import Lottie from "lottie-react";
+
 
 
 const Login = () => {
+
+
+
+
+
+
 
     function onChange(value) {
         console.log("Captcha value:", value);
@@ -126,8 +135,8 @@ const Login = () => {
 
                     <div>
 
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2  gap-8 md:gap-12 lg:gap-32">
-                            <div  >
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 px-8 py-8 lg:px-12 gap-6 md:gap-8 lg:gap-12">
+                            <div className="w-2/3" >
 
                                 <h3 className="text-3xl">Sign in to EasyRecruit</h3>
 
@@ -150,7 +159,7 @@ const Login = () => {
                                                     <Label htmlFor="password" value="Password" />
                                                 </div>
                                             </div>
-                                            <TextInput id="password"  type="password" placeholder="password" required shadow />
+                                            <TextInput id="password" type="password" placeholder="password" required shadow />
                                         </div>
 
                                         <div >
@@ -184,15 +193,24 @@ const Login = () => {
                                 <p className="text-center mt-4">Still do not have an account? <Link className="text-cyan-600" to={'/register'}>SIGN UP</Link></p>
                             </div>
 
+                            <div className="transform rounded transition-transform duration-300 hover:scale-105 hover:bg-gray-100 border-2 border-blue-400" 
+                            
+                           
+                            >
+                                <div className="p-6">
+                                    <div  className="flex items-center">
+                                    <h3 className="text-3xl">Refer a friend  <br /> and get reward</h3>
 
-                            <div className="transform rounded transition-transform duration-300 hover:-translate-y-2 hover:scale-105" style={{
-                                background: 'linear-gradient(to right,  #93C5FD ,white)',
+                                           <div className="w-32">
+                                           <Lottie animationData={gift} />
+                                           </div>
+                                    </div>
 
-                            }}>
-                                <div className="p-6 border-white">
-                                    <h3 className="text-3xl">Refer a friend to EasyRecruit <br /> and get reward</h3>
+
                                     <p className="mt-4">See Details...</p>
-                                    <img className="w-[250px] h-[200px]" src={referImg} alt="" />
+                                    <div className="w-72">
+                                    <Lottie animationData={refer} />
+                                    </div>
 
                                 </div>
 

@@ -1,6 +1,6 @@
-import { Button, FileInput, Footer, Label, Select, TextInput } from 'flowbite-react';
+import { Button, FileInput,  Label, Select, TextInput } from 'flowbite-react';
 import { useContext } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import 'tailwindcss/tailwind.css';
 import Login from '../Login/Login';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
@@ -197,11 +197,15 @@ const Register = () => {
     <p>Have an account? <Login></Login> </p>
     
 </div>
+
+<Link to={'/payment'}><button className='btn- primary'>
+    PAY
+    </button></Link>
 </div>
             </div>
             
         </div>
-        <Footer/>
+       
         </>
     );
 };

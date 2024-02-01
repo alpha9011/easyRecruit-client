@@ -5,6 +5,7 @@ import AboutUs from "../Page/AboutUs/AboutUs";
 import Login from "../Page/Login/Login";
 import Register from "../Page/Register/Register";
 import ErrorPage from "../Page/ErrorPage/ErrorPage";
+import Payment from "../Page/Payment/Payment";
 
 
 export const router = createBrowserRouter([
@@ -28,6 +29,10 @@ export const router = createBrowserRouter([
             {
                 path: "/about",
                 element: <AboutUs></AboutUs>
+            },
+            {
+                path: "/payment",
+                element: <Payment/>
             }
         ]
     }
