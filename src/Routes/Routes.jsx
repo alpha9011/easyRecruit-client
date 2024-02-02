@@ -13,13 +13,11 @@ import MyJobs from "../DashboardLayout/DashboardPage/MyJobs/MyJobs";
 import PostJob from "../DashboardLayout/DashboardPage/PostJob/PostJob";
 import Circular from "../Page/Circular/Circular";
 import ApplyForm from "../Page/Circular/ApplyForm/ApplyForm";
-
-
-
-
 import Pricing from "../Page/Pricing/Pricing";
 import WhyEasyRecruit from "../Page/WhyEasyRecruit/WhyEasyRecruit";
 import CandidateForm from "../Page/Circular/ApplyForm/CandidateForm";
+import PrivateRout from "./PrivateRout";
+
 
 
 export const router = createBrowserRouter([
@@ -74,7 +72,7 @@ export const router = createBrowserRouter([
     },
     {
         path: '/dashboard',
-        element: <Dashboard></Dashboard>,
+        element: <PrivateRout> <Dashboard></Dashboard></PrivateRout> ,
         children: [
             {
                 path: 'dashboardHome',
