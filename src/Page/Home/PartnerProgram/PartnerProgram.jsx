@@ -1,6 +1,11 @@
 
 import PartnerProgramImg from "../../../../public/Image/Partner-Program.jpg";
 import PrimarySection from "../../../shared/PrimarySection/PrimarySection";
+
+//Aos Animation
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init();
 const PartnerProgram = () => {
   const title =
     " Bring the Power of the EasyRecruit Recruiting Solution to Your Customers";
@@ -22,7 +27,7 @@ const PartnerProgram = () => {
         image={PartnerProgramImg}
         alt={"Easy Recruit"}
         imgPosition="left"
-       
+        aosImage="fade-up"
       ></PrimarySection>
 
    

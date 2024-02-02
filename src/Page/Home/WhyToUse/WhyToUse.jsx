@@ -1,13 +1,21 @@
-
 import jobsUsersImg from "../../../../public/Image/easy_home_unlimited.png";
 import fastImplementationImg from "../../../../public/Image/fast_implementation.png";
 import configurableImg from "../../../../public/Image/higly_Configurable.png";
 import PrimaryButton from "../../../shared/PrimaryButton/PrimaryButton";
+
+import AOS from "aos";
+import "aos/dist/aos.css";
+AOS.init();
 const WhyToUse = () => {
   return (
     <div className="container mx-auto my-28">
       <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 m-5 gap-5">
-        <div className="relative border border-sky-500 p-5">
+        <div
+          className="relative border border-sky-500 p-5"
+          data-aos={"fade-up-right"}
+          data-aos-duration="2000"
+          data-aos-offset="300"
+        >
           <img
             className="absolute  w-20 top-0 left-1/2 -translate-y-1/2 -ml-10"
             src={jobsUsersImg}
@@ -24,7 +32,12 @@ const WhyToUse = () => {
           </p>
         </div>
 
-        <div className="relative border border-sky-500 p-5">
+        <div
+          className="relative border border-sky-500 p-5"
+          data-aos={"fade-up"}
+          data-aos-duration="2000"
+          data-aos-offset="300"
+        >
           <img
             className="absolute  w-20 top-0 left-1/2 -translate-y-1/2 -ml-10"
             src={fastImplementationImg}
@@ -41,7 +54,12 @@ const WhyToUse = () => {
           </p>
         </div>
 
-        <div className="relative border border-sky-500 p-5">
+        <div
+          className="relative border border-sky-500 p-5"
+          data-aos={"fade-up-left"}
+          data-aos-duration="2000"
+          data-aos-offset="300"
+        >
           <img
             className="absolute  w-20 top-0 left-1/2 -translate-y-1/2 -ml-10"
             src={configurableImg}
@@ -59,9 +77,13 @@ const WhyToUse = () => {
         </div>
       </div>
       <div>
-        <div className="flex justify-center mt-5">
-        
-          <PrimaryButton buttonText={'Learn More'}></PrimaryButton>
+        <div
+          className="flex justify-center mt-5"
+          data-aos={"fade-up"}
+          data-aos-duration="1500"
+          // data-aos-offset="200"
+        >
+          <PrimaryButton buttonText={"Learn More"}></PrimaryButton>
         </div>
       </div>
     </div>
