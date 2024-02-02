@@ -1,6 +1,7 @@
 import { Button } from "flowbite-react";
 import hireBannerImg from "../../../../public/Image/makingHireBanner.jpg";
 import { Link } from "react-router-dom";
+import PrimaryButton from "../../../shared/PrimaryButton/PrimaryButton";
 
 const MakingHiresBanner = () => {
 
@@ -18,9 +19,8 @@ const MakingHiresBanner = () => {
             faster.
           </p>
           <div className="flex justify-center gap-5 items-center">
-            <Button outline gradientDuoTone="pinkToOrange" >
-        Watch a demo
-            </Button>
+           
+            <PrimaryButton  buttonText={'Watch Demo'} textColor={'text-white'} font={'font-bold'} hoverTextColor={'text-black'} hover={'hover:text-black'}> </PrimaryButton>
             <Link className="text-sky-500 hover:border-b">
                  Try EasyRecruit Free
             </Link>
@@ -41,9 +41,9 @@ const MakingHiresBanner = () => {
           Learn how to recruit employees quickly with EasyRecruit applicant
           tracking software.
         </h4>
-        <Button outline gradientDuoTone="pinkToOrange">
-          Request A Demo
-        </Button>
+       
+
+        {/* <PrimaryButton className="text-white " buttonText={'Request A Demo'}></PrimaryButton> */}
       </div>
    
     </div>
