@@ -1,5 +1,6 @@
 import { Button, Card, Dropdown } from "flowbite-react";
 import Swal from "sweetalert2";
+import { ImBin } from "react-icons/im";
 
 const CandidateCard = (candidate) => {
     console.log(candidate);
@@ -38,27 +39,11 @@ const CandidateCard = (candidate) => {
         <div className="flex justify-center border">
             <Card className="max-w-xs border transition-transform hover:border-cyan-200 duration-500 transform origin-center hover:translate-y-[-.5rem]">
                 <div className="flex justify-end px-4">
-                    <Dropdown inline label="">
-                        <Dropdown.Item>
-                            <a
-                                href="#"
-                                className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
-                            >
-                                Edit
-                            </a>
-                        </Dropdown.Item>
-                        <Dropdown.Item>
-                            <a
-                                href="#"
-                                className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
-                            >
-                                Export Data
-                            </a>
-                        </Dropdown.Item>
+                    <Dropdown inline label="" placement="bottom">
                         <Dropdown.Item>
                             <Button
                                 onClick={() => handleDelete(_id)}
-                                color="failure" className="w-full">Delete</Button>
+                                color="failure" className=""><ImBin /></Button>
                         </Dropdown.Item>
                     </Dropdown>
                 </div>
