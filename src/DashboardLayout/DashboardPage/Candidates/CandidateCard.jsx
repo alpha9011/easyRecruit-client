@@ -1,10 +1,10 @@
 import { Button, Card, Dropdown } from "flowbite-react";
 import Swal from "sweetalert2";
 import { ImBin } from "react-icons/im";
-
-const CandidateCard = (candidate) => {
+import PropTypes  from 'prop-types'
+const CandidateCard = ({candidate,candidates,setCandidate}) => {
     console.log(candidate);
-    const { name, address, salary, phone, email, resume, coverLetter, _id } = candidate.candidate || {};
+    const { name, address, salary, phone, email, resume, coverLetter, _id } = candidate || {};
     console.log(name);
     const handleDelete = _id => {
         console.log(_id);
@@ -33,6 +33,8 @@ const CandidateCard = (candidate) => {
                         }
                     })
             }
+            const remaining = candidates.filter( candidate => candidate._id !== _id)
+            setCandidate(remaining)
         });
     }
     return (
@@ -77,5 +79,11 @@ const CandidateCard = (candidate) => {
         </div>
     );
 };
+
+CandidateCard.propTypes = {
+    candidate:PropTypes.object,
+    candidates:PropTypes.object,
+    setCandidate:PropTypes.object,
+}
 
 export default CandidateCard;
