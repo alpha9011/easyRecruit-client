@@ -18,6 +18,7 @@ import WhyEasyRecruit from "../Page/WhyEasyRecruit/WhyEasyRecruit";
 import CandidateForm from "../Page/Circular/ApplyForm/CandidateForm";
 import PrivateRout from "./PrivateRout";
 
+import UpdateJob from "../Page/Circular/UpdateJob";
 
 
 export const router = createBrowserRouter([
@@ -58,6 +59,11 @@ export const router = createBrowserRouter([
             {
                 path: "/applyform/:id",
                 element: <CandidateForm></CandidateForm>,
+                loader: ({ params }) => fetch(`http://localhost:5000/postjob/${params.id}`)
+            },
+            {
+                path: "/updateJob/:id",
+                element: <UpdateJob></UpdateJob>,
                 loader: ({ params }) => fetch(`http://localhost:5000/postjob/${params.id}`)
             },
             {
