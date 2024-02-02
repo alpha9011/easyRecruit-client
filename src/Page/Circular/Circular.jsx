@@ -1,4 +1,4 @@
-import {  useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import JobCard from "./JobCard";
 import useAxiosPublic from "../../Hooks/useAxiosPublic";
 
@@ -15,12 +15,12 @@ const Circular = () => {
             })
     }, [axiosPublic])
     console.log(postJobs);
-   
-    return (
-        <div>
-            <h1 className="text-5xl font-bold mb-5 text-center">Latest Job</h1>
 
-            <div className="grid grid-cols-3 gap-4">
+    return (
+        <div className="max-w-screen-xl mx-auto">
+            <h1 className="text-6xl font-bold mb-10 text-center">Latest Job</h1>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mx-5">
                 {
                     postJobs.map(jobs => <JobCard key={jobs._id} jobs={jobs}></JobCard>)
                 }

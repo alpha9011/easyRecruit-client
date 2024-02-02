@@ -55,7 +55,8 @@ const UpdateJob = () => {
     }
     return (
         <div className="flex flex-col w-full items-center justify-center min-h-[500px] px-3 bg-slate-100">
-            <h1 className="text-center text-5xl md:text-6xl font-bold mb-10">Update Your Job: {title}</h1>
+            <h1 className="text-center text-5xl md:text-6xl font-bold my-2">Update Your Job</h1>
+            <h1 className="text-center text-3xl md:text-4xl font-bold mb-10">{title}</h1>
             <div className="bg-slate-200 w-full max-w-screen-md p-5 rounded-xl">
                 <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4 mb-8">
                     {/* row 1 */}
