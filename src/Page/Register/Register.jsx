@@ -1,6 +1,6 @@
 import { Footer, } from 'flowbite-react';
 import { useContext } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import 'tailwindcss/tailwind.css';
 import Login from '../Login/Login';
 import Toastify from 'toastify-js'
@@ -12,9 +12,11 @@ import { updateProfile } from 'firebase/auth';
 import { useForm } from 'react-hook-form';
 
 const Register = () => {
+  const location = useLocation()
+  const navigate = useNavigate()
     const axiospublic = useAxiosPublic()
     const { createUser } = useContext(AuthContext);
-    const Navigate = useNavigate();
+    // const Navigate = useNavigate();
     const {
         register,
         handleSubmit,
@@ -48,7 +50,7 @@ const Register = () => {
                       console.log( 'users added in database',res.data);
                       if(res.data.insertedId){
                         Toastify({
-                            text: "Job Posted succesfully",
+                            text: "Registration succesful",
                             className: "info",
                             style: {
                                 background: "linear-gradient(to right, #00b09b, #96c93d)",
@@ -60,7 +62,8 @@ const Register = () => {
                    
                   })
                   .catch(()=> {})
-                  Navigate('/')
+                  // Navigate('/')
+                  navigate(location?.state ? location.state : "/")
               })
               .catch(err => {
                   console.log(err);
@@ -172,7 +175,7 @@ const Register = () => {
     <div className='w-full'>
         <label className="block mb-1 font-semibold">*Workplace Type</label>
             <select {...register("workPlace")} className="input border-none rounded-md w-full">
-            <option selected disabled>select a type</option>
+           
             <option value='Social Media'>Social Media</option>
             <option value='Advertising'>Advertising</option>
             <option value='Previous Customer'>Previous Customer</option>

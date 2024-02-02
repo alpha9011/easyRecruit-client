@@ -1,5 +1,5 @@
-import { Avatar, Dropdown, Navbar } from 'flowbite-react';
-import { CiEdit } from "react-icons/ci";
+import { Avatar, Button, Dropdown, Navbar } from 'flowbite-react';
+// import { CiEdit } from "react-icons/ci";
 import { NavLink } from 'react-router-dom';
 // import users from "../../assets/user2.jpg"
 import { useContext } from 'react';
@@ -28,25 +28,22 @@ const Navbars = () => {
                             user && 
 
                         <div>
-                                <span className="block text-sm text-center">{user?.displayName}</span>
-                        <span className="block truncate text-sm font-medium">{user?.email}</span>
-                        <button onClick={()=> logOut()} className='inline-block w-full text-center text-xl'>logout</button>
+                                <span className="block text-lg font-semibold text-center ">{user?.displayName}</span>
                         </div>
+                       
                         }
+                        
                         <div className='text-center '>
                             <Navbar.Link>
-                                <NavLink to='/dashboard/dashboardHome' className='text-[15px]'>Dashboard</NavLink>
+                                <NavLink to='/dashboard/dashboardHome' className='text-lg'>Dashboard</NavLink>
                             </Navbar.Link>
                         </div>
 
+                        <Button outline gradientDuoTone="purpleToBlue" onClick={()=> logOut()} className='inline-block w-full text-center text-xl mt-2'>logout</Button>
+
                     </Dropdown.Header>
                     <Dropdown.Divider />
-                    <Dropdown.Item>
-                        <button className='inline-flex w-full justify-center rounded-lg bg-cyan-500 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-white hover:text-cyan-500 border-2 duration-500 border-cyan-500 focus:outline-none focus:ring-4 focus:ring-cyan-200 dark:focus:ring-cyan-900'>
-                            Edit Profile
-                            <CiEdit className="ml-2 h-5 w-5" />
-                        </button>
-                    </Dropdown.Item>
+                  
                 </Dropdown>
                 <Navbar.Toggle />
             </div>
@@ -60,21 +57,16 @@ const Navbars = () => {
                 <Navbar.Link>
                     <NavLink to='/about'>About Us</NavLink>
                 </Navbar.Link>
-                <Navbar.Link>
-                    <NavLink to='/jobs'>Jobs</NavLink>
-                </Navbar.Link>
-                <Navbar.Link>
-                    <NavLink to='/candidates'>Candidates</NavLink>
-                </Navbar.Link>
+            
                 {/* <Navbar.Link>
-                    <NavLink to='/blog'>Blog</NavLink>
+                    <NavLink >Blog</NavLink>
                 </Navbar.Link> */}
                 <Navbar.Link>
                     <NavLink to='/whyEasyRecruit'>Why Us</NavLink>
                 </Navbar.Link>
-                <Navbar.Link>
+                {/* <Navbar.Link>
                     <NavLink to='/contact'>Contact</NavLink>
-                </Navbar.Link>
+                </Navbar.Link> */}
                 <Navbar.Link>
                     <NavLink to='/register'>Register</NavLink>
                 </Navbar.Link>

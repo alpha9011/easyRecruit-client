@@ -83,7 +83,7 @@ const CandidateForm = () => {
                 <div >
                     <label>Gender<span className="text-red-600">*</span></label>
                     <select {...register("gender")} className="mt-1 input input-bordered w-full">
-                        <option selected disabled>select a type</option>
+                        
                         <option value="male">Male</option>
                         <option value="female">Female</option>
                         <option value="others">Others</option>
