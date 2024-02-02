@@ -12,13 +12,19 @@ import Candidates from "../DashboardLayout/DashboardPage/Candidates/Candidates";
 import MyJobs from "../DashboardLayout/DashboardPage/MyJobs/MyJobs";
 import PostJob from "../DashboardLayout/DashboardPage/PostJob/PostJob";
 import Circular from "../Page/Circular/Circular";
-import ApplyForm from "../DashboardLayout/ApplyForm/ApplyForm";
+// import ApplyForm from "../DashboardLayout/ApplyForm/ApplyForm";
 import InterViewSchedule from "../DashboardLayout/DashboardPage/InterViewSchedule/InterViewSchedule";
 import Appointment from "../DashboardLayout/DashboardPage/Appointment/appointment";
 
 
 
+import ApplyForm from "../Page/Circular/ApplyForm/ApplyForm";
+import Pricing from "../Page/Pricing/Pricing";
+import WhyEasyRecruit from "../Page/WhyEasyRecruit/WhyEasyRecruit";
+import CandidateForm from "../Page/Circular/ApplyForm/CandidateForm";
+import PrivateRout from "./PrivateRout";
 
+import UpdateJob from "../Page/Circular/UpdateJob";
 
 
 export const router = createBrowserRouter([
@@ -44,24 +50,41 @@ export const router = createBrowserRouter([
                 element: <AboutUs></AboutUs>
             },
             {
-                path:"/recruiting-software-capabilities",
-                element:<Capabilities></Capabilities>
+                path: "/recruiting-software-capabilities",
+                element: <Capabilities></Capabilities>
             },
-          {
-            path: "/circular", 
-            element: <Circular></Circular>
-          },
-          {
-            path: "/jobapply/:id", 
-            element: <ApplyForm></ApplyForm>,
-            loader: ({params})=> fetch(`http://localhost:5000/postjob/${params.id}`)
-          },
-
+            {
+                path: "/circular",
+                element: <Circular></Circular>
+            },
+            {
+                path: "/jobdetails/:id",
+                element: <ApplyForm></ApplyForm>,
+                loader: ({ params }) => fetch(`http://localhost:5000/postjob/${params.id}`)
+            },
+            {
+                path: "/applyform/:id",
+                element: <CandidateForm></CandidateForm>,
+                loader: ({ params }) => fetch(`http://localhost:5000/postjob/${params.id}`)
+            },
+            {
+                path: "/updateJob/:id",
+                element: <UpdateJob></UpdateJob>,
+                loader: ({ params }) => fetch(`http://localhost:5000/postjob/${params.id}`)
+            },
+            {
+                path: "/price",
+                element: <Pricing></Pricing>
+            },
+            {
+                path: '/whyEasyRecruit',
+                element: <WhyEasyRecruit></WhyEasyRecruit>
+            }
         ]
     },
     {
-        path:'/dashboard',
-        element: <Dashboard></Dashboard>,
+        path: '/dashboard',
+        element: <PrivateRout> <Dashboard></Dashboard></PrivateRout> ,
         children: [
             {
                 path: 'dashboardHome',

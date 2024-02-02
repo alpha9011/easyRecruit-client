@@ -5,13 +5,7 @@ import { Button, Modal } from "flowbite-react";
 const localizer = momentLocalizer(moment); // or globalizeLocalizer
 
 const InterViewSchedule = () => {
-  // const myEventsList =[
-  //     {
-  //         start: moment('2024-02-01-18T11:00:00').toDate(),
-  //         end: moment('2024-02-01-18T12:00:00').toDate(),
-  //         title: "test event"
-  //     }
-  // ]
+ 
   const [openModal, setOpenModal] = useState(false);
   const [selectedData, setSelectedData] = useState({});
   const [selectedSlotStyle, setSelectedSlotStyle] = useState({});
