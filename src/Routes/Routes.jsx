@@ -12,6 +12,12 @@ import Candidates from "../DashboardLayout/DashboardPage/Candidates/Candidates";
 import MyJobs from "../DashboardLayout/DashboardPage/MyJobs/MyJobs";
 import PostJob from "../DashboardLayout/DashboardPage/PostJob/PostJob";
 import Circular from "../Page/Circular/Circular";
+// import ApplyForm from "../DashboardLayout/ApplyForm/ApplyForm";
+import InterViewSchedule from "../DashboardLayout/DashboardPage/InterViewSchedule/InterViewSchedule";
+import Appointment from "../DashboardLayout/DashboardPage/Appointment/appointment";
+
+
+
 import ApplyForm from "../Page/Circular/ApplyForm/ApplyForm";
 import Pricing from "../Page/Pricing/Pricing";
 import WhyEasyRecruit from "../Page/WhyEasyRecruit/WhyEasyRecruit";
@@ -95,6 +101,14 @@ export const router = createBrowserRouter([
             {
                 path: 'postjob',
                 element: <PostJob></PostJob>
+            },
+            {
+                path: 'interviewSchedule',
+                element: <InterViewSchedule></InterViewSchedule>
+            },
+            {
+                path: 'appointment',
+                element: <Appointment></Appointment>
             },
 
         ]

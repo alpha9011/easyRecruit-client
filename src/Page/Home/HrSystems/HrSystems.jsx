@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
 import hrSystemImg from "../../../../public/Image/HrSystem.jpg";
-
-
+//Aos Animation
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init();
 const HrSystems = () => {
   const subTitle = "SYNC YOUR HR SYSTEMS";
 
@@ -21,14 +23,14 @@ const HrSystems = () => {
         md:flex-row-reverse
        justify-center items-center gap-10  `}
         >
-          <div className="md:w-1/2">
+          <div className="md:w-1/2" data-aos="fade-up"  data-aos-duration="2000"  >
             <img
               className="w-full md:w-96 lg:w-[700px]"
               src={hrSystemImg}
               alt={"easyRecruit"}
             />
           </div>
-          <div className="md:w-1/2 flex flex-col space-y-3 max-w-[370px] justify-center ">
+          <div className="md:w-1/2 flex flex-col space-y-3 max-w-[370px] justify-center " data-aos="fade-up"   data-aos-duration="1000" >
             <h6 className="text-sky-500 font-semibold">{subTitle}</h6>
             <h3 className="text-xl md:text-3xl font-semibold">{title}</h3>
             <p className="text-wrap leading-7">{content}</p>

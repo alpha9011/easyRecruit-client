@@ -14,6 +14,7 @@ const WhyUs = () => {
                     <p className="text-xl mb-3 font-bold text-gray-400">CREATIVE APPROCH</p>
                     <h1 className="text-5xl font-bold mb-2">Get over 50.000+<br /> talented experts in <span className="text-yellow-400">EasyRecruit.</span></h1>
                     <p className="text-[#737373] py-6">the majority have suffered alteration in some form, by injected humour, or randomised words which do not look even slightly believable. </p>
+
                     <div className="flex gap-3 items-center mb-1">
                         <FaCheck className="text-blue-600 text-lg"></FaCheck>
                         <p className="text-lg">Seamless searching</p>
