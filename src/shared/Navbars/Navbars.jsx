@@ -59,7 +59,7 @@ const Navbars = () => {
                 </Navbar.Link>
             
                 {/* <Navbar.Link>
-                    <NavLink >Blog</NavLink>
+                    <NavLink to='/membership'>Membership</NavLink>
                 </Navbar.Link> */}
                 <Navbar.Link>
                     <NavLink to='/whyEasyRecruit'>Why Us</NavLink>
