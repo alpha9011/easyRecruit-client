@@ -22,7 +22,7 @@ const MyJobs = () => {
         <div>
             {
                 myJobs.length > 0 ? 
-                <div className="grid grid-cols-3 gap-2">
+                <div className="grid grid-cols-3 gap-6">
                 {
                     myJobs.map(myjob => <MyJobCard key={myjob._id} myjob={myjob}></MyJobCard>)
                 }
