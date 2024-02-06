@@ -9,9 +9,11 @@ import Swal from "sweetalert2";
 // import 'react-toastify/dist/ReactToastify.css';
 
 const Appointment = () => {
-  const getEmails = () => {
-    return appointmentData.map((item) => item.email);
-  };
+  
+  // const getEmails = () => {
+  //   return appointmentData.map((item) => item.email);
+  // };
+
   const handleSendEmails = () => {
     
     Swal.fire({
@@ -28,14 +30,16 @@ const Appointment = () => {
     // Here, we're just logging the emails to the console
     // console.log("Sending emails:", emails);
   };
-  const notify = () => toast("Wow so easy!");
+  
 
-  return (
-    <div className="bg-white p-5">
-      <h2 className="text-center font-bold text-2xl my-3">Appointment</h2>
-      <div className="overflow-x-auto">
-        <Table hoverable>
-          <Table.Head>
+  return ( 
+    <div>
+      <h2 className="text-center font-bold text-3xl text-white opacity-90 my-3" 
+
+      >Appointment</h2>
+      <div className="overflow-x-auto ">
+        <Table  className="bg-opacity-10 text-white">
+          <Table.Head className="bg-opacity-10 ">
             <Table.HeadCell>Name</Table.HeadCell>
             <Table.HeadCell>Email</Table.HeadCell>
             <Table.HeadCell>Phone Number</Table.HeadCell>
@@ -44,13 +48,13 @@ const Appointment = () => {
             </Table.HeadCell> */}
           </Table.Head>
 
-          <Table.Body className="divide-y">
-            {appointmentData.map((item, index) => (
+          <Table.Body className="divide-y ">
+            {appointmentData.map((item) => (
               <Table.Row
-                className="bg-white dark:border-gray-700 dark:bg-gray-800"
+                className=" dark:border-gray-700 dark:bg-gray-800 text-white"
                 key={item?.id}
               >
-                <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white ">
+                <Table.Cell className="whitespace-nowrap font-medium  dark:text-white ">
                   {item.name}
                 </Table.Cell>
 
@@ -69,12 +73,13 @@ const Appointment = () => {
           </Table.Body>
         </Table>
       </div>
-      <div className="py-5 flex justify-center ">
+      <div className="pt-5 flex justify-center ">
        
         <PrimaryButton
             font={"font-bold"}
             buttonText={"Send Interview Schedule"}
             onClick={handleSendEmails}
+            textColor={'text-white'}
           ></PrimaryButton>
       </div>
     </div>
