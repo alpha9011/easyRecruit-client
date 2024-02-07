@@ -12,105 +12,125 @@ import Candidates from "../DashboardLayout/DashboardPage/Candidates/Candidates";
 import MyJobs from "../DashboardLayout/DashboardPage/MyJobs/MyJobs";
 import PostJob from "../DashboardLayout/DashboardPage/PostJob/PostJob";
 import Circular from "../Page/Circular/Circular";
+// import ApplyForm from "../DashboardLayout/ApplyForm/ApplyForm";
+import InterViewSchedule from "../DashboardLayout/DashboardPage/InterViewSchedule/InterViewSchedule";
+import Appointment from "../DashboardLayout/DashboardPage/Appointment/appointment";
+
 import ApplyForm from "../Page/Circular/ApplyForm/ApplyForm";
-
-
-
-
 import Pricing from "../Page/Pricing/Pricing";
 import WhyEasyRecruit from "../Page/WhyEasyRecruit/WhyEasyRecruit";
 import CandidateForm from "../Page/Circular/ApplyForm/CandidateForm";
-import Payment from "../Payment/Payment";
 import TermsAndConditions from "../shared/Footer/TermsAndConditions";
 import PrivacyPolicy from "../shared/Footer/PrivacyPolicy";
+import PrivateRout from "./PrivateRout";
+
+import UpdateJob from "../Page/Circular/UpdateJob";
+import MemberShip from "../Page/Membership/Membership";
 
 
 export const router = createBrowserRouter([
-    {
+  {
+    path: "/",
+    element: <MainLayout />,
+    errorElement: <ErrorPage></ErrorPage>,
+    children: [
+      {
         path: "/",
-        element: <MainLayout />,
-        errorElement: <ErrorPage></ErrorPage>,
-        children: [
-            {
-                path: "/",
-                element: <Home />
-            },
-            {
-                path: "/login",
-                element: <Login />
-            },
-            {
-                path: "/register",
-                element: <Register />
-            },
-            {
-                path: "/about",
-                element: <AboutUs></AboutUs>
-            },
-            {
-                path: "/recruiting-software-capabilities",
-                element: <Capabilities></Capabilities>
-            },
-            {
-                path: "/circular",
-                element: <Circular></Circular>
-            },
-            {
-                path: "/jobdetails/:id",
-                element: <ApplyForm></ApplyForm>,
-                loader: ({ params }) => fetch(`http://localhost:5000/postjob/${params.id}`)
-            },
-            {
-                path: "/applyform/:id",
-                element: <CandidateForm></CandidateForm>,
-                loader: ({ params }) => fetch(`http://localhost:5000/postjob/${params.id}`)
-            },
-            {
-                path: "/price",
-                element: <Pricing></Pricing>
-            },
-            {
-                path: '/whyEasyRecruit',
-                element: <WhyEasyRecruit></WhyEasyRecruit>
-            },
-           
-            {
-                path: '/payments',
-                element: <Payment></Payment>
-            },
-            {
-                path: '/terms',
-                element: <TermsAndConditions></TermsAndConditions>
-            },
-            {
-                path: '/privacy',
-                element: <PrivacyPolicy></PrivacyPolicy>
-            },
-        ]
-    },
-    {
-        path: '/dashboard',
-        element: <Dashboard></Dashboard>,
-        children: [
-            {
-                path: 'dashboardHome',
-                element: <DashboardHome></DashboardHome>
-            },
-            {
-                path: 'candidates',
-                element: <Candidates></Candidates>
-            },
-            {
-                path: 'myjobs',
-                element: <MyJobs></MyJobs>
-            },
-            {
-                path: 'postjob',
-                element: <PostJob></PostJob>
-            },
-            
-
-        ]
-
-    }
-]) 
+        element: <Home />,
+      },
+      {
+        path: "/login",
+        element: <Login />,
+      },
+      {
+        path: "/register",
+        element: <Register />,
+      },
+      {
+        path: "/about",
+        element: <AboutUs></AboutUs>,
+      },
+      {
+        path: "/recruiting-software-capabilities",
+        element: <Capabilities></Capabilities>,
+      },
+      {
+        path: "/circular",
+        element: <Circular></Circular>,
+      },
+      {
+        path: "/jobdetails/:id",
+        element: <ApplyForm></ApplyForm>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/postjob/${params.id}`),
+      },
+      {
+        path: "/applyform/:id",
+        element: <CandidateForm></CandidateForm>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/postjob/${params.id}`),
+      },
+      {
+        path: "/updateJob/:id",
+        element: <UpdateJob></UpdateJob>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/postjob/${params.id}`),
+      },
+      {
+        path: "/price",
+        element: <Pricing></Pricing>,
+      },
+      {
+        path: "/whyEasyRecruit",
+        element: <WhyEasyRecruit></WhyEasyRecruit>,
+      },
+      {
+        path:"/membership",
+        element: <MemberShip></MemberShip>
+      },
+      {
+        path:"/terms",
+        element: <TermsAndConditions></TermsAndConditions>
+      },
+      {
+        path:"/privacy",
+        element: <PrivacyPolicy></PrivacyPolicy>
+      },
+    ],
+  },
+  {
+    path: "/dashboard",
+    element: (
+      <PrivateRout>
+        {" "}
+        <Dashboard></Dashboard>
+      </PrivateRout>
+    ),
+    children: [
+      {
+        path: "dashboardHome",
+        element: <DashboardHome></DashboardHome>,
+      },
+      {
+        path: "candidates",
+        element: <Candidates></Candidates>,
+      },
+      {
+        path: "myjobs",
+        element: <MyJobs></MyJobs>,
+      },
+      {
+        path: "postjob",
+        element: <PostJob></PostJob>,
+      },
+      {
+        path: "interviewSchedule",
+        element: <InterViewSchedule></InterViewSchedule>,
+      },
+      {
+        path: "appointment",
+        element: <Appointment></Appointment>,
+      },
+    ],
+  },
+]);

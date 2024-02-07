@@ -5,7 +5,7 @@ import { Link, NavLink } from 'react-router-dom';
 
 const DashboardNav = () => {
     return (
-        <div>
+        <div >
                 <Navbar fluid rounded className='px-10 '>
             <Navbar.Brand href="/">
                 <div className='flex flex-col items-center'>

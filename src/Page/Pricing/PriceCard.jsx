@@ -3,20 +3,19 @@ import { FaRegCircleUser } from "react-icons/fa6";
 import { BiBriefcaseAlt2 } from "react-icons/bi";
 import { GoDotFill } from "react-icons/go";
 import { GrFireball } from "react-icons/gr";
-import { useNavigate } from "react-router-dom";
-import useAuth from "../../Hooks/useAuth";
+import { Link } from "react-router-dom";
 
 const PriceCard = () => {
-    const navigate = useNavigate()
-    const { selectedPlan,
-        setSelectedPlan,
-        productLimit,
-        setProductLimit } = useAuth();
-    const handlePurchase = (plan, limit) => {
-        setSelectedPlan(plan);
-        setProductLimit(limit);
-        navigate('/payments')
-    };
+    // const navigate = useNavigate()
+    // const { selectedPlan,
+    //     setSelectedPlan,
+    //     productLimit,
+    //     setProductLimit } = useAuth();
+    // const handlePurchase = (plan, limit) => {
+    //     setSelectedPlan(plan);
+    //     setProductLimit(limit);
+    //     navigate('/payments')
+    // };
     return (
         <div>
             {/* All Pricing Cards */}
@@ -62,13 +61,14 @@ const PriceCard = () => {
                             </div>
                         </div>
                         {/* button */}
-                        <button
-                            onClick={() => handlePurchase(79, 3)}
+                  <Link to='/membership'>
+                  <button
                             type="button"
                             className="inline-flex w-full justify-center rounded-lg bg-cyan-500 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-white hover:text-cyan-500 border-2 duration-500 border-cyan-500 focus:outline-none focus:ring-4 focus:ring-cyan-200 dark:focus:ring-cyan-900"
                         >
                             Choose plan
                         </button>
+                  </Link>
                     </Card>
                 </div>
                 {/* Card 2 */}
@@ -125,13 +125,14 @@ const PriceCard = () => {
                             </div>
                         </div>
                         {/* button */}
-                        <button
-                        onClick={() => handlePurchase(269, 200)}
+                <Link to='/membership'>
+                <button
                             type="button"
                             className="inline-flex w-full justify-center rounded-lg bg-cyan-500 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-white hover:text-cyan-500 border-2 duration-500 border-cyan-500 focus:outline-none focus:ring-4 focus:ring-cyan-200 dark:focus:ring-cyan-900"
                         >
                             Choose plan
                         </button>
+                </Link>
                     </Card>
                 </div>
                 {/* card 3 */}
@@ -192,13 +193,14 @@ const PriceCard = () => {
                             </div>
                         </div>
                         {/* button */}
-                        <button
-                        onClick={() => handlePurchase(420, 1000 )}
+                      <Link to='/membership'>
+                      <button
                             type="button"
                             className="inline-flex w-full justify-center rounded-lg bg-cyan-500 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-white hover:text-cyan-500 border-2 duration-500 border-cyan-500 focus:outline-none focus:ring-4 focus:ring-cyan-200 dark:focus:ring-cyan-900"
                         >
                             Choose plan
                         </button>
+                      </Link>
                     </Card>
                 </div>
             </div>

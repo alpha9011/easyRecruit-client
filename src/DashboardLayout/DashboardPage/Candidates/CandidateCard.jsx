@@ -1,9 +1,12 @@
-import { Button, Card, Dropdown } from "flowbite-react";
+import { Avatar, Button, Card, Dropdown, Rating } from "flowbite-react";
 import Swal from "sweetalert2";
-
-const CandidateCard = (candidate) => {
+import { ImBin } from "react-icons/im";
+import PropTypes  from 'prop-types'
+import { IoLocationOutline } from "react-icons/io5";
+import { FaMoneyCheckDollar } from "react-icons/fa6";
+const CandidateCard = ({candidate,candidates,setCandidate}) => {
     console.log(candidate);
-    const { name, address, salary, phone, email, resume, coverLetter, _id } = candidate.candidate || {};
+    const { name, address, salary, phone, email, resume, coverLetter, _id, photo, language } = candidate|| {};
     console.log(name);
     const handleDelete = _id => {
         console.log(_id);
@@ -32,41 +35,49 @@ const CandidateCard = (candidate) => {
                         }
                     })
             }
+            const remaining = candidates.filter( candidate => candidate._id !== _id)
+            setCandidate(remaining)
         });
     }
     return (
         <div className="flex justify-center border">
             <Card className="max-w-xs border transition-transform hover:border-cyan-200 duration-500 transform origin-center hover:translate-y-[-.5rem]">
-                <div className="flex justify-end px-4">
-                    <Dropdown inline label="">
-                        <Dropdown.Item>
-                            <a
-                                href="#"
-                                className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
-                            >
-                                Edit
-                            </a>
-                        </Dropdown.Item>
-                        <Dropdown.Item>
-                            <a
-                                href="#"
-                                className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
-                            >
-                                Export Data
-                            </a>
-                        </Dropdown.Item>
-                        <Dropdown.Item>
-                            <Button
-                                onClick={() => handleDelete(_id)}
-                                color="failure" className="w-full">Delete</Button>
-                        </Dropdown.Item>
-                    </Dropdown>
+                {/* <img src={photo} alt="candidate Img" className="w-16 h-16 rounded" /> */}
+                <div className="flex justify-between items-center gap-1 mb-4">
+                    <Avatar img={photo} size="lg" rounded status="online" statusPosition="bottom-right" />
+                    <div>
+                        <h5 className="mb-2 text-xl font-semibold text-gray-900 dark:text-white">{name}</h5>
+                        <Rating>
+                            <Rating.Star />
+                            <Rating.Star />
+                            <Rating.Star />
+                            <Rating.Star />
+                            <Rating.Star />
+                        </Rating>
+                    </div>
+                    <div className="flex justify-end">
+                        <Dropdown inline label="" placement="bottom">
+                            <Dropdown.Item>
+                                <Button
+                                    onClick={() => handleDelete(_id)}
+                                    color="failure" className=""><ImBin /></Button>
+                            </Dropdown.Item>
+                        </Dropdown>
+                    </div>
                 </div>
-                <h5 className="mb-2 text-3xl font-bold text-gray-900 dark:text-white">Name: {name}</h5>
-                <p className="mb-2 text-base text-gray-500 dark:text-gray-400 sm:text-lg">Email: {email}</p>
-                <p className="mb-2 text-base text-gray-500 dark:text-gray-400 sm:text-lg">Phone: {phone}</p>
-                <p className="mb-2 text-base text-gray-500 dark:text-gray-400 sm:text-lg">Address:{address}</p>
-                <p className="mb-2 text-base text-gray-500 dark:text-gray-400 sm:text-lg">Expected Salary: {salary}</p>
+                <p className="text-base text-gray-500">Email: {email}</p>
+                <p className="text-base text-gray-500">Phone: {phone}</p>
+                <p className="text-base text-gray-500">Languages: {language}</p>
+                <div className="flex justify-between items-center border-b-2 pb-5">
+                    <div className="flex items-center text-gray-500">
+                        <IoLocationOutline />
+                        <p className="ml-1"> {address}</p>
+                    </div>
+                    <div className="flex items-center text-gray-500">
+                        <FaMoneyCheckDollar />
+                        <p className="ml-1"> {salary}</p>
+                    </div>
+                </div>
                 <div className="items-center justify-center space-y-4 sm:flex sm:space-x-4 sm:space-y-0">
                     <a
                         href={resume}                    >
@@ -92,5 +103,11 @@ const CandidateCard = (candidate) => {
         </div>
     );
 };
+
+CandidateCard.propTypes = {
+    candidate:PropTypes.object,
+    candidates:PropTypes.object,
+    setCandidate:PropTypes.object,
+}
 
 export default CandidateCard;

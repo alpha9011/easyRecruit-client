@@ -21,7 +21,7 @@ const CandidateForm = () => {
                 Swal.fire({
                     position: "top-end",
                     icon: "success",
-                    title: "Your work has been saved",
+                    title: "Applied Successfully",
                     showConfirmButton: false,
                     timer: 1500
                 });
@@ -29,7 +29,7 @@ const CandidateForm = () => {
     }
     return (
         <div className="px-10">
-            <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+            <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 max-w-screen-md mx-auto bg-green-50 p-5 rounded-md">
 
                 <div>
                     <label >Full Name<span className="text-red-600">*</span></label>
@@ -47,13 +47,18 @@ const CandidateForm = () => {
 
                 </div >
                 <div >
+                    <label>Photo URL<span className="text-red-600">*</span></label>
+                    <input type="text" {...register("photo", { required: true })} className="mt-1 input input-bordered w-full" placeholder="Your photo URL" required />
+
+                </div >
+                <div >
                     <label>Full Address<span className="text-red-600">*</span></label>
                     <input type="text" {...register("address", { required: true })} className="mt-1 input input-bordered w-full" placeholder="Full Address" required />
 
                 </div >
                 <div >
                     <label>Country<span className="text-red-600">*</span></label>
-                    <input type="text" {...register("address", { required: true })} className="mt-1 input input-bordered w-full" placeholder="Country" required />
+                    <input type="text" {...register("country", { required: true })} className="mt-1 input input-bordered w-full" placeholder="Country" required />
 
                 </div >
                 <div >
@@ -83,7 +88,7 @@ const CandidateForm = () => {
                 <div >
                     <label>Gender<span className="text-red-600">*</span></label>
                     <select {...register("gender")} className="mt-1 input input-bordered w-full">
-                        <option selected disabled>select a type</option>
+
                         <option value="male">Male</option>
                         <option value="female">Female</option>
                         <option value="others">Others</option>

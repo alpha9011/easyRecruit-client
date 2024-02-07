@@ -1,9 +1,12 @@
 import { Button } from "flowbite-react";
 import EasyATSBannerImg from "../../../../public/Image/easyATS.jpg";
-
+//Aos Animation
+import AOS from "aos";
+import "aos/dist/aos.css";
+AOS.init();
 const EasyATSBanner = () => {
   return (
-    <div className="relative ">
+    <div className="relative " >
       <div className="absolute w-full md:w-1/2 grid justify-center items-center top-0 bottom-0 p-5">
         <div className="lg:w-1/2 mx-auto space-y-5 grid-flow-col text-center z-10 mb-20">
           {/* <img src={EasyATSBannerIcons} alt="" /> */}
@@ -11,12 +14,11 @@ const EasyATSBanner = () => {
             “Lightweight and Easy ATS”
           </h3>
           <p className="leading-7 text-wrap text-white font-bold">
-            EasyRecruit is perfect for  companies. I love that you can see when
+            EasyRecruit is perfect for companies. I love that you can see when
             an email was sent and opened by the candidate. I also like that it
             can integrate with other vendors to automatically feed into a
             background check company without having to fill anything out!”
           </p>
-        
         </div>
       </div>
 
