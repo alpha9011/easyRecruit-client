@@ -46,11 +46,8 @@ const InterViewSchedule = () => {
   };
   return (
     <>
-      <div className="  p-5 bg-opacity-10 ">
-        <h2
-          className="text-center font-bold text-3xl text-white opacity-90 my-3"
-         
-        >
+      <div >
+        <h2 className="text-center font-bold text-3xl text-white opacity-90 my-3">
           Interview Schedule
         </h2>
         <Calendar
@@ -61,9 +58,9 @@ const InterViewSchedule = () => {
           style={{ height: 500 }}
           selectable
           onSelectSlot={handleSelectSlot}
+          className="bg-white rounded-xl md:p-3 font-bold"
         />
       </div>
-      
     </>
   );
 };

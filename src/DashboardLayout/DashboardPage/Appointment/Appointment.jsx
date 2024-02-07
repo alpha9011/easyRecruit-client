@@ -33,12 +33,12 @@ const Appointment = () => {
   
 
   return ( 
-    <div>
-      <h2 className="text-center font-bold text-3xl text-white opacity-90 my-3" 
+    <div >
+      <h2 className="text-center font-bold text-3xl my-3 text-white" 
 
       >Appointment</h2>
-      <div className="overflow-x-auto ">
-        <Table  className="bg-opacity-10 text-white">
+      <div className="overflow-x-auto border rounded-xl">
+        <Table >
           <Table.Head className="bg-opacity-10 ">
             <Table.HeadCell>Name</Table.HeadCell>
             <Table.HeadCell>Email</Table.HeadCell>
@@ -51,7 +51,7 @@ const Appointment = () => {
           <Table.Body className="divide-y ">
             {appointmentData.map((item) => (
               <Table.Row
-                className=" dark:border-gray-700 dark:bg-gray-800 text-white"
+                className=" dark:border-gray-700 dark:bg-gray-800     text-black"
                 key={item?.id}
               >
                 <Table.Cell className="whitespace-nowrap font-medium  dark:text-white ">
@@ -60,14 +60,7 @@ const Appointment = () => {
 
                 <Table.Cell>{item.email}</Table.Cell>
                 <Table.Cell>{item.number}</Table.Cell>
-                {/* <Table.Cell>
-                  <a
-                    href="#"
-                    className="font-medium text-cyan-600 hover:underline dark:text-cyan-500"
-                  >
-                    Edit
-                  </a>
-                </Table.Cell> */}
+             
               </Table.Row>
             ))}
           </Table.Body>
