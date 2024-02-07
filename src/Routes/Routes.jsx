@@ -24,6 +24,7 @@ import PrivateRout from "./PrivateRout";
 
 import UpdateJob from "../Page/Circular/UpdateJob";
 import MemberShip from "../Page/Membership/Membership";
+import ContactUs from "../Page/ContactUs/ContactUs";
 
 
 export const router = createBrowserRouter([
@@ -47,6 +48,10 @@ export const router = createBrowserRouter([
       {
         path: "/about",
         element: <AboutUs></AboutUs>,
+      },
+      {
+        path: "/contact",
+        element: <ContactUs></ContactUs>
       },
       {
         path: "/recruiting-software-capabilities",
@@ -83,7 +88,7 @@ export const router = createBrowserRouter([
         element: <WhyEasyRecruit></WhyEasyRecruit>,
       },
       {
-        path:"/membership",
+        path: "/membership",
         element: <MemberShip></MemberShip>
       }
     ],
