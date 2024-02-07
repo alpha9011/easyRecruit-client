@@ -1,15 +1,15 @@
 import { Calendar, momentLocalizer } from "react-big-calendar";
 import moment from "moment";
 import { useState } from "react";
-import { Button, Modal } from "flowbite-react";
+
 
 const localizer = momentLocalizer(moment); // or globalizeLocalizer
 
 const InterViewSchedule = () => {
-  const [openModal, setOpenModal] = useState(false);
-  const [selectedData, setSelectedData] = useState({});
 
-  const [selectedSlotStyle, setSelectedSlotStyle] = useState({});
+  // const [selectedData, setSelectedData] = useState({});
+
+  // const [selectedSlotStyle, setSelectedSlotStyle] = useState({});
 
   const [events, setEvents] = useState([
     {
@@ -29,28 +29,25 @@ const InterViewSchedule = () => {
     },
   ]);
 
-  const handleSelectSlot = ({ start, end }) => {
-    setSelectedSlotStyle({
-      backgroundColor: "rgba(0, 123, 255, 0.5)", // Adjust the color as needed
-      borderRadius: "3px",
-    });
+  // const handleSelectSlot = ({ start, end }) => {
+  //   setSelectedSlotStyle({
+  //     backgroundColor: "rgba(0, 123, 255, 0.5)", // Adjust the color as needed
+  //     borderRadius: "3px",
+  //   });
 
-    setSelectedData({ start, end });
-  };
-  const handleSaveEvent = (title) => {
-    const newEvent = { title, ...selectedData };
-    setEvents([...events, newEvent]);
+  //   setSelectedData({ start, end });
+  // };
+  // const handleSaveEvent = (title) => {
+  //   const newEvent = { title, ...selectedData };
+  //   setEvents([...events, newEvent]);
 
-    // Handle the selected data as needed
-    console.log("Selected Event:", newEvent);
-  };
+  //   // Handle the selected data as needed
+  //   console.log("Selected Event:", newEvent);
+  // };
   return (
     <>
-      <div className="  p-5 bg-opacity-10 ">
-        <h2
-          className="text-center font-bold text-3xl text-white opacity-90 my-3"
-         
-        >
+      <div >
+        <h2 className="text-center font-bold text-3xl text-white opacity-90 my-3">
           Interview Schedule
         </h2>
         <Calendar
@@ -60,10 +57,10 @@ const InterViewSchedule = () => {
           endAccessor="end"
           style={{ height: 500 }}
           selectable
-          onSelectSlot={handleSelectSlot}
+          // onSelectSlot={handleSelectSlot}
+          className="bg-white rounded-xl md:p-3 font-bold"
         />
       </div>
-      
     </>
   );
 };
