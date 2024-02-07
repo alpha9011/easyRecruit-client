@@ -3,6 +3,7 @@ import { FaRegCircleUser } from "react-icons/fa6";
 import { BiBriefcaseAlt2 } from "react-icons/bi";
 import { GoDotFill } from "react-icons/go";
 import { GrFireball } from "react-icons/gr";
+import { Link } from "react-router-dom";
 
 const PriceCard = () => {
     return (
@@ -50,12 +51,14 @@ const PriceCard = () => {
                             </div>
                         </div>
                         {/* button */}
-                        <button
+                  <Link to='/membership'>
+                  <button
                             type="button"
                             className="inline-flex w-full justify-center rounded-lg bg-cyan-500 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-white hover:text-cyan-500 border-2 duration-500 border-cyan-500 focus:outline-none focus:ring-4 focus:ring-cyan-200 dark:focus:ring-cyan-900"
                         >
                             Choose plan
                         </button>
+                  </Link>
                     </Card>
                 </div>
                 {/* Card 2 */}
@@ -112,12 +115,14 @@ const PriceCard = () => {
                             </div>
                         </div>
                         {/* button */}
-                        <button
+                <Link to='/membership'>
+                <button
                             type="button"
                             className="inline-flex w-full justify-center rounded-lg bg-cyan-500 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-white hover:text-cyan-500 border-2 duration-500 border-cyan-500 focus:outline-none focus:ring-4 focus:ring-cyan-200 dark:focus:ring-cyan-900"
                         >
                             Choose plan
                         </button>
+                </Link>
                     </Card>
                 </div>
                 {/* card 3 */}
@@ -176,12 +181,14 @@ const PriceCard = () => {
                             </div>
                         </div>
                         {/* button */}
-                        <button
+                      <Link to='/membership'>
+                      <button
                             type="button"
                             className="inline-flex w-full justify-center rounded-lg bg-cyan-500 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-white hover:text-cyan-500 border-2 duration-500 border-cyan-500 focus:outline-none focus:ring-4 focus:ring-cyan-200 dark:focus:ring-cyan-900"
                         >
                             Choose plan
                         </button>
+                      </Link>
                     </Card>
                 </div>
             </div>
