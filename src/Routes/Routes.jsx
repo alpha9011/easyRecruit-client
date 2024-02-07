@@ -21,6 +21,8 @@ import Pricing from "../Page/Pricing/Pricing";
 import WhyEasyRecruit from "../Page/WhyEasyRecruit/WhyEasyRecruit";
 import CandidateForm from "../Page/Circular/ApplyForm/CandidateForm";
 import Payment from "../Payment/Payment";
+import TermsAndConditions from "../shared/Footer/TermsAndConditions";
+import PrivacyPolicy from "../shared/Footer/PrivacyPolicy";
 
 
 export const router = createBrowserRouter([
@@ -70,7 +72,20 @@ export const router = createBrowserRouter([
             {
                 path: '/whyEasyRecruit',
                 element: <WhyEasyRecruit></WhyEasyRecruit>
-            }
+            },
+           
+            {
+                path: '/payments',
+                element: <Payment></Payment>
+            },
+            {
+                path: '/terms',
+                element: <TermsAndConditions></TermsAndConditions>
+            },
+            {
+                path: '/privacy',
+                element: <PrivacyPolicy></PrivacyPolicy>
+            },
         ]
     },
     {
@@ -93,10 +108,7 @@ export const router = createBrowserRouter([
                 path: 'postjob',
                 element: <PostJob></PostJob>
             },
-            {
-                path: 'payments',
-                element: <Payment></Payment>
-            },
+            
 
         ]
 

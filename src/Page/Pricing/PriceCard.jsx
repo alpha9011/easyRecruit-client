@@ -15,7 +15,7 @@ const PriceCard = () => {
     const handlePurchase = (plan, limit) => {
         setSelectedPlan(plan);
         setProductLimit(limit);
-        navigate('/')
+        navigate('/payments')
     };
     return (
         <div>
@@ -193,7 +193,7 @@ const PriceCard = () => {
                         </div>
                         {/* button */}
                         <button
-                        onClick={() => handlePurchase(420, )}
+                        onClick={() => handlePurchase(420, 1000 )}
                             type="button"
                             className="inline-flex w-full justify-center rounded-lg bg-cyan-500 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-white hover:text-cyan-500 border-2 duration-500 border-cyan-500 focus:outline-none focus:ring-4 focus:ring-cyan-200 dark:focus:ring-cyan-900"
                         >

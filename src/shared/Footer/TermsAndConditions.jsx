@@ -1,5 +1,3 @@
-
-
 const TermsAndConditions = () => {
   return (
     <div className="container mx-auto p-4">
