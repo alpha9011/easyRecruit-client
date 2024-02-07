@@ -6,8 +6,8 @@ import Navbars from "../shared/Navbars/Navbars"
 const MainLayout = () => {
     return (
         <div>
-           <Navbars></Navbars>
-            <Outlet/>
+            <Navbars></Navbars>
+            <Outlet />
         </div>
     );
 };
