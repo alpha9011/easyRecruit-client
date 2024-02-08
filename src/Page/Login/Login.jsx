@@ -58,8 +58,8 @@ const Login = () => {
 
 
             })
-            .catch((error) => {
-                alert(error.message);
+            .catch(() => {
+              
 
                 Toastify({
                     text: "Login failed",

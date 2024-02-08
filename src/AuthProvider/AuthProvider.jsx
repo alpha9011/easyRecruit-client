@@ -1,29 +1,25 @@
-import { FacebookAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
+import { GoogleAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
 import auth from "../firebase/firebase.config";
 
 
 export const AuthContext = createContext(null)
 
-const AuthProvider = ({children}) => {
-
-
+// eslint-disable-next-line react/prop-types
+const AuthProvider = ({ children }) => {
     const [user, setUser] = useState()
-    const[loader, setLoader] = useState(true)
+    const [loader, setLoader] = useState(true)
+    const [selectedPlan, setSelectedPlan] = useState(null);
+    const [productLimit, setProductLimit] = useState(0);
 
-    
+
     //signInWithGoogle
     const googleProvider = new GoogleAuthProvider();
-     const signInWithGoogle  = () => {
+    const signInWithGoogle = () => {
         setLoader(true)
         return signInWithPopup(auth, googleProvider)
     }
-    //signInWithGoogle
-    const facebookProvider = new FacebookAuthProvider();
-     const signInWithFacebook = () => {
-        setLoader(true)
-        return signInWithPopup(auth, facebookProvider)
-    }
+   
 
     // create user 
     const createUser = (email, password) => {
@@ -40,46 +36,48 @@ const AuthProvider = ({children}) => {
     }
 
     // log out 
-    const logOut = ()=> {
+    const logOut = () => {
         setLoader(true)
         return signOut(auth)
-        
+
     }
 
-// update 
-const handleUpdateProfile = (name, photo) => {
-    return updateProfile(auth.currentUser, {
-        displayName: name, photoURL: photo
-    })
-}
 
     // save user 
-    useEffect(()=> {
+    useEffect(() => {
         const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
             setUser(currentUser)
+            // console.log("currentUser", currentUser);
             setLoader(false)
         });
 
-        return ()=> {
+        return () => {
             unSubscribe()
         }
 
 
-    } ,[])
+    }, [])
 
     // forgot pass 
     const forgotPass = (email) => {
         setLoader(true)
         return sendPasswordResetEmail(auth, email)
- 
+
     }
 
-console.log(user);
+    // console.log(user);
 
     const authInfo = {
-        signInWithGoogle, createUser, login,logOut, user, loader,handleUpdateProfile, forgotPass,signInWithFacebook
-    }
-
+        signInWithGoogle,
+        createUser,
+        login, logOut,
+        user,
+        loader,
+        forgotPass,
+        selectedPlan,
+        setSelectedPlan,
+        productLimit,
+        setProductLimit}
 
     return (
         <div>
