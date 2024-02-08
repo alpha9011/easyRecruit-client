@@ -10,7 +10,7 @@ import PrimaryButton from "../../../shared/PrimaryButton/PrimaryButton";
 const Banner = () => {
 
   return (
-    <div className="pt-10 ">
+    <div className="pt-10 bg-gradient-to-br from-[#191970] via-[#4169e1] to-[#6a5acd]">
       {/* Banner section */}
       <div className="container mx-auto flex flex-col-reverse md:flex-row gap-10 items-center h-[80vh] md:h-[70vh] w-full p-5 md:pb-28 ">
         <div className="md:w-1/2">

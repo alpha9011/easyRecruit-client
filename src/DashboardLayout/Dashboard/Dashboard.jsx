@@ -9,7 +9,7 @@ import {
   AiOutlineHome,
   AiOutlineSchedule,
 } from "react-icons/ai";
-
+import { LuLayoutDashboard } from "react-icons/lu";
 // drawer component
 import Drawer from "react-modern-drawer";
 import "react-modern-drawer/dist/index.css";
@@ -61,7 +61,6 @@ const Dashboard = () => {
         </NavLink>
       </li>
     </div>
-
     :
    <div>
 
@@ -69,6 +68,7 @@ const Dashboard = () => {
       <li>
         <NavLink to="/dashboard/dashboardHome" className={navLinkStyle}>
           <span className="flex justify-center items-center gap-2">
+            <LuLayoutDashboard/>
             Dashboard
           </span>
         </NavLink>
