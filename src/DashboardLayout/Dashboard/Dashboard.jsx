@@ -168,6 +168,7 @@ const Dashboard = () => {
                 data-aos-duration="2000"
                 data-aos-delay="1500"
               />
+              
               <Outlet></Outlet>
             </div>
           </div>
