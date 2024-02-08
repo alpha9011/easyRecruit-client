@@ -36,7 +36,7 @@ const Navbars = () => {
 
             <div className="text-center ">
               <Navbar.Link>
-                <NavLink to="/dashboard/dashboardHome" className="text-lg">
+                <NavLink to="/dashboard" className="text-lg">
                   Dashboard
                 </NavLink>
               </Navbar.Link>
@@ -72,16 +72,15 @@ const Navbars = () => {
         <Navbar.Link>
           <NavLink to="/whyEasyRecruit">Why Us</NavLink>
         </Navbar.Link>
-        {/* <Navbar.Link>
-                    <NavLink to='/contact'>Contact</NavLink>
-                </Navbar.Link> */}
+        <Navbar.Link>
+          <NavLink to='/contact'>Contact</NavLink>
+        </Navbar.Link>
         <Navbar.Link>
           <NavLink to="/register">Register</NavLink>
         </Navbar.Link>
         <Navbar.Link>
           <NavLink to="/circular">Circular</NavLink>
         </Navbar.Link>
-  
       </Navbar.Collapse>
     </Navbar>
   );

@@ -12,9 +12,41 @@ const PostJob = () => {
     const { register, handleSubmit, reset } = useForm()
     const { user } = useContext(AuthContext)
     console.log(user?.email);
+
+//     const currentDate = new Date()
+//     const postdate = currentDate.toLocaleDateString();
+// console.log(postdate)
+
+const date = new Date();
+const options = { year: 'numeric', month: '2-digit', day: '2-digit' };
+const postDate = date.toLocaleDateString('en-US', options);
+
+console.log(postDate);
+
+
+
     const onSubmit = (data) => {
         console.log(data);
-        axiospublic.post('/postjob', data)
+      const postjob = {
+        title:data.title,
+        location:data.location,
+        email:user?.email,
+        companyName:data.companyName,
+        logo:data.logo,
+        aboutCompany:data.aboutCompany,
+        positionSummary:data.positionSummary,
+        responsibilities:data.responsibilities,
+        qualifications:data.qualifications,
+        education:data.education,
+        benifits:data.benifits,
+        jobType:data.jobType,
+        experience:data.experience,
+        salary:data.salary,
+        postDate:postDate,
+        deadline:data.date   
+            }
+      console.log(postjob);
+        axiospublic.post('/postjob', postjob)
             .then(res => {
                 console.log(res.data);
                 if (res.data.insertedId) {
@@ -134,8 +166,8 @@ const PostJob = () => {
 
                         </div >
                         <div >
-                            <label>Tags(optional)</label>
-                            <input type="text" {...register("tags")} className="mt-1 input border-none w-full" placeholder="Figma, Ui/Ux, Sketch " />
+                            <label>Application Deadline</label>
+                            <input type="date" {...register("date")} className="mt-1 input border-none w-full" placeholder="" />
                         </div>
                     </div>
 

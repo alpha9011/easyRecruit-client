@@ -6,6 +6,16 @@ import { GrFireball } from "react-icons/gr";
 import { Link } from "react-router-dom";
 
 const PriceCard = () => {
+    // const navigate = useNavigate()
+    // const { selectedPlan,
+    //     setSelectedPlan,
+    //     productLimit,
+    //     setProductLimit } = useAuth();
+    // const handlePurchase = (plan, limit) => {
+    //     setSelectedPlan(plan);
+    //     setProductLimit(limit);
+    //     navigate('/payments')
+    // };
     return (
         <div>
             {/* All Pricing Cards */}
@@ -137,6 +147,8 @@ const PriceCard = () => {
                             <span className="text-7xl font-semibold italic tracking-tight">420</span>
                             <span className="ml-1 font-normal text-gray-500 dark:text-gray-400">/month <p>on an annual plan</p></span>
                         </div>
+
+
                         {/* border */}
                         <div className="bg-gradient-to-r from-[#2379d0] to-[#01addf] p-[2.6px] my-6"></div>
                         {/* features in box */}
