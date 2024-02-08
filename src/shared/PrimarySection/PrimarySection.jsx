@@ -1,8 +1,6 @@
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-AOS.init();
+
 const PrimarySection = ({
   subTitle,
   title,
@@ -12,18 +10,13 @@ const PrimarySection = ({
   image,
   alt,
   imgPosition,
-  aosImage="fade-up",
-  aosDurationImage="2000",
-  aosContent="fade-up",
-  aosDurationContent="2000"
+  aosImage="zoom-in",
+  aosDurationImage="1000",
+  aosContent="zoom-in",
+  aosDurationContent="1000"
 }) => {
 
-  // const imgAlign =
-  //   imgPosition === "left"
-  //     ? "flex-row"
-  //     : imgPosition === "right"
-  //     ? "flex-row-reverse"
-  //     : "";
+
 
   return (
     <div className="p-5 my-10 container mx-auto" >

@@ -10,12 +10,12 @@ import PrimaryButton from "../../../shared/PrimaryButton/PrimaryButton";
 const Banner = () => {
 
   return (
-    <div className="pt-10 bg-gradient-to-br from-[#191970] via-[#4169e1] to-[#6a5acd]">
+    <div className="pt-10 ">
       {/* Banner section */}
       <div className="container mx-auto flex flex-col-reverse md:flex-row gap-10 items-center h-[80vh] md:h-[70vh] w-full p-5 md:pb-28 ">
         <div className="md:w-1/2">
           <motion.h2
-            className=" text-center text-4xl md:text-5xl lg:text-6xl font-bold text-wrap"
+            className=" text-center text-4xl md:text-5xl lg:text-6xl font-bold text-wrap "
             animate={{ x: [-1000, 100, 0] }}
             transition={{
               duration: 2,
@@ -45,7 +45,7 @@ const Banner = () => {
             </Link> */}
 
            
-            <div className="border"></div>
+           
           </div>
         </div>
         <div className=" md:w-1/2 flex justify-center items-center w-64 ">
