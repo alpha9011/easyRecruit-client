@@ -3,22 +3,33 @@ import { FaRegCircleUser } from "react-icons/fa6";
 import { BiBriefcaseAlt2 } from "react-icons/bi";
 import { GoDotFill } from "react-icons/go";
 import { GrFireball } from "react-icons/gr";
+import { Link } from "react-router-dom";
 
 const PriceCard = () => {
+    // const navigate = useNavigate()
+    // const { selectedPlan,
+    //     setSelectedPlan,
+    //     productLimit,
+    //     setProductLimit } = useAuth();
+    // const handlePurchase = (plan, limit) => {
+    //     setSelectedPlan(plan);
+    //     setProductLimit(limit);
+    //     navigate('/payments')
+    // };
     return (
         <div>
             {/* All Pricing Cards */}
-            <div className="w-full grid grid-cols-1 gap-5 lg:grid-cols-3 justify-center items-center max-w-screen-xl mx-auto">
+            <div className="w-full grid grid-cols-1 gap-8 lg:grid-cols-2 xl:grid-cols-3 justify-center items-center max-w-screen-xl mx-auto">
                 {/* Card 1 */}
-                <div className="flex justify-center">
-                    <Card className='max-w-sm h-[710px] transition-transform duration-500 transform origin-center hover:translate-y-[-1rem]'>
+                <div className="flex justify-center" data-aos="fade-up-right" data-aos-duration="1000">
+                    <Card className='max-w-sm h-[710px] transition-transform duration-500 transform origin-center hover:translate-y-[-2rem]'>
                         {/* name */}
                         <h2 className="text-black text-2xl -mb-3 font-bold -mt-14">Hero</h2>
                         <h5 className="mb-4 text-gray-500 dark:text-gray-400">Intuitive Recruiting for Small Teams</h5>
                         {/* pricing */}
                         <div className="flex items-baseline text-gray-900 dark:text-white">
                             <span className="text-3xl font-semibold">$</span>
-                            <span className="text-7xl font-semibold italic tracking-tight">75</span>
+                            <span className="text-7xl font-semibold italic tracking-tight">79</span>
                             <span className="ml-1 font-normal text-gray-500 dark:text-gray-400">/month <p>when billed annually*</p></span>
                         </div>
                         {/* border */}
@@ -50,17 +61,19 @@ const PriceCard = () => {
                             </div>
                         </div>
                         {/* button */}
-                        <button
+                  <Link to='/membership'>
+                  <button
                             type="button"
                             className="inline-flex w-full justify-center rounded-lg bg-cyan-500 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-white hover:text-cyan-500 border-2 duration-500 border-cyan-500 focus:outline-none focus:ring-4 focus:ring-cyan-200 dark:focus:ring-cyan-900"
                         >
                             Choose plan
                         </button>
+                  </Link>
                     </Card>
                 </div>
                 {/* Card 2 */}
-                <div className="flex justify-center">
-                    <Card className='max-w-sm h-[710px] transition-transform duration-500 transform origin-center hover:translate-y-[-1rem]'>
+                <div className="flex justify-center" data-aos="fade-up" data-aos-duration="1000">
+                    <Card className='max-w-sm h-[710px] transition-transform duration-500 transform origin-center hover:translate-y-[-2rem]'>
                         {/* name */}
                         <div className="flex justify-between">
                             <h2 className="text-black text-2xl -mb-3 font-bold">Plus</h2>
@@ -112,17 +125,19 @@ const PriceCard = () => {
                             </div>
                         </div>
                         {/* button */}
-                        <button
+                <Link to='/membership'>
+                <button
                             type="button"
                             className="inline-flex w-full justify-center rounded-lg bg-cyan-500 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-white hover:text-cyan-500 border-2 duration-500 border-cyan-500 focus:outline-none focus:ring-4 focus:ring-cyan-200 dark:focus:ring-cyan-900"
                         >
                             Choose plan
                         </button>
+                </Link>
                     </Card>
                 </div>
                 {/* card 3 */}
-                <div className="flex justify-center">
-                    <Card className='w-96 h-[710px] transition-transform duration-500 transform origin-center hover:translate-y-[-1rem]'>
+                <div className="flex justify-center" data-aos="fade-up-left" data-aos-duration="1000">
+                    <Card className='w-96 h-[710px] transition-transform duration-500 transform origin-center hover:translate-y-[-2rem]'>
                         {/* name */}
                         <h2 className="text-black text-2xl -mb-3 font-bold">Pro</h2>
                         <h5 className="mb-4 text-gray-500 dark:text-gray-400">Streamline Every Stage</h5>
@@ -132,6 +147,8 @@ const PriceCard = () => {
                             <span className="text-7xl font-semibold italic tracking-tight">420</span>
                             <span className="ml-1 font-normal text-gray-500 dark:text-gray-400">/month <p>on an annual plan</p></span>
                         </div>
+
+
                         {/* border */}
                         <div className="bg-gradient-to-r from-[#2379d0] to-[#01addf] p-[2.6px] my-6"></div>
                         {/* features in box */}
@@ -176,18 +193,20 @@ const PriceCard = () => {
                             </div>
                         </div>
                         {/* button */}
-                        <button
+                      <Link to='/membership'>
+                      <button
                             type="button"
                             className="inline-flex w-full justify-center rounded-lg bg-cyan-500 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-white hover:text-cyan-500 border-2 duration-500 border-cyan-500 focus:outline-none focus:ring-4 focus:ring-cyan-200 dark:focus:ring-cyan-900"
                         >
                             Choose plan
                         </button>
+                      </Link>
                     </Card>
                 </div>
             </div>
 
             {/* Buttons */}
-            <div className="w-full flex flex-col justify-center items-center gap-5 my-5">
+            <div className="w-full flex flex-col justify-center items-center gap-5 my-16" data-aos="fade-up" data-aos-duration="1000">
                 <p className="text-2xl">Let’s transform how you hire.</p>
                 <div className="flex gap-3">
                     <button

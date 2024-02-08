@@ -31,9 +31,9 @@ const GoogleLogin = () => {
     return (
         <div>
             <Link onClick={handleGoogleLogin}>
-                <div className="flex items-center gap-2 justify-center border shadow-xl px-4 py-2">
+                <div className="flex items-center justify-start gap-2 mb-2 rounded hover:bg-gray-200 px-4 py-2 ">
+                    <p className=" border-r-2 pr-2 ">Or, Sign in with...</p>
                     <FcGoogle className="text-4xl" />
-                    <p className="text-lg">Continue with Google</p>
                 </div>
 
             </Link>
