@@ -9,7 +9,7 @@ const HrSystems = () => {
 
   const title = "Integrate Your HR Technology with Easy Recruiting Software ";
   const content =
-    " EasyRecruit offers direct integrations with leading easy tech tools to strengthen your efforts and connect data you need to succeed.";
+    " EasyRecruit enhances your recruitment capabilities by seamlessly integrating with a variety of leading easy tech tools. This comprehensive integration ensures you have the connectivity and data insights needed to optimize your recruitment efforts for success.";
 
   const linkText = "View EasyRecruit Marketplace ";
   const linkUrl = "";
@@ -25,7 +25,7 @@ const HrSystems = () => {
         >
           <div className="md:w-1/2" data-aos="fade-up"  data-aos-duration="2000"  >
             <img
-              className="w-full md:w-96 lg:w-[700px]"
+              className=" w-full "
               src={hrSystemImg}
               alt={"easyRecruit"}
             />

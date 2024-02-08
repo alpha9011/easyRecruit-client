@@ -21,7 +21,7 @@ const MakingHiresBanner = () => {
           <div className="flex justify-center gap-5 items-center">
            
             <PrimaryButton  buttonText={'Watch Demo'} textColor={'text-white'} font={'font-bold'} hoverTextColor={'text-black'} hover={'hover:text-black'}> </PrimaryButton>
-            <Link className="text-sky-500 hover:border-b">
+            <Link className="text-white hover:border-b">
                  Try EasyRecruit Free
             </Link>
           </div>
@@ -34,7 +34,7 @@ const MakingHiresBanner = () => {
         src={hireBannerImg}
         alt="EasyATSBanner"
       />
-      <div className="absolute inset-0  bg-gradient-to-r from-transparent to-blue-500 "></div>
+      <div className="absolute inset-0  bg-gradient-to-l from-transparent to-blue-500 "></div>
 
       <div className="flex flex-col md:flex-row justify-center items-center bg-sky-500 p-5 ">
         <h4 className="md:w-4/5 text-white font-semibold text-xl md:text-3xl z-10">

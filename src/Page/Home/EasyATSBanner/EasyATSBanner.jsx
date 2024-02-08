@@ -28,15 +28,17 @@ const EasyATSBanner = () => {
         alt="EasyATSBanner"
       />
       <div className="absolute inset-0  bg-gradient-to-r from-transparent to-blue-500 "></div>
+      {/* <div className="absolute inset-0  bg-gradient-to-br from-[#191970] via-[#4169e1] to-[#6a5acd] opacity-70"></div> */}
 
       <div className="flex flex-col md:flex-row justify-center items-center bg-sky-500 p-5 ">
         <h4 className="md:w-4/5 text-white font-semibold text-xl md:text-2xl lg:text-3xl z-10">
           Learn how to recruit employees quickly with EasyRecruit applicant
           tracking software.
         </h4>
-        <Button outline gradientDuoTone="pinkToOrange">
+        <Button outline className="bg-gradient-to-br from-[#191970] via-[#4169e1] to-[#6a5acd]">
           Request A Demo
         </Button>
+        
       </div>
     </div>
   );
