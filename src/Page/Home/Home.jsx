@@ -15,8 +15,9 @@ import WhyToUse from "./WhyToUse/WhyToUse";
 import Footers from "../../shared/Footer/Footers";
 
 const Home = () => {
+  
   return (
-    <div className="border">
+    <div>
       <Banner></Banner>
       <RecruitingResult></RecruitingResult>
       <WhyToUse></WhyToUse>
