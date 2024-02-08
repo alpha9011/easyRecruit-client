@@ -7,7 +7,7 @@ import { AuthContext } from "../../AuthProvider/AuthProvider";
 const Navbars = () => {
   const { user, logOut } = useContext(AuthContext);
   return (
-    <Navbar fluid rounded className="px-10 mb-10">
+    <Navbar fluid rounded className="px-10 bg-gray-300">
       <Navbar.Brand href="/">
         <div className="flex flex-col items-center">
           <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
