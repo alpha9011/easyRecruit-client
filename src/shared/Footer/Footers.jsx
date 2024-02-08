@@ -41,7 +41,7 @@ const Footers = () => {
 
 
   return (
-    <Footer className='w-full mt-14'>
+    <Footer className='w-full'>
       <div className="w-full mx-auto p-7 bg-blue-200 text-black">
         <div className='flex justify-center'>
           <Footer.Brand

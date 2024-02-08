@@ -7,6 +7,7 @@ import team from "../../../src/assets/teamWork.jpg"
 import responsive from "../../../src/assets/responsive.jpg"
 import supports from "../../../src/assets/support.jpg"
 import job from "../../../src/assets/19209.jpg"
+import Footers from '../../shared/Footer/Footers';
 // import Footers from '../../shared/Footer/Footers';
 
 const WhyEasyRecruit = () => {
@@ -117,6 +118,7 @@ const WhyEasyRecruit = () => {
                 </div>
             </div>
             {/* <Footers></Footers> */}
+            <Footers></Footers>
         </div>
     );
 };
