@@ -17,6 +17,8 @@ import "react-modern-drawer/dist/index.css";
 //Aos Animation
 import AOS from "aos";
 import "aos/dist/aos.css";
+import useAdmin from "../../Hooks/useAdmin";
+
 AOS.init();
 
 const Dashboard = () => {
@@ -34,9 +36,35 @@ const Dashboard = () => {
             : " hover:duration-200 hover:-translate-y-1  hover:border-y hover:backdrop-blur-3xl"
         }`;
   };
+  const [isAdmin] = useAdmin()
+  const dashBoardMenu = ( 
+    isAdmin ? <div>
 
-  const dashBoardMenu = (
-    <>
+<li>
+        <NavLink to="/dashboard/allUser" className={navLinkStyle}>
+          All User
+        </NavLink>
+      </li>
+        <li>
+        <NavLink to="/dashboard/allJobs" className={navLinkStyle}>
+          All Jobs
+        </NavLink>
+      </li>
+
+      <div className="border-t  my-5 "></div>
+      <li>
+        <NavLink to="/" className={navLinkStyle}>
+          <span className="flex justify-center items-center gap-2">
+            <AiOutlineHome />
+            Home
+          </span>
+        </NavLink>
+      </li>
+    </div>
+
+    :
+   <div>
+
       <div className="border-t  my-5 "></div>
       <li>
         <NavLink to="/dashboard/dashboardHome" className={navLinkStyle}>
@@ -93,7 +121,9 @@ const Dashboard = () => {
           </span>
         </NavLink>
       </li>
-    </>
+    </div>
+
+  
   );
   return (
     <>
