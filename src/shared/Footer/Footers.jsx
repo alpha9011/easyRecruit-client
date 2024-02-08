@@ -42,7 +42,7 @@ const Footers = () => {
 
   return (
     <Footer className='w-full mt-14'>
-      <div className="w-full mx-auto p-7 bg-blue-200 text-black">
+      <div className="w-full mx-auto p-7 bg-blue-300 text-black">
         <div className='flex justify-center'>
           <Footer.Brand
             href="http://localhost:5173/"
@@ -130,7 +130,7 @@ const Footers = () => {
 
           {/* Social Icons */}
           <div className="mt-4 md:mt-0 flex space-x-4">
-            <Footer.Icon href="https://www.facebook.com/yourpage" target="_blank" rel="noopener noreferrer" icon={BsFacebook} className="text-blue-500 hover:text-blue-600" />
+            <Footer.Icon href="https://www.facebook.com/profile.php?id=61555929885285" target="_blank" rel="noopener noreferrer" icon={BsFacebook} className="text-blue-500 hover:text-blue-600" />
             <Footer.Icon href="https://www.instagram.com/yourpage" target="_blank" rel="noopener noreferrer" icon={BsInstagram} className="text-pink-500 hover:text-pink-600" />
             <Footer.Icon href="https://twitter.com/yourpage" target="_blank" rel="noopener noreferrer" icon={BsTwitter} className="text-blue-400 hover:text-blue-500" />
             <Footer.Icon href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" icon={BsGithub} className="text-gray-800 hover:text-gray-900" />

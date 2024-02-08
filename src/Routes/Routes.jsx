@@ -15,7 +15,6 @@ import Circular from "../Page/Circular/Circular";
 // import ApplyForm from "../DashboardLayout/ApplyForm/ApplyForm";
 import InterViewSchedule from "../DashboardLayout/DashboardPage/InterViewSchedule/InterViewSchedule";
 import Appointment from "../DashboardLayout/DashboardPage/Appointment/appointment";
-
 import ApplyForm from "../Page/Circular/ApplyForm/ApplyForm";
 import Pricing from "../Page/Pricing/Pricing";
 import WhyEasyRecruit from "../Page/WhyEasyRecruit/WhyEasyRecruit";
@@ -23,9 +22,9 @@ import CandidateForm from "../Page/Circular/ApplyForm/CandidateForm";
 import TermsAndConditions from "../shared/Footer/TermsAndConditions";
 import PrivacyPolicy from "../shared/Footer/PrivacyPolicy";
 import PrivateRout from "./PrivateRout";
-
 import UpdateJob from "../Page/Circular/UpdateJob";
 import MemberShip from "../Page/Membership/Membership";
+import CustomerProfile from "../DashboardLayout/DashboardPage/CustomerProfile/CustomerProfile";
 
 
 export const router = createBrowserRouter([
@@ -107,6 +106,10 @@ export const router = createBrowserRouter([
       </PrivateRout>
     ),
     children: [
+      {
+        path: "customerProfile",
+        element: <CustomerProfile></CustomerProfile>,
+      },
       {
         path: "dashboardHome",
         element: <DashboardHome></DashboardHome>,

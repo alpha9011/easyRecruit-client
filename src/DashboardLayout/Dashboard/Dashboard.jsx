@@ -17,9 +17,12 @@ import "react-modern-drawer/dist/index.css";
 //Aos Animation
 import AOS from "aos";
 import "aos/dist/aos.css";
+import useAuth from "../../Hooks/useAuth";
 AOS.init();
 
 const Dashboard = () => {
+  const {user}= useAuth();
+  console.log(user);
   const [isOpen, setIsOpen] = useState(false);
   const toggleDrawer = () => {
     setIsOpen((prevState) => !prevState);
@@ -28,16 +31,26 @@ const Dashboard = () => {
   const navLinkStyle = ({ isActive, isPending }) => {
     return isPending
       ? "pending"
-      : `inline-block w-full text-center py-2  bg-transparent text-white rounded font-semibold ${
-          isActive
-            ? "border-white border-y backdrop-filter backdrop-blur-3xl "
-            : " hover:duration-200 hover:-translate-y-1  hover:border-y hover:backdrop-blur-3xl"
-        }`;
+      : `inline-block w-full text-center py-2  bg-transparent text-white rounded font-semibold ${isActive
+        ? "border-white border-y backdrop-filter backdrop-blur-3xl "
+        : " hover:duration-200 hover:-translate-y-1  hover:border-y hover:backdrop-blur-3xl"
+      }`;
   };
-
   const dashBoardMenu = (
     <>
-      <div className="border-t  my-5 "></div>
+    {/* customer profile from database */}
+      <div className="flex flex-col items-center pb-10">
+        <img className="w-24 h-24 mb-3 rounded-full shadow-lg" src={user?.photoURL} alt="Bonnie image" />
+        <h5 className="mb-3 text-xl font-medium bg-gradient-to-r from-gray-300 to-gray-400 inline-block text-transparent bg-clip-text dark:text-white">{user?.displayName}</h5>
+        <NavLink to="/dashboard/customerProfile" className={navLinkStyle}>
+          <span className="flex justify-center items-center gap-2">
+            Profile
+          </span>
+        </NavLink>
+      </div>
+
+      <div className="border-t "></div>
+
       <li>
         <NavLink to="/dashboard/dashboardHome" className={navLinkStyle}>
           <span className="flex justify-center items-center gap-2">
