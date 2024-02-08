@@ -11,6 +11,7 @@ import "react-modern-drawer/dist/index.css";
 //Aos Animation
 import AOS from "aos";
 import "aos/dist/aos.css";
+import useAdmin from "../../Hooks/useAdmin";
 
 AOS.init();
 const Dashboard = () => {
@@ -28,9 +29,31 @@ const Dashboard = () => {
           : "hover:bg-blend-saturation hover:text-white hover:duration-200 hover:-translate-y-1"
       }`;
   }
-  
+  const [isAdmin] = useAdmin()
   const dashBoardMenu = (
-    <>
+   
+   isAdmin ? 
+    <div>
+        <li>
+        <NavLink to="/dashboard/allUser" className={navLinkStyle}>
+          All User
+        </NavLink>
+      </li>
+        <li>
+        <NavLink to="/dashboard/allJobs" className={navLinkStyle}>
+          All Jobs
+        </NavLink>
+      </li>
+
+<div className="border-t  my-5 "></div>
+      <li>
+        <NavLink to="/" className={navLinkStyle}>
+          Home
+        </NavLink>
+      </li>
+    </div>
+   :
+ <div>
      <li>
         <NavLink to="/dashboard/dashboardHome" className={navLinkStyle}>
           Dashboard
@@ -52,7 +75,7 @@ const Dashboard = () => {
         </NavLink>
       </li>
       <li>
-        <NavLink to="/dashboard/appointment" className={navLinkStyle}>
+        <NavLink to="/dashboard/postjob" className={navLinkStyle}>
          Post Job
         </NavLink>
       </li>
@@ -71,7 +94,9 @@ const Dashboard = () => {
           Home
         </NavLink>
       </li>
-    </>
+    </div>
+
+  
   );
   return (
    
@@ -94,7 +119,7 @@ const Dashboard = () => {
           </div>
         </Drawer>
 
-        <div className=" container mx-auto  p-5 lg:p-0 ">
+        <div className=" container  mx-auto  p-5 lg:p-0 ">
           <div className="grid grid-cols-5 gap-10 h-screen lg:h-[80vh] ">
             <div
               className=" hidden lg:block lg:col-span-1  rounded-xl backdrop-filter backdrop-blur-xl bg-opacity-10 border border-gray-100 bg-white p-5"

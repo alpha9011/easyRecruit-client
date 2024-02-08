@@ -36,7 +36,7 @@ const Navbars = () => {
 
             <div className="text-center ">
               <Navbar.Link>
-                <NavLink to="/dashboard/dashboardHome" className="text-lg">
+                <NavLink to="/dashboard" className="text-lg">
                   Dashboard
                 </NavLink>
               </Navbar.Link>
