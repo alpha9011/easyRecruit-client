@@ -18,12 +18,15 @@ import ApplyForm from "../Page/Circular/ApplyForm/ApplyForm";
 import Pricing from "../Page/Pricing/Pricing";
 import WhyEasyRecruit from "../Page/WhyEasyRecruit/WhyEasyRecruit";
 import CandidateForm from "../Page/Circular/ApplyForm/CandidateForm";
+import TermsAndConditions from "../shared/Footer/TermsAndConditions";
+import PrivacyPolicy from "../shared/Footer/PrivacyPolicy";
 import PrivateRout from "./PrivateRout";
 import UpdateJob from "../Page/Circular/UpdateJob";
 import MemberShip from "../Page/Membership/Membership";
 import AllUsers from "../DashboardLayout/DashboardAdminPage/AllUsers/AllUsers";
 import AllJobs from "../DashboardLayout/DashboardAdminPage/AllJobs/AllJobs";
 
+import ContactUs from "../Page/ContactUs/ContactUs";
 
 
 export const router = createBrowserRouter([
@@ -47,6 +50,10 @@ export const router = createBrowserRouter([
       {
         path: "/about",
         element: <AboutUs></AboutUs>,
+      },
+      {
+        path: "/contact",
+        element: <ContactUs></ContactUs>
       },
       {
         path: "/recruiting-software-capabilities",
@@ -83,9 +90,17 @@ export const router = createBrowserRouter([
         element: <WhyEasyRecruit></WhyEasyRecruit>,
       },
       {
-        path:"/membership",
+        path: "/membership",
         element: <MemberShip></MemberShip>
-      }
+      },
+      {
+        path:"/terms",
+        element: <TermsAndConditions></TermsAndConditions>
+      },
+      {
+        path:"/privacy",
+        element: <PrivacyPolicy></PrivacyPolicy>
+      },
     ],
   },
   {

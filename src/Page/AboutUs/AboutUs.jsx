@@ -1,4 +1,6 @@
 import Footers from "../../shared/Footer/Footers";
+import SocialIcon from "../../shared/SocialIcon/SocialIcon";
+import Reviews from "../Home/Reviews/Reviews";
 import OurMission from "./OurMission";
 import Team from "./Team";
 import WhyUs from "./WhyUs";
@@ -10,6 +12,8 @@ const AboutUs = () => {
             <OurMission></OurMission>
             <WhyUs></WhyUs>
             <Team></Team>
+            <Reviews></Reviews>
+            <SocialIcon></SocialIcon>
             <Footers></Footers>
         </div>
     );
