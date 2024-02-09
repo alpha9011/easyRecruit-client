@@ -22,6 +22,7 @@ import TermsAndConditions from "../shared/Footer/TermsAndConditions";
 // import PrivacyPolicy from "../shared/Footer/PrivacyPolicy";
 import UpdateJob from "../Page/Circular/UpdateJob";
 import MemberShip from "../Page/Membership/Membership";
+import CustomerProfile from "../DashboardLayout/DashboardPage/CustomerProfile/CustomerProfile";
 import AllUsers from "../DashboardLayout/DashboardAdminPage/AllUsers/AllUsers";
 import AllJobs from "../DashboardLayout/DashboardAdminPage/AllJobs/AllJobs";
 
@@ -124,6 +125,10 @@ export const router = createBrowserRouter([
       },
 
       // Normal user routs
+      {
+        path: "customerProfile",
+        element: <CustomerProfile></CustomerProfile>,
+      },
       {
         path: "dashboardHome",
         element: <DashboardHome></DashboardHome>,

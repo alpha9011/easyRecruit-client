@@ -128,7 +128,7 @@ const SocialIcon = () => {
         onMouseLeave={handleMouseLeave}
       >
         {/* Social Icons */}
-        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.facebook.com/profile.php?id=61555929885285" target="_blank" rel="noopener noreferrer">
           <FaFacebook className="text-blue-500 text-2xl" />
         </a>
         <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
