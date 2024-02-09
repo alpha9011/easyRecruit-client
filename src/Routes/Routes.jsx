@@ -7,12 +7,11 @@ import Register from "../Page/Register/Register";
 import Capabilities from "../Page/Capabilities/Capabilities";
 import ErrorPage from "../Page/ErrorPage/ErrorPage";
 import Dashboard from "../DashboardLayout/Dashboard/Dashboard";
-import DashboardHome from "../DashboardLayout/DashboardPage/DashboardHome/DashboardHome";
+import DashboardHome from "../DashboardLayout/DashboardPage/DashboardUserHome/DashboardHome";
 import Candidates from "../DashboardLayout/DashboardPage/Candidates/Candidates";
 import MyJobs from "../DashboardLayout/DashboardPage/MyJobs/MyJobs";
 import PostJob from "../DashboardLayout/DashboardPage/PostJob/PostJob";
 import Circular from "../Page/Circular/Circular";
-// import ApplyForm from "../DashboardLayout/ApplyForm/ApplyForm";
 import InterViewSchedule from "../DashboardLayout/DashboardPage/InterViewSchedule/InterViewSchedule";
 import Appointment from "../DashboardLayout/DashboardPage/Appointment/appointment";
 import ApplyForm from "../Page/Circular/ApplyForm/ApplyForm";
@@ -25,6 +24,10 @@ import PrivateRout from "./PrivateRout";
 import UpdateJob from "../Page/Circular/UpdateJob";
 import MemberShip from "../Page/Membership/Membership";
 import CustomerProfile from "../DashboardLayout/DashboardPage/CustomerProfile/CustomerProfile";
+import AllUsers from "../DashboardLayout/DashboardAdminPage/AllUsers/AllUsers";
+import AllJobs from "../DashboardLayout/DashboardAdminPage/AllJobs/AllJobs";
+
+import ContactUs from "../Page/ContactUs/ContactUs";
 
 
 export const router = createBrowserRouter([
@@ -48,6 +51,10 @@ export const router = createBrowserRouter([
       {
         path: "/about",
         element: <AboutUs></AboutUs>,
+      },
+      {
+        path: "/contact",
+        element: <ContactUs></ContactUs>
       },
       {
         path: "/recruiting-software-capabilities",
@@ -84,7 +91,7 @@ export const router = createBrowserRouter([
         element: <WhyEasyRecruit></WhyEasyRecruit>,
       },
       {
-        path:"/membership",
+        path: "/membership",
         element: <MemberShip></MemberShip>
       },
       {
@@ -101,11 +108,22 @@ export const router = createBrowserRouter([
     path: "/dashboard",
     element: (
       <PrivateRout>
-        {" "}
+       
         <Dashboard></Dashboard>
       </PrivateRout>
     ),
     children: [
+      // Admin User routs
+      {
+        path: "allUser",
+        element: <AllUsers></AllUsers>
+      },
+      {
+        path: "allJobs",
+        element: <AllJobs></AllJobs>
+      },
+
+      // Normal user routs
       {
         path: "customerProfile",
         element: <CustomerProfile></CustomerProfile>,

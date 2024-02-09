@@ -41,8 +41,8 @@ const Footers = () => {
 
 
   return (
-    <Footer className='w-full mt-14'>
-      <div className="w-full mx-auto p-7 bg-blue-300 text-black">
+    <Footer className='w-full'>
+      <div className="w-full mx-auto p-7 bg-blue-200 text-black">
         <div className='flex justify-center'>
           <Footer.Brand
             href="http://localhost:5173/"
@@ -85,7 +85,7 @@ const Footers = () => {
 
             <Footer.Title className='text-black font-bold text-xl' title="Our Blogs" />
             <Footer.LinkGroup col className=''>
-              <Footer.Link className='hover:text-pink-500' target="_blank" rel="noopener noreferrer"  href="https://medium.com/@fasunan">Blog About Tech</Footer.Link>
+              <Footer.Link className='hover:text-pink-500' target="_blank" rel="noopener noreferrer" href="https://medium.com/@fasunan">Blog About Tech</Footer.Link>
               <Footer.Link className='hover:text-pink-500' href="#">Blog About "ATS Website"</Footer.Link>
               <Footer.Link className='hover:text-pink-500' href="#">Blog About Hiring Process</Footer.Link>
             </Footer.LinkGroup>
@@ -96,7 +96,7 @@ const Footers = () => {
               <Link to={"whyEasyRecruit"} target="_blank" rel="noopener noreferrer" className='hover:text-pink-500'>Why Choose Us</Link>
               <Link to={"about"} target="_blank" rel="noopener noreferrer" className='hover:text-pink-500'>Our Team</Link>
               <Link to={"/"} target="_blank" rel="noopener noreferrer" className='hover:text-pink-500'>Contact Us</Link>
-              
+
             </Footer.LinkGroup>
           </div>
 
@@ -107,7 +107,7 @@ const Footers = () => {
               <Link to={"terms"} target="_blank" rel="noopener noreferrer" className='hover:text-pink-500'>Terms &amp; Conditions</Link> */}
               <Link to={"/"} className='hover:text-pink-500'>Careers</Link>
               <Link to={"/"} className='hover:text-pink-500'>Customers</Link>
-              <Link to={"/"}  className='hover:text-pink-500'>Case Studies</Link>
+              <Link to={"/"} className='hover:text-pink-500'>Case Studies</Link>
 
             </Footer.LinkGroup>
           </div>
@@ -120,13 +120,13 @@ const Footers = () => {
           {/* Copyright */}
           <Footer.Copyright href="#" by="easyRecruit™" year={2024} />
           <Footer.LinkGroup col className=''>
-              <Link to={"privacy"} target="_blank" rel="noopener noreferrer" className='hover:text-pink-500'>Privacy Policy</Link>
-              
-            </Footer.LinkGroup>
+            <Link to={"privacy"} target="_blank" rel="noopener noreferrer" className='hover:text-pink-500'>Privacy Policy</Link>
+
+          </Footer.LinkGroup>
           <Footer.LinkGroup col className=''>
-          <Link to={"terms"} target="_blank" rel="noopener noreferrer" className='hover:text-pink-500'>Terms &amp; Conditions</Link>
-              
-            </Footer.LinkGroup>
+            <Link to={"terms"} target="_blank" rel="noopener noreferrer" className='hover:text-pink-500'>Terms &amp; Conditions</Link>
+
+          </Footer.LinkGroup>
 
           {/* Social Icons */}
           <div className="mt-4 md:mt-0 flex space-x-4">
