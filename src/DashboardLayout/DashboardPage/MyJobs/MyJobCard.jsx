@@ -4,11 +4,43 @@ import { CiLocationOn } from "react-icons/ci";
 import { useState } from 'react';
 import { Button, Modal } from 'flowbite-react'
 import { IoLocationOutline } from "react-icons/io5";
+import { Link } from "react-router-dom";
+import { ImBin } from "react-icons/im";
+import { FaRegPenToSquare } from "react-icons/fa6";
+import Swal from "sweetalert2";
 const MyJobCard = ({myjob}) => {
     console.log(myjob);
-    const  {logo, title ,jobType,location,experience,salary,aboutCompany,positionSummary,companyName,postDate,deadline,responsibilities,qualifications,education,benifits} = myjob || {}
+    const  {logo, title ,jobType,location,experience,salary,aboutCompany,positionSummary,companyName,postDate,deadline,responsibilities,qualifications,education,benifits,_id} = myjob || {}
     const [openModal, setOpenModal] = useState(false);
-
+ const handleDelete = _id => {
+    console.log(`want to delete ${_id}`);
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!"
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:5000/postjob/${_id}`, {
+          method: 'DELETE',
+        })
+          .then(res => res.json())
+          .then(data => {
+            console.log(data);
+            if (data.deletedCount > 0) {
+              Swal.fire({
+                title: "Deleted!",
+                text: "Your Job Post has been deleted.",
+                icon: "success"
+              });
+            }
+          })
+      }
+    });
+  }
     return (
         <div className="hover:-translate-y-1 duration-150">
             <Card >
@@ -18,10 +50,17 @@ const MyJobCard = ({myjob}) => {
        </div>
       <h5 className="text-2xl font-bold  text-gray-900 dark:text-white">{title}</h5>
       <p className="text-gray-500 -mt-3 flex items-center gap-2"><CiLocationOn /> {location}</p>
-      <div className="flex justify-between">
+      <div className="">
       <p className="font-medium">Experience:{experience}</p>
       <p className="font-semibold">${salary}<sub >/month</sub> </p>
       </div>
+
+      <div className="flex gap-2">
+                <Link to={`/dashboard/updateJob/${_id}`} className=" px-3 py-2 bg-blue-700 text-white  rounded-md hover:bg-slate-800 hover:-translate-y-[2px] duration-75 cursor-pointer flex items-center w-fit gap-2"><FaRegPenToSquare /></Link>
+                <button onClick={() => handleDelete(_id)} className="bg-red-600 rounded px-3 py-2">
+                  <ImBin className="text-white" />
+                </button>
+              </div>
      
 
       <Button onClick={() => setOpenModal(true)} className="px-2 py-1 mt-5 bg-blue-700 hover:bg-blue-900 text-white  rounded-md  hover:-translate-y-[2px] duration-75 cursor-pointer flex items-center w-full gap-2 ">See Details</Button>
@@ -47,6 +86,8 @@ const MyJobCard = ({myjob}) => {
    </div>
   </div>
 </div></Modal.Header>
+    {/* update and delete */}
+
 
 <Modal.Body >
 <div className="space-y-3">

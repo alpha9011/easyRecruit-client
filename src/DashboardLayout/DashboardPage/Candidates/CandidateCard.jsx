@@ -6,6 +6,10 @@ import { IoLocationOutline } from "react-icons/io5";
 import { FaMoneyCheckDollar } from "react-icons/fa6";
 const CandidateCard = ({candidate,candidates,setCandidate}) => {
     console.log(candidate);
+
+//     all applier candidates data, use what you need to build card/ table
+//    const candidatesData= { name, email,phone,photo,country,resume,coverLetter,lastAcademy,language,salary,gender,companyName,jobTitle,jobPostEmail,applyDate}
+
     const { name, address, salary, phone, email, resume, coverLetter, _id, photo, language } = candidate|| {};
     console.log(name);
     const handleDelete = _id => {

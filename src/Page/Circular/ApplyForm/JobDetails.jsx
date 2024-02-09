@@ -1,12 +1,29 @@
 import { FaArrowRightLong } from "react-icons/fa6";
 import { Link, useLoaderData } from "react-router-dom";
 
-
+// this is job details page( circular page theke details a click korele je details ta dekha jay)
 
 const ApplyForm = () => {
-   
-    const {aboutCompany, benifits,companyName,education,positionSummary,qualifications,responsibilities, _id} = useLoaderData()
-  
+
+    // all data for showing details in circulr (-=> jobpost => )see detail page
+    // title
+    // location
+    // email
+    // companyName
+    // logo
+    // aboutCompany
+    // positionSummary
+    // responsibilities
+    // qualifications
+    // education
+    // benifits
+    // jobType
+    // experience
+    // salary
+    // postDate
+    // deadline
+    const {aboutCompany, benifits,education,positionSummary,qualifications,responsibilities, _id, companyName} = useLoaderData()
+  console.log(companyName);
    
     return (
         <div className="px-10 ">
