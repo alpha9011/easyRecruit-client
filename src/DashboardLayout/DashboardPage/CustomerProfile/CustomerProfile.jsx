@@ -3,10 +3,9 @@ import { FaEdit } from "react-icons/fa";
 import { AuthContext } from "../../../AuthProvider/AuthProvider";
 
 const CustomerProfile = () => {
-
     // this data comes from firebase but here need data from database
     const { user } = useContext(AuthContext);
-    console.log(user);
+    // console.log(user);
     const {
         email,
         number,
@@ -62,3 +61,4 @@ const CustomerProfile = () => {
 };
 
 export default CustomerProfile;
+
