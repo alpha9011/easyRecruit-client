@@ -12,6 +12,7 @@ import yahoo from "../../../../public/Image/yahoo.png";
 import { Link } from "react-router-dom";
 
 const CustomersSlider = () => {
+
   return (
     <div className="group">
       <div className="relative flex flex-col md:flex-row items-center justify-center h-20 w-full my-20 ">
@@ -40,7 +41,9 @@ const CustomersSlider = () => {
             delay: 1000,
             disableOnInteraction: true,
           }}
+
           className="group-hover:blur hidden lg:block"
+          
         >
           <SwiperSlide className="flex items-center justify-center h-20  p-3">
             <img className="max-h-full " src={amazon} alt="" />
@@ -68,7 +71,7 @@ const CustomersSlider = () => {
           </SwiperSlide>
         </Swiper>
         <div className="lg:hidden group-hover:block absolute text-xl  md:text-3xl font-bold">
-          <Link to="/" className="pointer text-sky-500 hover:opacity-75">See All our Customers</Link>
+          <Link to="/" className="pointer text-sky-500 hover:opacity-75"> All our Customers</Link>
         </div>
       </div>
     </div>

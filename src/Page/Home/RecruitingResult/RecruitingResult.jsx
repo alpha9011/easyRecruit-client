@@ -19,7 +19,6 @@ const RecruitingResult = () => {
           Drive Better Recruiting Results with the Right ATS
         </h4>
       </div>
-      
       <PrimarySection
         title={title}
         subTitle={subTitle}
