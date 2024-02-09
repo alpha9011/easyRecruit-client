@@ -5,6 +5,8 @@ import { AuthContext } from "../AuthProvider/AuthProvider";
 import { Spinner } from "flowbite-react";
 
 
+
+
 const PrivateRout = ({children}) => {
 
     const {user, loader} = useContext(AuthContext)
