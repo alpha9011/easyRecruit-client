@@ -1,7 +1,7 @@
 import { Link,   useLoaderData } from "react-router-dom";
 import PrimaryButton from "../../../shared/PrimaryButton/PrimaryButton";
 
-
+// this is job details page( circular page theke details a click korele je details ta dekha jay)
 
 const ApplyForm = () => {
 

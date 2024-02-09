@@ -81,11 +81,7 @@ console.log(postDate);
 
                         </div >
                     </div>
-                    {/* hidden email */}
-                    <div className="hidden">
-                        <label >Email<span className="text-red-600">*</span></label>
-                        <input type="email" defaultValue={user?.email} className="mt-1 input border-none w-full"  {...register("email")} />
-                    </div>
+              
 
                     <div className="grid grid-cols-2 gap-3">
                         <div>

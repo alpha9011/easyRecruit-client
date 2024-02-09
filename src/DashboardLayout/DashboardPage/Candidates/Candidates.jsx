@@ -1,16 +1,21 @@
 import { useEffect, useState } from "react";
 import useAxiosPublic from "../../../Hooks/useAxiosPublic";
 import CandidateCard from "./CandidateCard";
+import useAuth from "../../../Hooks/useAuth";
 
 const Candidates = () => {
   const axiosPublic = useAxiosPublic()
   const [candidates, setCandidate] = useState([])
+  const {user} = useAuth()
+  const currentUSer = user?.email
   useEffect(() => {
     axiosPublic.get('/applicantCV')
       .then(res => {
-        setCandidate(res.data)
+        const allcandidates = res.data
+        const myCandidates = allcandidates.filter( candidate => candidate.jobPostEmail === currentUSer)
+        setCandidate(myCandidates)
       })
-  }, [axiosPublic])
+  }, [axiosPublic,currentUSer])
   console.log(candidates);
   return (
     <div>

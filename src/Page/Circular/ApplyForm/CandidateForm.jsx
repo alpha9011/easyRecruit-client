@@ -1,20 +1,46 @@
 import { useForm } from "react-hook-form";
 import useAxiosPublic from "../../../Hooks/useAxiosPublic";
 import Swal from "sweetalert2";
+import { useLoaderData } from "react-router-dom";
+
 
 
 const CandidateForm = () => {
     const axiosPublic = useAxiosPublic()
-    // const { register, handleSubmit, reset } = useForm()
+    const date = new Date();
+    const options = { year: 'numeric', month: '2-digit', day: '2-digit' };
+    const postDate = date.toLocaleDateString('en-US', options);
+    const {email,  companyName,title,logo} = useLoaderData()
+    console.log(email, companyName,title);
+   
     const {
         register,
         handleSubmit,
         reset,
         formState: { errors },
     } = useForm();
+// this is  candidate apply form
+
     const onSubmit = (data) => {
-        console.log(data);
-        axiosPublic.post('/applicantCV', data)
+        const applicatnCV = {
+            name:data.name,
+            email:data.email,
+            phone:data.phone,
+            photo:data.photo,
+            country:data.country,
+            resume:data.resume,
+            coverLetter:data.coverLetter,
+            lastAcademy:data.lastAcademy,
+            language:data.language,
+            salary:data.salary,
+            gender:data.gender,
+            companyName:companyName,
+            jobTitle:title,
+            jobPostEmail:email,
+            applyDate:postDate,
+        }
+        console.log(applicatnCV);
+        axiosPublic.post('/applicantCV', applicatnCV)
             .then(res => {
                 console.log(res.data);
                 reset();
@@ -29,6 +55,9 @@ const CandidateForm = () => {
     }
     return (
         <div className="px-10">
+            <img src={logo} alt="" className="w-20"/>
+        <h1>{companyName}</h1>
+        <h1>{title}</h1>
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 max-w-screen-md mx-auto bg-green-50 p-5 rounded-md">
 
                 <div>
@@ -51,11 +80,7 @@ const CandidateForm = () => {
                     <input type="text" {...register("photo", { required: true })} className="mt-1 input input-bordered w-full" placeholder="Your photo URL" required />
 
                 </div >
-                <div >
-                    <label>Full Address<span className="text-red-600">*</span></label>
-                    <input type="text" {...register("address", { required: true })} className="mt-1 input input-bordered w-full" placeholder="Full Address" required />
-
-                </div >
+            
                 <div >
                     <label>Country<span className="text-red-600">*</span></label>
                     <input type="text" {...register("country", { required: true })} className="mt-1 input input-bordered w-full" placeholder="Country" required />
@@ -65,19 +90,20 @@ const CandidateForm = () => {
                     <label>Resume<span className="text-red-600">*</span></label>
                     <input type="text" {...register("resume", { required: true })} className="mt-1 input input-bordered w-full" placeholder="Resume drive link" required />
                 </div >
-
-                <div>
+                <div >
                     <label>Cover Letter<span className="text-red-600">*</span></label>
-                    <textarea {...register("coverLetter", { required: true })} className="mt-1 input input-bordered w-full" id="" cols="30" rows="10" placeholder="Cover Letter" required></textarea>
-                </div>
+                    <input type="text" {...register("coverLetter", { required: true })} className="mt-1 input input-bordered w-full" placeholder="Cover Letter drive link" required />
+                </div >
+
+          
 
                 <div >
-                    <label>Linkedin<span className="text-red-600">*</span></label>
-                    <input type="text" {...register("linkedin", { required: true })} className="mt-1 input input-bordered w-full" placeholder="Linkedin profile URL" required />
+                    <label>Last Academy <span className="text-red-600">*</span></label>
+                    <input type="text" {...register("lastAcademy", { required: true })} className="mt-1 input input-bordered w-full" placeholder="e.g. Hons, Masters" required />
                 </div >
                 <div >
-                    <label>What languages do you speak fluently?</label>
-                    <input type="text" {...register("language")} className="mt-1 input input-bordered w-full" placeholder="Linkedin profile URL" />
+                    <label>What languages do you speak fluently?<span className="text-red-600">*</span></label>
+                    <input type="text" {...register("language", { required: true })} className="mt-1 input input-bordered w-full" placeholder="e.g. Bangla, English, Hindi" />
                 </div >
 
                 <div>
