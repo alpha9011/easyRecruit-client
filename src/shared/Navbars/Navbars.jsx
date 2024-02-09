@@ -21,11 +21,10 @@ const Navbars = () => {
   const navLinkStyle = ({ isActive, isPending }) => {
     return isPending
       ? "pending"
-      : `inline-block w-full text-center py-2  bg-transparent text rounded font-semibold ${
-          isActive
-            ? "border-blue-500 border-y backdrop-filter backdrop-blur-3xl "
-            : "  hover:border-y hover:border-blue-500 hover:backdrop-blur-3xl"
-        }`;
+      : `inline-block w-full text-center py-2  bg-transparent text rounded font-semibold ${isActive
+        ? "border-blue-500 border-y backdrop-filter backdrop-blur-3xl "
+        : "  hover:border-y hover:border-blue-500 hover:backdrop-blur-3xl"
+      }`;
   };
   //  NavMenu Side bar
   const navMenu = (
@@ -91,7 +90,7 @@ const Navbars = () => {
     <Navbar
       fluid
       rounded
-      className="px-10 mb-10 sticky top-0 bg-white z-50  shadow p-4 lg:opacity-80"
+      className="px-10 sticky top-0 bg-white z-50  shadow p-4 lg:opacity-80"
     >
       <Navbar.Brand href="/">
         <div className="flex flex-col items-center">
