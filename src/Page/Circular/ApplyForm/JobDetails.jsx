@@ -5,31 +5,8 @@ import PrimaryButton from "../../../shared/PrimaryButton/PrimaryButton";
 
 const ApplyForm = () => {
 
-<<<<<<< HEAD:src/Page/Circular/ApplyForm/JobDetails.jsx
-    // all data for showing details in circulr (-=> jobpost => )see detail page
-    // title
-    // location
-    // email
-    // companyName
-    // logo
-    // aboutCompany
-    // positionSummary
-    // responsibilities
-    // qualifications
-    // education
-    // benifits
-    // jobType
-    // experience
-    // salary
-    // postDate
-    // deadline
-    const {aboutCompany, benifits,education,positionSummary,qualifications,responsibilities, _id, companyName} = useLoaderData()
-  console.log(companyName);
-   
-=======
     const { aboutCompany,title , benifits,location, companyName,salary, education, positionSummary, qualifications, responsibilities, _id } = useLoaderData()
 
->>>>>>> f55abf46db963913856f5fb82d2317039e953c4d:src/Page/Circular/ApplyForm/ApplyForm.jsx
     return (
         <div className="p-6 md:10 lg:px-40 ">
             {/* company details */}
