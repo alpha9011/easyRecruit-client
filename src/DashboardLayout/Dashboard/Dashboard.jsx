@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { NavLink, Outlet } from "react-router-dom";
-
+import { FaChartSimple } from "react-icons/fa6";
 // react icons
 import { CgMenuRound } from "react-icons/cg";
 import { FiEdit, FiUsers } from "react-icons/fi";
+import { FaUsers } from "react-icons/fa";
 import {
   AiOutlineCarryOut,
   AiOutlineHome,
@@ -54,12 +55,43 @@ const Dashboard = () => {
       </div>
       <li>
         <NavLink to="/dashboard/allUser" className={navLinkStyle}>
-          All User
+        <span className="flex justify-center items-center gap-2">
+            <FaUsers />
+            All User
+          </span> 
         </NavLink>
       </li>
       <li>
         <NavLink to="/dashboard/allJobs" className={navLinkStyle}>
-          All Jobs
+        <span className="flex justify-center items-center gap-2">
+            <FaChartSimple />
+            All jobs
+          </span> 
+        </NavLink>
+      </li>
+
+      <li>
+        <NavLink to="/dashboard/appointment" className={navLinkStyle}>
+          <span className="flex justify-center items-center gap-2">
+            <AiOutlineCarryOut />
+            Appointment
+          </span>
+        </NavLink>
+      </li>
+
+      <li>
+        <NavLink to="/dashboard/interviewSchedule" className={navLinkStyle}>
+          <span className="flex justify-center items-center gap-2">
+            <AiOutlineSchedule />
+            Interview Schedule
+          </span>
+        </NavLink>
+      </li>
+      <li>
+        <NavLink to="CVmanage" className={navLinkStyle}>
+          <span className="flex justify-center items-center gap-2">
+            <FiEdit></FiEdit>CV Management
+          </span>
         </NavLink>
       </li>
 
@@ -72,6 +104,7 @@ const Dashboard = () => {
           </span>
         </NavLink>
       </li>
+
     </div>
 
    : 
@@ -98,7 +131,14 @@ const Dashboard = () => {
       <li>
         <NavLink to="/dashboard/myjobs" className={navLinkStyle}>
           <span className="flex justify-center items-center gap-2">
-            My Jobs
+           <FaChartSimple></FaChartSimple> My Jobs
+          </span>
+        </NavLink>
+      </li>
+      <li>
+        <NavLink to="postjob" className={navLinkStyle}>
+          <span className="flex justify-center items-center gap-2">
+            <FiEdit></FiEdit> Post Job
           </span>
         </NavLink>
       </li>
@@ -110,38 +150,7 @@ const Dashboard = () => {
           </span>
         </NavLink>
       </li>
-      <li>
-        <NavLink to="/dashboard/appointment" className={navLinkStyle}>
-          <span className="flex justify-center items-center gap-2">
-            <AiOutlineCarryOut />
-            Appointment
-          </span>
-        </NavLink>
-      </li>
-
-      <li>
-        <NavLink to="/dashboard/interviewSchedule" className={navLinkStyle}>
-          <span className="flex justify-center items-center gap-2">
-            <AiOutlineSchedule />
-            Interview Schedule
-          </span>
-        </NavLink>
-      </li>
-      <li>
-        <NavLink to="postjob" className={navLinkStyle}>
-          <span className="flex justify-center items-center gap-2">
-            <FiEdit></FiEdit> Post Job
-          </span>
-        </NavLink>
-      </li>
-
-      <li>
-        <NavLink to="CVmanage" className={navLinkStyle}>
-          <span className="flex justify-center items-center gap-2">
-            <FiEdit></FiEdit>CV Management
-          </span>
-        </NavLink>
-      </li>
+      
       <div className="border-t  my-5 "></div>
       <li>
         <NavLink to="/" className={navLinkStyle}>

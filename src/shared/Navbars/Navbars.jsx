@@ -43,7 +43,7 @@ const Navbars = () => {
       )}
 
       <div className="text-center border-t mt-5">
-        <NavLink to="/dashboard" className={navLinkStyle}>
+        <NavLink to="/dashboard/customerProfile" className={navLinkStyle}>
           Dashboard
         </NavLink>
 
@@ -121,7 +121,7 @@ const Navbars = () => {
 
             <div className="text-center ">
               <Navbar.Link>
-                <NavLink to="/dashboard" className="text-lg">
+                <NavLink to="/dashboard/customerProfile" className="text-lg">
                   Dashboard
                 </NavLink>
               </Navbar.Link>
