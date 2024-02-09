@@ -20,13 +20,15 @@ import WhyEasyRecruit from "../Page/WhyEasyRecruit/WhyEasyRecruit";
 import CandidateForm from "../Page/Circular/ApplyForm/CandidateForm";
 import TermsAndConditions from "../shared/Footer/TermsAndConditions";
 import PrivacyPolicy from "../shared/Footer/PrivacyPolicy";
-import PrivateRout from "./PrivateRout";
 import UpdateJob from "../Page/Circular/UpdateJob";
 import MemberShip from "../Page/Membership/Membership";
+import CustomerProfile from "../DashboardLayout/DashboardPage/CustomerProfile/CustomerProfile";
 import AllUsers from "../DashboardLayout/DashboardAdminPage/AllUsers/AllUsers";
 import AllJobs from "../DashboardLayout/DashboardAdminPage/AllJobs/AllJobs";
 
 import ContactUs from "../Page/ContactUs/ContactUs";
+import PrivateRout from "./PrivateRout";
+import CVmanage from "../DashboardLayout/DashboardPage/CVmanage/CVmanage";
 
 
 export const router = createBrowserRouter([
@@ -120,6 +122,10 @@ export const router = createBrowserRouter([
 
       // Normal user routs
       {
+        path: "customerProfile",
+        element: <CustomerProfile></CustomerProfile>,
+      },
+      {
         path: "dashboardHome",
         element: <DashboardHome></DashboardHome>,
       },
@@ -148,6 +154,10 @@ export const router = createBrowserRouter([
       {
         path: "appointment",
         element: <Appointment></Appointment>,
+      },
+      {
+        path: "CVmanage",
+        element: <CVmanage/>
       },
     ],
   },

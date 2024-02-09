@@ -3,17 +3,15 @@ import fastImplementationImg from "../../../../public/Image/fast_implementation.
 import configurableImg from "../../../../public/Image/higly_Configurable.png";
 import PrimaryButton from "../../../shared/PrimaryButton/PrimaryButton";
 
-import AOS from "aos";
-import "aos/dist/aos.css";
-AOS.init();
+
 const WhyToUse = () => {
   return (
     <div className="container mx-auto my-28">
       <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 m-5 gap-5">
         <div
           className="relative border border-sky-500 p-5"
-          data-aos={"fade-up-right"}
-          data-aos-duration="2000"
+          data-aos={"zoom-in-up"}
+          data-aos-duration="1000"
           data-aos-offset="300"
         >
           <img
@@ -34,8 +32,8 @@ const WhyToUse = () => {
 
         <div
           className="relative border border-sky-500 p-5"
-          data-aos={"fade-up"}
-          data-aos-duration="2000"
+          data-aos={"zoom-in-down"}
+          data-aos-duration="1000"
           data-aos-offset="300"
         >
           <img
@@ -56,8 +54,8 @@ const WhyToUse = () => {
 
         <div
           className="relative border border-sky-500 p-5"
-          data-aos={"fade-up-left"}
-          data-aos-duration="2000"
+          data-aos={"zoom-in-up"}
+          data-aos-duration="1000"
           data-aos-offset="300"
         >
           <img
