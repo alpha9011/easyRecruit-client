@@ -104,6 +104,14 @@ const Dashboard = () => {
           </span>
         </NavLink>
       </li>
+
+      <li>
+        <NavLink to="CVmanage" className={navLinkStyle}>
+          <span className="flex justify-center items-center gap-2">
+            <FiEdit></FiEdit>CV Management
+          </span>
+        </NavLink>
+      </li>
       <div className="border-t  my-5 "></div>
       <li>
         <NavLink to="/" className={navLinkStyle}>
