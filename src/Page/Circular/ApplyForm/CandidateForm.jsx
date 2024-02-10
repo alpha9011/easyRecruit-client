@@ -98,7 +98,7 @@ const CandidateForm = () => {
           
 
                 <div >
-                    <label>Last Academy <span className="text-red-600">*</span></label>
+                    <label>Last academic status <span className="text-red-600">*</span></label>
                     <input type="text" {...register("lastAcademy", { required: true })} className="mt-1 input input-bordered w-full" placeholder="e.g. Hons, Masters" required />
                 </div >
                 <div >
