@@ -173,7 +173,7 @@ const Register = () => {
 
 
     <div className='w-full'>
-        <label className="block mb-1 font-semibold">*Workplace Type</label>
+        <label className="block mb-1 font-semibold">*How do you know about us?</label>
             <select {...register("workPlace")} className="input border-none rounded-md w-full">
            
             <option value='Social Media'>Social Media</option>
