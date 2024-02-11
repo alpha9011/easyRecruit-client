@@ -1,9 +1,13 @@
+import { useContext } from "react";
+import { AuthContext } from "../../../AuthProvider/AuthProvider";
 
 
 const DashboardHome = () => {
+    const { user } = useContext(AuthContext);
+    console.log(user);
     return (
         <div>
-           Dashboard home coming soon ........
+            Hello!! {user.displayName}. Welcome back to the dashboard..
         </div>
     );
 };
