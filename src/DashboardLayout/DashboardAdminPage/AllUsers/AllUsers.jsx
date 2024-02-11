@@ -112,7 +112,7 @@ const { refetch, data: users = [] } = useQuery({
                     </Table.Cell>
     
                     <Table.Cell>{user?.email}</Table.Cell>
-                    <Table.Cell>dfd</Table.Cell>
+                    <Table.Cell>{user?.number}</Table.Cell>
                     <Table.Cell>{user?.userRole}</Table.Cell>
 
                     <Table.Cell className=' cursor-pointer flex justify-center' onClick={()=> handleMakeAdmin(user)}> { user?.role ? 

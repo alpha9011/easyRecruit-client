@@ -29,6 +29,7 @@ import AllJobs from "../DashboardLayout/DashboardAdminPage/AllJobs/AllJobs";
 import ContactUs from "../Page/ContactUs/ContactUs";
 import PrivateRout from "./PrivateRout";
 import CVmanage from "../DashboardLayout/DashboardPage/CVmanage/CVmanage";
+import AllJobsCandidates from "../DashboardLayout/DashboardAdminPage/AllJobs/AllJobsCandidates";
 
 
 export const router = createBrowserRouter([
@@ -118,6 +119,11 @@ export const router = createBrowserRouter([
       {
         path: "allJobs",
         element: <AllJobs></AllJobs>
+      },
+      {
+        path:"alljobs/:id",
+        element:<AllJobsCandidates></AllJobsCandidates>,
+        loader: ({ params }) =>fetch(`http://localhost:5000/postjob/${params.id}`),
       },
 
       // Normal user routs
