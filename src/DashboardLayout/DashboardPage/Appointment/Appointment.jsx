@@ -5,7 +5,7 @@ import { Table } from "flowbite-react";
 import PrimaryButton from "../../../shared/PrimaryButton/PrimaryButton";
 import Swal from "sweetalert2";
 
-;
+
 
 const Appointment = () => {
 

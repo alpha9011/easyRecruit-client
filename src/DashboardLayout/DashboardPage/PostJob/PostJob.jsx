@@ -13,9 +13,7 @@ const PostJob = () => {
     const { user } = useContext(AuthContext)
     console.log(user?.email);
 
-//     const currentDate = new Date()
-//     const postdate = currentDate.toLocaleDateString();
-// console.log(postdate)
+
 
 const date = new Date();
 const options = { year: 'numeric', month: '2-digit', day: '2-digit' };
@@ -57,7 +55,7 @@ console.log(postDate);
                             background: "linear-gradient(to right, #00b09b, #96c93d)",
                         }
                     }).showToast();
-                    reset()
+                    // reset()
                 }
             })
     }
