@@ -6,8 +6,8 @@ const DashboardHome = () => {
     const { user } = useContext(AuthContext);
     console.log(user);
     return (
-        <div>
-            Hello!! {user.displayName}. Welcome back to the dashboard..
+        <div className="text-center text-3xl md:text-5xl">
+            Hello!! <span className="text-white font-bold text-4xl md:text-6xl">{user.displayName}</span>. Welcome back to the dashboard..
         </div>
     );
 };
