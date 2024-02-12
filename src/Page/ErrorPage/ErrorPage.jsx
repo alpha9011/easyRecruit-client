@@ -4,8 +4,8 @@ import ErrorNavbar from "./ErrorNavbar";
 
 const ErrorPage = () => {
     return (
-        <div>
-            <div className="flex items-center justify-center mt-10 md:mb-5 mx-5">
+        <div className="bg-slate-700 h-svh">
+            <div className="flex items-center justify-center pt-10 md:mb-5 mx-5">
                 <Lottie animationData={errorAnim} className="h-[80vh]"></Lottie>
             </div>
             <ErrorNavbar></ErrorNavbar>

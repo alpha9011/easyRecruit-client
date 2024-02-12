@@ -7,10 +7,10 @@ const ErrorNavbar = () => {
         <div>
             <section className="flex justify-center gap-5 max-w-200px">
                 <div className="flex md:order-2">
-                    <Button onClick={() => navigate(-1)}>Go Back</Button>
+                    <Button gradientDuoTone="redToYellow" onClick={() => navigate(-1)}>Go Back</Button>
                 </div>
                 <div className="flex md:order-2">
-                    <Button><Link to={"/"}>Home</Link></Button>
+                    <Button gradientDuoTone="tealToLime"><Link to={"/"}>Home</Link></Button>
                 </div>
             </section>
         </div>
