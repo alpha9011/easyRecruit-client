@@ -4,10 +4,11 @@ import { useLoaderData } from "react-router-dom";
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 import { useQuery } from "@tanstack/react-query";
 import {  Spinner, Table } from "flowbite-react";
+import CandidatesDetail from './CandidatesDetail';
 const AllJobsCandidates = () => {
 const {title, companyName} = useLoaderData()
 const axiosSecure = useAxiosSecure()
-const {isLoading,  data: candidates = [] } = useQuery({
+const {isLoading, refetch,  data: candidates = [] } = useQuery({
     queryKey: ['candidates'],
     queryFn: async () => {
         const res = await axiosSecure.get('/applicantCV')
@@ -17,7 +18,7 @@ const {isLoading,  data: candidates = [] } = useQuery({
         return candidate
     }
 })
-console.log(candidates);
+
 if(isLoading) {
     return <div className=" h-screen flex items-center justify-center">
        <Spinner aria-label="Large spinner example" size="lg" />
@@ -38,10 +39,10 @@ if(isLoading) {
                     <Table.HeadCell>Name</Table.HeadCell>
                     <Table.HeadCell>Phone</Table.HeadCell>
                     <Table.HeadCell>Country</Table.HeadCell>
-                    <Table.HeadCell>Expected Salary</Table.HeadCell>
-                    <Table.HeadCell>
-                      <span className="sr-only">Edit</span>
-                    </Table.HeadCell>
+                    <Table.HeadCell>Apply Date</Table.HeadCell>
+                    <Table.HeadCell>Selected</Table.HeadCell>
+                    <Table.HeadCell></Table.HeadCell>
+
                   </Table.Head>
                   <Table.Body className="divide-y">
                  
@@ -54,9 +55,10 @@ if(isLoading) {
                       <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">{candidate?.name}</Table.Cell>
                       <Table.Cell>{candidate?.phone}</Table.Cell>
                       <Table.Cell>{candidate?.country}</Table.Cell>
-                      <Table.Cell>${candidate?.salary}</Table.Cell>
+                      <Table.Cell>{candidate?.applyDate}</Table.Cell>
+                      <Table.Cell> {candidate?.isSelected ? 'selected' : 'not select'} </Table.Cell>
                       <Table.Cell>
-                      details
+                          <CandidatesDetail candidate={candidate} refetch={refetch}></CandidatesDetail>
                       </Table.Cell>
                     </Table.Row>
                       
