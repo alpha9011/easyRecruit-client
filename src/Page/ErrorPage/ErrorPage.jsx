@@ -1,10 +1,10 @@
 import Lottie from "lottie-react";
-import errorAnim from "../../Json/coming.json"
+import errorAnim from "../../Json/newError.json"
 
 const ErrorPage = () => {
     return (
-        <div className="max-h-10">
-            <Lottie animationData={errorAnim} className="h-screen"></Lottie>
+        <div className="flex items-center justify-center mt-16 mx-5">
+            <Lottie animationData={errorAnim} className="h-[80vh]"></Lottie>
         </div>
     );
 };
