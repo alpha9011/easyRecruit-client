@@ -12,9 +12,9 @@ const useAdmin = () => {
     queryKey: [ user?.email, 'isAdmin'],
     enabled: !loading,
     queryFn: async ()=> {
-      console.log('askign or cheacking adming' , user);
+      // console.log('askign or cheacking adming' , user);
      const res = await axiosSecure.get(`/users/admin/${user?.email}`)
-     console.log(res.data);
+    //  console.log(res.data);
      if(loading){
         <Spinner aria-label="Default status example" />;
      }
