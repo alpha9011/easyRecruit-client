@@ -11,24 +11,24 @@ const axiosSecure = useAxiosSecure()
 const {isLoading, refetch,  data: candidates = [] } = useQuery({
     queryKey: ['candidates'],
     queryFn: async () => {
-        const res = await axiosSecure.get('/applicantCV')
-        const applier = res.data;
-        const candidate = applier.filter(apply =>
-           apply.companyName ===companyName && apply.jobTitle === title  )
-        return candidate
+      const res = await axiosSecure.get('/applicantCV')
+      const applier = res.data;
+      const candidate = applier.filter(apply =>
+        apply.companyName === companyName && apply.jobTitle === title)
+      return candidate
     }
 })
 
 if(isLoading) {
     return <div className=" h-screen flex items-center justify-center">
-       <Spinner aria-label="Large spinner example" size="lg" />
+      <Spinner aria-label="Large spinner example" size="lg" />
     </div>
   }
-    return (
-        <div className="text-white">
-            <h1 className='text-center font-semibold text-2xl'>{companyName}</h1>
-            <h1 className='text-center font-semibold text-3xl'>{title} Total Candidates: {candidates.length}</h1>
-            <h2></h2>
+  return (
+    <div className="text-white">
+      <h1 className='text-center font-semibold text-2xl'>{companyName}</h1>
+      <h1 className='text-center font-semibold text-3xl'>{title} Total Candidates: {candidates.length}</h1>
+      <h2></h2>
 
             {
                 candidates.length > 0  ?
@@ -61,28 +61,28 @@ if(isLoading) {
                           <CandidatesDetail candidate={candidate} refetch={refetch}></CandidatesDetail>
                       </Table.Cell>
                     </Table.Row>
-                      
-                      )
-                    
-               }
-                  
-                  </Table.Body>
-                </Table>
-              </div>
 
-              :
+                  )
 
-              <div className='flex h-[50vh] justify-center items-center '>
-                <h1>This post do not have any Applier</h1>
-                </div>
+                }
 
-            }
-    
-        </div>
-    );
+              </Table.Body>
+            </Table>
+          </div>
+
+          :
+
+          <div className='flex h-[50vh] justify-center items-center '>
+            <h1>This post do not have any Applier</h1>
+          </div>
+
+      }
+
+    </div>
+  );
 };
 
 AllJobsCandidates.propTypes = {
-    job: PropTypes.object
+  job: PropTypes.object
 }
 export default AllJobsCandidates;
