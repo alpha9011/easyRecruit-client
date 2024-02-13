@@ -1,17 +1,28 @@
-import { useContext } from "react";
+
 import { FaEdit } from "react-icons/fa";
-import { AuthContext } from "../../../AuthProvider/AuthProvider";
+import useAuth from "../../../Hooks/useAuth";
+import { useEffect, useState } from "react";
+import useAxiosPublic from "../../../Hooks/useAxiosPublic";
+
 
 const CustomerProfile = () => {
     // this data comes from firebase but here need data from database
-    const { user } = useContext(AuthContext);
-    // console.log(user);
-    const {
-        email,
-        number,
-        company,
-        jpLimit,
-        userRole } = user;
+    const axiosPublic = useAxiosPublic()
+    const { user } = useAuth()
+    const [ users , setUsers] = useState({})
+
+    useEffect(()=> {
+        axiosPublic.get('/users')
+        .then( res => {
+            const allUsers = res.data
+            const singleuser = allUsers.find( singleUser => singleUser?.email === user?.email)
+            setUsers(singleuser)
+        })
+    },[axiosPublic, user?.email ])
+    console.log(users)
+const {email,number,company,jpLimit,userRole} = users || {}
+
+
     return (
         <div>
 

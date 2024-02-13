@@ -5,7 +5,6 @@ import { MdOutlinePhoneIphone } from "react-icons/md";
 import { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import Swal from "sweetalert2";
-import { Button } from "flowbite-react";
 const ContactForm = () => {
 
     const form = useRef();
@@ -58,7 +57,7 @@ const ContactForm = () => {
                 <div>
                     <textarea placeholder="write your message" name="message" cols="30" rows="10" className="w-full rounded-3xl mb-5 bg-transparent border-2 border-gray-400 text-white" required></textarea>
                 </div>
-                <Button type="submit" gradientDuoTone="purpleToBlue">Send</Button>
+                <button type="submit" className="before:ease relative h-12 w-40 overflow-hidden border bg-gray-50 text-black shadow-2xl transition-all before:absolute before:right-0 before:top-0 before:h-12 before:w-6 before:translate-x-12 before:rotate-6 before:bg-black before:opacity-10 before:duration-1000 hover:shadow-green-500 hover:before:-translate-x-96" >Send</button>
             </form>
         </div>
     );

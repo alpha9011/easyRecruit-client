@@ -1,6 +1,6 @@
 import { Avatar, Button, Dropdown, Navbar } from "flowbite-react";
 // import { CiEdit } from "react-icons/ci";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 // import users from "../../assets/user2.jpg"
 import { useContext, useState } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
@@ -43,7 +43,7 @@ const Navbars = () => {
       )}
 
       <div className="text-center border-t mt-5">
-        <NavLink to="/dashboard" className={navLinkStyle}>
+        <NavLink to="/dashboard/dashboardHome" className={navLinkStyle}>
           Dashboard
         </NavLink>
 
@@ -67,22 +67,26 @@ const Navbars = () => {
           Contact
         </NavLink>
 
-        <NavLink to="/register" className={navLinkStyle}>
+        {/* <NavLink to="/register" className={navLinkStyle}>
           Register
-        </NavLink>
+        </NavLink> */}
 
         <NavLink to="/circular" className={navLinkStyle}>
           Circular
         </NavLink>
 
-        <Button
-          outline
-          gradientDuoTone="purpleToBlue"
-          onClick={() => logOut()}
-          className="inline-block w-full text-center text-xl mt-2"
-        >
-          logout
-        </Button>
+    {
+      user ?     <Button
+      outline
+      gradientDuoTone="purpleToBlue"
+      onClick={() => logOut()}
+      className="inline-block w-full text-center text-xl mt-2"
+    >
+      logout
+    </Button> 
+    : 
+    <Link>Login</Link>
+    }
       </div>
     </div>
   );
@@ -121,20 +125,31 @@ const Navbars = () => {
 
             <div className="text-center ">
               <Navbar.Link>
-                <NavLink to="/dashboard" className="text-lg">
+                <NavLink to="/dashboard/dashboardHome" className="text-lg">
                   Dashboard
                 </NavLink>
               </Navbar.Link>
             </div>
 
-            <Button
-              outline
-              gradientDuoTone="purpleToBlue"
-              onClick={() => logOut()}
-              className="inline-block w-full text-center text-xl mt-2"
-            >
-              logout
-            </Button>
+            {
+      user ?     <Button
+      outline
+      gradientDuoTone="purpleToBlue"
+      onClick={() => logOut()}
+      className="inline-block w-full text-center text-xl mt-2"
+    >
+      logout
+    </Button> 
+    : 
+    <Link to='/register'><Button
+    outline
+    gradientDuoTone="purpleToBlue"
+    
+    className="inline-block w-full text-center text-xl mt-2"
+  >
+    login
+  </Button> </Link>
+    }
           </Dropdown.Header>
           <Dropdown.Divider />
         </Dropdown>
@@ -158,9 +173,9 @@ const Navbars = () => {
           <Navbar.Link>
             <NavLink to="/contact">Contact</NavLink>
           </Navbar.Link>
-          <Navbar.Link>
+          {/* <Navbar.Link>
             <NavLink to="/register">Register</NavLink>
-          </Navbar.Link>
+          </Navbar.Link> */}
           <Navbar.Link>
             <NavLink to="/circular">Circular</NavLink>
           </Navbar.Link>

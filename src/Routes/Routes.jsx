@@ -14,13 +14,12 @@ import PostJob from "../DashboardLayout/DashboardPage/PostJob/PostJob";
 import Circular from "../Page/Circular/Circular";
 import InterViewSchedule from "../DashboardLayout/DashboardPage/InterViewSchedule/InterViewSchedule";
 import Appointment from "../DashboardLayout/DashboardPage/Appointment/appointment";
-import ApplyForm from "../Page/Circular/ApplyForm/ApplyForm";
+import ApplyForm from "../Page/Circular/ApplyForm/JobDetails";
 import Pricing from "../Page/Pricing/Pricing";
 import WhyEasyRecruit from "../Page/WhyEasyRecruit/WhyEasyRecruit";
 import CandidateForm from "../Page/Circular/ApplyForm/CandidateForm";
 import TermsAndConditions from "../shared/Footer/TermsAndConditions";
 import PrivacyPolicy from "../shared/Footer/PrivacyPolicy";
-import PrivateRout from "./PrivateRout";
 import UpdateJob from "../Page/Circular/UpdateJob";
 import MemberShip from "../Page/Membership/Membership";
 import CustomerProfile from "../DashboardLayout/DashboardPage/CustomerProfile/CustomerProfile";
@@ -28,6 +27,10 @@ import AllUsers from "../DashboardLayout/DashboardAdminPage/AllUsers/AllUsers";
 import AllJobs from "../DashboardLayout/DashboardAdminPage/AllJobs/AllJobs";
 
 import ContactUs from "../Page/ContactUs/ContactUs";
+import PrivateRout from "./PrivateRout";
+import CVmanage from "../DashboardLayout/DashboardPage/CVmanage/CVmanage";
+import AllJobsCandidates from "../DashboardLayout/DashboardAdminPage/AllJobs/AllJobsCandidates";
+import MyCandidates from "../DashboardLayout/DashboardPage/MyJobs/MyCandidates";
 
 
 export const router = createBrowserRouter([
@@ -71,17 +74,12 @@ export const router = createBrowserRouter([
           fetch(`http://localhost:5000/postjob/${params.id}`),
       },
       {
-        path: "/applyform/:id",
+      path: "/applyform/:id",
         element: <CandidateForm></CandidateForm>,
         loader: ({ params }) =>
           fetch(`http://localhost:5000/postjob/${params.id}`),
       },
-      {
-        path: "/updateJob/:id",
-        element: <UpdateJob></UpdateJob>,
-        loader: ({ params }) =>
-          fetch(`http://localhost:5000/postjob/${params.id}`),
-      },
+   
       {
         path: "/price",
         element: <Pricing></Pricing>,
@@ -102,6 +100,7 @@ export const router = createBrowserRouter([
         path:"/privacy",
         element: <PrivacyPolicy></PrivacyPolicy>
       },
+
     ],
   },
   {
@@ -122,6 +121,11 @@ export const router = createBrowserRouter([
         path: "allJobs",
         element: <AllJobs></AllJobs>
       },
+      {
+        path:"alljobs/:id",
+        element:<AllJobsCandidates></AllJobsCandidates>,
+        loader: ({ params }) =>fetch(`http://localhost:5000/postjob/${params.id}`),
+      },
 
       // Normal user routs
       {
@@ -141,6 +145,18 @@ export const router = createBrowserRouter([
         element: <MyJobs></MyJobs>,
       },
       {
+        path: "myCandidate/:id",
+        element: <MyCandidates></MyCandidates> ,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/postjob/${params.id}`),
+      },
+      {
+        path: "updateJob/:id",
+        element: <UpdateJob></UpdateJob>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/postjob/${params.id}`),
+      },
+      {
         path: "postjob",
         element: <PostJob></PostJob>,
       },
@@ -151,6 +167,10 @@ export const router = createBrowserRouter([
       {
         path: "appointment",
         element: <Appointment></Appointment>,
+      },
+      {
+        path: "CVmanage",
+        element: <CVmanage/>
       },
     ],
   },
