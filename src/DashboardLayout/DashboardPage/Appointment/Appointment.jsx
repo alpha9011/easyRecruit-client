@@ -4,10 +4,27 @@ console.log(appointmentData);
 import { Table } from "flowbite-react";
 import PrimaryButton from "../../../shared/PrimaryButton/PrimaryButton";
 import Swal from "sweetalert2";
+import useAxiosSecure from "../../../Hooks/useAxiosSecure";
+import { useEffect, useState } from "react";
+import useAuth from "../../../Hooks/useAuth";
 
 
 
 const Appointment = () => {
+
+  // get all the selected candidate
+  const axiosPublic = useAxiosSecure()
+  const [selected, setselected] = useState([])
+  const { user } = useAuth()
+  const currentUSer = user?.email
+  useEffect(() => {
+    axiosPublic.get('/applicantCV/selected')
+      .then(res => {
+        const allcandidates = res.data
+        setselected(allcandidates)
+      })
+  }, [axiosPublic, currentUSer])
+  console.log(selected);
 
 
   const handleSendEmails = () => {
@@ -19,7 +36,7 @@ const Appointment = () => {
       timer: 1500,
     });
 
- 
+
   };
 
   return (
@@ -29,27 +46,26 @@ const Appointment = () => {
       </h2>
       <div className="overflow-x-auto border rounded-xl">
         <Table>
+          {/* Table titles */}
           <Table.Head className="bg-opacity-10 ">
             <Table.HeadCell>Company Name</Table.HeadCell>
             <Table.HeadCell>Email</Table.HeadCell>
             <Table.HeadCell>Phone Number</Table.HeadCell>
-            {/* <Table.HeadCell>
-              <span className="sr-only">Edit</span>
-            </Table.HeadCell> */}
           </Table.Head>
 
+          {/* Table data */}
           <Table.Body className="divide-y ">
-            {appointmentData.map((item) => (
+            {selected.map((item) => (
               <Table.Row
                 className=" dark:border-gray-700 dark:bg-gray-800     text-black"
                 key={item?.id}
               >
                 <Table.Cell className="whitespace-nowrap font-medium  dark:text-white ">
-                  {item.name}
+                  {item.companyName}
                 </Table.Cell>
 
                 <Table.Cell>{item.email}</Table.Cell>
-                <Table.Cell>{item.number}</Table.Cell>
+                <Table.Cell>{item.phone}</Table.Cell>
               </Table.Row>
             ))}
           </Table.Body>
