@@ -87,7 +87,8 @@ const MyJobCard = ({ myjob }) => {
               <button onClick={() => handleDelete(_id)} className="bg-red-600 rounded px-3 py-2">
                 <ImBin className="text-white" />
               </button>
-              <Link to={`/dashboard/alljobs/${_id}`} className=" px-3 py-2 bg-blue-700 text-white  rounded-md hover:bg-slate-800 hover:-translate-y-[2px] duration-75 cursor-pointer flex items-center w-fit gap-2"><FaUsers /></Link>
+              
+              <Link to={`/dashboard/myCandidate/${_id}`} className=" px-3 py-2 bg-blue-700 text-white  rounded-md hover:bg-slate-800 hover:-translate-y-[2px] duration-75 cursor-pointer flex items-center w-fit gap-2"><FaUsers /></Link>
             </div>
 
 

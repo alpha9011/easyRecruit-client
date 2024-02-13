@@ -41,7 +41,8 @@ console.log(postDate);
         experience:data.experience,
         salary:data.salary,
         postDate:postDate,
-        deadline:data.date   
+        deadline:data.date  ,
+        vacancy:data.vacancy 
             }
       console.log(postjob);
         axiospublic.post('/postjob', postjob)
@@ -164,6 +165,11 @@ console.log(postDate);
                             <input type="date" {...register("date")} className="mt-1 input border-none w-full" placeholder="" />
                         </div>
                     </div>
+
+                    <div >
+                            <label>Post vacancy</label>
+                            <input type="number" {...register("vacancy")} className="mt-1 input border-none w-full" placeholder="vacancy" />
+                        </div>
 
                     <div className=" px-3 py-2 bg-blue-700 text-white  rounded-md hover:bg-slate-800 hover:-translate-y-[2px] duration-75 cursor-pointer flex items-center w-fit gap-2">
                         <GoCheckCircle className="text-lg text-white font-bold"></GoCheckCircle>

@@ -24,6 +24,7 @@ if(isLoading) {
       <Spinner aria-label="Large spinner example" size="lg" />
     </div>
   }
+
   return (
     <div className="text-white">
       <h1 className='text-center font-semibold text-2xl'>{companyName}</h1>
@@ -56,7 +57,12 @@ if(isLoading) {
                       <Table.Cell>{candidate?.phone}</Table.Cell>
                       <Table.Cell>{candidate?.country}</Table.Cell>
                       <Table.Cell>{candidate?.applyDate}</Table.Cell>
-                      <Table.Cell> {candidate?.isSelected ? 'selected' : 'not select'} </Table.Cell>
+
+                      {/* <Table.Cell> {(candidate?.isSelected) === 'selected' ? 'selected' : (candidate?.isSelected === 'notselected') ? 'Not selected' : 'Make Select' } </Table.Cell> */}
+                      
+                      <Table.Cell>{candidate?.isSelected || 'Make Select'}</Table.Cell>
+                      
+
                       <Table.Cell>
                           <CandidatesDetail candidate={candidate} refetch={refetch}></CandidatesDetail>
                       </Table.Cell>

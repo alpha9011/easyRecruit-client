@@ -60,11 +60,11 @@ console.log(aboutCompany);
 <div className="grid grid-cols-2 gap-3">
     <div>
         <label >Job title<span className="text-red-600">*</span></label>
-        <input type="text" defaultValue={title} className="mt-1 input border-none w-full"  {...register("title", { required: true })} placeholder="e.g. Senior Product Designer" required />
+        <input type="text" disabled defaultValue={title} className="mt-1 input border-none w-full"  {...register("title", { required: true })} placeholder="e.g. Senior Product Designer" required />
     </div>
     <div >
         <label>Job location<span className="text-red-600">*</span></label>
-        <input type="text" defaultValue={location} {...register("location", { required: true })} className="mt-1 input border-none w-full" placeholder="e.g. 'New York City' " required />
+        <input type="text"  defaultValue={location} {...register("location", { required: true })} className="mt-1 input border-none w-full" placeholder="e.g. 'New York City' " required />
 
     </div >
 </div>
@@ -73,7 +73,7 @@ console.log(aboutCompany);
 <div className="grid grid-cols-2 gap-3">
     <div>
         <label >Company Name<span className="text-red-600">*</span></label>
-        <input type="text" defaultValue={companyName} className="mt-1 input border-none w-full"  {...register("companyName", { required: true })} placeholder="your company name" required />
+        <input type="text" disabled defaultValue={companyName} className="mt-1 input border-none w-full"  {...register("companyName", { required: true })} placeholder="your company name" required />
     </div>
 
     <div>
