@@ -1,7 +1,7 @@
 import appointmentData from "../../../Json/appointmentData.json";
 
 console.log(appointmentData);
-import { Table } from "flowbite-react";
+import { Avatar, Table } from "flowbite-react";
 import PrimaryButton from "../../../shared/PrimaryButton/PrimaryButton";
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
@@ -48,7 +48,9 @@ const Appointment = () => {
         <Table>
           {/* Table titles */}
           <Table.Head className="bg-opacity-10 ">
-            <Table.HeadCell>Company Name</Table.HeadCell>
+            <Table.HeadCell>Photo</Table.HeadCell>
+            <Table.HeadCell>Name</Table.HeadCell>
+            <Table.HeadCell>Applied Company</Table.HeadCell>
             <Table.HeadCell>Email</Table.HeadCell>
             <Table.HeadCell>Phone Number</Table.HeadCell>
           </Table.Head>
@@ -60,10 +62,11 @@ const Appointment = () => {
                 className=" dark:border-gray-700 dark:bg-gray-800     text-black"
                 key={item?.id}
               >
+                <Table.Cell><Avatar img={item.photo} /></Table.Cell>
                 <Table.Cell className="whitespace-nowrap font-medium  dark:text-white ">
-                  {item.companyName}
+                  {item.name}
                 </Table.Cell>
-
+                <Table.Cell>{item.companyName}</Table.Cell>
                 <Table.Cell>{item.email}</Table.Cell>
                 <Table.Cell>{item.phone}</Table.Cell>
               </Table.Row>
