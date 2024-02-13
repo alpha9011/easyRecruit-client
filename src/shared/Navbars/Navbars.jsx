@@ -1,6 +1,6 @@
 import { Avatar, Button, Dropdown, Navbar } from "flowbite-react";
 // import { CiEdit } from "react-icons/ci";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 // import users from "../../assets/user2.jpg"
 import { useContext, useState } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
@@ -21,11 +21,10 @@ const Navbars = () => {
   const navLinkStyle = ({ isActive, isPending }) => {
     return isPending
       ? "pending"
-      : `inline-block w-full text-center py-2  bg-transparent text rounded font-semibold ${
-          isActive
-            ? "border-blue-500 border-y backdrop-filter backdrop-blur-3xl "
-            : "  hover:border-y hover:border-blue-500 hover:backdrop-blur-3xl"
-        }`;
+      : `inline-block w-full text-center py-2  bg-transparent text rounded font-semibold ${isActive
+        ? "border-blue-500 border-y backdrop-filter backdrop-blur-3xl "
+        : "  hover:border-y hover:border-blue-500 hover:backdrop-blur-3xl"
+      }`;
   };
   //  NavMenu Side bar
   const navMenu = (
@@ -44,7 +43,7 @@ const Navbars = () => {
       )}
 
       <div className="text-center border-t mt-5">
-        <NavLink to="/dashboard" className={navLinkStyle}>
+        <NavLink to="/dashboard/dashboardHome" className={navLinkStyle}>
           Dashboard
         </NavLink>
 
@@ -68,22 +67,26 @@ const Navbars = () => {
           Contact
         </NavLink>
 
-        <NavLink to="/register" className={navLinkStyle}>
+        {/* <NavLink to="/register" className={navLinkStyle}>
           Register
-        </NavLink>
+        </NavLink> */}
 
         <NavLink to="/circular" className={navLinkStyle}>
           Circular
         </NavLink>
 
-        <Button
-          outline
-          gradientDuoTone="purpleToBlue"
-          onClick={() => logOut()}
-          className="inline-block w-full text-center text-xl mt-2"
-        >
-          logout
-        </Button>
+    {
+      user ?     <Button
+      outline
+      gradientDuoTone="purpleToBlue"
+      onClick={() => logOut()}
+      className="inline-block w-full text-center text-xl mt-2"
+    >
+      logout
+    </Button> 
+    : 
+    <Link>Login</Link>
+    }
       </div>
     </div>
   );
@@ -91,7 +94,7 @@ const Navbars = () => {
     <Navbar
       fluid
       rounded
-      className="px-10 mb-10 sticky top-0 bg-white z-50  shadow p-4 lg:opacity-80"
+      className="px-10 sticky top-0 bg-white z-50  shadow p-4 lg:opacity-80"
     >
       <Navbar.Brand href="/">
         <div className="flex flex-col items-center">
@@ -122,20 +125,31 @@ const Navbars = () => {
 
             <div className="text-center ">
               <Navbar.Link>
-                <NavLink to="/dashboard" className="text-lg">
+                <NavLink to="/dashboard/dashboardHome" className="text-lg">
                   Dashboard
                 </NavLink>
               </Navbar.Link>
             </div>
 
-            <Button
-              outline
-              gradientDuoTone="purpleToBlue"
-              onClick={() => logOut()}
-              className="inline-block w-full text-center text-xl mt-2"
-            >
-              logout
-            </Button>
+            {
+      user ?     <Button
+      outline
+      gradientDuoTone="purpleToBlue"
+      onClick={() => logOut()}
+      className="inline-block w-full text-center text-xl mt-2"
+    >
+      logout
+    </Button> 
+    : 
+    <Link to='/register'><Button
+    outline
+    gradientDuoTone="purpleToBlue"
+    
+    className="inline-block w-full text-center text-xl mt-2"
+  >
+    login
+  </Button> </Link>
+    }
           </Dropdown.Header>
           <Dropdown.Divider />
         </Dropdown>
@@ -159,9 +173,9 @@ const Navbars = () => {
           <Navbar.Link>
             <NavLink to="/contact">Contact</NavLink>
           </Navbar.Link>
-          <Navbar.Link>
+          {/* <Navbar.Link>
             <NavLink to="/register">Register</NavLink>
-          </Navbar.Link>
+          </Navbar.Link> */}
           <Navbar.Link>
             <NavLink to="/circular">Circular</NavLink>
           </Navbar.Link>
