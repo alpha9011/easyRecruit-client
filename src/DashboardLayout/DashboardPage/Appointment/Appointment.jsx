@@ -1,26 +1,12 @@
 import appointmentData from "../../../Json/appointmentData.json";
 
-console.log(appointmentData);
 import { Table } from "flowbite-react";
-import PrimaryButton from "../../../shared/PrimaryButton/PrimaryButton";
-import Swal from "sweetalert2";
 
-;
+
+import { NavLink } from "react-router-dom";
 
 const Appointment = () => {
-
-
-  const handleSendEmails = () => {
-    Swal.fire({
-      position: "center",
-      icon: "success",
-      title: "Interview Schedule Sent",
-      showConfirmButton: false,
-      timer: 1500,
-    });
-
- 
-  };
+  
 
   return (
     <div>
@@ -31,8 +17,9 @@ const Appointment = () => {
         <Table>
           <Table.Head className="bg-opacity-10 ">
             <Table.HeadCell>Company Name</Table.HeadCell>
-            <Table.HeadCell>Email</Table.HeadCell>
-            <Table.HeadCell>Phone Number</Table.HeadCell>
+            <Table.HeadCell>Job Name</Table.HeadCell>
+            <Table.HeadCell>Appointment</Table.HeadCell>
+
             {/* <Table.HeadCell>
               <span className="sr-only">Edit</span>
             </Table.HeadCell> */}
@@ -49,20 +36,16 @@ const Appointment = () => {
                 </Table.Cell>
 
                 <Table.Cell>{item.email}</Table.Cell>
-                <Table.Cell>{item.number}</Table.Cell>
+
+                <Table.Cell>
+                  <NavLink>Appointed</NavLink>
+                </Table.Cell>
               </Table.Row>
             ))}
           </Table.Body>
         </Table>
       </div>
-      <div className="pt-5 flex justify-center ">
-        <PrimaryButton
-          font={"font-bold"}
-          buttonText={"Send Interview Schedule"}
-          onClick={handleSendEmails}
-          textColor={"text-white"}
-        ></PrimaryButton>
-      </div>
+      <div className="pt-5 flex justify-center "></div>
     </div>
   );
 };

@@ -27,7 +27,7 @@ const Dashboard = () => {
       : `inline-block w-full text-center py-2  bg-transparent text-white rounded font-semibold ${
           isActive
             ? "border-white border-y backdrop-filter backdrop-blur-3xl "
-            : " hover:duration-200 hover:-translate-y-1  hover:border-y hover:backdrop-blur-3xl"
+            : "  hover:border-y hover:backdrop-blur-3xl"
         }`;
   };
   const [isAdmin] = useAdmin();

@@ -17,6 +17,7 @@ const MyJobs = () => {
                 setMyJobs(jobs)
             })
     }, [axiosPublic, user?.email])
+    
     console.log(myJobs);
     return (
         <div>

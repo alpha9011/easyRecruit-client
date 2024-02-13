@@ -28,7 +28,6 @@ import AllJobs from "../DashboardLayout/DashboardAdminPage/AllJobs/AllJobs";
 
 import ContactUs from "../Page/ContactUs/ContactUs";
 
-
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -53,7 +52,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/contact",
-        element: <ContactUs></ContactUs>
+        element: <ContactUs></ContactUs>,
       },
       {
         path: "/recruiting-software-capabilities",
@@ -91,15 +90,15 @@ export const router = createBrowserRouter([
       },
       {
         path: "/membership",
-        element: <MemberShip></MemberShip>
+        element: <MemberShip></MemberShip>,
       },
       {
-        path:"/terms",
-        element: <TermsAndConditions></TermsAndConditions>
+        path: "/terms",
+        element: <TermsAndConditions></TermsAndConditions>,
       },
       {
-        path:"/privacy",
-        element: <PrivacyPolicy></PrivacyPolicy>
+        path: "/privacy",
+        element: <PrivacyPolicy></PrivacyPolicy>,
       },
     ],
   },
@@ -107,7 +106,6 @@ export const router = createBrowserRouter([
     path: "/dashboard",
     element: (
       <PrivateRout>
-       
         <Dashboard></Dashboard>
       </PrivateRout>
     ),
@@ -115,11 +113,11 @@ export const router = createBrowserRouter([
       // Admin User routs
       {
         path: "allUser",
-        element: <AllUsers></AllUsers>
+        element: <AllUsers></AllUsers>,
       },
       {
         path: "allJobs",
-        element: <AllJobs></AllJobs>
+        element: <AllJobs></AllJobs>,
       },
 
       // Normal user routs

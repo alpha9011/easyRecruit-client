@@ -12,7 +12,6 @@ const JobDetails = ({job}) => {
         <Modal.Header>    <div className="flex items-center gap-2 mb-3">
   <div>
     <img src={logo} className="border w-20 rounded-lg shadow" />
-    
   </div>
   <div className="ml-2">
 
