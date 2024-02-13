@@ -44,7 +44,7 @@ const Dashboard = () => {
    isAdmin ? 
    
    <div>
-      <div className="flex flex-col items-center pb-10">
+      <div className="flex flex-col items-center ">
         <img className="w-24 h-24 mb-3 rounded-full shadow-lg" src={user?.photoURL} alt="Bonnie image" />
         <h5 className="mb-3 text-xl font-medium bg-gradient-to-r from-gray-300 to-gray-400 inline-block text-transparent bg-clip-text dark:text-white">{user?.displayName}</h5>
         <NavLink to="/dashboard/customerProfile" className={navLinkStyle}>
@@ -95,7 +95,7 @@ const Dashboard = () => {
         </NavLink>
       </li>
 
-      <div className="border-t  my-5 "></div>
+      <div className="border-t  mt-5 "></div>
       <li>
         <NavLink to="/" className={navLinkStyle}>
           <span className="flex justify-center items-center gap-2">
@@ -110,8 +110,8 @@ const Dashboard = () => {
    : 
 
     <div>
-      <div className="border-t  my-5 "></div>
-      <div className="flex flex-col items-center pb-10">
+      
+      <div className="flex flex-col items-center">
         <img className="w-24 h-24 mb-3 rounded-full shadow-lg" src={user?.photoURL} alt="Bonnie image" />
         <h5 className="mb-3 text-xl font-medium bg-gradient-to-r from-gray-300 to-gray-400 inline-block text-transparent bg-clip-text dark:text-white">{user?.displayName}</h5>
         <NavLink to="/dashboard/customerProfile" className={navLinkStyle}>
@@ -151,7 +151,7 @@ const Dashboard = () => {
         </NavLink>
       </li>
       
-      <div className="border-t  my-5 "></div>
+      <div className="border-t  mt-5 "></div>
       <li>
         <NavLink to="/" className={navLinkStyle}>
           <span className="flex justify-center items-center gap-2">

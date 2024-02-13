@@ -10,7 +10,7 @@ const CandidatesDetail = ({candidate,refetch}) => {
 const axiosSecure = useAxiosSecure()
     const [openModal, setOpenModal] = useState(false);
 
-const handleUpdate = id => {
+const handleUpdateSelected = id => {
     console.log(id);
 
     Swal.fire({
@@ -20,11 +20,45 @@ const handleUpdate = id => {
         showCancelButton: true,
         confirmButtonColor: "#3085d6",
         cancelButtonColor: "#d33",
-        confirmButtonText: "Yes, Make Admin"
+        confirmButtonText: "Yes, Select "
     }).then((result) => {
         if (result.isConfirmed) {
 
             axiosSecure.patch(`/applicantCV/${id}`)
+
+            .then(res => {
+                console.log(res.data);
+                if (res.data.modifiedCount > 0) {
+                    refetch()
+                    Swal.fire({
+                        position: "top-center",
+                        icon: "success",
+                        title: `selected successfully`,
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
+
+                }
+            })
+
+        }
+    });
+}
+const handlenNOtSelect = id => {
+    console.log(id);
+
+    Swal.fire({
+        title: "Are you sure?",
+        text: "You won't be able to revert this!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, Not Select"
+    }).then((result) => {
+        if (result.isConfirmed) {
+
+            axiosSecure.patch(`/applicantCV/notSelect/${id}`)
 
             .then(res => {
                 console.log(res.data);
@@ -70,12 +104,13 @@ const handleUpdate = id => {
 
                <div className="mt-3">
                {
-                        isSelected ? <span className="bg-green-400 px-4 py-2 rounded-md "> selected</span> :
+                        isSelected === 'selected'? <span className="bg-green-400 px-4 py-2 rounded-md "> selected</span> :
                         
-                    <button className="bg-blue-600 px-3 py-2 rounded-md text-white" onClick={()=>handleUpdate(_id)}>Select</button>
+                    <button className="bg-blue-600 px-3 py-2 rounded-md text-white" onClick={()=>handleUpdateSelected(_id)}>Select</button>
                     }
 
                </div>
+               <button className="bg-red-600 px-3 py-2 rounded-md text-white mt-5" onClick={()=>handlenNOtSelect(_id)}>Not Select</button>
                    </div>
                 </Modal.Body>
 
