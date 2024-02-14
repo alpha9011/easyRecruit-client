@@ -11,7 +11,7 @@ const PostJob = () => {
     const axiospublic = useAxiosPublic()
     const { register, handleSubmit, reset } = useForm()
     const { user } = useContext(AuthContext)
-    console.log(user?.email);
+    // console.log(user?.email);
 
 
 
@@ -19,18 +19,30 @@ const date = new Date();
 const options = { year: 'numeric', month: '2-digit', day: '2-digit' };
 const postDate = date.toLocaleDateString('en-US', options);
 
-console.log(postDate);
+// console.log(postDate);
 
+const imageBBKey = import.meta.env.VITE_IMAGEBB
 
+const imageBBApi =`https://api.imgbb.com/1/upload?key=${imageBBKey}`
 
-    const onSubmit = (data) => {
-        console.log(data);
+    const onSubmit =async (data) => {
+        
+        const imageFile = {image: data.logo[0]} 
+       
+        const res = await axiospublic.post(imageBBApi, imageFile, {
+            headers: {
+                'content-type': 'multipart/form-data'
+            }
+        })
+    //    console.log(res.data.data.display_url );
+       const image = res.data.data.display_url
+       console.log(image);
       const postjob = {
         title:data.title,
         location:data.location,
         email:user?.email,
         companyName:data.companyName,
-        logo:data.logo,
+        logo:image,
         aboutCompany:data.aboutCompany,
         positionSummary:data.positionSummary,
         responsibilities:data.responsibilities,
@@ -90,7 +102,7 @@ console.log(postDate);
 
                         <div>
                             <label >Company Logo<span className="text-red-600">*</span></label>
-                            <input type="text" className="mt-1 input border-none w-full"  {...register("logo", { required: true })} placeholder="Company Logo URL" required />
+                            <input type="file" className="mt-1 input border-none w-full"  {...register("logo", { required: true })} placeholder="Company Logo URL" required />
                         </div>
                     </div>
 
