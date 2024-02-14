@@ -41,8 +41,8 @@ const Appointment = () => {
 
   return (
     <div>
-      <h2 className="text-center font-bold text-3xl my-3 text-white">
-        Appointment
+      <h2 className="text-center font-bold text-4xl my-3 text-white">
+        Selected Candidates
       </h2>
       <div className="overflow-x-auto border rounded-xl">
         <Table>
@@ -62,8 +62,12 @@ const Appointment = () => {
                 className=" dark:border-gray-700 dark:bg-gray-800     text-black"
                 key={item?.id}
               >
-                <Table.Cell><Avatar img={item.photo} /></Table.Cell>
-                <Table.Cell className="whitespace-nowrap font-medium  dark:text-white ">
+                <Table.Cell>
+                  <div className="flex justify-start">
+                    <Avatar img={item.photo} />
+                  </div>
+                </Table.Cell>
+                <Table.Cell className="whitespace-nowrap font-medium  dark:text-white">
                   {item.name}
                 </Table.Cell>
                 <Table.Cell>{item.companyName}</Table.Cell>
