@@ -11,7 +11,7 @@ import { FaUsers } from "react-icons/fa6";
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 import { useQuery } from "@tanstack/react-query";
-const MyJobCard = ({ myjob }) => {
+const MyJobCard = ({ myjob,refetch }) => {
   console.log(myjob);
   const { logo, title, jobType, location, experience, salary, aboutCompany, positionSummary, companyName, postDate, deadline, responsibilities, qualifications, education, benifits, _id } = myjob || {}
   const [openModal, setOpenModal] = useState(false);
@@ -52,8 +52,8 @@ const MyJobCard = ({ myjob }) => {
         })
           .then(res => res.json())
           .then(data => {
-            console.log(data);
             if (data.deletedCount > 0) {
+              refetch()
               Swal.fire({
                 title: "Deleted!",
                 text: "Your Job Post has been deleted.",
@@ -171,6 +171,7 @@ const MyJobCard = ({ myjob }) => {
 
 
 MyJobCard.propTypes = {
-  myjob: PropTypes.object
+  myjob: PropTypes.object,
+  refetch:PropTypes.object
 }
 export default MyJobCard;
