@@ -20,7 +20,7 @@ const CustomerProfile = () => {
         })
     },[axiosPublic, user?.email ])
     console.log(users)
-const { email,number,company,jpLimit,userRole} = users || {}
+const {email,number,company,jpLimit,userRole} = users || {}
 
 
     return (
