@@ -13,7 +13,6 @@ import MyJobs from "../DashboardLayout/DashboardPage/MyJobs/MyJobs";
 import PostJob from "../DashboardLayout/DashboardPage/PostJob/PostJob";
 import Circular from "../Page/Circular/Circular";
 import InterViewSchedule from "../DashboardLayout/DashboardPage/InterViewSchedule/InterViewSchedule";
-import Appointment from "../DashboardLayout/DashboardPage/Appointment/appointment";
 import ApplyForm from "../Page/Circular/ApplyForm/JobDetails";
 import Pricing from "../Page/Pricing/Pricing";
 import WhyEasyRecruit from "../Page/WhyEasyRecruit/WhyEasyRecruit";
@@ -25,13 +24,13 @@ import MemberShip from "../Page/Membership/Membership";
 import CustomerProfile from "../DashboardLayout/DashboardPage/CustomerProfile/CustomerProfile";
 import AllUsers from "../DashboardLayout/DashboardAdminPage/AllUsers/AllUsers";
 import AllJobs from "../DashboardLayout/DashboardAdminPage/AllJobs/AllJobs";
-
 import ContactUs from "../Page/ContactUs/ContactUs";
 import PrivateRout from "./PrivateRout";
 import CVmanage from "../DashboardLayout/DashboardPage/CVmanage/CVmanage";
 import AllJobsCandidates from "../DashboardLayout/DashboardAdminPage/AllJobs/AllJobsCandidates";
 import MyCandidates from "../DashboardLayout/DashboardPage/MyJobs/MyCandidates";
 import ShortListed from "../DashboardLayout/DashboardPage/Appointment/ShortListed";
+import Appointment from "../DashboardLayout/DashboardPage/Appointment/Appointment";
 
 
 export const router = createBrowserRouter([
