@@ -1,10 +1,16 @@
 import { useLoaderData } from "react-router-dom";
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 import { useQuery } from "@tanstack/react-query";
-import { Avatar, Spinner, Table } from "flowbite-react";
+import { Avatar, Button, Label, Modal, Spinner, Table, TextInput, Textarea } from "flowbite-react";
+import { useState } from "react";
 // import CandidatesDetail from "../../DashboardAdminPage/AllJobs/CandidatesDetail";
 
 const ShortListed = () => {
+    // modal functionality
+    const [openModal, setOpenModal] = useState(false);
+    function onCloseModal() {
+        setOpenModal(false);
+    }
     const { title, companyName } = useLoaderData()
     const axiosSecure = useAxiosSecure()
     const { isLoading, data: candidates = [] } = useQuery({
@@ -53,10 +59,48 @@ const ShortListed = () => {
                                             <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">{candidate?.name}</Table.Cell>
                                             <Table.Cell>{candidate?.phone}</Table.Cell>
                                             <Table.Cell>{candidate?.email}</Table.Cell>
-                                            <Table.Cell>Send Mail</Table.Cell>
-                                            {/* <Table.Cell>
-                                                <CandidatesDetail candidate={candidate} refetch={refetch}></CandidatesDetail>
-                                            </Table.Cell> */}
+                                            <Table.Cell>
+                                                <>
+                                                    <div className="flex justify-center">
+                                                        <Button onClick={() => setOpenModal(true)}>Send Email</Button>
+                                                    </div>
+                                                    <Modal show={openModal} size="md" onClose={onCloseModal} popup>
+                                                        <Modal.Header />
+                                                        <Modal.Body>
+                                                            <div className="space-y-6">
+                                                                <h3 className="text-xl font-medium text-gray-900 dark:text-white">Send Email to {candidate.name}</h3>
+                                                                <div>
+                                                                    <div className="mb-2 block">
+                                                                        <Label htmlFor="email" value="Email Address" />
+                                                                    </div>
+                                                                    <TextInput
+                                                                        id="email"
+                                                                        placeholder="recevers email address"
+                                                                        defaultValue={candidate.email}
+                                                                        required
+                                                                        disabled
+                                                                    />
+                                                                </div>
+                                                                <div>
+                                                                    <div className="mb-2 block">
+                                                                        <Label htmlFor="subject" value="Subject" />
+                                                                    </div>
+                                                                    <Textarea id="subject" type="text" defaultValue={`Interview schedule for the post of ${candidate.jobTitle} on ${candidate.companyName}.`} placeholder="Enter the subject here" required disabled />
+                                                                </div>
+                                                                <div>
+                                                                    <div className="mb-2 block">
+                                                                        <Label htmlFor="message" value="Message" />
+                                                                    </div>
+                                                                    <Textarea id="message" type="text" placeholder="Enter the message here" required rows={4} />
+                                                                </div>
+                                                                <div className="w-full flex justify-center">
+                                                                    <Button>Send</Button>
+                                                                </div>
+                                                            </div>
+                                                        </Modal.Body>
+                                                    </Modal>
+                                                </>
+                                            </Table.Cell>
                                         </Table.Row>
 
                                     )
