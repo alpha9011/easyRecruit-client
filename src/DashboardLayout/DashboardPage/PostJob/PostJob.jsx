@@ -12,40 +12,52 @@ const PostJob = () => {
     const axiospublic = useAxiosPublic()
     const { register, handleSubmit, reset } = useForm()
     const { user } = useContext(AuthContext)
-    console.log(user?.email);
+    // console.log(user?.email);
 
 
 
-const date = new Date();
-const options = { year: 'numeric', month: '2-digit', day: '2-digit' };
-const postDate = date.toLocaleDateString('en-US', options);
+    const date = new Date();
+    const options = { year: 'numeric', month: '2-digit', day: '2-digit' };
+    const postDate = date.toLocaleDateString('en-US', options);
 
-console.log(postDate);
+    // console.log(postDate);
 
+    const imageBBKey = import.meta.env.VITE_IMAGEBB
 
+    const imageBBApi = `https://api.imgbb.com/1/upload?key=${imageBBKey}`
 
-    const onSubmit = (data) => {
-        console.log(data);
-      const postjob = {
-        title:data.title,
-        location:data.location,
-        email:user?.email,
-        companyName:data.companyName,
-        logo:data.logo,
-        aboutCompany:data.aboutCompany,
-        positionSummary:data.positionSummary,
-        responsibilities:data.responsibilities,
-        qualifications:data.qualifications,
-        education:data.education,
-        benifits:data.benifits,
-        jobType:data.jobType,
-        experience:data.experience,
-        salary:data.salary,
-        postDate:postDate,
-        deadline:data.date  ,
-        vacancy:data.vacancy 
+    const onSubmit = async (data) => {
+
+        const imageFile = { image: data.logo[0] }
+
+        const res = await axiospublic.post(imageBBApi, imageFile, {
+            headers: {
+                'content-type': 'multipart/form-data'
             }
-      console.log(postjob);
+        })
+        //    console.log(res.data.data.display_url );
+        const image = res.data.data.display_url
+        console.log(image);
+        const postjob = {
+            title: data.title,
+            location: data.location,
+            email: user?.email,
+            companyName: data.companyName,
+            logo: image,
+            aboutCompany: data.aboutCompany,
+            positionSummary: data.positionSummary,
+            responsibilities: data.responsibilities,
+            qualifications: data.qualifications,
+            education: data.education,
+            benifits: data.benifits,
+            jobType: data.jobType,
+            experience: data.experience,
+            salary: data.salary,
+            postDate: postDate,
+            deadline: data.date,
+            vacancy: data.vacancy
+        }
+        console.log(postjob);
         axiospublic.post('/postjob', postjob)
             .then(res => {
                 console.log(res.data);
@@ -84,7 +96,7 @@ console.log(postDate);
 
                         </div >
                     </div>
-              
+
 
                     <div className="grid grid-cols-2 gap-3">
                         <div>
@@ -94,7 +106,7 @@ console.log(postDate);
 
                         <div>
                             <label >Company Logo<span className="text-red-600">*</span></label>
-                            <input type="text" className="mt-1 input border-none w-full"  {...register("logo", { required: true })} placeholder="Company Logo URL" required />
+                            <input type="file" className="mt-1 input border-none w-full"  {...register("logo", { required: true })} placeholder="Company Logo URL" required />
                         </div>
                     </div>
 
@@ -131,11 +143,11 @@ console.log(postDate);
 
 
                     <div className="grid grid-cols-2 gap-3">
-                        
+
                         <div >
                             <label>Workplace Type<span className="text-red-600">*</span></label>
                             <select {...register("jobType")} required className="mt-1 input border-none w-full">
-                                
+
                                 <option value="Remote">Remote</option>
                                 <option value="Office">Office</option>
                                 <option value="Onsite">Onsite</option>
@@ -145,7 +157,7 @@ console.log(postDate);
                         <div >
                             <label>Experience<span className="text-red-600">*</span></label>
                             <select {...register("experience")} required className="mt-1 input border-none w-full">
-                                
+
                                 <option value="Freasher">Freasher</option>
                                 <option value="6 month+">6 month+</option>
                                 <option value="1 year+">1 year+</option>
@@ -156,7 +168,7 @@ console.log(postDate);
 
                             </select>
                         </div>
-                   
+
                     </div>
                     <div className="grid grid-cols-2 gap-3">
                         <div >
@@ -171,9 +183,9 @@ console.log(postDate);
                     </div>
 
                     <div >
-                            <label>Post vacancy</label>
-                            <input type="number" {...register("vacancy")} className="mt-1 input border-none w-full" placeholder="vacancy" />
-                        </div>
+                        <label>Post vacancy</label>
+                        <input type="number" {...register("vacancy")} className="mt-1 input border-none w-full" placeholder="vacancy" />
+                    </div>
 
                     <div className=" px-3 py-2 bg-blue-700 text-white  rounded-md hover:bg-slate-800 hover:-translate-y-[2px] duration-75 cursor-pointer flex items-center w-fit gap-2">
                         <GoCheckCircle className="text-lg text-white font-bold"></GoCheckCircle>

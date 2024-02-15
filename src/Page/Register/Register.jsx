@@ -24,22 +24,35 @@ const Register = () => {
         reset,
         formState: { errors },
       } = useForm()
+      const imageBBKey = import.meta.env.VITE_IMAGEBB
+      const imageBBApi =`https://api.imgbb.com/1/upload?key=${imageBBKey}`
+      
+      const onSubmit = async(data) => {
+        const imageFile = {image: data.photo[0]} 
+       
+        const res = await axiospublic.post(imageBBApi, imageFile, {
+            headers: {
+                'content-type': 'multipart/form-data'
+            }
+        })
+    //    console.log(res.data.data.display_url );
+       const image = res.data.data.display_url
+       console.log(image);
 
-      const onSubmit = (data) => {
     
        createUser(data.email, data.password)
         .then( result => {
                   
                   updateProfile(result.user , {
                       displayName: data.name,
-                      photoURL: data.photo
+                      photoURL: image
                   })
                   .then(()=> {
                     // create users entry in database
                     const usersInfo = {
                       name: data.name,
                       email: data.email,
-                      image: data.photo,
+                      image: image,
                       number: data.number,
                       company:data.company,
                       workPlace:data.workPlace,
@@ -139,7 +152,7 @@ const Register = () => {
       <label className="block mb-1">
         <span className="font-semibold">*Photo URL</span>
       </label>
-      <input type="text" {...register("photo"  , { required: true })} name='photo' placeholder="photo url" className="input border-none rounded-md w-full" />
+      <input type="file" {...register("photo"  , { required: true })} name='photo' placeholder="photo url" className="input border-none rounded-md w-full" />
       {errors.photo && <span className='text-red-500 mt-1'>This field is required</span>}
     </div>
 
@@ -168,7 +181,7 @@ const Register = () => {
 
     <div className="w-full">
       <label className="block mb-1">
-        <span className="font-semibold">*Comapny name</span>
+        <span className="font-semibold">*Company name</span>
       </label>
       <input type="text" {...register("company")} name='company' placeholder="Company Name" className="input border-none rounded-md w-full " required />
     </div>

@@ -1,45 +1,100 @@
+<<<<<<< HEAD
 import appointmentData from "../../../Json/appointmentData.json";
 
 import { Table } from "flowbite-react";
+=======
+import { Avatar, Table } from "flowbite-react";
+import PrimaryButton from "../../../shared/PrimaryButton/PrimaryButton";
+import Swal from "sweetalert2";
+import useAxiosSecure from "../../../Hooks/useAxiosSecure";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+>>>>>>> 4c0000198fb60a936d5e9a861f2250ae644dfc2b
 
 
 import { NavLink } from "react-router-dom";
 
 const Appointment = () => {
+<<<<<<< HEAD
   
+=======
+  // get all the job post
+  const axiosPublic = useAxiosSecure()
+  const [jobPost, setjobPost] = useState([])
+
+  useEffect(() => {
+    axiosPublic.get('/postjob')
+      .then(res => {
+        setjobPost(res.data)
+      })
+  }, [axiosPublic])
+  console.log(jobPost);
+
+
+  const handleSendEmails = () => {
+    Swal.fire({
+      position: "center",
+      icon: "success",
+      title: "Interview Schedule Sent",
+      showConfirmButton: false,
+      timer: 1500,
+    });
+
+
+  };
+>>>>>>> 4c0000198fb60a936d5e9a861f2250ae644dfc2b
 
   return (
     <div>
-      <h2 className="text-center font-bold text-3xl my-3 text-white">
-        Appointment
+      <h2 className="text-center font-bold text-4xl my-3 text-white">
+        Selected Candidates
       </h2>
       <div className="overflow-x-auto border rounded-xl">
         <Table>
+          {/* Table titles */}
           <Table.Head className="bg-opacity-10 ">
+            <Table.HeadCell>Logo</Table.HeadCell>
             <Table.HeadCell>Company Name</Table.HeadCell>
+<<<<<<< HEAD
             <Table.HeadCell>Job Name</Table.HeadCell>
             <Table.HeadCell>Appointment</Table.HeadCell>
 
             {/* <Table.HeadCell>
               <span className="sr-only">Edit</span>
             </Table.HeadCell> */}
+=======
+            <Table.HeadCell>Job Title</Table.HeadCell>
+            <Table.HeadCell>Short listed</Table.HeadCell>
+>>>>>>> 4c0000198fb60a936d5e9a861f2250ae644dfc2b
           </Table.Head>
 
+          {/* Table data */}
           <Table.Body className="divide-y ">
-            {appointmentData.map((item) => (
+            {jobPost.map((item) => (
               <Table.Row
                 className=" dark:border-gray-700 dark:bg-gray-800     text-black"
                 key={item?.id}
               >
-                <Table.Cell className="whitespace-nowrap font-medium  dark:text-white ">
-                  {item.name}
+                <Table.Cell>
+                  <div className="flex justify-start">
+                    <Avatar img={item.logo} />
+                  </div>
                 </Table.Cell>
+<<<<<<< HEAD
 
                 <Table.Cell>{item.email}</Table.Cell>
 
                 <Table.Cell>
                   <NavLink>Appointed</NavLink>
                 </Table.Cell>
+=======
+                <Table.Cell>{item.companyName}</Table.Cell>
+                <Table.Cell className="whitespace-nowrap font-medium  dark:text-white">
+                  {item.title}
+                </Table.Cell>
+                <Table.Cell><Link to={`/dashboard/shortlisted/${item._id}`}>Candidates</Link></Table.Cell>
+                <Table.Cell>{item.phone}</Table.Cell>
+>>>>>>> 4c0000198fb60a936d5e9a861f2250ae644dfc2b
               </Table.Row>
             ))}
           </Table.Body>

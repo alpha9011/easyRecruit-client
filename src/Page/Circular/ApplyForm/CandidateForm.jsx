@@ -20,13 +20,25 @@ const CandidateForm = () => {
         formState: { errors },
     } = useForm();
 // this is  candidate apply form
+const imageBBKey = import.meta.env.VITE_IMAGEBB
+const imageBBApi =`https://api.imgbb.com/1/upload?key=${imageBBKey}`
+    const onSubmit = async(data) => {
 
-    const onSubmit = (data) => {
+        const imageFile = {image: data.photo[0]} 
+       
+        const res = await axiosPublic.post(imageBBApi, imageFile, {
+            headers: {
+                'content-type': 'multipart/form-data'
+            }
+        })
+    //    console.log(res.data.data.display_url );
+       const image = res.data.data.display_url
+       console.log(image);
         const applicatnCV = {
             name:data.name,
             email:data.email,
             phone:data.phone,
-            photo:data.photo,
+            photo:image,
             country:data.country,
             resume:data.resume,
             coverLetter:data.coverLetter,
@@ -77,7 +89,7 @@ const CandidateForm = () => {
                 </div >
                 <div >
                     <label>Photo URL<span className="text-red-600">*</span></label>
-                    <input type="text" {...register("photo", { required: true })} className="mt-1 input input-bordered w-full" placeholder="Your photo URL" required />
+                    <input type="file" {...register("photo", { required: true })} className="mt-1 input input-bordered w-full" placeholder="Your photo URL" required />
 
                 </div >
             
