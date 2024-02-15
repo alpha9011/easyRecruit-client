@@ -1,10 +1,11 @@
 import { useForm } from "react-hook-form";
 import { GoCheckCircle } from "react-icons/go";
-import { FaGraduationCap } from "react-icons/fa";
-import Toastify from 'toastify-js'
+
 import useAxiosPublic from "../../../Hooks/useAxiosPublic";
 import { useContext } from "react";
 import { AuthContext } from "../../../AuthProvider/AuthProvider";
+import Swal from "sweetalert2";
+import { FaGraduationCap } from "react-icons/fa";
 
 
 const PostJob = () => {
@@ -49,13 +50,16 @@ console.log(postDate);
             .then(res => {
                 console.log(res.data);
                 if (res.data.insertedId) {
-                    Toastify({
-                        text: "Job Posted succesfully",
-                        className: "info",
-                        style: {
-                            background: "linear-gradient(to right, #00b09b, #96c93d)",
-                        }
-                    }).showToast();
+                    
+                    Swal.fire({
+                        position: "top-center",
+                        icon: "success",
+                        title: "Job Posted successfully",
+                        showConfirmButton: false,
+                        timer: 1500,
+                      
+                      });
+
                     // reset()
                 }
             })

@@ -1,4 +1,3 @@
-
 import Banner from "./Banner/Banner";
 
 import CustomersSlider from "./CustomersSlider/CustomersSlider";
@@ -15,7 +14,6 @@ import WhyToUse from "./WhyToUse/WhyToUse";
 import Footers from "../../shared/Footer/Footers";
 
 const Home = () => {
-  
   return (
     <div>
       <Banner></Banner>

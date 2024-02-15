@@ -3,11 +3,20 @@ export default {
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
-    'node_modules/flowbite-react/lib/esm/**/*.js'
+    "node_modules/flowbite-react/lib/esm/**/*.js",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        primary: "",
+        primaryLight: "",
+        primaryDark: "",
+        secondary: "",
+        linkColor: "#0EA5E9",
+        textPrimary: "",
+        textSecondary: "#0EA5E9",
+      },
+    },
   },
-  plugins: [require('flowbite/plugin')],
-}
-
+  plugins: [require("flowbite/plugin")],
+};
