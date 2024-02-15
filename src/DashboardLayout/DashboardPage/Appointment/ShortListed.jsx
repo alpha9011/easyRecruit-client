@@ -3,9 +3,21 @@ import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 import { useQuery } from "@tanstack/react-query";
 import { Avatar, Button, Label, Modal, Spinner, Table, TextInput, Textarea } from "flowbite-react";
 import { useState } from "react";
+import { useForm } from "react-hook-form";
 // import CandidatesDetail from "../../DashboardAdminPage/AllJobs/CandidatesDetail";
 
 const ShortListed = () => {
+    // hook form things
+    const {
+        register,
+        handleSubmit,
+        reset,
+        formState: { errors },
+    } = useForm();
+    const onSubmit = async (data) => {
+        console.log(data);
+        reset()
+    }
     // modal functionality
     const [openModal, setOpenModal] = useState(false);
     function onCloseModal() {
@@ -65,37 +77,34 @@ const ShortListed = () => {
                                                         <Button onClick={() => setOpenModal(true)}>Send Email</Button>
                                                     </div>
                                                     <Modal show={openModal} size="md" onClose={onCloseModal} popup>
-                                                        <Modal.Header />
-                                                        <Modal.Body>
+                                                        <Modal.Header className="bg-gray-100" />
+                                                        <Modal.Body className="bg-gray-100 rounded-b-md">
                                                             <div className="space-y-6">
                                                                 <h3 className="text-xl font-medium text-gray-900 dark:text-white">Send Email to {candidate.name}</h3>
-                                                                <div>
-                                                                    <div className="mb-2 block">
-                                                                        <Label htmlFor="email" value="Email Address" />
+                                                                <form onSubmit={handleSubmit(onSubmit)} className="flex max-w-md w-full flex-col gap-4 mb-8">
+                                                                    <div>
+                                                                        <div className="mb-2 block">
+                                                                            <Label htmlFor="email" value="Email address" />
+                                                                        </div>
+                                                                        <TextInput id="email" type="email" {...register("email", { required: true })} name='email' placeholder="receveres email address" defaultValue={candidate.email} shadow />
+                                                                        {errors.email && <span className="text-red-600">Email address is required</span>}
                                                                     </div>
-                                                                    <TextInput
-                                                                        id="email"
-                                                                        placeholder="recevers email address"
-                                                                        defaultValue={candidate.email}
-                                                                        required
-                                                                        disabled
-                                                                    />
-                                                                </div>
-                                                                <div>
-                                                                    <div className="mb-2 block">
-                                                                        <Label htmlFor="subject" value="Subject" />
+                                                                    <div>
+                                                                        <div className="mb-2 block">
+                                                                            <Label htmlFor="subject" value="Email subject" />
+                                                                        </div>
+                                                                        <Textarea id="subject" type="text" {...register("subject", { required: true })} name='subject' placeholder="Enter the subject here" defaultValue={`Interview schedule for the post of ${candidate.jobTitle} on ${candidate.companyName}.`} shadow />
+                                                                        {errors.name && <span className="text-red-600">Email subject is required</span>}
                                                                     </div>
-                                                                    <Textarea id="subject" type="text" defaultValue={`Interview schedule for the post of ${candidate.jobTitle} on ${candidate.companyName}.`} placeholder="Enter the subject here" required disabled />
-                                                                </div>
-                                                                <div>
-                                                                    <div className="mb-2 block">
-                                                                        <Label htmlFor="message" value="Message" />
+                                                                    <div>
+                                                                        <div className="mb-2 block">
+                                                                            <Label htmlFor="message" value="Message" />
+                                                                        </div>
+                                                                        <Textarea id="message" type="text" {...register("message", { required: true })} name='message' placeholder="Enter your message" rows={4} shadow />
+                                                                        {errors.message && <span className="text-red-600">message is required</span>}
                                                                     </div>
-                                                                    <Textarea id="message" type="text" placeholder="Enter the message here" required rows={4} />
-                                                                </div>
-                                                                <div className="w-full flex justify-center">
-                                                                    <Button>Send</Button>
-                                                                </div>
+                                                                    <Button type="submit" >Send Message</Button>
+                                                                </form>
                                                             </div>
                                                         </Modal.Body>
                                                     </Modal>
