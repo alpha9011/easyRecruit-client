@@ -1,3 +1,4 @@
+
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
@@ -24,19 +25,19 @@ const PrimarySection = ({
         className={` flex flex-col 
         md:${imgPosition === "right"? 'flex-row-reverse': imgPosition === "left" ? 'flex-row' : ''}
        justify-center items-center gap-10 `}
-       
+
       >
         <div className="md:w-1/2" data-aos={aosImage}  data-aos-duration={aosDurationImage}>
           <img className="w-full md:w-96 lg:w-[700px]" src={image} alt={alt} />
         </div>
         <div className="md:w-1/2 flex flex-col space-y-3 max-w-[370px] justify-center " data-aos={aosContent}  data-aos-duration={aosDurationContent} >
-          <h6 className="text-sky-500 font-semibold">{subTitle}</h6>
+          <h6 className="text-textSecondary font-semibold">{subTitle}</h6>
           <h3 className="text-xl md:text-3xl font-semibold">{title}</h3>
           <p className="text-wrap leading-7">{content}</p>
 
           <Link
             to={linkUrl}
-            className="text-sky-500 hover:underline text-wrap hover:font-semibold"
+            className="text-linkColor hover:underline text-wrap hover:font-semibold"
           >
             {linkText}
           </Link>
@@ -54,7 +55,12 @@ PrimarySection.propTypes = {
   linkText: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
   alt: PropTypes.string.isRequired,
+  aosImage: PropTypes.string.isRequired,
+  aosDurationImage: PropTypes.string.isRequired,
+  aosContent: PropTypes.string.isRequired,
+  aosDurationContent: PropTypes.string.isRequired,
   imgPosition: PropTypes.oneOf(["left", "right"]).isRequired,
+ 
 };
 
 export default PrimarySection;

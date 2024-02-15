@@ -1,13 +1,23 @@
+<<<<<<< HEAD
+import appointmentData from "../../../Json/appointmentData.json";
+
+import { Table } from "flowbite-react";
+=======
 import { Avatar, Table } from "flowbite-react";
 import PrimaryButton from "../../../shared/PrimaryButton/PrimaryButton";
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+>>>>>>> 4c0000198fb60a936d5e9a861f2250ae644dfc2b
 
 
+import { NavLink } from "react-router-dom";
 
 const Appointment = () => {
+<<<<<<< HEAD
+  
+=======
   // get all the job post
   const axiosPublic = useAxiosSecure()
   const [jobPost, setjobPost] = useState([])
@@ -32,6 +42,7 @@ const Appointment = () => {
 
 
   };
+>>>>>>> 4c0000198fb60a936d5e9a861f2250ae644dfc2b
 
   return (
     <div>
@@ -44,8 +55,17 @@ const Appointment = () => {
           <Table.Head className="bg-opacity-10 ">
             <Table.HeadCell>Logo</Table.HeadCell>
             <Table.HeadCell>Company Name</Table.HeadCell>
+<<<<<<< HEAD
+            <Table.HeadCell>Job Name</Table.HeadCell>
+            <Table.HeadCell>Appointment</Table.HeadCell>
+
+            {/* <Table.HeadCell>
+              <span className="sr-only">Edit</span>
+            </Table.HeadCell> */}
+=======
             <Table.HeadCell>Job Title</Table.HeadCell>
             <Table.HeadCell>Short listed</Table.HeadCell>
+>>>>>>> 4c0000198fb60a936d5e9a861f2250ae644dfc2b
           </Table.Head>
 
           {/* Table data */}
@@ -60,25 +80,27 @@ const Appointment = () => {
                     <Avatar img={item.logo} />
                   </div>
                 </Table.Cell>
+<<<<<<< HEAD
+
+                <Table.Cell>{item.email}</Table.Cell>
+
+                <Table.Cell>
+                  <NavLink>Appointed</NavLink>
+                </Table.Cell>
+=======
                 <Table.Cell>{item.companyName}</Table.Cell>
                 <Table.Cell className="whitespace-nowrap font-medium  dark:text-white">
                   {item.title}
                 </Table.Cell>
                 <Table.Cell><Link to={`/dashboard/shortlisted/${item._id}`}>Candidates</Link></Table.Cell>
                 <Table.Cell>{item.phone}</Table.Cell>
+>>>>>>> 4c0000198fb60a936d5e9a861f2250ae644dfc2b
               </Table.Row>
             ))}
           </Table.Body>
         </Table>
       </div>
-      <div className="pt-5 flex justify-center ">
-        <PrimaryButton
-          font={"font-bold"}
-          buttonText={"Send Interview Schedule"}
-          onClick={handleSendEmails}
-          textColor={"text-white"}
-        ></PrimaryButton>
-      </div>
+      <div className="pt-5 flex justify-center "></div>
     </div>
   );
 };

@@ -1,5 +1,5 @@
 
-
+// import './Banner.css'
 import Lottie from "lottie-react";
 import bannerAnimation from "../../../Json/Animation-banner.json";
 
@@ -10,8 +10,20 @@ import PrimaryButton from "../../../shared/PrimaryButton/PrimaryButton";
 const Banner = () => {
 
   return (
-    <div className="pt-10 ">
+    <div className="pt-10 area ">
       {/* Banner section */}
+      <ul className="circles">
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
       <div className="container mx-auto flex flex-col-reverse md:flex-row gap-10 items-center h-[80vh] md:h-[70vh] w-full p-5 md:pb-28 ">
         <div className="md:w-1/2">
           <motion.h2
@@ -26,8 +38,9 @@ const Banner = () => {
             Drive Success <br />
             with Excellence
           </motion.h2>
+          
           <span className="flex justify-center ">
-            <p className="max-w-96 my-3 text-center leading-7">
+            <p className="max-w-96 my-3 text-center leading-7 ">
               Swap manual hiring tasks for efficient recruiting software
               suitable for businesses of any size.
             </p>
@@ -38,11 +51,8 @@ const Banner = () => {
           </div>
 
           <div className="flex justify-center items-center ">
-            {/* <Link>
-              <p className="text-center mt-3 border-b-2 w-48  hover:bg-gray-100 ">
-                Try EasyRecruit free
-              </p>
-            </Link> */}
+
+          
 
            
            

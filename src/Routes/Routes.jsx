@@ -32,7 +32,6 @@ import MyCandidates from "../DashboardLayout/DashboardPage/MyJobs/MyCandidates";
 import ShortListed from "../DashboardLayout/DashboardPage/Appointment/ShortListed";
 import Appointment from "../DashboardLayout/DashboardPage/Appointment/Appointment";
 
-
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -57,7 +56,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/contact",
-        element: <ContactUs></ContactUs>
+        element: <ContactUs></ContactUs>,
       },
       {
         path: "/recruiting-software-capabilities",
@@ -90,7 +89,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/membership",
-        element: <MemberShip></MemberShip>
+        element: <MemberShip></MemberShip>,
       },
       {
         path: "/terms",
@@ -107,7 +106,6 @@ export const router = createBrowserRouter([
     path: "/dashboard",
     element: (
       <PrivateRout>
-
         <Dashboard></Dashboard>
       </PrivateRout>
     ),
@@ -115,11 +113,11 @@ export const router = createBrowserRouter([
       // Admin User routs
       {
         path: "allUser",
-        element: <AllUsers></AllUsers>
+        element: <AllUsers></AllUsers>,
       },
       {
         path: "allJobs",
-        element: <AllJobs></AllJobs>
+        element: <AllJobs></AllJobs>,
       },
       {
         path: "alljobs/:id",

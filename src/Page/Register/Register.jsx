@@ -3,13 +3,14 @@ import { useContext } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import 'tailwindcss/tailwind.css';
 import Login from '../Login/Login';
-import Toastify from 'toastify-js'
+
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import { FaRegCircle } from "react-icons/fa";
 import bgRegister from '../../assets/women.jpg'
 import useAxiosPublic from '../../Hooks/useAxiosPublic';
 import { updateProfile } from 'firebase/auth';
 import { useForm } from 'react-hook-form';
+import Swal from 'sweetalert2';
 
 const Register = () => {
   const location = useLocation()
@@ -62,13 +63,14 @@ const Register = () => {
                     .then( res => {
                       console.log( 'users added in database',res.data);
                       if(res.data.insertedId){
-                        Toastify({
-                            text: "Registration succesful",
-                            className: "info",
-                            style: {
-                                background: "linear-gradient(to right, #00b09b, #96c93d)",
-                            }
-                        }).showToast();
+                        
+                        Swal.fire({
+                          position: "top-center",
+                          icon: "success",
+                          title: "Registration succesful",
+                          showConfirmButton: false,
+                          timer: 1500
+                        });
                         reset()
                       }
                     })
