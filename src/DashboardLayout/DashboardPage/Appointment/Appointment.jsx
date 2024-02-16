@@ -1,5 +1,4 @@
 import appointmentData from "../../../Json/appointmentData.json";
-
 console.log(appointmentData);
 import { Avatar, Table } from "flowbite-react";
 import PrimaryButton from "../../../shared/PrimaryButton/PrimaryButton";
