@@ -8,11 +8,15 @@ import responsive from "../../../src/assets/responsive.jpg"
 import supports from "../../../src/assets/support.jpg"
 import job from "../../../src/assets/19209.jpg"
 import Footers from '../../shared/Footer/Footers';
+import { Helmet } from 'react-helmet-async';
 // import Footers from '../../shared/Footer/Footers';
 
 const WhyEasyRecruit = () => {
     return (
         <div className='overflow-x-hidden overflow-y-hidden'>
+            <Helmet>
+                <title>EasyRecruit || Why US</title>
+            </Helmet>
             {/* Banner */}
             <div className='bg-gradient-to-r from-purple-800 to-green-500 h-[91vh] w-full relative'>
                 <img src={bgImg} alt="bgImage" className='w-full h-full object-cover absolute mix-blend-overlay' />

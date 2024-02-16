@@ -11,7 +11,7 @@ import { FaUsers } from "react-icons/fa6";
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 import { useQuery } from "@tanstack/react-query";
-const MyJobCard = ({ myjob }) => {
+const MyJobCard = ({ myjob,refetch }) => {
   console.log(myjob);
   const { logo, title, jobType, location, experience, salary, aboutCompany, positionSummary, companyName, postDate, deadline, responsibilities, qualifications, education, benifits, _id } = myjob || {}
   const [openModal, setOpenModal] = useState(false);
@@ -52,8 +52,8 @@ const MyJobCard = ({ myjob }) => {
         })
           .then(res => res.json())
           .then(data => {
-            console.log(data);
             if (data.deletedCount > 0) {
+              refetch()
               Swal.fire({
                 title: "Deleted!",
                 text: "Your Job Post has been deleted.",
@@ -100,7 +100,6 @@ const MyJobCard = ({ myjob }) => {
 
                 </div>
                 <div className="ml-2">
-
                   <h2>{title}</h2>
                   <h3 className="text-sm ">{companyName}</h3>
                   <div className="flex items-center gap-5 text-gray-500">
@@ -124,34 +123,34 @@ const MyJobCard = ({ myjob }) => {
 
                   <div >
                     <h2 className="font-semibold mb-1">About Company:</h2>
-                    <p className="text-base  text-gray-500 dark:text-gray-400">
+                    <p className="text-base  text-gray-500 dark:text-gray-400 text-justify">
                       {aboutCompany}</p>
                   </div>
 
                   <div>
                     <h2 className="font-semibold mb-1">Position Summary:</h2>
-                    <p className="text-base  text-gray-500 dark:text-gray-400 ">
+                    <p className="text-base  text-gray-500 dark:text-gray-400 text-justify">
                       {positionSummary}</p>
 
                   </div>
                   <div>
                     <h2 className="font-semibold mb-1">Responsibilities:</h2>
-                    <p className="text-base  text-gray-500 dark:text-gray-400 ">
+                    <p className="text-base  text-gray-500 dark:text-gray-400 text-justify">
                       {responsibilities}</p>
                   </div>
                   <div>
                     <h2 className="font-semibold mb-1">Qualifications:</h2>
-                    <p className="text-base  text-gray-500 dark:text-gray-400 ">
+                    <p className="text-base  text-gray-500 dark:text-gray-400 text-justify">
                       {qualifications}</p>
                   </div>
                   <div>
                     <h2 className="font-semibold mb-1">Education:</h2>
-                    <p className="text-base  text-gray-500 dark:text-gray-400 ">
+                    <p className="text-base  text-gray-500 dark:text-gray-400 text-justify">
                       {education}</p>
                   </div>
                   <div>
                     <h2 className="font-semibold mb-1">Others Benifit:</h2>
-                    <p className="text-base  text-gray-500 dark:text-gray-400 ">
+                    <p className="text-base  text-gray-500 dark:text-gray-400 text-justify">
                       {benifits}</p>
                   </div>
 
@@ -171,6 +170,7 @@ const MyJobCard = ({ myjob }) => {
 
 
 MyJobCard.propTypes = {
-  myjob: PropTypes.object
+  myjob: PropTypes.object,
+  refetch:PropTypes.object
 }
 export default MyJobCard;

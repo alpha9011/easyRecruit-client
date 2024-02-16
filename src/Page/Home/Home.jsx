@@ -1,4 +1,3 @@
-
 import Banner from "./Banner/Banner";
 
 import CustomersSlider from "./CustomersSlider/CustomersSlider";
@@ -13,11 +12,15 @@ import RecruitingResult from "./RecruitingResult/RecruitingResult";
 
 import WhyToUse from "./WhyToUse/WhyToUse";
 import Footers from "../../shared/Footer/Footers";
+import { Helmet } from 'react-helmet-async';
 
 const Home = () => {
-  
+
   return (
     <div>
+      <Helmet>
+        <title>EasyRecruit || Home</title>
+      </Helmet>
       <Banner></Banner>
       <RecruitingResult></RecruitingResult>
       <WhyToUse></WhyToUse>

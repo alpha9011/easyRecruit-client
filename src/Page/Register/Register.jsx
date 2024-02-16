@@ -1,15 +1,16 @@
-import { FileInput, Footer, } from 'flowbite-react';
+import { Footer, } from 'flowbite-react';
 import { useContext } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import 'tailwindcss/tailwind.css';
 import Login from '../Login/Login';
-import Toastify from 'toastify-js'
+
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import { FaRegCircle } from "react-icons/fa";
 import bgRegister from '../../assets/women.jpg'
 import useAxiosPublic from '../../Hooks/useAxiosPublic';
 import { updateProfile } from 'firebase/auth';
 import { useForm } from 'react-hook-form';
+import Swal from 'sweetalert2';
 
 const Register = () => {
   const location = useLocation()
@@ -23,22 +24,35 @@ const Register = () => {
         reset,
         formState: { errors },
       } = useForm()
+      const imageBBKey = import.meta.env.VITE_IMAGEBB
+      const imageBBApi =`https://api.imgbb.com/1/upload?key=${imageBBKey}`
+      
+      const onSubmit = async(data) => {
+        const imageFile = {image: data.photo[0]} 
+       
+        const res = await axiospublic.post(imageBBApi, imageFile, {
+            headers: {
+                'content-type': 'multipart/form-data'
+            }
+        })
+    //    console.log(res.data.data.display_url );
+       const image = res.data.data.display_url
+       console.log(image);
 
-      const onSubmit = (data) => {
     
        createUser(data.email, data.password)
         .then( result => {
                   
                   updateProfile(result.user , {
                       displayName: data.name,
-                      photoURL: data.photo
+                      photoURL: image
                   })
                   .then(()=> {
                     // create users entry in database
                     const usersInfo = {
                       name: data.name,
                       email: data.email,
-                      image: data.photo,
+                      image: image,
                       number: data.number,
                       company:data.company,
                       workPlace:data.workPlace,
@@ -49,13 +63,14 @@ const Register = () => {
                     .then( res => {
                       console.log( 'users added in database',res.data);
                       if(res.data.insertedId){
-                        Toastify({
-                            text: "Registration succesful",
-                            className: "info",
-                            style: {
-                                background: "linear-gradient(to right, #00b09b, #96c93d)",
-                            }
-                        }).showToast();
+                        
+                        Swal.fire({
+                          position: "top-center",
+                          icon: "success",
+                          title: "Registration succesful",
+                          showConfirmButton: false,
+                          timer: 1500
+                        });
                         reset()
                       }
                     })
@@ -144,7 +159,7 @@ const Register = () => {
       <label className="block mb-1">
         <span className="font-semibold">*Photo</span>
       </label>
-      <FileInput type="text" {...register("photo"  , { required: true })} name='photo' placeholder="photo url" className="input border-none rounded-md w-full" />
+      <input type="file" {...register("photo"  , { required: true })} name='photo' placeholder="photo url" className="input border-none rounded-md w-full" />
       {errors.photo && <span className='text-red-500 mt-1'>This field is required</span>}
     </div>
 
@@ -173,7 +188,7 @@ const Register = () => {
 
     <div className="w-full">
       <label className="block mb-1">
-        <span className="font-semibold">*Comapny name</span>
+        <span className="font-semibold">*Company name</span>
       </label>
       <input type="text" {...register("company")} name='company' placeholder="Company Name" className="input border-none rounded-md w-full " required />
     </div>
