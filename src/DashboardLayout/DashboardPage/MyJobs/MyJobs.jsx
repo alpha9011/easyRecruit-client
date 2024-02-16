@@ -9,19 +9,6 @@ import { Spinner } from "flowbite-react";
 const MyJobs = () => {
     const { user } = useContext(AuthContext)
     const axiosPublic = useAxiosPublic()
-<<<<<<< HEAD
-    const [myJobs, setMyJobs] = useState([])
-
-    useEffect(() => {
-        axiosPublic.get('/postjob')
-            .then(res => {
-                const alljobs = res.data
-                const jobs = alljobs.filter(job => job?.email === user?.email)
-                setMyJobs(jobs)
-            })
-    }, [axiosPublic, user?.email])
-    
-=======
  
     const {isLoading, refetch,  data: myJobs = [] } = useQuery({
         queryKey: ['jobs'],
@@ -32,12 +19,12 @@ const MyJobs = () => {
             return jobs
         }
     })
+    
     if (isLoading) {
         return <div className=" h-screen flex items-center justify-center">
           <Spinner aria-label="Large spinner example" size="lg" />
         </div>
       }
->>>>>>> 4c0000198fb60a936d5e9a861f2250ae644dfc2b
     console.log(myJobs);
     return (
         <div>
