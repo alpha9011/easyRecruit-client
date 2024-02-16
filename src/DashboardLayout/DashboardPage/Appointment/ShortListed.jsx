@@ -4,9 +4,12 @@ import { useQuery } from "@tanstack/react-query";
 import { Avatar, Button, Label, Modal, Spinner, Table, TextInput, Textarea } from "flowbite-react";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import Swal from "sweetalert2";
 // import CandidatesDetail from "../../DashboardAdminPage/AllJobs/CandidatesDetail";
 
 const ShortListed = () => {
+    const axiosSecure = useAxiosSecure()
+
     // hook form things
     const {
         register,
@@ -14,17 +17,38 @@ const ShortListed = () => {
         reset,
         formState: { errors },
     } = useForm();
+
     const onSubmit = async (data) => {
         console.log(data);
-        reset()
+        const mailInfo = {
+            email: data.email,
+            subject: data.subject,
+            message: data.message
+        }
+        console.log(mailInfo);
+        axiosSecure.post('/interviewMessage', mailInfo)
+            .then(res => {
+                console.log(res.data);
+                if (res.data.insertedId) {
+                    Swal.fire({
+                        position: "top-end",
+                        icon: "success",
+                        title: "Email send successFully",
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
+                    reset()
+                }
+            })
     }
+
     // modal functionality
     const [openModal, setOpenModal] = useState(false);
     function onCloseModal() {
         setOpenModal(false);
     }
     const { title, companyName } = useLoaderData()
-    const axiosSecure = useAxiosSecure()
+    // const axiosSecure = useAxiosSecure()
     const { isLoading, data: candidates = [] } = useQuery({
         queryKey: ['candidates'],
         queryFn: async () => {
