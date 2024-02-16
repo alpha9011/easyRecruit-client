@@ -6,6 +6,7 @@ import bannerAnimation from "../../../Json/Animation-banner.json";
 import { motion } from "framer-motion";
 "react-router-dom";
 import PrimaryButton from "../../../shared/PrimaryButton/PrimaryButton";
+import { Link } from "react-router-dom";
 
 const Banner = () => {
 
@@ -47,10 +48,12 @@ const Banner = () => {
           </span>
 
           <div className="flex justify-center">
-            <PrimaryButton buttonText="Request A Demo"></PrimaryButton>
-          </div>
+            <Link to={"https://www.youtube.com/watch?v=ctchVy-Qxic"} target="blank">
+              <PrimaryButton buttonText="Request A Demo"></PrimaryButton>
+            </Link>          </div>
 
           <div className="flex justify-center items-center ">
+            
 
           
 
