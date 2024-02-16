@@ -1,9 +1,9 @@
 import { useContext } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
-import Toastify from 'toastify-js'
-import "toastify-js/src/toastify.css"
+
 import { FcGoogle } from "react-icons/fc";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const GoogleLogin = () => {
 
@@ -14,13 +14,15 @@ const GoogleLogin = () => {
         signInWithGoogle()
             .then(res => {
                 console.log(res.user);
-                Toastify({
-                    text: "Login successful",
-                    className: "info",
-                    style: {
-                        background: "linear-gradient(to right, #00b09b, #96c93d)",
-                    }
-                }).showToast();
+                
+                Swal.fire({
+                    position: "top-center",
+                    icon: "success",
+                    title: "Login successful",
+                    showConfirmButton: false,
+                    timer: 1500
+                  });
+
             })
             .catch(err => {
                 console.log(err.message);

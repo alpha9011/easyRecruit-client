@@ -25,12 +25,12 @@ import MemberShip from "../Page/Membership/Membership";
 import CustomerProfile from "../DashboardLayout/DashboardPage/CustomerProfile/CustomerProfile";
 import AllUsers from "../DashboardLayout/DashboardAdminPage/AllUsers/AllUsers";
 import AllJobs from "../DashboardLayout/DashboardAdminPage/AllJobs/AllJobs";
-
 import ContactUs from "../Page/ContactUs/ContactUs";
 import PrivateRout from "./PrivateRout";
 import CVmanage from "../DashboardLayout/DashboardPage/CVmanage/CVmanage";
 import AllJobsCandidates from "../DashboardLayout/DashboardAdminPage/AllJobs/AllJobsCandidates";
 import MyCandidates from "../DashboardLayout/DashboardPage/MyJobs/MyCandidates";
+import ShortListed from "../DashboardLayout/DashboardPage/Appointment/ShortListed";
 
 
 export const router = createBrowserRouter([
@@ -57,7 +57,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/contact",
-        element: <ContactUs></ContactUs>
+        element: <ContactUs></ContactUs>,
       },
       {
         path: "/recruiting-software-capabilities",
@@ -74,12 +74,12 @@ export const router = createBrowserRouter([
           fetch(`http://localhost:5000/postjob/${params.id}`),
       },
       {
-      path: "/applyform/:id",
+        path: "/applyform/:id",
         element: <CandidateForm></CandidateForm>,
         loader: ({ params }) =>
           fetch(`http://localhost:5000/postjob/${params.id}`),
       },
-   
+
       {
         path: "/price",
         element: <Pricing></Pricing>,
@@ -90,14 +90,14 @@ export const router = createBrowserRouter([
       },
       {
         path: "/membership",
-        element: <MemberShip></MemberShip>
+        element: <MemberShip></MemberShip>,
       },
       {
-        path:"/terms",
+        path: "/terms",
         element: <TermsAndConditions></TermsAndConditions>
       },
       {
-        path:"/privacy",
+        path: "/privacy",
         element: <PrivacyPolicy></PrivacyPolicy>
       },
 
@@ -107,7 +107,6 @@ export const router = createBrowserRouter([
     path: "/dashboard",
     element: (
       <PrivateRout>
-       
         <Dashboard></Dashboard>
       </PrivateRout>
     ),
@@ -115,16 +114,21 @@ export const router = createBrowserRouter([
       // Admin User routs
       {
         path: "allUser",
-        element: <AllUsers></AllUsers>
+        element: <AllUsers></AllUsers>,
       },
       {
         path: "allJobs",
-        element: <AllJobs></AllJobs>
+        element: <AllJobs></AllJobs>,
       },
       {
-        path:"alljobs/:id",
-        element:<AllJobsCandidates></AllJobsCandidates>,
-        loader: ({ params }) =>fetch(`http://localhost:5000/postjob/${params.id}`),
+        path: "alljobs/:id",
+        element: <AllJobsCandidates></AllJobsCandidates>,
+        loader: ({ params }) => fetch(`http://localhost:5000/postjob/${params.id}`),
+      },
+      {
+        path: "shortlisted/:id",
+        element: <ShortListed></ShortListed>,
+        loader: ({ params }) => fetch(`http://localhost:5000/postjob/${params.id}`),
       },
 
       // Normal user routs
@@ -146,7 +150,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "myCandidate/:id",
-        element: <MyCandidates></MyCandidates> ,
+        element: <MyCandidates></MyCandidates>,
         loader: ({ params }) =>
           fetch(`http://localhost:5000/postjob/${params.id}`),
       },
@@ -170,7 +174,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "CVmanage",
-        element: <CVmanage/>
+        element: <CVmanage />
       },
     ],
   },

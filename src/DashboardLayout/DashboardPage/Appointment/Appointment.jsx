@@ -1,90 +1,62 @@
-import appointmentData from "../../../Json/appointmentData.json";
-console.log(appointmentData);
 import { Avatar, Table } from "flowbite-react";
-import PrimaryButton from "../../../shared/PrimaryButton/PrimaryButton";
-import Swal from "sweetalert2";
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 import { useEffect, useState } from "react";
-import useAuth from "../../../Hooks/useAuth";
-
-
-
+import { Link } from "react-router-dom";
 const Appointment = () => {
 
-  // get all the selected candidate
+  // get all the job post
   const axiosPublic = useAxiosSecure()
-  const [selected, setselected] = useState([])
-  const { user } = useAuth()
-  const currentUSer = user?.email
+  const [jobPost, setjobPost] = useState([])
+
   useEffect(() => {
-    axiosPublic.get('/applicantCV/selected')
+    axiosPublic.get('/postjob')
       .then(res => {
-        const allcandidates = res.data
-        setselected(allcandidates)
+        setjobPost(res.data)
       })
-  }, [axiosPublic, currentUSer])
-  console.log(selected);
-
-
-  const handleSendEmails = () => {
-    Swal.fire({
-      position: "center",
-      icon: "success",
-      title: "Interview Schedule Sent",
-      showConfirmButton: false,
-      timer: 1500,
-    });
-
-
-  };
+  }, [axiosPublic])
+  console.log(jobPost);
 
   return (
     <div>
       <h2 className="text-center font-bold text-4xl my-3 text-white">
-        Selected Candidates
+        All companies jobs
       </h2>
       <div className="overflow-x-auto border rounded-xl">
         <Table>
           {/* Table titles */}
           <Table.Head className="bg-opacity-10 ">
-            <Table.HeadCell>Photo</Table.HeadCell>
-            <Table.HeadCell>Name</Table.HeadCell>
-            <Table.HeadCell>Applied Company</Table.HeadCell>
-            <Table.HeadCell>Email</Table.HeadCell>
-            <Table.HeadCell>Phone Number</Table.HeadCell>
+            <Table.HeadCell>Logo</Table.HeadCell>
+            <Table.HeadCell>Company Name</Table.HeadCell>
+            <Table.HeadCell>Job Title</Table.HeadCell>
+            <Table.HeadCell>Deadline</Table.HeadCell>
+            <Table.HeadCell>Short listed</Table.HeadCell>
           </Table.Head>
 
           {/* Table data */}
           <Table.Body className="divide-y ">
-            {selected.map((item) => (
+            {jobPost.map((item) => (
               <Table.Row
                 className=" dark:border-gray-700 dark:bg-gray-800     text-black"
                 key={item?.id}
               >
                 <Table.Cell>
                   <div className="flex justify-start">
-                    <Avatar img={item.photo} />
+                    <Avatar img={item.logo} />
                   </div>
                 </Table.Cell>
-                <Table.Cell className="whitespace-nowrap font-medium  dark:text-white">
-                  {item.name}
-                </Table.Cell>
                 <Table.Cell>{item.companyName}</Table.Cell>
-                <Table.Cell>{item.email}</Table.Cell>
+                <Table.Cell className="whitespace-nowrap font-medium  dark:text-white">
+                  {item.title}
+                </Table.Cell>
+                <Table.Cell>{item.deadline}</Table.Cell>
+                <Table.Cell><Link to={`/dashboard/shortlisted/${item._id}`}>Candidates</Link></Table.Cell>
                 <Table.Cell>{item.phone}</Table.Cell>
               </Table.Row>
             ))}
           </Table.Body>
         </Table>
       </div>
-      <div className="pt-5 flex justify-center ">
-        <PrimaryButton
-          font={"font-bold"}
-          buttonText={"Send Interview Schedule"}
-          onClick={handleSendEmails}
-          textColor={"text-white"}
-        ></PrimaryButton>
-      </div>
+      <div className="pt-5 flex justify-center "></div>
     </div>
   );
 };
