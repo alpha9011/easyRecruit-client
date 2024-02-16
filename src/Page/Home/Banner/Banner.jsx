@@ -1,11 +1,11 @@
 
-
 import Lottie from "lottie-react";
 import bannerAnimation from "../../../Json/Animation-banner.json";
 
 import { motion } from "framer-motion";
 "react-router-dom";
 import PrimaryButton from "../../../shared/PrimaryButton/PrimaryButton";
+import { Link } from "react-router-dom";
 
 const Banner = () => {
 
@@ -34,18 +34,12 @@ const Banner = () => {
           </span>
 
           <div className="flex justify-center">
-            <PrimaryButton buttonText="Request A Demo"></PrimaryButton>
-          </div>
+            <Link to={"https://www.youtube.com/watch?v=ctchVy-Qxic"} target="blank">
+              <PrimaryButton buttonText="Request A Demo"></PrimaryButton>
+            </Link>          </div>
 
           <div className="flex justify-center items-center ">
-            {/* <Link>
-              <p className="text-center mt-3 border-b-2 w-48  hover:bg-gray-100 ">
-                Try EasyRecruit free
-              </p>
-            </Link> */}
-
-           
-           
+            
           </div>
         </div>
         <div className=" md:w-1/2 flex justify-center items-center w-64 ">

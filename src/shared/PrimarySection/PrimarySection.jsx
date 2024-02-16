@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
@@ -11,9 +12,9 @@ const PrimarySection = ({
   alt,
   imgPosition,
   aosImage="zoom-in",
-  aosDurationImage="1000",
+  aosDurationImage="500",
   aosContent="zoom-in",
-  aosDurationContent="1000"
+  aosDurationContent="500"
 }) => {
 
 

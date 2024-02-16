@@ -1,4 +1,4 @@
-import { Footer, } from 'flowbite-react';
+import { FileInput, Footer, } from 'flowbite-react';
 import { useContext } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import 'tailwindcss/tailwind.css';
@@ -132,12 +132,19 @@ const Register = () => {
       <input type="email" {...register("email")} name='email' placeholder="email" className="input border-none rounded-md w-full " required />
     </div>
 
+    {/* <div>
+      <div>
+        <Label htmlFor="file-upload-helper-text" value="Upload file" />
+      </div>
+      <FileInput id="file-upload-helper-text" helperText="SVG, PNG, JPG or GIF (MAX. 800x400px)." />
+    </div> */}
+
  
     <div className="w-full">
       <label className="block mb-1">
-        <span className="font-semibold">*Photo URL</span>
+        <span className="font-semibold">*Photo</span>
       </label>
-      <input type="text" {...register("photo"  , { required: true })} name='photo' placeholder="photo url" className="input border-none rounded-md w-full" />
+      <FileInput type="text" {...register("photo"  , { required: true })} name='photo' placeholder="photo url" className="input border-none rounded-md w-full" />
       {errors.photo && <span className='text-red-500 mt-1'>This field is required</span>}
     </div>
 
