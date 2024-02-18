@@ -77,7 +77,7 @@ const CvManagement = () => {
 
             <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-2 ml-8">
                 {/* Job Requirements Box */}
-                <div className="w-full max-w-sm bg-sky-200 p-8 border border-gray-200 rounded-lg shadow-lg dark:bg-gray-800 dark:border-gray-700">
+                <div className="w-full max-w-sm bg-sky-200 p-8 border border-gray-200 rounded-lg shadow-lg dark:bg-gray-800 dark:border-gray-700  hover:bg-black hover:text-white">
                     <h2 className="text-2xl font-semibold mb-4 text-center text-red-600 shadow-md ">Job Requirements</h2>
                     <div className="font-bold text-lg">
                         <p>Education:{" "}<span className="font-semibold text-green-600">{jobRequirements.education}</span></p>
@@ -89,7 +89,7 @@ const CvManagement = () => {
                 </div>
 
                 {/* Candidate Profile Box */}
-                <div className="w-full max-w-sm bg-gray-200 border border-gray-200 rounded-lg shadow-lg p-8 dark:bg-gray-800 dark:border-gray-700">
+                <div className="w-full max-w-sm bg-gray-200 border border-gray-200 rounded-lg  hover:bg-black hover:text-white shadow-lg p-8 dark:bg-gray-800 dark:border-gray-700">
                     <h2 className="text-2xl font-semibold mb-4 text-center text-blue-600  shadow-md">
                         Candidate Profile
                     </h2>
@@ -114,7 +114,7 @@ const CvManagement = () => {
             </div>
 
             {/* Result card with selected and rejected button */}
-            <div className="mt-6 mx-auto items-center max-w-sm bg-sky-100 p-5 border border-gray-200 rounded-lg shadow-lg dark:bg-gray-800 dark:border-gray-700">
+            <div className=" hover:bg-black hover:text-white mt-6 mx-auto items-center max-w-sm bg-sky-100 p-5 border border-gray-200 rounded-lg shadow-lg dark:bg-gray-800 dark:border-gray-700">
                 <h2 className="text-2xl font-semibold mb-4 text-center">Matching Result</h2>
 
                 <div className="font-bold text-lg">

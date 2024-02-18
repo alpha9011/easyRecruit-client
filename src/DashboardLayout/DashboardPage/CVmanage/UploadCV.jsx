@@ -1,37 +1,38 @@
 import { useState, useEffect } from "react";
-import axios from "axios";
+// import axios from "axios";
 
 const UploadCV = () => {
     const [pdfUrl, setPdfUrl] = useState(""); // State to store PDF URL
     const [showResume, setShowResume] = useState(false); // State to toggle resume visibility
 
     console.log(pdfUrl);
-    // useEffect(() => {
-    //     fetch("/candidate.json")
-    //       .then((res) => res.json())
-    //       .then((data) => {
-    //           console.log("Fetched data:", data);
-    //           setPdfUrl(data.resumeUrl);
-    //       })
-    //       .catch((error) => {
-    //           console.error("Error fetching candidate data:", error);
-    //       });
-    // }, []);
-
     useEffect(() => {
-        // Fetch candidate data from JSON file
-        const fetchData = async () => {
-            try {
-                const response = await axios.get("/candidate.json");
-                const { resumeUrl } = response.data;
-                setPdfUrl(resumeUrl);
-            } catch (error) {
-                console.error("Error fetching candidate data:", error);
-            }
-        };
-
-        fetchData();
+        fetch("/candidate.json")
+          .then((res) => res.json())
+          .then((data) => {
+              console.log("Fetched data:", data);
+              setPdfUrl(data.resumeUrl);
+              console.log(setPdfUrl);
+          })
+          .catch((error) => {
+              console.error("Error fetching candidate data:", error);
+          });
     }, []);
+
+    // useEffect(() => {
+    //     // Fetch candidate data from JSON file
+    //     const fetchData = async () => {
+    //         try {
+    //             const response = await axios.get("/candidate.json");
+    //             const { resumeUrl } = response.data;
+    //             setPdfUrl(resumeUrl);
+    //         } catch (error) {
+    //             console.error("Error fetching candidate data:", error);
+    //         }
+    //     };
+
+    //     fetchData();
+    // }, []);
 
     const toggleResume = () => {
         setShowResume(!showResume);
@@ -58,3 +59,34 @@ const UploadCV = () => {
 };
 
 export default UploadCV;
+
+
+
+// system 2 by using react pdf viewer
+
+// import { useState, useEffect } from "react";
+// import MyPDFViewer from "./MyPDFViewer";
+
+
+// const UploadCV = () => {
+//     const [pdfUrl, setPdfUrl] = useState(""); // State to store PDF URL
+
+//     useEffect(() => {
+//         // Fetch PDF URL from API or local JSON file
+//         fetch("candidate.json")
+//             .then((res) => res.json())
+//             .then((data) => setPdfUrl(data.resumeUrl))
+//             .catch((error) => console.error("Error fetching PDF URL:", error));
+//     }, []);
+
+//     return (
+//         <div>
+//             <h1 className="text-4xl mb-4">My Resume</h1>
+//             <div className="bg-white border-dashed p-16 rounded-lg">
+//                 {pdfUrl && <MyPDFViewer pdfUrl={pdfUrl} />}
+//             </div>
+//         </div>
+//     );
+// };
+
+// export default UploadCV;

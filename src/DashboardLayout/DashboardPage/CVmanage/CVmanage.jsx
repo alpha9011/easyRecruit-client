@@ -8,8 +8,6 @@ const CVmanage = () => {
     return (
         <div className="text-white p-10 space-y-8">
             <UploadCV/>
-            {/* <Education/>
-            <Experience/> */}
             <CvManagement></CvManagement>
         </div>
     );
