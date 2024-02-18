@@ -1,19 +1,92 @@
-import { FileInput, Label } from "flowbite-react";
+import { useState, useEffect } from "react";
+// import axios from "axios";
 
 const UploadCV = () => {
+    const [pdfUrl, setPdfUrl] = useState(""); // State to store PDF URL
+    const [showResume, setShowResume] = useState(false); // State to toggle resume visibility
+
+    console.log(pdfUrl);
+    useEffect(() => {
+        fetch("/candidate.json")
+          .then((res) => res.json())
+          .then((data) => {
+              console.log("Fetched data:", data);
+              setPdfUrl(data.resumeUrl);
+              console.log(setPdfUrl);
+          })
+          .catch((error) => {
+              console.error("Error fetching candidate data:", error);
+          });
+    }, []);
+
+    // useEffect(() => {
+    //     // Fetch candidate data from JSON file
+    //     const fetchData = async () => {
+    //         try {
+    //             const response = await axios.get("/candidate.json");
+    //             const { resumeUrl } = response.data;
+    //             setPdfUrl(resumeUrl);
+    //         } catch (error) {
+    //             console.error("Error fetching candidate data:", error);
+    //         }
+    //     };
+
+    //     fetchData();
+    // }, []);
+
+    const toggleResume = () => {
+        setShowResume(!showResume);
+    };
+
     return (
         <div>
             <h1 className="text-4xl mb-4">My Resume</h1>
             <div className="bg-white border-dashed p-16 rounded-lg">
-                <div id="fileUpload" className="max-w-md ">
-                    <div className="mb-6 block">
-                        <Label className="text-3xl" htmlFor="file" value="Update Your CV" />
-                    </div>
-                    <FileInput id="file" className="mt-4" helperText="You Can upload your cv for apply to the job" />
-                </div>
+                
+                    <button
+                        className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+                        onClick={toggleResume}
+                    >
+                        {showResume ? "Hide Resume" : "See Resume"}
+                    </button>
+                    {showResume && pdfUrl && (
+                        <embed src={pdfUrl} type="application/pdf" width="100%" height="600" />
+                    )}
+                
             </div>
         </div>
     );
 };
 
 export default UploadCV;
+
+
+
+// system 2 by using react pdf viewer
+
+// import { useState, useEffect } from "react";
+// import MyPDFViewer from "./MyPDFViewer";
+
+
+// const UploadCV = () => {
+//     const [pdfUrl, setPdfUrl] = useState(""); // State to store PDF URL
+
+//     useEffect(() => {
+//         // Fetch PDF URL from API or local JSON file
+//         fetch("candidate.json")
+//             .then((res) => res.json())
+//             .then((data) => setPdfUrl(data.resumeUrl))
+//             .catch((error) => console.error("Error fetching PDF URL:", error));
+//     }, []);
+
+//     return (
+//         <div>
+//             <h1 className="text-4xl mb-4">My Resume</h1>
+//             <div className="bg-white border-dashed p-16 rounded-lg">
+//                 {pdfUrl && <MyPDFViewer pdfUrl={pdfUrl} />}
+//             </div>
+//         </div>
+//     );
+// };
+
+// export default UploadCV;
