@@ -4,7 +4,7 @@ import { BiBriefcaseAlt2 } from "react-icons/bi";
 import { GoDotFill } from "react-icons/go";
 import { GrFireball } from "react-icons/gr";
 import { Link } from "react-router-dom";
-import SecondaryButton from "../../shared/SecondaryButton/SecondaryButton";
+
 import PrimaryButton from "../../shared/PrimaryButton/PrimaryButton";
 
 const PriceCard = () => {

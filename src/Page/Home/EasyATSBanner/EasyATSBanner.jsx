@@ -1,5 +1,6 @@
 import { Button } from "flowbite-react";
 import EasyATSBannerImg from "../../../../public/Image/easyATS.jpg";
+import PrimaryButton from "../../../shared/PrimaryButton/PrimaryButton";
 
 const EasyATSBanner = () => {
   return (
@@ -35,7 +36,7 @@ const EasyATSBanner = () => {
         <Button outline className="bg-gradient-to-br from-[#191970] via-[#4169e1] to-[#6a5acd]">
           Request A Demo
         </Button>
-        
+       
       </div>
     </div>
   );

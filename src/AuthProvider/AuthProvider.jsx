@@ -9,8 +9,8 @@ export const AuthContext = createContext(null)
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState()
     const [loader, setLoader] = useState(true)
-    const [selectedPlan, setSelectedPlan] = useState(null);
-    const [productLimit, setProductLimit] = useState(0);
+    // const [selectedPlan, setSelectedPlan] = useState(null);
+    // const [productLimit, setProductLimit] = useState(0);
 
 
     //signInWithGoogle
@@ -19,7 +19,7 @@ const AuthProvider = ({ children }) => {
         setLoader(true)
         return signInWithPopup(auth, googleProvider)
     }
-   
+
 
     // create user 
     const createUser = (email, password) => {
@@ -74,10 +74,7 @@ const AuthProvider = ({ children }) => {
         user,
         loader,
         forgotPass,
-        selectedPlan,
-        setSelectedPlan,
-        productLimit,
-        setProductLimit}
+    }
 
     return (
         <div>
