@@ -1,11 +1,8 @@
-
 import hireBannerImg from "../../../../public/Image/makingHireBanner.jpg";
 import { Link } from "react-router-dom";
-import PrimaryButton from "../../../shared/PrimaryButton/PrimaryButton";
+import PrimaryButton from "../../../shared/SecondaryButton/SecondaryButton";
 
 const MakingHiresBanner = () => {
-
-
   return (
     <div className="relative ">
       <div className="absolute w-full md:w-1/2 grid justify-center items-center top-0 bottom-0 p-5">
@@ -19,18 +16,24 @@ const MakingHiresBanner = () => {
             faster.
           </p>
           <div className="flex justify-center gap-5 items-center">
-           
-            <PrimaryButton  buttonText={'Watch Demo'} textColor={'text-white'} font={'font-bold'} hoverTextColor={'text-black'} hover={'hover:text-black'}> </PrimaryButton>
+            <PrimaryButton
+              buttonText={"Watch Demo"}
+              textColor={"text-white"}
+              font={"font-bold"}
+              hoverTextColor={"text-black"}
+              hover={"hover:text-black"}
+            >
+              {" "}
+            </PrimaryButton>
             <Link className="text-white hover:border-b">
-                 Try EasyRecruit Free
+              Try EasyRecruit Free
             </Link>
           </div>
         </div>
       </div>
 
       <img
-        className="h-[60vh] w-full object-cover object-top md:object-left lg:object-top  z-0 " 
-       
+        className="h-[60vh] w-full object-cover object-top md:object-left lg:object-top  z-0 "
         src={hireBannerImg}
         alt="EasyATSBanner"
       />
@@ -41,11 +44,9 @@ const MakingHiresBanner = () => {
           Learn how to recruit employees quickly with EasyRecruit applicant
           tracking software.
         </h4>
-       
 
         {/* <PrimaryButton className="text-white " buttonText={'Request A Demo'}></PrimaryButton> */}
       </div>
-   
     </div>
   );
 };

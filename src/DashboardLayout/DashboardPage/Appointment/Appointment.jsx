@@ -1,27 +1,25 @@
 import { Avatar, Table } from "flowbite-react";
-
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-
-
-
 const Appointment = () => {
+
   // get all the job post
   const axiosPublic = useAxiosSecure();
   const [jobPost, setjobPost] = useState([]);
 
   useEffect(() => {
-    axiosPublic.get("/postjob").then((res) => {
-      setjobPost(res.data);
-    });
-  }, [axiosPublic]);
+    axiosPublic.get('/postjob')
+      .then(res => {
+        setjobPost(res.data)
+      })
+  }, [axiosPublic])
   console.log(jobPost);
 
   return (
     <div>
       <h2 className="text-center font-bold text-4xl my-3 text-white">
-        Selected Candidates
+        All companies jobs
       </h2>
       <div className="overflow-x-auto border rounded-xl">
         <Table>
@@ -30,6 +28,7 @@ const Appointment = () => {
             <Table.HeadCell>Logo</Table.HeadCell>
             <Table.HeadCell>Company Name</Table.HeadCell>
             <Table.HeadCell>Job Title</Table.HeadCell>
+            <Table.HeadCell>Deadline</Table.HeadCell>
             <Table.HeadCell>Short listed</Table.HeadCell>
           </Table.Head>
 
@@ -49,11 +48,8 @@ const Appointment = () => {
                 <Table.Cell className="whitespace-nowrap font-medium  dark:text-white">
                   {item.title}
                 </Table.Cell>
-                <Table.Cell>
-                  <Link to={`/dashboard/shortlisted/${item._id}`}>
-                    Candidates
-                  </Link>
-                </Table.Cell>
+                <Table.Cell>{item.deadline}</Table.Cell>
+                <Table.Cell><Link to={`/dashboard/shortlisted/${item._id}`}>Candidates</Link></Table.Cell>
                 <Table.Cell>{item.phone}</Table.Cell>
               </Table.Row>
             ))}
