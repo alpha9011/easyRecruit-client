@@ -31,6 +31,7 @@ import AllJobsCandidates from "../DashboardLayout/DashboardAdminPage/AllJobs/All
 import MyCandidates from "../DashboardLayout/DashboardPage/MyJobs/MyCandidates";
 import ShortListed from "../DashboardLayout/DashboardPage/Appointment/ShortListed";
 import Appointment from "../DashboardLayout/DashboardPage/Appointment/Appointment";
+import PackDetiles from "../Page/Pricing/PackDetiles";
 
 export const router = createBrowserRouter([
   {
@@ -71,6 +72,12 @@ export const router = createBrowserRouter([
         element: <ApplyForm></ApplyForm>,
         loader: ({ params }) =>
           fetch(`http://localhost:5000/postjob/${params.id}`),
+      },
+      {
+        path: "/packdetails/:id",
+        element: <PackDetiles></PackDetiles>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/packs/${params.id}`),
       },
       {
         path: "/applyform/:id",
