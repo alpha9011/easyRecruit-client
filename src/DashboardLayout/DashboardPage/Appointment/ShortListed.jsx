@@ -117,14 +117,14 @@ const ShortListed = () => {
                                                                         <div className="mb-2 block">
                                                                             <Label htmlFor="subject" value="Email subject" />
                                                                         </div>
-                                                                        <Textarea id="subject" type="text" {...register("subject", { required: true })} name='subject' placeholder="Enter the subject here" defaultValue={`Interview schedule for the post of ${candidate.jobTitle} on ${candidate.companyName}.`} shadow />
+                                                                        <Textarea id="subject" type="text" {...register("subject", { required: true })} name='subject' placeholder="Enter the subject here" defaultValue={`Congratulation!!! You are short-listed for the post of ${candidate.jobTitle} on ${candidate.companyName}.`} shadow />
                                                                         {errors.name && <span className="text-red-600">Email subject is required</span>}
                                                                     </div>
                                                                     <div>
                                                                         <div className="mb-2 block">
                                                                             <Label htmlFor="message" value="Message" />
                                                                         </div>
-                                                                        <Textarea id="message" type="text" {...register("message", { required: true })} name='message' placeholder="Enter your message" rows={4} shadow />
+                                                                        <Textarea id="message" type="text" {...register("message", { required: true })} name='message' placeholder="Enter your message" defaultValue={`Dear ${candidate.name},\n\nThank you for applying to our position. We have received your CV and shortlisted your application as suitable for this role. After reviewing all applications for this position, we may contact you to discuss a potential interview.\n\nThank you\nEasyRecruit`} rows={10} shadow />
                                                                         {errors.message && <span className="text-red-600">message is required</span>}
                                                                     </div>
                                                                     <Button type="submit" >Send Message</Button>
