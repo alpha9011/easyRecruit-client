@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 const PriceCard = (packs) => {
     console.log(packs.packs);
-    const { pack_name, short_details, price, job_limit, feature_1, feature_2, feature_3 } = packs.packs || {}
+    const { _id, pack_name, short_details, price, job_limit, feature_1, feature_2, feature_3 } = packs.packs || {}
     return (
         <div>
             {/* All Pricing Cards */}
@@ -64,7 +64,7 @@ const PriceCard = (packs) => {
                             </div>
                         </div>
                         {/* button */}
-                        <Link to='/membership'>
+                        <Link to={`/packdetails/${_id}`}>
                             <button
                                 type="button"
                                 className="inline-flex w-full justify-center rounded-lg bg-cyan-500 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-white hover:text-cyan-500 border-2 duration-500 border-cyan-500 focus:outline-none focus:ring-4 focus:ring-cyan-200 dark:focus:ring-cyan-900"
