@@ -15,10 +15,11 @@ import './login.css'
 
 
 const Login = () => {
+  function onChange(value) {
+    console.log("Captcha value:", value);
+  }
 
-    function onChange(value) {
-        console.log("Captcha value:", value);
-    }
+  
 
     const emailRef = useRef(null)
 
@@ -193,5 +194,16 @@ const Login = () => {
         </div>
     );
 
-}
+                    
+                
+
+                 
+
+                
+                
+            
+
+              
+
+};
 export default Login;

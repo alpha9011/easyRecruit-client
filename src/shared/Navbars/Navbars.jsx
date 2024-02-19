@@ -21,10 +21,11 @@ const Navbars = () => {
   const navLinkStyle = ({ isActive, isPending }) => {
     return isPending
       ? "pending"
-      : `inline-block w-full text-center py-2  bg-transparent text rounded font-semibold ${isActive
-        ? "border-blue-500 border-y backdrop-filter backdrop-blur-3xl "
-        : "  hover:border-y hover:border-blue-500 hover:backdrop-blur-3xl"
-      }`;
+      : `inline-block w-full  text-center py-2  bg-transparent text rounded font-semibold ${
+          isActive
+            ? "border-blue-500   border-y backdrop-filter backdrop-blur-3xl "
+            : "   hover:border-y hover:border-blue-500 hover:backdrop-blur-3xl"
+        }`;
   };
   //  NavMenu Side bar
   const navMenu = (
@@ -75,33 +76,36 @@ const Navbars = () => {
           Circular
         </NavLink>
 
-    {
-      user ?     <Button
-      outline
-      gradientDuoTone="purpleToBlue"
-      onClick={() => logOut()}
-      className="inline-block w-full text-center text-xl mt-2"
-    >
-      logout
-    </Button> 
-    : 
-    <Link>Login</Link>
-    }
+        {user ? (
+          <Button
+            outline
+            gradientDuoTone="purpleToBlue"
+            onClick={() => logOut()}
+            className="inline-block w-full text-center text-xl mt-2"
+          >
+            logout
+          </Button>
+        ) : (
+          <Link>Login</Link>
+        )}
       </div>
     </div>
   );
+
   return (
     <Navbar
       fluid
       rounded
-      className="px-10 sticky top-0 bg-white z-50  shadow p-4 lg:opacity-80"
+      className="px-10 sticky top-0 z-50 shadow p-4 bg-white bg-opacity-50"
+      style={{
+        backdropFilter: "blur(10px)",
+      }}
     >
       <Navbar.Brand href="/">
         <div className="flex flex-col items-center">
           <span className="self-center whitespace-nowrap text-3xl lg:text-4xl   font-bold dark:text-white bg-gradient-to-r from-blue-500 to-sky-500 text-transparent bg-clip-text ">
             Easy<span className="">Recruit</span>
           </span>
-          {/* <span className="text-xs">Simplify Hiring, Amplify Results.</span> */}
         </div>
       </Navbar.Brand>
       <div className=" md:order-2  hidden lg:block">

@@ -5,12 +5,16 @@ import { AuthContext } from '../../AuthProvider/AuthProvider';
 import { FaRegCircle } from "react-icons/fa";
 // import bgRegister from '../../assets/women.jpg'
 import useAxiosPublic from '../../Hooks/useAxiosPublic';
-import {  updateProfile } from 'firebase/auth';
+import { updateProfile } from 'firebase/auth';
 import { useForm } from 'react-hook-form';
 import Swal from 'sweetalert2';
 
+const imageBBKey = import.meta.env.VITE_IMAGEBB
+const imageBBApi = `https://api.imgbb.com/1/upload?key=${imageBBKey}`
+
+
 const Register = () => {
- 
+
   const location = useLocation()
   const navigate = useNavigate()
   const axiospublic = useAxiosPublic()
@@ -25,74 +29,66 @@ const Register = () => {
 
   const onSubmit = async (data) => {
     console.log(data);
-   
 
-    
-      const usersInfo = {
-        name: data.name,
-        email: data.email,
-        image: data.photo,
-        number: data.number,
-        company: data.company,
-        workPlace: data.workPlace,
-        jpLimit: 0,
-        userRole: 'free-user'
+
+    const imageFile = { image: data.photo[0] }
+
+    const res = await axiospublic.post(imageBBApi, imageFile, {
+      headers: {
+        'content-type': 'multipart/form-data'
       }
-
-      axiospublic.post('/users', usersInfo)
-      .then(res => {
-        console.log('users added in database', res.data);
-        if (res.data.insertedId) {
-          Swal.fire({
-            position: "top-end",
-            icon: "success",
-            title: "Registration successfully",
-            showConfirmButton: false,
-            timer: 1500
-          });
-          reset()
-        }
-      })
-
-      
-    
+    })
+    //    console.log(res.data.data.display_url );
+    const image = res.data.data.display_url
+    console.log(image);
 
 
-    
 
     createUser(data.email, data.password)
-      .then(result => {
-
-
-         // verification 
-        //  sendEmailVerification(result.user)
-        //  .then(() => {
-        //    Swal.fire({
-        //      position: "top-end",
-        //      icon: "success",
-        //      title: "Check your email and verify",
-        //      showConfirmButton: false,
-        //      timer: 1500
-        //    });
-        //  })
-        //  .catch(error => console.log(error))
-
-
-        updateProfile(result.user, {
-          displayName: data.name,
-          photoURL: data.photo
-        })
-          .then(() => {
-
+    .then( result => {
+              
+              updateProfile(result.user , {
+                  displayName: data.name,
+                  photoURL: image
+              })
+              .then(()=> {
+                // create users entry in database
+                const usersInfo = {
+                  name: data.name,
+                  email: data.email,
+                  image: image,
+                  number: data.number,
+                  company:data.company,
+                  workPlace:data.workPlace,
+                  jpLimit: 0,
+                  userRole: 'free-user'
+                }
+                axiospublic.post('/users', usersInfo)
+                .then( res => {
+                  console.log( 'users added in database',res.data);
+                  if(res.data.insertedId){
+                    
+                    Swal.fire({
+                      position: "top-center",
+                      icon: "success",
+                      title: "Registration succesful",
+                      showConfirmButton: false,
+                      timer: 1500
+                    });
+                    reset()
+                  }
+                })
+               
+              })
+              .catch(()=> {})
+              // Navigate('/')
+              navigate(location?.state ? location.state : "/")
           })
-          .catch(() => { })
-        // Navigate('/')
-        navigate(location?.state ? location.state : "/")
-      })
-      .catch(err => {
-        console.log(err);
-        alert(err.message)
-      })
+          .catch(err => {
+              console.log(err);
+              alert(err.message)
+          })
+
   }
 
 
@@ -100,11 +96,12 @@ const Register = () => {
   return (
 
     <div>
-      <div 
-      style={{ background: 'linear-gradient(to right,  #1a2980, #3789b4, #7fdbe8)',
+      <div
+        style={{
+          background: 'linear-gradient(to right,  #1a2980, #3789b4, #7fdbe8)',
 
-    }}
-      
+        }}
+
       >
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 p-8 md:p-10 lg:gap-16  lg:p-24'>
           <div>
@@ -129,7 +126,7 @@ const Register = () => {
           </div>
 
           <div className='bg-[#b9cdc6]  rounded-lg  p-12  lg:w-[500px]'>
-            
+
 
             <h2 className='text-2xl font-semibold mb-4 text-center'>Create a Free Account</h2>
 
@@ -159,16 +156,16 @@ const Register = () => {
                   <label className="block mb-1">
                     <span className="font-semibold"><span className='text-red-700 pr-2'>*</span>Photo URL</span>
                   </label>
-                 
 
-                  <input type="file" {...register("image", { required: true })} name='image' placeholder="photo url" className="file-input file-input-bordered w-full max-w-xs" />
+
+                  <input type="file" {...register("photo", { required: true })} name='photo' placeholder="photo url" className="file-input file-input-bordered w-full max-w-xs" />
 
                   {errors.photo && <span className='text-red-500 mt-1'>This field is required</span>}
                 </div>
 
 
 
-                
+
 
 
 
@@ -222,14 +219,14 @@ const Register = () => {
                 </div>
               </form>
               <div className='text-center mt-2'>
-                <p>Have an account? <Link  className='ml-2 font-bold text-cyan-600  hover:underline' to={'/login'}>Login</Link> </p>
+                <p>Have an account? <Link className='ml-2 font-bold text-cyan-600  hover:underline' to={'/login'}>Login</Link> </p>
               </div>
             </div>
           </div>
         </div>
 
       </div>
-      
+
     </div>
   );
 };
