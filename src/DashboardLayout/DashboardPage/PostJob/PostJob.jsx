@@ -65,17 +65,17 @@ const PostJob = () => {
             .then(res => {
                 console.log(res.data);
                 if (res.data.insertedId) {
-                    
+
                     Swal.fire({
                         position: "top-center",
                         icon: "success",
                         title: "Job Posted successfully",
                         showConfirmButton: false,
                         timer: 1500,
-                      
-                      });
 
-                    // reset()
+                    });
+
+                    reset()
                 }
             })
     }
