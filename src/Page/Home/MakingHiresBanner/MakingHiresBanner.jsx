@@ -1,4 +1,4 @@
-import { Button } from "flowbite-react";
+
 import hireBannerImg from "../../../../public/Image/makingHireBanner.jpg";
 import { Link } from "react-router-dom";
 import PrimaryButton from "../../../shared/PrimaryButton/PrimaryButton";

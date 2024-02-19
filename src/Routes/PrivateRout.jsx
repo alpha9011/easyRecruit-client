@@ -5,6 +5,8 @@ import { AuthContext } from "../AuthProvider/AuthProvider";
 import { Spinner } from "flowbite-react";
 
 
+
+
 const PrivateRout = ({children}) => {
 
     const {user, loader} = useContext(AuthContext)
@@ -18,7 +20,7 @@ const PrivateRout = ({children}) => {
     if(user) {
         return children
     }
-    return <Navigate state={location.pathname} replace to = "/register"></Navigate>
+    return <Navigate state={location.pathname} replace to = "/login"></Navigate>
 };
 
 PrivateRout.propTypes = {

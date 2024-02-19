@@ -19,8 +19,8 @@ const RecruitingResult = () => {
           Drive Better Recruiting Results with the Right ATS
         </h4>
       </div>
-      
       <PrimarySection
+
         title={title}
         subTitle={subTitle}
         content={content}
@@ -29,6 +29,7 @@ const RecruitingResult = () => {
         image={recruitingImg}
         alt={"easy Recruit"}
         imgPosition="left"
+
       ></PrimarySection>
     </>
   );

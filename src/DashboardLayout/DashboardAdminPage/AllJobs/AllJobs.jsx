@@ -1,13 +1,15 @@
 import { useQuery } from "@tanstack/react-query";
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
-import {  Table } from "flowbite-react";
+import {  Spinner, Table } from "flowbite-react";
 import { MdDelete } from "react-icons/md";
 import JobDetails from "./JobDetails";
+import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 
 
 const AllJobs = () => {
     const axiosSecure = useAxiosSecure()
-    const {  data: jobs = [] } = useQuery({
+    const {isLoading, refetch,  data: jobs = [] } = useQuery({
         queryKey: ['users'],
         queryFn: async () => {
             const res = await axiosSecure.get('/postjob')
@@ -15,6 +17,46 @@ const AllJobs = () => {
         }
     })
     console.log(jobs);
+    if(isLoading) {
+      return <div className=" h-screen flex items-center justify-center">
+         <Spinner aria-label="Large spinner example" size="lg" />
+      </div>
+    }
+
+    const handleDelete = _id => {
+      console.log(`want to delete ${_id}`);
+      Swal.fire({
+        title: "Are you sure?",
+        text: "You won't be able to revert this!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, delete it!"
+      }).then((result) => {
+        if (result.isConfirmed) {
+          
+          axiosSecure.delete(`/postjob/${_id}`)
+            .then(res => {
+              if (res.data.deletedCount > 0) {
+                refetch()
+                Swal.fire({
+                  title: "Deleted!",
+                  text: "Your Job Post has been deleted.",
+                  icon: "success"
+                });
+             
+            }
+            })
+           
+        }
+      });
+    }
+
+
+
+
+
     return (
         <div>
         <h1 className='mb-5 text-white text-center font-bold text-3xl'>All Jobs: {jobs.length}</h1>
@@ -26,6 +68,8 @@ const AllJobs = () => {
         <Table.HeadCell>Company Name</Table.HeadCell>
         <Table.HeadCell>Job Title</Table.HeadCell>
         <Table.HeadCell>Deadline</Table.HeadCell>
+        <Table.HeadCell></Table.HeadCell>
+
         <Table.HeadCell></Table.HeadCell>
         <Table.HeadCell></Table.HeadCell>
        
@@ -44,12 +88,16 @@ const AllJobs = () => {
                 </Table.Cell>
                 <Table.Cell>{job?.title}</Table.Cell>
                 <Table.Cell>{job?.deadline}</Table.Cell>
+
+                {/* candidates */}
+                {/* <Table.Cell> <Candidates job={job}></Candidates> </Table.Cell> */}
+                <Table.Cell><Link to={`/dashboard/alljobs/${job._id}`}>Candidates</Link></Table.Cell>
                 
                 {/* job details */}
 
                 <JobDetails job={job}></JobDetails>
                 
-                <Table.Cell className=' text-2xl text-red-700 cursor-pointer' ><MdDelete/></Table.Cell>
+                <Table.Cell className=' text-2xl text-red-700 cursor-pointer' onClick={()=>handleDelete(job._id)} ><MdDelete/></Table.Cell>
 
              
      

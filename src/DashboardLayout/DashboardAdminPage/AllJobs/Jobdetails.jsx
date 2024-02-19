@@ -7,15 +7,14 @@ const JobDetails = ({job}) => {
   const  {logo, title ,jobType,location,experience,salary,aboutCompany,positionSummary,companyName,postDate,deadline,responsibilities,qualifications,education,benifits} = job|| {}
     const [openModal, setOpenModal] = useState(false);
     return (
-        <Table.Cell><button  onClick={() => setOpenModal(true)} className="hover:text-blue-600 font-semibold">See Details</button>
+        <Table.Cell><button  onClick={() => setOpenModal(true)} className="hover:text-blue-600 font-semibold">Details</button>
         <Modal show={openModal} onClose={() => setOpenModal(false)}>
         <Modal.Header>    <div className="flex items-center gap-2 mb-3">
   <div>
     <img src={logo} className="border w-20 rounded-lg shadow" />
-    
   </div>
   <div className="ml-2">
-
+      
   <h2>{title}</h2>
   <h3 className="text-sm ">{companyName}</h3>
     <div className="flex items-center gap-5 text-gray-500">

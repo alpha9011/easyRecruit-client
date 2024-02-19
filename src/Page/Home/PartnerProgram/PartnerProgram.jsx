@@ -26,7 +26,7 @@ const PartnerProgram = () => {
         image={PartnerProgramImg}
         alt={"Easy Recruit"}
         imgPosition="left"
-        aosImage="fade-up"
+        aosImage="zoom-in"
       ></PrimarySection>
     </div>
   );

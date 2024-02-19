@@ -1,9 +1,6 @@
 import { Button } from "flowbite-react";
 import EasyATSBannerImg from "../../../../public/Image/easyATS.jpg";
-//Aos Animation
-import AOS from "aos";
-import "aos/dist/aos.css";
-AOS.init();
+
 const EasyATSBanner = () => {
   return (
     <div className="relative " >

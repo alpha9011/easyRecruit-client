@@ -8,9 +8,13 @@ import twitter from "../../../src/assets/twitter.jpg"
 import ContactForm from "./ContactForm/ContactForm";
 // import bg from "../../../src/assets/city.jpg"
 import "./contactUs.css"
+import { Helmet } from "react-helmet-async";
 const ContactUs = () => {
     return (
         <div className="contactPage">
+            <Helmet>
+                <title>EasyRecruit || Contact Us</title>
+            </Helmet>
             <h1 className="text-7xl text-center font-bold text-white pt-10">Get In Touch</h1>
             <div className="flex flex-col md:flex-row justify-center items-center gap-3 p-10">
                 {/* left column */}
