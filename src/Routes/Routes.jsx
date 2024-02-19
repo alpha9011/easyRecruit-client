@@ -31,6 +31,7 @@ import AllJobsCandidates from "../DashboardLayout/DashboardAdminPage/AllJobs/All
 import MyCandidates from "../DashboardLayout/DashboardPage/MyJobs/MyCandidates";
 import ShortListed from "../DashboardLayout/DashboardPage/Appointment/ShortListed";
 import Appointment from "../DashboardLayout/DashboardPage/Appointment/Appointment";
+import DemoPage from "../Page/DemoPage/DemoPage";
 
 export const router = createBrowserRouter([
   {
@@ -98,6 +99,10 @@ export const router = createBrowserRouter([
       {
         path: "/privacy",
         element: <PrivacyPolicy></PrivacyPolicy>
+      },
+      {
+        path: "/demoPage",
+        element: <DemoPage></DemoPage>
       },
 
     ],

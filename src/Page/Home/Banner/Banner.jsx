@@ -48,17 +48,12 @@ const Banner = () => {
           </span>
 
           <div className="flex justify-center">
-            <Link to={"https://www.youtube.com/watch?v=ctchVy-Qxic"} target="blank">
+            <Link to={"/demoPage"}>
               <PrimaryButton buttonText="Request A Demo"></PrimaryButton>
             </Link>          </div>
 
           <div className="flex justify-center items-center ">
-            
-
-          
-
-           
-           
+    
           </div>
         </div>
         <div className=" md:w-1/2 flex justify-center items-center w-64 ">
