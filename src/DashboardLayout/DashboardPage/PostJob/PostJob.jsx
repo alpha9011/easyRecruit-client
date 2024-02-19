@@ -49,6 +49,9 @@ const PostJob = () => {
             responsibilities: data.responsibilities,
             qualifications: data.qualifications,
             education: data.education,
+            skills:data.skills,
+            country:data.country,
+            language:data.language,
             benifits: data.benifits,
             jobType: data.jobType,
             experience: data.experience,
@@ -131,16 +134,58 @@ const PostJob = () => {
                     </div>
 
                     <div>
-                        <label>Education <span className="text-red-600">*</span></label>
-                        <textarea {...register("education", { required: true })} className="mt-1 input border-none w-full" id="" cols="30" rows="4" placeholder="Education " required></textarea>
-                    </div>
-
-                    <div>
                         <label>Anything about job or employe benifits</label>
                         <textarea {...register("benifits")} className="mt-1 input border-none w-full" id="" cols="30" rows="4" placeholder="Anything about job or employe benifits" ></textarea>
                     </div>
 
 
+{/* education and skills */}
+                    <div className="grid grid-cols-2 gap-3">
+                    <div >
+                            <label>Education<span className="text-red-600">*</span></label>
+                            <select {...register("education")} required className="mt-1 input border-none w-full">
+
+                                <option value="HSC">HSC</option>
+                                <option value="HONOURS Technial">HONOURS(Technical)</option>
+                                <option value="HONOURS (Non-Technical)">HONOURS(Non-Technical)</option>
+                                <option value="MASTERS(Technical)">MASTERS(Technical)</option>
+                                <option value="MASTERS (Non-Technical)">MASTERS(Non-Technical)</option>
+                                <option value="Others">Others</option>
+                               
+
+                            </select>
+                        </div>
+
+                        <div >
+                            <label>Skills<span className="text-red-600">*</span></label>
+                            <select {...register("skills")} required className="mt-1 input border-none w-full">
+
+                                <option value="HTML">HTML</option>
+                                <option value="HTML">CSS</option>
+                               
+                               
+
+                            </select>
+                        </div>
+
+                    </div>
+{/* cuntry and language */}
+                    <div className="grid grid-cols-2 gap-3">
+                    <div>
+                            <label >Country<span className="text-red-600">*</span></label>
+                            <input type="text" className="mt-1 input border-none w-full"  {...register("country", { required: true })} placeholder="your Country" required />
+                        </div>
+                        <div >
+                            <label>Language<span className="text-red-600">*</span></label>
+                            <select {...register("language")} required className="mt-1 input border-none w-full">
+
+                                <option value="Bangla">Bangla</option>
+                                <option value="English">English</option>
+                                <option value="Others">Others</option>
+
+                            </select>
+                        </div>
+                    </div>
 
                     <div className="grid grid-cols-2 gap-3">
 
@@ -178,7 +223,7 @@ const PostJob = () => {
                         </div >
                         <div >
                             <label>Application Deadline</label>
-                            <input type="date" {...register("date")} className="mt-1 input border-none w-full" placeholder="" />
+                            <input type="date" {...register("date")} className="mt-1 input border-none w-full" placeholder="" required />
                         </div>
                     </div>
 

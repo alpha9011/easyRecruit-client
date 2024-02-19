@@ -179,8 +179,10 @@ export const router = createBrowserRouter([
         element: <Appointment></Appointment>,
       },
       {
-        path: "CVmanage",
-        element: <CVmanage />
+        path: "CVmanage/:id",
+        element: <CVmanage />,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/applicantCV/${params.id}`),
       },
     ],
   },
