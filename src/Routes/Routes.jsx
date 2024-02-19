@@ -13,7 +13,7 @@ import MyJobs from "../DashboardLayout/DashboardPage/MyJobs/MyJobs";
 import PostJob from "../DashboardLayout/DashboardPage/PostJob/PostJob";
 import Circular from "../Page/Circular/Circular";
 import InterViewSchedule from "../DashboardLayout/DashboardPage/InterViewSchedule/InterViewSchedule";
-import Appointment from "../DashboardLayout/DashboardPage/Appointment/Appointment";
+// import Appointment from "../DashboardLayout/DashboardPage/Appointment/Appointment";
 import ApplyForm from "../Page/Circular/ApplyForm/JobDetails";
 import Pricing from "../Page/Pricing/Pricing";
 import WhyEasyRecruit from "../Page/WhyEasyRecruit/WhyEasyRecruit";
@@ -31,7 +31,8 @@ import CVmanage from "../DashboardLayout/DashboardPage/CVmanage/CVmanage";
 import AllJobsCandidates from "../DashboardLayout/DashboardAdminPage/AllJobs/AllJobsCandidates";
 import MyCandidates from "../DashboardLayout/DashboardPage/MyJobs/MyCandidates";
 import ShortListed from "../DashboardLayout/DashboardPage/Appointment/ShortListed";
-
+import Appointment from "../DashboardLayout/DashboardPage/Appointment/Appointment";
+import PackDetiles from "../Page/Pricing/PackDetiles";
 
 export const router = createBrowserRouter([
   {
@@ -72,6 +73,12 @@ export const router = createBrowserRouter([
         element: <ApplyForm></ApplyForm>,
         loader: ({ params }) =>
           fetch(`http://localhost:5000/postjob/${params.id}`),
+      },
+      {
+        path: "/packdetails/:id",
+        element: <PackDetiles></PackDetiles>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/packs/${params.id}`),
       },
       {
         path: "/applyform/:id",

@@ -39,7 +39,7 @@ const JobCard = (jobs) => {
               </p>
              <p>
              <Link to={`/jobdetails/${_id}`} className="text-sky-500 transition-all duration-300 group-hover:text-white flex before:ease relative overflow-hidden shadow-2xl before:absolute before:right-0 before:top-0 before:h-12 before:w-6 before:translate-x-12 before:rotate-6 before:bg-white before:opacity-50 before:duration-1000
-                    hover:before:-translate-x-40 hover:scale-110">See Details <FaArrowRightLong className="mt-2 ml-2" />
+                    hover:before:-translate-x-40 hover:scale-110">See Details <FaArrowRightLong className=" animate-pulse mt-2 ml-2" />
 
                 </Link>
               </p>
