@@ -13,7 +13,6 @@ import MyJobs from "../DashboardLayout/DashboardPage/MyJobs/MyJobs";
 import PostJob from "../DashboardLayout/DashboardPage/PostJob/PostJob";
 import Circular from "../Page/Circular/Circular";
 import InterViewSchedule from "../DashboardLayout/DashboardPage/InterViewSchedule/InterViewSchedule";
-// import Appointment from "../DashboardLayout/DashboardPage/Appointment/Appointment";
 import ApplyForm from "../Page/Circular/ApplyForm/JobDetails";
 import Pricing from "../Page/Pricing/Pricing";
 import WhyEasyRecruit from "../Page/WhyEasyRecruit/WhyEasyRecruit";
@@ -180,8 +179,10 @@ export const router = createBrowserRouter([
         element: <Appointment></Appointment>,
       },
       {
-        path: "CVmanage",
-        element: <CVmanage />
+        path: "CVmanage/:id",
+        element: <CVmanage />,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/applicantCV/${params.id}`),
       },
     ],
   },

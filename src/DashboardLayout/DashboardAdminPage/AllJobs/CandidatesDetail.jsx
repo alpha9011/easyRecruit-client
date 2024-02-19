@@ -4,6 +4,7 @@ import { useState } from "react";
 import PropTypes from "prop-types"
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
+import { Link } from "react-router-dom";
 
 const CandidatesDetail = ({candidate,refetch}) => {
     const { name, email,phone,photo,country,resume,coverLetter,lastAcademy,language,salary,gender,applyDate, _id,isSelected} = candidate || {}
@@ -160,6 +161,9 @@ const handlenNOtSelect = id => {
                <div>
                <button className="bg-red-600 px-3 py-2 rounded-md text-white " onClick={()=>handlenNOtSelect(_id)}>Not Select</button>
                </div>
+          </div>
+          <div>
+            <Link to={`/dashboard/CVmanage/${_id}`}> CV Mangagement</Link>
           </div>
                    </div>
                 </Modal.Body>

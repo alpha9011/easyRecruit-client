@@ -1,22 +1,26 @@
 import { useState } from "react";
+import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const CvManagement = () => {
+    const applicants = useLoaderData()
+    const {lastAcademy, skills, language, country, experience,jobEducation,jobSkills,jobLanguage,jobCountry,jobExperience,jobsalary} = applicants || {}
+  
     //   database theke single candidate and job er just requirements gula ante hobe 
     const [jobRequirements, setJobRequirements] = useState({
-        education: "Honors",
-        skills: "HTML, CSS, React, Js",
-        jobExperience: "2 Years",
-        country: "Bangladesh",
-        language: "English",
+        education:jobEducation,
+        skills: jobSkills,
+        jobExperience: jobExperience,
+        country:jobCountry,
+        language: jobLanguage,
     });
 
     const [candidateProfile, setCandidateProfile] = useState({
-        education: "Honors",
-        skills: "HTML, CSS, React, Js",
-        jobExperience: "2 Years",
-        country: "Bangladesh",
-        language: "bangla",
+        education:lastAcademy,
+        skills: skills,
+        jobExperience: experience,
+        country:country,
+        language: language,
     });
 
     const [matchingResult, setMatchingResult] = useState({
@@ -34,7 +38,7 @@ const CvManagement = () => {
         // You can customize this logic based on your requirements
         const newMatchingResult = {
             education: jobRequirements.education === candidateProfile.education,
-            skills: jobRequirements.skills === candidateProfile.skills,
+            skills: jobRequirements.skills <= candidateProfile.skills,
             jobExperience: jobRequirements.jobExperience === candidateProfile.jobExperience,
             country: jobRequirements.country === candidateProfile.country,
             language: jobRequirements.language === candidateProfile.language,
