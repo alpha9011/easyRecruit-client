@@ -65,6 +65,11 @@ const imageBBApi =`https://api.imgbb.com/1/upload?key=${imageBBKey}`
                 });
             })
     }
+
+        
+
+
+    
     return (
         <div className="px-10">
             <img src={logo} alt="" className="w-20"/>
@@ -90,8 +95,7 @@ const imageBBApi =`https://api.imgbb.com/1/upload?key=${imageBBKey}`
                 <div >
                     <label>Photo URL<span className="text-red-600">*</span></label>
                     <input type="file" {...register("photo", { required: true })} className="mt-1 input input-bordered w-full" placeholder="Your photo URL" required />
-
-                </div >
+</div>
             
                 <div >
                     <label>Country<span className="text-red-600">*</span></label>
