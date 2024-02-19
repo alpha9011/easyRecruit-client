@@ -3,6 +3,7 @@ import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 
+
 const CvManagement = () => {
     const axiosSecure = useAxiosSecure()
     const applicants = useLoaderData()
@@ -78,7 +79,7 @@ const CvManagement = () => {
             confirmButtonText: "Yes, Select "
         }).then((result) => {
             if (result.isConfirmed) {
-    
+               
                 axiosSecure.patch(`/applicantCV/${id}`)
     
                 .then(res => {
@@ -118,7 +119,7 @@ const CvManagement = () => {
                 .then(res => {
                     console.log(res.data);
                     if (res.data.modifiedCount > 0) {
-                        
+                        refetch()
                         Swal.fire({
                             position: "top-center",
                             icon: "success",
