@@ -2,6 +2,9 @@ import { useEffect, useState } from "react";
 import JobCard from "./JobCard";
 import useAxiosPublic from "../../Hooks/useAxiosPublic";
 import { Helmet } from "react-helmet-async";
+import CircularSwiper from "./CirculerSwiper/CirculerSwiper";
+import Footers from "../../shared/Footer/Footers";
+import CustomersSlider from "../Home/CustomersSlider/CustomersSlider";
 
 
 
@@ -22,15 +25,34 @@ const Circular = () => {
             <Helmet>
                 <title>EasyRecruit || Circular</title>
             </Helmet>
-            <div className="text-center mt-10 mb-10">
-                <h1 className="text-6xl font-bold mb-10 text-blue-400">Featured Job</h1>
-                <p className="text-2xl">See All our customers latest Jobs</p>
+            <div>
+                <CircularSwiper></CircularSwiper>
             </div>
+            <div className="py-10 rounded-sm bg-opacity-45"
+            
+                style={{
+                    backgroundImage: `url('https://i.ibb.co/0mx2DWy/bg2.jpg')`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    backgroundRepeat: 'no-repeat',
+                    backdropFilter:'blur(10px)'
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mx-5">
-                {
-                    postJobs.map(jobs => <JobCard key={jobs._id} jobs={jobs}></JobCard>)
-                }
+                    
+                }}>
+                <div className="text-center mb-14">
+                    <h1 className="text-6xl font-bold mb-3 text-blue-400">Featured Jobs</h1>
+                    <p className="text-2xl">Find Your Dream Job From All our Latest Jobs</p>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mx-5">
+                    {
+                        postJobs.map(jobs => <JobCard key={jobs._id} jobs={jobs}></JobCard>)
+                    }
+                </div>
+            </div>
+            <div>
+                <CustomersSlider></CustomersSlider>
+                <Footers></Footers>
             </div>
 
         </div>
