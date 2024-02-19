@@ -20,7 +20,7 @@ const PrivateRout = ({children}) => {
     if(user) {
         return children
     }
-    return <Navigate state={location.pathname} replace to = "/register"></Navigate>
+    return <Navigate state={location.pathname} replace to = "/login"></Navigate>
 };
 
 PrivateRout.propTypes = {

@@ -135,26 +135,25 @@ const Navbars = () => {
               </Navbar.Link>
             </div>
 
-            {user ? (
-              <Button
-                outline
-                gradientDuoTone="purpleToBlue"
-                onClick={() => logOut()}
-                className="inline-block w-full text-center text-xl mt-2"
-              >
-                logout
-              </Button>
-            ) : (
-              <Link to="/register">
-                <Button
-                  outline
-                  gradientDuoTone="purpleToBlue"
-                  className="inline-block w-full text-center text-xl mt-2"
-                >
-                  login
-                </Button>{" "}
-              </Link>
-            )}
+            {
+      user ?     <Button
+      outline
+      gradientDuoTone="purpleToBlue"
+      onClick={() => logOut()}
+      className="inline-block w-full text-center text-xl mt-2"
+    >
+      logout
+    </Button> 
+    : 
+    <Link to='/login'><Button
+    outline
+    gradientDuoTone="purpleToBlue"
+    
+    className="inline-block w-full text-center text-xl mt-2"
+  >
+    login
+  </Button> </Link>
+    }
           </Dropdown.Header>
           <Dropdown.Divider />
         </Dropdown>

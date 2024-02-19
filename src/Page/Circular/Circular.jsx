@@ -21,7 +21,7 @@ const Circular = () => {
     console.log(postJobs);
 
     return (
-        <div className="max-w-screen-xl mx-auto ">
+        <div className="max-w-screen-xl mx-auto mb-8">
             <Helmet>
                 <title>EasyRecruit || Circular</title>
             </Helmet>

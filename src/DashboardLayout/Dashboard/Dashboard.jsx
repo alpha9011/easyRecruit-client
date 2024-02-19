@@ -70,6 +70,14 @@ const Dashboard = () => {
           </span> 
         </NavLink>
       </li>
+      <li>
+        <NavLink to="/dashboard/allCandidates" className={navLinkStyle}>
+          <span className="flex justify-center items-center gap-2">
+            <AiOutlineSchedule />
+            All Candidates
+          </span>
+        </NavLink>
+      </li>
 
       <li>
         <NavLink to="/dashboard/appointment" className={navLinkStyle}>
@@ -88,13 +96,14 @@ const Dashboard = () => {
           </span>
         </NavLink>
       </li>
-      <li>
+  
+      {/* <li>
         <NavLink to="CVmanage" className={navLinkStyle}>
           <span className="flex justify-center items-center gap-2">
             <FiEdit></FiEdit>CV Management
           </span>
         </NavLink>
-      </li>
+      </li> */}
 
       <div className="border-t  mt-5 "></div>
       <li>
