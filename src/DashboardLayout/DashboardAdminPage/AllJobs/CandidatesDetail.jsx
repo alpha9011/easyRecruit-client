@@ -2,83 +2,15 @@
 import { Modal, Table } from "flowbite-react";
 import { useState } from "react";
 import PropTypes from "prop-types"
-import Swal from "sweetalert2";
-import useAxiosSecure from "../../../Hooks/useAxiosSecure";
+
 import { Link } from "react-router-dom";
 
-const CandidatesDetail = ({candidate,refetch}) => {
-    const { name, email,phone,photo,country,resume,coverLetter,lastAcademy,language,salary,gender,applyDate, _id,isSelected} = candidate || {}
-const axiosSecure = useAxiosSecure()
+const CandidatesDetail = ({candidate}) => {
+    const { name, email,phone,photo,country,resume,coverLetter,lastAcademy,language,salary,gender,applyDate, _id} = candidate || {}
+
     const [openModal, setOpenModal] = useState(false);
 
-const handleUpdateSelected = id => {
-    console.log(id);
 
-    Swal.fire({
-        title: "Are you sure?",
-        text: "You won't be able to revert this!",
-        icon: "warning",
-        showCancelButton: true,
-        confirmButtonColor: "#3085d6",
-        cancelButtonColor: "#d33",
-        confirmButtonText: "Yes, Select "
-    }).then((result) => {
-        if (result.isConfirmed) {
-
-            axiosSecure.patch(`/applicantCV/${id}`)
-
-            .then(res => {
-                console.log(res.data);
-                if (res.data.modifiedCount > 0) {
-                    refetch()
-                    Swal.fire({
-                        position: "top-center",
-                        icon: "success",
-                        title: `selected successfully`,
-                        showConfirmButton: false,
-                        timer: 1500
-                    });
-
-                }
-            })
-
-        }
-    });
-}
-const handlenNOtSelect = id => {
-    console.log(id);
-
-    Swal.fire({
-        title: "Are you sure?",
-        text: "You won't be able to revert this!",
-        icon: "warning",
-        showCancelButton: true,
-        confirmButtonColor: "#3085d6",
-        cancelButtonColor: "#d33",
-        confirmButtonText: "Yes, Not Select"
-    }).then((result) => {
-        if (result.isConfirmed) {
-
-            axiosSecure.patch(`/applicantCV/notSelect/${id}`)
-
-            .then(res => {
-                console.log(res.data);
-                if (res.data.modifiedCount > 0) {
-                    refetch()
-                    Swal.fire({
-                        position: "top-center",
-                        icon: "success",
-                        title: `Not selected`,
-                        showConfirmButton: false,
-                        timer: 1500
-                    });
-
-                }
-            })
-
-        }
-    });
-}
     return (
         <Table.Cell><button onClick={() => setOpenModal(true)} className="hover:text-blue-600 font-semibold">Details</button>
             <Modal show={openModal} onClose={() => setOpenModal(false)}>
@@ -149,19 +81,7 @@ const handlenNOtSelect = id => {
               </h4>
             </div>
 
-          <div className="flex items-center gap-5 mt-5">
-          <div className="">
-               {
-                        isSelected === 'selected'? <span className="bg-green-400 px-5 py-2 rounded-md "> selected</span> :
-                        
-                    <button className="bg-blue-600 px-5 py-2 rounded-md text-white" onClick={()=>handleUpdateSelected(_id)}>Select</button>
-                    }
-
-               </div>
-               <div>
-               <button className="bg-red-600 px-3 py-2 rounded-md text-white " onClick={()=>handlenNOtSelect(_id)}>Not Select</button>
-               </div>
-          </div>
+  
           <div>
             <Link to={`/dashboard/CVmanage/${_id}`}> CV Mangagement</Link>
           </div>
