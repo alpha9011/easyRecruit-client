@@ -141,7 +141,7 @@ const Navbars = () => {
       logout
     </Button> 
     : 
-    <Link to='/register'><Button
+    <Link to='/login'><Button
     outline
     gradientDuoTone="purpleToBlue"
     

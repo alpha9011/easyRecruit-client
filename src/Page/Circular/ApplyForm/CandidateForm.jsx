@@ -12,7 +12,9 @@ const CandidateForm = () => {
     const postDate = date.toLocaleDateString('en-US', options);
     const {email,  companyName,title,logo} = useLoaderData()
     console.log(email, companyName,title);
-   
+    const image_hosting_key = import.meta.env.VITE_IMAGE_HOSTING_KEY;
+    const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`;
+
     const {
         register,
         handleSubmit,
@@ -21,7 +23,17 @@ const CandidateForm = () => {
     } = useForm();
 // this is  candidate apply form
 
-    const onSubmit = (data) => {
+    const onSubmit = async (data) => {
+
+
+        const imageFile = { image: data.image[0] }
+    const res = await axiosPublic.post(image_hosting_api, imageFile, {
+        headers: {
+            'content-type': 'multipart/form-data'
+        }
+    });
+
+    if(res.data.success){
         const applicatnCV = {
             name:data.name,
             email:data.email,
@@ -53,6 +65,9 @@ const CandidateForm = () => {
                 });
             })
     }
+
+        
+    }
     return (
         <div className="px-10">
             <img src={logo} alt="" className="w-20"/>
@@ -75,11 +90,19 @@ const CandidateForm = () => {
                     <input type="text" {...register("phone", { required: true })} className="mt-1 input input-bordered w-full" placeholder="Type your number" required />
 
                 </div >
-                <div >
-                    <label>Photo URL<span className="text-red-600">*</span></label>
-                    <input type="text" {...register("photo", { required: true })} className="mt-1 input input-bordered w-full" placeholder="Your photo URL" required />
+                
 
-                </div >
+<div className="w-full">
+                  <label className="block mb-1">
+                    <span className="font-semibold"><span className='text-red-700 pr-2'>*</span>Photo URL</span>
+                  </label>
+                 
+
+                  <input type="file" {...register("image", { required: true })} name='image' placeholder="photo url" className="file-input file-input-bordered w-full max-w-xs" />
+
+                  {errors.photo && <span className='text-red-500 mt-1'>This field is required</span>}
+                </div>
+
             
                 <div >
                     <label>Country<span className="text-red-600">*</span></label>

@@ -19,7 +19,7 @@ import Pricing from "../Page/Pricing/Pricing";
 import WhyEasyRecruit from "../Page/WhyEasyRecruit/WhyEasyRecruit";
 import CandidateForm from "../Page/Circular/ApplyForm/CandidateForm";
 import TermsAndConditions from "../shared/Footer/TermsAndConditions";
-import PrivacyPolicy from "../shared/Footer/PrivacyPolicy";
+// import PrivacyPolicy from "../shared/Footer/PrivacyPolicy";
 import UpdateJob from "../Page/Circular/UpdateJob";
 import MemberShip from "../Page/Membership/Membership";
 import CustomerProfile from "../DashboardLayout/DashboardPage/CustomerProfile/CustomerProfile";
@@ -96,10 +96,10 @@ export const router = createBrowserRouter([
         path:"/terms",
         element: <TermsAndConditions></TermsAndConditions>
       },
-      {
-        path:"/privacy",
-        element: <PrivacyPolicy></PrivacyPolicy>
-      },
+      // {
+      //   path:"/privacy",
+      //   element: <PrivacyPolicy></PrivacyPolicy>
+      // },
 
     ],
   },

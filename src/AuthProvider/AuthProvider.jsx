@@ -1,4 +1,4 @@
-import { GoogleAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
+import { GoogleAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, sendEmailVerification, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
 import auth from "../firebase/firebase.config";
 
@@ -27,6 +27,11 @@ const AuthProvider = ({ children }) => {
         return createUserWithEmailAndPassword(auth, email, password)
     }
 
+    
+//    const emailVerification = () => {
+//     setLoader(true)
+//     return sendEmailVerification(auth.currentUser)
+//    }
 
 
     // log in 
@@ -77,7 +82,9 @@ const AuthProvider = ({ children }) => {
         selectedPlan,
         setSelectedPlan,
         productLimit,
-        setProductLimit}
+        setProductLimit,
+        // emailVerification
+    }
 
     return (
         <div>
