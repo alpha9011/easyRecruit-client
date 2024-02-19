@@ -4,25 +4,28 @@ import bannerAnimation from "../../../Json/Animation-banner.json";
 
 import { motion } from "framer-motion";
 ("react-router-dom");
-import PrimaryButton from "../../../shared/SecondaryButton/SecondaryButton";
-import SecondaryButton from "../../../shared/PrimaryButton/PrimaryButton";
+
+import SecondaryButton from "../../../shared/SecondaryButton/SecondaryButton";
+import PrimaryButton from "../../../shared/PrimaryButton/PrimaryButton";
 
 const Banner = () => {
   return (
-    <div className=" area h-screen ">
+    <div className=" h-screen overflow-hidden">
       {/* Banner section */}
-      <ul className="circles">
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-      </ul>
+      {/* <div className='area'>
+        <ul className="circles">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+    </div> */}
       <div className=" container mx-auto h-screen flex flex-col-reverse md:flex-row gap-10 items-center   p-5 md:pb-28 ">
         <div className="md:w-1/2">
           <motion.h2
@@ -46,9 +49,7 @@ const Banner = () => {
           </span>
 
           <div className="flex justify-center">
-            <PrimaryButton buttonText="Request A Demo"></PrimaryButton>
-
-           
+            <SecondaryButton buttonText="Request A Demo"></SecondaryButton>
           </div>
 
           <div className="flex justify-center items-center "></div>
