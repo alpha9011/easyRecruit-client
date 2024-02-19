@@ -1,4 +1,4 @@
-import { GoogleAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, sendEmailVerification, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
+import { createUserWithEmailAndPassword, onAuthStateChanged, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
 import auth from "../firebase/firebase.config";
 
@@ -13,13 +13,7 @@ const AuthProvider = ({ children }) => {
     const [productLimit, setProductLimit] = useState(0);
 
 
-    //signInWithGoogle
-    const googleProvider = new GoogleAuthProvider();
-    const signInWithGoogle = () => {
-        setLoader(true)
-        return signInWithPopup(auth, googleProvider)
-    }
-   
+    
 
     // create user 
     const createUser = (email, password) => {
