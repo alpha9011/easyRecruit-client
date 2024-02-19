@@ -6,22 +6,46 @@ import { FaRegCircleUser } from "react-icons/fa6";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { useContext } from "react";
+// import Swal from "sweetalert2";
+import useAxiosPublic from "../../Hooks/useAxiosPublic";
 
 const PackDetiles = () => {
-    const { pack_name, job_limit, price, short_details, feature_1, feature_2, feature_3 } = useLoaderData();
+    const { _id, pack_name, job_limit, price, short_details, feature_1, feature_2, feature_3 } = useLoaderData();
     const { user } = useContext(AuthContext);
+    const axiosPublic = useAxiosPublic()
 
     // hook form things
     const {
         register,
         handleSubmit,
-        reset,
+        // reset,
         formState: { errors },
     } = useForm();
 
     const onSubmit = async (data) => {
         console.log(data);
-        reset()
+        const orderInfo = {
+            id: _id,
+            name: data.name,
+            email: data.email,
+            price: data.price
+        }
+        console.log(orderInfo);
+        axiosPublic.post('/order', orderInfo)
+            .then(res => {
+                console.log(res.data);
+                window.location.replace(res.data.url);
+                // if (res.data.insertedId) {
+                //     Swal.fire({
+                //         position: "top-end",
+                //         icon: "success",
+                //         title: "Payment send successFully",
+                //         showConfirmButton: false,
+                //         timer: 1500
+                //     });
+                //     reset()
+                // }
+            })
     }
 
     return (

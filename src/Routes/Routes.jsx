@@ -32,6 +32,8 @@ import MyCandidates from "../DashboardLayout/DashboardPage/MyJobs/MyCandidates";
 import ShortListed from "../DashboardLayout/DashboardPage/Appointment/ShortListed";
 import Appointment from "../DashboardLayout/DashboardPage/Appointment/Appointment";
 import PackDetiles from "../Page/Pricing/PackDetiles";
+import PaymentSuccess from "../Page/Pricing/PaymentSuccess";
+import PaymentFail from "../Page/Pricing/PaymentFail";
 
 export const router = createBrowserRouter([
   {
@@ -89,6 +91,14 @@ export const router = createBrowserRouter([
       {
         path: "/price",
         element: <Pricing></Pricing>,
+      },
+      {
+        path: "/payment/success/:tranId",
+        element: <PaymentSuccess></PaymentSuccess>,
+      },
+      {
+        path: "/payment/fail/:tranId",
+        element: <PaymentFail></PaymentFail>,
       },
       {
         path: "/whyEasyRecruit",
