@@ -3,6 +3,7 @@ import Slider from "./Slider";
 import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
 import { SiQuora } from "react-icons/si";
 import Footers from "../../shared/Footer/Footers";
+import CustomerFeedback from "../Home/Reviews/CustomerFeedback";
 
 const DemoPage = () => {
     return (
@@ -51,7 +52,12 @@ const DemoPage = () => {
                 </div>
 
             </div>
+            <div className="m-10 p-10">
+                <CustomerFeedback></CustomerFeedback>
+
+            </div>
             <div className="mt-5">
+
                 <Footers></Footers>
             </div>
         </div>

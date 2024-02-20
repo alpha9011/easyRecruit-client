@@ -35,6 +35,7 @@ import DemoPage from "../Page/DemoPage/DemoPage";
 import PackDetiles from "../Page/Pricing/PackDetiles";
 import PaymentSuccess from "../Page/Pricing/PaymentSuccess";
 import PaymentFail from "../Page/Pricing/PaymentFail";
+import CustomerFeedback from "../Page/Home/Reviews/CustomerFeedback";
 
 export const router = createBrowserRouter([
   {
@@ -120,6 +121,10 @@ export const router = createBrowserRouter([
       {
         path: "/demoPage",
         element: <DemoPage></DemoPage>
+      },
+      {
+        path: "/feedback",
+        element: <CustomerFeedback></CustomerFeedback>
       },
 
     ],
