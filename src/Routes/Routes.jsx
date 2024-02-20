@@ -124,7 +124,10 @@ export const router = createBrowserRouter([
       },
       {
         path: "/feedback",
-        element: <CustomerFeedback></CustomerFeedback>
+        element: 
+        
+          <CustomerFeedback></CustomerFeedback>
+       
       },
 
     ],
