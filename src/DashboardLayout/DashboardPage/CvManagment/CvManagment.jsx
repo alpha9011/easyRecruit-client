@@ -4,10 +4,6 @@ import Swal from "sweetalert2";
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 
 
-
-
-
-
 const CvManagement = () => {
  
     const applicants = useLoaderData()

@@ -36,19 +36,7 @@ console.log(aboutCompany);
                     });
                 }
             })
-        // axiosPublic.put(`/postjob/${_id}`)
-        //     .then(res => {
-        //         console.log(res.data);
-        //         if (res.data.modifiedCount > 0) {
-        //             Swal.fire({
-        //                 position: "top-end",
-        //                 icon: "success",
-        //                 title: `Updated Success!!`,
-        //                 showConfirmButton: false,
-        //                 timer: 1500
-        //             });
-        //         }
-        //     })
+  
     }
     return (
         <div className="flex flex-col w-full items-center justify-center min-h-[500px] px-3 bg-slate-100">
