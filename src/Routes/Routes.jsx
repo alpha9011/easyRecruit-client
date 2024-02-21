@@ -31,10 +31,12 @@ import AllJobsCandidates from "../DashboardLayout/DashboardAdminPage/AlCandidate
 import MyCandidates from "../DashboardLayout/DashboardPage/MyJobs/MyCandidates";
 import ShortListed from "../DashboardLayout/DashboardPage/Appointment/ShortListed";
 import Appointment from "../DashboardLayout/DashboardPage/Appointment/Appointment";
+import DemoPage from "../Page/DemoPage/DemoPage";
 import PackDetiles from "../Page/Pricing/PackDetiles";
 import ALLShowJobs from "../DashboardLayout/DashboardAdminPage/AllJobs/ALLShowJobs";
 import PaymentSuccess from "../Page/Pricing/PaymentSuccess";
 import PaymentFail from "../Page/Pricing/PaymentFail";
+import CustomerFeedback from "../Page/Home/Reviews/CustomerFeedback";
 
 export const router = createBrowserRouter([
   {
@@ -116,6 +118,17 @@ export const router = createBrowserRouter([
       {
         path: "/privacy",
         element: <PrivacyPolicy></PrivacyPolicy>
+      },
+      {
+        path: "/demoPage",
+        element: <DemoPage></DemoPage>
+      },
+      {
+        path: "/feedback",
+        element: 
+        
+          <CustomerFeedback></CustomerFeedback>
+       
       },
 
     ],
