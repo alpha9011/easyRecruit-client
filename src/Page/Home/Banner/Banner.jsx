@@ -1,18 +1,27 @@
-// import './Banner.css'
+import './Banner.css'
 import Lottie from "lottie-react";
-import bannerAnimation from "../../../Json/Animation-banner.json";
+// import bannerAnimation from "../../../Json/Animation-banner.json";
+import bannerAnimation from "../../../Json/Animation-banner2.json";
 
 import { motion } from "framer-motion";
 ("react-router-dom");
 
 import SecondaryButton from "../../../shared/SecondaryButton/SecondaryButton";
-import PrimaryButton from "../../../shared/PrimaryButton/PrimaryButton";
 
 const Banner = () => {
   return (
-    <div className=" h-screen overflow-hidden">
+    <div
+      className=" h-screen overflow-hidden"
+      style={{
+        background: `url('https://i.ibb.co/LrMJbrv/bg.jpg')`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        height: "calc(100vh - 65px)"
+      }}
+    >
       {/* Banner section */}
-      {/* <div className='area'>
+      <div className='area'>
         <ul className="circles">
           <li></li>
           <li></li>
@@ -25,7 +34,7 @@ const Banner = () => {
           <li></li>
           <li></li>
         </ul>
-    </div> */}
+    </div>
       <div className=" container mx-auto h-screen flex flex-col-reverse md:flex-row gap-10 items-center   p-5 md:pb-28 ">
         <div className="md:w-1/2">
           <motion.h2

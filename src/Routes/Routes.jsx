@@ -31,6 +31,7 @@ import AllJobsCandidates from "../DashboardLayout/DashboardAdminPage/AllJobs/All
 import MyCandidates from "../DashboardLayout/DashboardPage/MyJobs/MyCandidates";
 import ShortListed from "../DashboardLayout/DashboardPage/Appointment/ShortListed";
 import Appointment from "../DashboardLayout/DashboardPage/Appointment/Appointment";
+import Meet from "../DashboardLayout/DashboardPage/meet/meet";
 
 export const router = createBrowserRouter([
   {
@@ -146,6 +147,10 @@ export const router = createBrowserRouter([
       {
         path: "myjobs",
         element: <MyJobs></MyJobs>,
+      },
+      {
+        path: "meet",
+        element: <Meet></Meet>
       },
       {
         path: "myCandidate/:id",

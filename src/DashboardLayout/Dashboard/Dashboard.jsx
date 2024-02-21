@@ -151,6 +151,14 @@ const Dashboard = () => {
           </span>
         </NavLink>
       </li>
+      <li>
+        <NavLink to="/dashboard/meet" className={navLinkStyle}>
+          <span className="flex justify-center items-center gap-2">
+            <FiUsers />
+            meet
+          </span>
+        </NavLink>
+      </li>
       
       <div className="border-t  mt-5 "></div>
       <li>

@@ -110,7 +110,7 @@ const Navbars = () => {
     <Navbar
       fluid
       rounded
-      className="px-10 sticky top-0 z-50 shadow p-4 bg-white"
+      className="px-10 sticky top-0 z-50 shadow p-4 bg-white bg-opacity-50"
       style={{
         backdropFilter: "blur(10px)",
       }}
