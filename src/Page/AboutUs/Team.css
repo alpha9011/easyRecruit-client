@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(45deg, #d6f3f7, #e1f2f4);
+    /* background: linear-gradient(45deg, #d6f3f7, #e1f2f4); */
 }
 .cardContainer {
     position: relative;

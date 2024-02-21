@@ -33,7 +33,7 @@ const JobCard = (jobs) => {
 
               <p className="">{positionSummary.slice(0, 75)}......</p>
             </div>
-            <div className="pt-5 flex justify-between text-base font-semibold leading-7">
+            <div className="pt-5 flex gap-2 justify-between text-base font-semibold leading-7">
               <p className=" text-sky-500 transition-all duration-300 group-hover:text-white font-semibold hover:scale-110">
                 Deadline: <span className="text-black"> {deadline}</span>
               </p>
