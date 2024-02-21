@@ -112,7 +112,7 @@ const CustomerFeedback = () => {
                     // backgroundImage: `url('https://i.ibb.co/sjcjk2F/bg-4.jpg')`, 
                     backgroundImage: `url('https://i.ibb.co/LrMJbrv/bg.jpg')`, 
                     
-                    opacity: 0.5, 
+                    // opacity: 0.5, 
                 }}
             ></div>
             <div className="max-w-2xl text-center rounded-tr-3xl transition-transform duration-500 transform origin-center bg-yellow-50 hover:shadow-2xl   border-t-8 border-r-8 border-yellow-300 ">
@@ -121,7 +121,7 @@ const CustomerFeedback = () => {
 
                 <div className="p-5 m-2">
                     <h2 className="text-2xl text-left font-semibold mb-2 flex gap-2"> <span><BsStars className="text-yellow-300 mt-1" /></span> We would Love To Here From You</h2>
-                    <p className="text-left font-normal text-lg flex gap-2"> <span><FaHandSparkles className="text-yellow-300  text-xl mt-1" /></span> Hey there! You are Here because you are an valued EasyRecruit customer . We'd love to receive your feedback so that we can improve for you and others</p>
+                    <p className="text-left font-light text-lg flex gap-2"> <span><FaHandSparkles className="text-yellow-300  text-xl mt-1" /></span> Hey there! You are Here because you are an valued EasyRecruit customer. We'd love to receive your feedback so that we can improve for you and others</p>
                 </div>
                 <form onSubmit={handleSubmit(onSubmit)} className="">
                     <div>

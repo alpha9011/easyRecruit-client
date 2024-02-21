@@ -28,18 +28,29 @@ const Circular = () => {
             <div>
                 <CircularSwiper></CircularSwiper>
             </div>
-            <div className="py-10 rounded-sm bg-opacity-45"
+            <div className="py-10 rounded-sm relative"
             
-                style={{
-                    backgroundImage: `url('https://i.ibb.co/0mx2DWy/bg2.jpg')`,
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                    backgroundRepeat: 'no-repeat',
-                    backdropFilter:'blur(10px)'
+                // style={{
+                //     backgroundImage: `url('https://i.ibb.co/0mx2DWy/bg2.jpg')`,
+                //     backgroundSize: 'cover',
+                //     backgroundPosition: 'center',
+                //     backgroundRepeat: 'no-repeat',
+                //     backdropFilter:'blur(10px)'
 
                     
-                }}>
-                <div className="text-center mb-14">
+                // }}
+                >
+                    <div
+                className="absolute inset-0 bg-cover bg-center bg-fixed z-0"
+                style={{
+                    // backgroundImage: `url('https://i.ibb.co/sjcjk2F/bg-4.jpg')`, 
+                    // backgroundImage: `url('https://i.ibb.co/LrMJbrv/bg.jpg')`, 
+                    backgroundImage: `url('https://i.ibb.co/0mx2DWy/bg2.jpg')`, 
+                    
+                    // opacity: 0.5, 
+                }}
+            ></div>
+                <div className="text-center mb-14 relative">
                     <h1 className="text-6xl font-bold mb-3 text-blue-400">Featured Jobs</h1>
                     <p className="text-2xl">Find Your Dream Job From All our Latest Jobs</p>
                 </div>

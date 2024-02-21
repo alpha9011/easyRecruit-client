@@ -4,6 +4,7 @@ import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
 import { SiQuora } from "react-icons/si";
 import Footers from "../../shared/Footer/Footers";
 import CustomerFeedback from "../Home/Reviews/CustomerFeedback";
+import Chatbot from "../ChatBotSimple/Chatbot";
 
 const DemoPage = () => {
     return (
@@ -14,12 +15,23 @@ const DemoPage = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2">
                 <div className=" relative h-[600px] p-8">
                     {/* Background Image */}
-                    <div
+                    {/* <div
                         className="absolute inset-0 bg-cover bg-center bg-no-repeat backdrop-filter "
                         style={{
-                            backgroundImage: `url('https://i.ibb.co/0mx2DWy/bg2.jpg')`
+                            backgroundImage: `url('https://i.ibb.co/sjcjk2F/bg-4.jpg')`
+
                         }}
-                    />
+                    /> */}
+
+                    <div
+                        className="absolute inset-0 bg-cover bg-center bg-fixed z-0"
+                        style={{
+                            backgroundImage: `url('https://i.ibb.co/sjcjk2F/bg-4.jpg')`, 
+                            // backgroundImage: `url('https://i.ibb.co/LrMJbrv/bg.jpg')`,
+
+                            // opacity: 0.5,
+                        }}
+                    ></div>
                     {/* Client Review Section */}
                     <div className="relative z-10 py-16 px-6 mt-24 lg:px-16 text-white text-center ">
                         <div className="text-center ">
@@ -55,8 +67,10 @@ const DemoPage = () => {
             <div className="m-10 p-10">
                 <CustomerFeedback></CustomerFeedback>
 
+
             </div>
             <div className="mt-5">
+                <Chatbot></Chatbot>
 
                 <Footers></Footers>
             </div>
