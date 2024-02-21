@@ -146,10 +146,13 @@ export const router = createBrowserRouter([
       {
         path: "allUser",
         element: <AllUsers></AllUsers>,
+      
       },
       {
         path: "allJobs",
-       element:<ALLShowJobs></ALLShowJobs>
+       element:<ALLShowJobs></ALLShowJobs>,
+       loader: () =>fetch(`http://localhost:5000/postJobCount`),
+
       },
       {
         path: "allCandidates/:id",
@@ -159,6 +162,7 @@ export const router = createBrowserRouter([
       {
         path: "allCandidates",
         element: <AllJobs></AllJobs> ,
+        loader: () =>fetch(`http://localhost:5000/postJobCount`),
       },
       {
         path: "shortlisted/:id",

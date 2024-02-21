@@ -13,12 +13,12 @@ import './style.css'
 const Circular = () => {
     const axiosPublic = useAxiosPublic()
     const [postJobs, setPostJob] = useState([])
-    const [ currentPage , setCurrentPage] = useState(1)
+    const [ currentPage , setCurrentPage] = useState(0)
     const {count} = useLoaderData();
     console.log(count);
      const itemsPerPage = 6
      const numberOfPages = Math.ceil(count/itemsPerPage)
-    const pages = [...Array(numberOfPages).keys()] //.map(i => i + 1);
+    const pages = [...Array(numberOfPages).keys()] 
 
     useEffect(() => {
         axiosPublic.get(`/postjob?page=${currentPage}&size=${itemsPerPage}`)
@@ -35,7 +35,7 @@ const Circular = () => {
         }
     }
     const handleNexPage = ()=>{
-        if(currentPage <numberOfPages ){
+        if(currentPage <numberOfPages -1 ){
             setCurrentPage(currentPage + 1)
         }
     } 
