@@ -36,6 +36,10 @@ import PackDetiles from "../Page/Pricing/PackDetiles";
 import PaymentSuccess from "../Page/Pricing/PaymentSuccess";
 import PaymentFail from "../Page/Pricing/PaymentFail";
 import CustomerFeedback from "../Page/Home/Reviews/CustomerFeedback";
+import CreateBlog from "../Page/Blogs/CreateBlog";
+import Blogs from "../Page/Blogs/Blogs";
+import BlogDetails from "../Page/Blogs/BlogDetails";
+import UpdateBlog from "../Page/Blogs/UpdateBlog";
 
 export const router = createBrowserRouter([
   {
@@ -70,6 +74,25 @@ export const router = createBrowserRouter([
       {
         path: "/circular",
         element: <Circular></Circular>,
+      },
+      {
+        path: "/blog",
+        element: <Blogs></Blogs>
+      },
+      {
+        path: "/blog/:id",
+        element: <BlogDetails></BlogDetails>,
+        // loader : ({params}) =>  fetch(`http://localhost:5000/blog/${params.id}`) 
+      },
+      {
+        path: "/createBlog",
+        element: <CreateBlog></CreateBlog>
+      },
+      {
+        path: "/updateBlog/:id",
+        element: <UpdateBlog></UpdateBlog>,
+        loader : ({params}) =>  fetch(`http://localhost:5000/blog/${params.id}`) 
+
       },
       {
         path: "/jobdetails/:id",
