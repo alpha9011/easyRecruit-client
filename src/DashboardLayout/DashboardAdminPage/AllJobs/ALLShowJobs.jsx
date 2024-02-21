@@ -65,11 +65,12 @@ const ALLShowJobs = () => {
 <Table  className="bg-opacity-10  text-center">
       <Table.Head className="bg-opacity-10 ">
      
+        <Table.HeadCell>Company Logo</Table.HeadCell>
         <Table.HeadCell>Company Name</Table.HeadCell>
         <Table.HeadCell>Job Title</Table.HeadCell>
        
 
-        <Table.HeadCell></Table.HeadCell>
+        <Table.HeadCell>Job Details</Table.HeadCell>
         <Table.HeadCell></Table.HeadCell>
        
 
@@ -82,7 +83,7 @@ const ALLShowJobs = () => {
                 className=" dark:border-gray-700 dark:bg-gray-800 text-center  bg-white"
                 key={job._id}
               >
-               
+                 <Table.Cell className="flex justify-center"> <img src={job?.logo} alt="company logo" className="h-12 w-12 rounded-full" /> </Table.Cell>
                 <Table.Cell className="whitespace-nowrap font-medium  dark:text-white ">
                 {job?.companyName}
                 </Table.Cell>

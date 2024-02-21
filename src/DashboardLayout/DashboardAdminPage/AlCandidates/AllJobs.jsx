@@ -32,7 +32,7 @@ const AllJobs = () => {
      
         <Table.HeadCell>Company Name</Table.HeadCell>
         <Table.HeadCell>Job Title</Table.HeadCell>
-        <Table.HeadCell>All Candidates</Table.HeadCell>
+        <Table.HeadCell>Candidates</Table.HeadCell>
       </Table.Head>
 
       <Table.Body className="divide-y ">
@@ -42,7 +42,7 @@ const AllJobs = () => {
                 className=" dark:border-gray-700 dark:bg-gray-800 text-center  bg-white"
                 key={job._id}
               >
-               
+             
                 <Table.Cell className="whitespace-nowrap font-medium  dark:text-white ">
                 {job?.companyName}
                 </Table.Cell>
