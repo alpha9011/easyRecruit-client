@@ -23,16 +23,17 @@ import UpdateJob from "../Page/Circular/UpdateJob";
 import MemberShip from "../Page/Membership/Membership";
 import CustomerProfile from "../DashboardLayout/DashboardPage/CustomerProfile/CustomerProfile";
 import AllUsers from "../DashboardLayout/DashboardAdminPage/AllUsers/AllUsers";
-import AllJobs from "../DashboardLayout/DashboardAdminPage/AllJobs/AllJobs";
+import AllJobs from "../DashboardLayout/DashboardAdminPage/AlCandidates/AllJobs";
 import ContactUs from "../Page/ContactUs/ContactUs";
 import PrivateRout from "./PrivateRout";
 import CVmanage from "../DashboardLayout/DashboardPage/CVmanage/CVmanage";
-import AllJobsCandidates from "../DashboardLayout/DashboardAdminPage/AllJobs/AllJobsCandidates";
+import AllJobsCandidates from "../DashboardLayout/DashboardAdminPage/AlCandidates/AllJobsCandidates";
 import MyCandidates from "../DashboardLayout/DashboardPage/MyJobs/MyCandidates";
 import ShortListed from "../DashboardLayout/DashboardPage/Appointment/ShortListed";
 import Appointment from "../DashboardLayout/DashboardPage/Appointment/Appointment";
 import DemoPage from "../Page/DemoPage/DemoPage";
 import PackDetiles from "../Page/Pricing/PackDetiles";
+import ALLShowJobs from "../DashboardLayout/DashboardAdminPage/AllJobs/ALLShowJobs";
 import PaymentSuccess from "../Page/Pricing/PaymentSuccess";
 import PaymentFail from "../Page/Pricing/PaymentFail";
 import CustomerFeedback from "../Page/Home/Reviews/CustomerFeedback";
@@ -152,12 +153,16 @@ export const router = createBrowserRouter([
       },
       {
         path: "allJobs",
-        element: <AllJobs></AllJobs>,
+       element:<ALLShowJobs></ALLShowJobs>
       },
       {
-        path: "alljobs/:id",
+        path: "allCandidates/:id",
         element: <AllJobsCandidates></AllJobsCandidates>,
         loader: ({ params }) => fetch(`http://localhost:5000/postjob/${params.id}`),
+      },
+      {
+        path: "allCandidates",
+        element: <AllJobs></AllJobs> ,
       },
       {
         path: "shortlisted/:id",
