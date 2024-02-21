@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { NavLink, Outlet } from "react-router-dom";
-import { FaChartSimple } from "react-icons/fa6";
+import { FaChartSimple,FaPeopleGroup } from "react-icons/fa6";
 // react icons
 import { CgMenuRound } from "react-icons/cg";
 import { FiEdit, FiUsers } from "react-icons/fi";
 import { FaUsers } from "react-icons/fa";
+
 import {
   AiOutlineCarryOut,
   AiOutlineHome,
@@ -63,13 +64,22 @@ const Dashboard = () => {
         </NavLink>
       </li>
       <li>
-        <NavLink to="/dashboard/allJobs" className={navLinkStyle}>
+        <NavLink to="/dashboard/alljobs" className={navLinkStyle}>
+          <span className="flex justify-center items-center gap-2">
+            <AiOutlineSchedule />
+            All Jobs
+          </span>
+        </NavLink>
+      </li>
+      <li>
+        <NavLink to="/dashboard/allCandidates" className={navLinkStyle}>
         <span className="flex justify-center items-center gap-2">
-            <FaChartSimple />
-            All jobs
+            <FaPeopleGroup  />
+            All Candidates
           </span> 
         </NavLink>
       </li>
+ 
 
       <li>
         <NavLink to="/dashboard/appointment" className={navLinkStyle}>
@@ -88,13 +98,14 @@ const Dashboard = () => {
           </span>
         </NavLink>
       </li>
-      <li>
+  
+      {/* <li>
         <NavLink to="CVmanage" className={navLinkStyle}>
           <span className="flex justify-center items-center gap-2">
             <FiEdit></FiEdit>CV Management
           </span>
         </NavLink>
-      </li>
+      </li> */}
 
       <div className="border-t  mt-5 "></div>
       <li>

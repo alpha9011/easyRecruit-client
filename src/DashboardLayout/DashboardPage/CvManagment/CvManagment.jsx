@@ -1,22 +1,38 @@
 import { useState } from "react";
+import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
+import useAxiosSecure from "../../../Hooks/useAxiosSecure";
+
+
+
+
+
 
 const CvManagement = () => {
+ 
+    const applicants = useLoaderData()
+    const axiosSecure = useAxiosSecure()
+    const {lastAcademy, skills, language, country, experience,jobEducation,jobSkills,jobLanguage,jobCountry,jobExperience,jobsalary,isSelected, _id} = applicants || {}
+
+
+   
     //   database theke single candidate and job er just requirements gula ante hobe 
+
     const [jobRequirements, setJobRequirements] = useState({
-        education: "Honors",
-        skills: "HTML, CSS, React, Js",
-        jobExperience: "2 Years",
-        country: "Bangladesh",
-        language: "English",
+        education:jobEducation,
+        skills: jobSkills,
+        jobExperience: jobExperience,
+        country:jobCountry,
+        language: jobLanguage,
     });
 
+
     const [candidateProfile, setCandidateProfile] = useState({
-        education: "Honors",
-        skills: "HTML, CSS, React, Js",
-        jobExperience: "2 Years",
-        country: "Bangladesh",
-        language: "bangla",
+        education:lastAcademy,
+        skills: skills,
+        jobExperience: experience,
+        country:country,
+        language: language,
     });
 
     const [matchingResult, setMatchingResult] = useState({
@@ -34,7 +50,7 @@ const CvManagement = () => {
         // You can customize this logic based on your requirements
         const newMatchingResult = {
             education: jobRequirements.education === candidateProfile.education,
-            skills: jobRequirements.skills === candidateProfile.skills,
+            skills: jobRequirements.skills <= candidateProfile.skills,
             jobExperience: jobRequirements.jobExperience === candidateProfile.jobExperience,
             country: jobRequirements.country === candidateProfile.country,
             language: jobRequirements.language === candidateProfile.language,
@@ -54,20 +70,79 @@ const CvManagement = () => {
         return "Not Qualified";
     };
 
-    const handleAction = (selected) => {
-        if (selected) {
-            // Logic for selecting candidate
-            // For example, display a success message
-            Swal.fire('Candidate Selected!', '', 'success');
-        } else {
-            // Logic for rejecting candidate
-            // For example, display a warning message
-            Swal.fire('Candidate Rejected!', '', 'warning');
-        }
-    };
+
 
     // Function to get matching status text
     const getMatchingStatusText = (isMatched) => (isMatched ? "Matched" : "Not Matched");
+
+    const handleUpdateSelected = id => {
+        console.log(id);
+    
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, Select "
+        }).then((result) => {
+            if (result.isConfirmed) {
+               
+                axiosSecure.patch(`/applicantCV/${id}`)
+    
+                .then(res => {
+                    console.log(res.data);
+                    if (res.data.modifiedCount > 0) {
+                        
+                        Swal.fire({
+                            position: "top-center",
+                            icon: "success",
+                            title: `selected successfully`,
+                            showConfirmButton: false,
+                            timer: 1500
+                        });
+                        
+                    }
+                })
+    
+            }
+        });
+    }
+    const handlenNOtSelect = id => {
+        console.log(id);
+    
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, Reject"
+        }).then((result) => {
+            if (result.isConfirmed) {
+    
+                axiosSecure.patch(`/applicantCV/notSelect/${id}`)
+    
+                .then(res => {
+                    console.log(res.data);
+                    if (res.data.modifiedCount > 0) {
+                       
+                        Swal.fire({
+                            position: "top-center",
+                            icon: "success",
+                            title: `Rejected`,
+                            showConfirmButton: false,
+                            timer: 1500
+                        });
+                      
+                    }
+                })
+    
+            }
+        });
+    }
 
 
     return (
@@ -156,19 +231,18 @@ const CvManagement = () => {
 
 
                 {/* selected and rejected button */}
-                <div className="flex justify-center mt-4">
-                    <button
-                        className="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600 mr-4"
-                        onClick={() => handleAction(true)}
-                    >
-                        Select
-                    </button>
-                    <button
-                        className="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600"
-                        onClick={() => handleAction(false)}
-                    >
-                        Reject
-                    </button>
+                <div className="flex justify-center mt-4 gap-3">
+                <div className="">
+               {
+                        isSelected === 'selected'? <span className="bg-green-400 px-5 py-2 rounded-md "> selected</span> :
+                        
+                    <button disabled={matchedCount < 2} className="bg-blue-600 px-5 py-2 rounded-md text-white disabled:bg-slate-600 disabled:text-slate-400" onClick={()=>handleUpdateSelected(_id)}>Select</button>
+                    }
+
+               </div>
+               <div>
+               <button className="bg-red-600 px-3 py-2 rounded-md text-white " onClick={()=>handlenNOtSelect(_id)}>Reject</button>
+               </div>
                 </div>
             </div>
 

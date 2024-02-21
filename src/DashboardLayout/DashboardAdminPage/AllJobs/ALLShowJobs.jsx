@@ -2,12 +2,11 @@ import { useQuery } from "@tanstack/react-query";
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 import {  Spinner, Table } from "flowbite-react";
 import { MdDelete } from "react-icons/md";
-import JobDetails from "./JobDetails";
-import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
+import JobDetails from "./Jobdetails";
 
 
-const AllJobs = () => {
+const ALLShowJobs = () => {
     const axiosSecure = useAxiosSecure()
     const {isLoading, refetch,  data: jobs = [] } = useQuery({
         queryKey: ['users'],
@@ -65,12 +64,13 @@ const AllJobs = () => {
 
 <Table  className="bg-opacity-10  text-center">
       <Table.Head className="bg-opacity-10 ">
+     
+        <Table.HeadCell>Company Logo</Table.HeadCell>
         <Table.HeadCell>Company Name</Table.HeadCell>
         <Table.HeadCell>Job Title</Table.HeadCell>
-        <Table.HeadCell>Deadline</Table.HeadCell>
-        <Table.HeadCell></Table.HeadCell>
+       
 
-        <Table.HeadCell></Table.HeadCell>
+        <Table.HeadCell>Job Details</Table.HeadCell>
         <Table.HeadCell></Table.HeadCell>
        
 
@@ -83,15 +83,14 @@ const AllJobs = () => {
                 className=" dark:border-gray-700 dark:bg-gray-800 text-center  bg-white"
                 key={job._id}
               >
+                 <Table.Cell className="flex justify-center"> <img src={job?.logo} alt="company logo" className="h-12 w-12 rounded-full" /> </Table.Cell>
                 <Table.Cell className="whitespace-nowrap font-medium  dark:text-white ">
                 {job?.companyName}
                 </Table.Cell>
                 <Table.Cell>{job?.title}</Table.Cell>
-                <Table.Cell>{job?.deadline}</Table.Cell>
 
-                {/* candidates */}
-                {/* <Table.Cell> <Candidates job={job}></Candidates> </Table.Cell> */}
-                <Table.Cell><Link to={`/dashboard/alljobs/${job._id}`}>Candidates</Link></Table.Cell>
+            
+               
                 
                 {/* job details */}
 
@@ -113,4 +112,4 @@ const AllJobs = () => {
     );
 };
 
-export default AllJobs;
+export default ALLShowJobs;

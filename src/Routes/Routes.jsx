@@ -23,15 +23,22 @@ import UpdateJob from "../Page/Circular/UpdateJob";
 import MemberShip from "../Page/Membership/Membership";
 import CustomerProfile from "../DashboardLayout/DashboardPage/CustomerProfile/CustomerProfile";
 import AllUsers from "../DashboardLayout/DashboardAdminPage/AllUsers/AllUsers";
-import AllJobs from "../DashboardLayout/DashboardAdminPage/AllJobs/AllJobs";
+import AllJobs from "../DashboardLayout/DashboardAdminPage/AlCandidates/AllJobs";
 import ContactUs from "../Page/ContactUs/ContactUs";
 import PrivateRout from "./PrivateRout";
 import CVmanage from "../DashboardLayout/DashboardPage/CVmanage/CVmanage";
-import AllJobsCandidates from "../DashboardLayout/DashboardAdminPage/AllJobs/AllJobsCandidates";
+import AllJobsCandidates from "../DashboardLayout/DashboardAdminPage/AlCandidates/AllJobsCandidates";
 import MyCandidates from "../DashboardLayout/DashboardPage/MyJobs/MyCandidates";
 import ShortListed from "../DashboardLayout/DashboardPage/Appointment/ShortListed";
 import Appointment from "../DashboardLayout/DashboardPage/Appointment/Appointment";
 import Meet from "../DashboardLayout/DashboardPage/meet/meet";
+import DemoPage from "../Page/DemoPage/DemoPage";
+import PackDetiles from "../Page/Pricing/PackDetiles";
+import ALLShowJobs from "../DashboardLayout/DashboardAdminPage/AllJobs/ALLShowJobs";
+import PaymentSuccess from "../Page/Pricing/PaymentSuccess";
+import PaymentFail from "../Page/Pricing/PaymentFail";
+import CustomerFeedback from "../Page/Home/Reviews/CustomerFeedback";
+import Chatbot from "../Page/ChatBotSimple/Chatbot";
 
 export const router = createBrowserRouter([
   {
@@ -74,6 +81,12 @@ export const router = createBrowserRouter([
           fetch(`http://localhost:5000/postjob/${params.id}`),
       },
       {
+        path: "/packdetails/:id",
+        element: <PackDetiles></PackDetiles>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/packs/${params.id}`),
+      },
+      {
         path: "/applyform/:id",
         element: <CandidateForm></CandidateForm>,
         loader: ({ params }) =>
@@ -83,6 +96,14 @@ export const router = createBrowserRouter([
       {
         path: "/price",
         element: <Pricing></Pricing>,
+      },
+      {
+        path: "/payment/success/:tranId",
+        element: <PaymentSuccess></PaymentSuccess>,
+      },
+      {
+        path: "/payment/fail/:tranId",
+        element: <PaymentFail></PaymentFail>,
       },
       {
         path: "/whyEasyRecruit",
@@ -99,6 +120,21 @@ export const router = createBrowserRouter([
       {
         path: "/privacy",
         element: <PrivacyPolicy></PrivacyPolicy>
+      },
+      {
+        path: "/demoPage",
+        element: <DemoPage></DemoPage>
+      },
+      {
+        path: "/chatbot",
+        element: <Chatbot></Chatbot>
+      },
+      {
+        path: "/feedback",
+        element: 
+        
+          <CustomerFeedback></CustomerFeedback>
+       
       },
 
     ],
@@ -118,12 +154,16 @@ export const router = createBrowserRouter([
       },
       {
         path: "allJobs",
-        element: <AllJobs></AllJobs>,
+       element:<ALLShowJobs></ALLShowJobs>
       },
       {
-        path: "alljobs/:id",
+        path: "allCandidates/:id",
         element: <AllJobsCandidates></AllJobsCandidates>,
         loader: ({ params }) => fetch(`http://localhost:5000/postjob/${params.id}`),
+      },
+      {
+        path: "allCandidates",
+        element: <AllJobs></AllJobs> ,
       },
       {
         path: "shortlisted/:id",
@@ -177,8 +217,10 @@ export const router = createBrowserRouter([
         element: <Appointment></Appointment>,
       },
       {
-        path: "CVmanage",
-        element: <CVmanage />
+        path: "CVmanage/:id",
+        element: <CVmanage />,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/applicantCV/${params.id}`),
       },
     ],
   },
