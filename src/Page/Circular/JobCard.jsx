@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 
 const JobCard = (jobs) => {
-  console.log(jobs.jobs);
+  
   const { _id, title, location, salary, jobType, logo, companyName, positionSummary, deadline } = jobs.jobs || {}
   return (
     <div className="flex justify-center">

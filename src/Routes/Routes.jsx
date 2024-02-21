@@ -71,6 +71,7 @@ export const router = createBrowserRouter([
       {
         path: "/circular",
         element: <Circular></Circular>,
+        loader: () =>fetch(`http://localhost:5000/postJobCount`),
       },
       {
         path: "/jobdetails/:id",

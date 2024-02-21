@@ -5,20 +5,42 @@ import { Helmet } from "react-helmet-async";
 import CircularSwiper from "./CirculerSwiper/CirculerSwiper";
 import Footers from "../../shared/Footer/Footers";
 import CustomersSlider from "../Home/CustomersSlider/CustomersSlider";
+import { useLoaderData } from "react-router-dom";
+import './style.css'
 
 
 
 const Circular = () => {
     const axiosPublic = useAxiosPublic()
     const [postJobs, setPostJob] = useState([])
+    const [ currentPage , setCurrentPage] = useState(1)
+    const {count} = useLoaderData();
+    console.log(count);
+     const itemsPerPage = 6
+     const numberOfPages = Math.ceil(count/itemsPerPage)
+    const pages = [...Array(numberOfPages).keys()] //.map(i => i + 1);
 
     useEffect(() => {
-        axiosPublic.get('/postjob')
+        axiosPublic.get(`/postjob?page=${currentPage}&size=${itemsPerPage}`)
             .then(res => {
                 setPostJob(res.data)
             })
-    }, [axiosPublic])
-    console.log(postJobs);
+    }, [axiosPublic, currentPage])
+ 
+ 
+
+    const handlePrevPage = ()=>{
+        if(currentPage >0 ){
+            setCurrentPage(currentPage - 1)
+        }
+    }
+    const handleNexPage = ()=>{
+        if(currentPage <numberOfPages ){
+            setCurrentPage(currentPage + 1)
+        }
+    } 
+
+
 
     return (
         <div className="max-w-screen-xl mx-auto mb-8">
@@ -48,6 +70,22 @@ const Circular = () => {
                     {
                         postJobs.map(jobs => <JobCard key={jobs._id} jobs={jobs}></JobCard>)
                     }
+                </div>
+
+                {/* pagination */}
+                
+                <div className="text-center mt-10 flex  justify-center gap-2">
+                    
+                    <button className=" bg-black text-white text-md px-2 py-1 rounded-md $" onClick={handlePrevPage}>prev</button>
+                    {
+                        pages.map(page => <button 
+                            key={page}
+                            onClick={()=> setCurrentPage(page)}
+                            className={` bg-black text-white text-md px-2 py-1 rounded-md ${currentPage === page  && 'selected'}`}
+                        
+                        >{page +1}</button>)
+                    }
+                    <button className=" bg-black text-white text-md px-2 py-1 rounded-md $" onClick={handleNexPage}>Next</button>
                 </div>
             </div>
             <div>
