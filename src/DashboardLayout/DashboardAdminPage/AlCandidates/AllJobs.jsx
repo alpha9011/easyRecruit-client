@@ -91,8 +91,7 @@ const AllJobs = () => {
         
       </Table.Body>
     </Table>
-    <div>pagination: {currentPage}</div>
-    <div className="flex justify-center gap-2">
+    <div className="flex justify-center gap-2 mt-5">
       <button onClick={handlePrevPage} className=" bg-black text-white text-md px-2 py-1 rounded-md">Prev</button>
       {
         pages.map(page => <button 
@@ -104,12 +103,13 @@ const AllJobs = () => {
         
         >{page +1}</button>)
       }
+     
+      <button onClick={handleNextPage} className=" bg-black text-white text-md px-2 py-1 rounded-md">Next</button>
       <select value={itemsPerPage} onChange={handlePerPage}  name="" id="">
         <option value="5">5</option>
         <option value="10">10</option>
         <option value="20">20</option>
       </select>
-      <button onClick={handleNextPage} className=" bg-black text-white text-md px-2 py-1 rounded-md">Next</button>
     </div>
 </div>
     </div>
