@@ -3,21 +3,68 @@ import PropTypes from 'prop-types'
 import { useLoaderData } from "react-router-dom";
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 import { useQuery } from "@tanstack/react-query";
-import { Spinner, Table } from "flowbite-react";
+import { Select, Spinner, Table } from "flowbite-react";
 import CandidatesDetail from './CandidatesDetail';
+import { useEffect, useState } from 'react';
 const AllJobsCandidates = () => {
   const { title, companyName } = useLoaderData()
   const axiosSecure = useAxiosSecure()
+  const [counts, setCount] = useState({})
+
+  const count =counts.count
+  const [itemsPerPage, setItemsPerPage] = useState(10)
+  const [currentPage, setCurrentPage] = useState(0)
+  const numberOfPages = Math.ceil(count/itemsPerPage)
+
+  const pages = [];
+  for( let i = 0; i < numberOfPages; i ++) {
+    pages.push(i)
+  }
+  useEffect( ()=> {
+    axiosSecure.get('/applicantCount')
+    .then( res =>{
+      setCount( res.data)
+    })
+  }, [axiosSecure])
+
+
   const { isLoading, refetch, data: candidates = [] } = useQuery({
-    queryKey: ['candidates'],
+    queryKey: ['candidates', currentPage, itemsPerPage],
     queryFn: async () => {
-      const res = await axiosSecure.get('/applicantCV')
+      const res = await axiosSecure.get(`/applicantCV?page=${currentPage}&size=${itemsPerPage}`)
       const applier = res.data;
       const candidate = applier.filter(apply =>
         apply.companyName === companyName && apply.jobTitle === title)
       return candidate
     }
   })
+
+
+
+
+
+  const handlePrevPage =()=> {
+    if(currentPage > 0) {
+      setCurrentPage( (prevPage) => prevPage -1 )
+    }
+  }
+
+  const handleNextPage =()=> {
+    if (currentPage < numberOfPages -1) {
+      setCurrentPage( (prevPage)=> prevPage + 1)
+    }
+  }
+
+  const handleItemsPerPage = e => {
+    e.preventDefault()
+    const value = parseInt(e.target.value)
+  
+    setItemsPerPage(value)
+    setCurrentPage(0)
+  }
+
+
+
 
   if (isLoading) {
     return <div className=" h-screen flex items-center justify-center">
@@ -83,6 +130,26 @@ const AllJobsCandidates = () => {
           </div>
 
       }
+
+  
+   <div className='flex justify-center gap-3 mt-5'>
+   <button onClick={handlePrevPage} className=" bg-black text-white text-md px-2 py-1 rounded-md">Prev</button>
+    {
+      pages.map(page => <button 
+          key={page}
+          onClick={()=>setCurrentPage(page)}
+          className={` bg-black text-white text-md px-2 py-1 rounded-md ${currentPage === page  && 'selected'}`}
+      >{page +1}</button>)
+    }
+
+    <button onClick={handleNextPage} className=" bg-black text-white text-md px-2 py-1 rounded-md">Next</button>
+    <Select value={itemsPerPage} onChange={handleItemsPerPage}>
+    <option value="5">5</option>
+        <option value="10">10</option>
+        <option value="15">15</option>
+        <option value="20">20</option>
+      </Select>
+   </div>
 
     </div>
   );
