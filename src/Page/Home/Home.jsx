@@ -13,8 +13,8 @@ import RecruitingResult from "./RecruitingResult/RecruitingResult";
 import WhyToUse from "./WhyToUse/WhyToUse";
 import Footers from "../../shared/Footer/Footers";
 import { Helmet } from 'react-helmet-async';
-import Countdown from "./Countdown/Countdown";
 import SocialIcon from "../../shared/SocialIcon/SocialIcon";
+import CustomerFeedback from "./Reviews/CustomerFeedback";
 
 const Home = () => {
 
@@ -28,11 +28,12 @@ const Home = () => {
       <WhyToUse></WhyToUse>
       <EasyATSBanner></EasyATSBanner>
       <HrSystems></HrSystems>
-      <Countdown></Countdown>
+      
       <PartnerProgram></PartnerProgram>
       <CustomersSlider></CustomersSlider>
       <MakingHiresBanner></MakingHiresBanner>
       <SocialIcon></SocialIcon>
+      <CustomerFeedback></CustomerFeedback>
       <Footers></Footers>
     </div>
   );
