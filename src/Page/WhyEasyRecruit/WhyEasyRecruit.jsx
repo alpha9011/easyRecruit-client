@@ -1,4 +1,4 @@
-import bgImg from '../../../src/assets/team.png';
+import bgImg from '../../../src/assets/whyUs3.jpg';
 import growth from "../../../src/assets/growth.jpg"
 import background from "../../../src/assets/women_with_laptop.jpg"
 import marketPlace from "../../../src/assets/background.jpg"
@@ -9,6 +9,7 @@ import supports from "../../../src/assets/support.jpg"
 import job from "../../../src/assets/19209.jpg"
 import Footers from '../../shared/Footer/Footers';
 import { Helmet } from 'react-helmet-async';
+import PageCover from '../../shared/PageCover/PageCover';
 // import Footers from '../../shared/Footer/Footers';
 
 const WhyEasyRecruit = () => {
@@ -18,7 +19,8 @@ const WhyEasyRecruit = () => {
                 <title>EasyRecruit || Why US</title>
             </Helmet>
             {/* Banner */}
-            <div className='bg-gradient-to-r from-purple-800 to-green-500 h-[91vh] w-full relative'>
+            <PageCover img={bgImg} title={'We help build tomorrows greatest companies'} desc={'EasyRecriut is powerful, user-friendly recruitment software that scales your ability to find and hire great talent'}></PageCover>
+            {/* <div className='bg-gradient-to-r from-purple-800 to-green-500 h-[91vh] w-full relative'>
                 <img src={bgImg} alt="bgImage" className='w-full h-full object-cover absolute mix-blend-overlay' />
                 <div className='max-w-screen-md mx-auto h-full flex justify-center items-center px-10'>
                     <div>
@@ -27,7 +29,7 @@ const WhyEasyRecruit = () => {
                         <p className='text-yellow-200 text-lg text-center font-normal mt-5' data-aos="fade-left" data-aos-duration="1000">EasyRecriut is powerful, user-friendly recruitment software that scales your ability to find and hire great talent.</p>
                     </div>
                 </div>
-            </div>
+            </div> */}
             {/* part-1 */}
             <div className='flex flex-col-reverse justify-around gap-5 lg:flex-row items-center bg-slate-100'>
                 {/* text colomn */}
@@ -74,7 +76,7 @@ const WhyEasyRecruit = () => {
                 <img src={team} alt="bgImage" className='w-full h-full object-cover absolute mix-blend-overlay' />
                 <div className='max-w-screen-md mx-auto h-full flex justify-center items-center px-10'>
                     <div>
-                        <h1 className='text-yellow-100 text-4xl font-bold text-center mx-auto'>
+                        <h1 className='text-yellow-100 text-5xl md:text-6xl font-bold text-center mx-auto'>
                             We help build tomorrows greatest companies</h1>
                         <p className='text-gray-300 text-lg text-center font-light mt-5'>EasyRecriut is powerful, user-friendly recruitment software that scales your ability to find and hire great talent.</p>
                     </div>
