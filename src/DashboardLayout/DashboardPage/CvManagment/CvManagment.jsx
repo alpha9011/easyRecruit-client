@@ -3,12 +3,17 @@ import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 
+
 const CvManagement = () => {
-    const axiosSecure = useAxiosSecure()
+ 
     const applicants = useLoaderData()
+    const axiosSecure = useAxiosSecure()
     const {lastAcademy, skills, language, country, experience,jobEducation,jobSkills,jobLanguage,jobCountry,jobExperience,jobsalary,isSelected, _id} = applicants || {}
-  
+
+
+   
     //   database theke single candidate and job er just requirements gula ante hobe 
+
     const [jobRequirements, setJobRequirements] = useState({
         education:jobEducation,
         skills: jobSkills,
@@ -16,6 +21,7 @@ const CvManagement = () => {
         country:jobCountry,
         language: jobLanguage,
     });
+
 
     const [candidateProfile, setCandidateProfile] = useState({
         education:lastAcademy,
@@ -78,7 +84,7 @@ const CvManagement = () => {
             confirmButtonText: "Yes, Select "
         }).then((result) => {
             if (result.isConfirmed) {
-    
+               
                 axiosSecure.patch(`/applicantCV/${id}`)
     
                 .then(res => {
@@ -92,7 +98,7 @@ const CvManagement = () => {
                             showConfirmButton: false,
                             timer: 1500
                         });
-    
+                        
                     }
                 })
     
@@ -118,7 +124,7 @@ const CvManagement = () => {
                 .then(res => {
                     console.log(res.data);
                     if (res.data.modifiedCount > 0) {
-                        
+                       
                         Swal.fire({
                             position: "top-center",
                             icon: "success",
@@ -126,13 +132,15 @@ const CvManagement = () => {
                             showConfirmButton: false,
                             timer: 1500
                         });
-    
+                      
                     }
                 })
     
             }
         });
     }
+
+
     return (
         <div className="container mx-auto py-8 text-black w-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
 
@@ -224,7 +232,7 @@ const CvManagement = () => {
                {
                         isSelected === 'selected'? <span className="bg-green-400 px-5 py-2 rounded-md "> selected</span> :
                         
-                    <button className="bg-blue-600 px-5 py-2 rounded-md text-white" onClick={()=>handleUpdateSelected(_id)}>Select</button>
+                    <button disabled={matchedCount < 2} className="bg-blue-600 px-5 py-2 rounded-md text-white disabled:bg-slate-600 disabled:text-slate-400" onClick={()=>handleUpdateSelected(_id)}>Select</button>
                     }
 
                </div>

@@ -4,6 +4,7 @@ import { useState } from "react";
 import PropTypes from "prop-types"
 
 import { Link } from "react-router-dom";
+import PrimaryButton from "../../../shared/PrimaryButton/PrimaryButton";
 
 const CandidatesDetail = ({candidate}) => {
     const { name, email,phone,photo,country,resume,coverLetter,lastAcademy,language,salary,gender,applyDate, _id} = candidate || {}
@@ -82,8 +83,8 @@ const CandidatesDetail = ({candidate}) => {
             </div>
 
   
-          <div>
-            <Link to={`/dashboard/CVmanage/${_id}`}> CV Mangagement</Link>
+          <div className="my-3">
+            <Link to={`/dashboard/CVmanage/${_id}`}>  <PrimaryButton buttonText="CV Management"></PrimaryButton></Link>
           </div>
                    </div>
                 </Modal.Body>
