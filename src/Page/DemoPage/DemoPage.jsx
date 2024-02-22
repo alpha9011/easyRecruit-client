@@ -26,7 +26,7 @@ const DemoPage = () => {
                     <div
                         className="absolute inset-0 bg-cover bg-center bg-fixed z-0"
                         style={{
-                            backgroundImage: `url('https://i.ibb.co/sjcjk2F/bg-4.jpg')`, 
+                            backgroundImage: `url('https://i.ibb.co/sjcjk2F/bg-4.jpg')`,
                             // backgroundImage: `url('https://i.ibb.co/LrMJbrv/bg.jpg')`,
 
                             // opacity: 0.5,
