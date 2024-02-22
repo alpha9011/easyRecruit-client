@@ -82,6 +82,14 @@ const Dashboard = () => {
           </span> 
         </NavLink>
       </li>
+      <li>
+        <NavLink to="/dashboard/appointment" className={navLinkStyle}>
+        <span className="flex justify-center items-center gap-2">
+            <FaChartSimple />
+            Appointment
+          </span> 
+        </NavLink>
+      </li>
 
   
 
