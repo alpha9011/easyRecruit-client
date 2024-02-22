@@ -41,14 +41,17 @@ const Dashboard = () => {
   };
 
   const [isAdmin] = useAdmin();
-  const dashBoardMenu = 
-  
-   isAdmin ? 
-   
-   <div>
+  const dashBoardMenu = isAdmin ? (
+    <div>
       <div className="flex flex-col items-center ">
-        <img className="w-24 h-24 mb-3 rounded-full shadow-lg" src={user?.photoURL} alt="Bonnie image" />
-        <h5 className="mb-3 text-xl font-medium bg-gradient-to-r from-gray-300 to-gray-400 inline-block text-transparent bg-clip-text dark:text-white">{user?.displayName}</h5>
+        <img
+          className="w-24 h-24 mb-3 rounded-full shadow-lg"
+          src={user?.photoURL}
+          alt="Bonnie image"
+        />
+        <h5 className="mb-3 text-xl font-medium bg-gradient-to-r from-gray-300 to-gray-400 inline-block text-transparent bg-clip-text dark:text-white">
+          {user?.displayName}
+        </h5>
         <NavLink to="/dashboard/customerProfile" className={navLinkStyle}>
           <span className="flex justify-center items-center gap-2">
             Profile
@@ -57,18 +60,18 @@ const Dashboard = () => {
       </div>
       <li>
         <NavLink to="/dashboard/allUser" className={navLinkStyle}>
-        <span className="flex justify-center items-center gap-2">
+          <span className="flex justify-center items-center gap-2">
             <FaUsers />
             All User
-          </span> 
+          </span>
         </NavLink>
       </li>
       <li>
         <NavLink to="/dashboard/allJobs" className={navLinkStyle}>
-        <span className="flex justify-center items-center gap-2">
+          <span className="flex justify-center items-center gap-2">
             <FaChartSimple />
             All jobs
-          </span> 
+          </span>
         </NavLink>
       </li>
       <li>
@@ -76,6 +79,14 @@ const Dashboard = () => {
         <span className="flex justify-center items-center gap-2">
             <FaChartSimple />
             All Candidates
+          </span> 
+        </NavLink>
+      </li>
+      <li>
+        <NavLink to="/dashboard/appointment" className={navLinkStyle}>
+        <span className="flex justify-center items-center gap-2">
+            <FaChartSimple />
+            Appointment
           </span> 
         </NavLink>
       </li>
@@ -108,16 +119,18 @@ const Dashboard = () => {
           </span>
         </NavLink>
       </li>
-
     </div>
-
-   : 
-
+  ) : (
     <div>
-      
       <div className="flex flex-col items-center">
-        <img className="w-24 h-24 mb-3 rounded-full shadow-lg" src={user?.photoURL} alt="Bonnie image" />
-        <h5 className="mb-3 text-xl font-medium bg-gradient-to-r from-gray-300 to-gray-400 inline-block text-transparent bg-clip-text dark:text-white">{user?.displayName}</h5>
+        <img
+          className="w-24 h-24 mb-3 rounded-full shadow-lg"
+          src={user?.photoURL}
+          alt="Bonnie image"
+        />
+        <h5 className="mb-3 text-xl font-medium bg-gradient-to-r from-gray-300 to-gray-400 inline-block text-transparent bg-clip-text dark:text-white">
+          {user?.displayName}
+        </h5>
         <NavLink to="/dashboard/customerProfile" className={navLinkStyle}>
           <span className="flex justify-center items-center gap-2">
             Profile
@@ -135,7 +148,7 @@ const Dashboard = () => {
       <li>
         <NavLink to="/dashboard/myjobs" className={navLinkStyle}>
           <span className="flex justify-center items-center gap-2">
-           <FaChartSimple></FaChartSimple> My Jobs
+            <FaChartSimple></FaChartSimple> My Jobs
           </span>
         </NavLink>
       </li>
@@ -154,8 +167,7 @@ const Dashboard = () => {
           </span>
         </NavLink>
       </li>
-    
-      
+
       <div className="border-t  mt-5 "></div>
       <li>
         <NavLink to="/" className={navLinkStyle}>
@@ -166,6 +178,7 @@ const Dashboard = () => {
         </NavLink>
       </li>
     </div>
+  );
 
   return (
     <>
@@ -221,5 +234,3 @@ const Dashboard = () => {
 };
 
 export default Dashboard;
-
-

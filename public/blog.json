@@ -1,0 +1,82 @@
+[
+  {
+    "blog_img": "https://i.ibb.co/7G6692D/jason-goodman-Oalh2-Moj-Uuk-unsplash.jpg",
+    "title": "Top 5 Tips for Writing a Winning Resume",
+    "description": "In this blog post, we share five essential tips to help you craft a winning resume that stands out to employers.",
+    "name": "John Doe",
+    "date": "2024-02-21",
+    "read_time": "5 min"
+  },
+  {
+    "blog_img": "https://i.ibb.co/WvxwSFX/jo-szczepanska-5ai-Rb5f464-A-unsplash.jpg",
+    "title": "The Importance of Networking in Job Search",
+    "description": "Networking is a crucial aspect of job searching. In this post, we discuss why networking matters and how to effectively leverage it.",
+    "name": "Jane Smith",
+    "date": "2024-02-22",
+    "read_time": "7 min"
+  },
+  {
+    "blog_img": "https://i.ibb.co/QFNxFcT/towfiqu-barbhuiya-n-Apa-Sgkzaxg-unsplash.jpg",
+    "title": "Common Mistakes to Avoid in Job Interviews",
+    "description": "Avoiding common interview mistakes can significantly increase your chances of landing the job. Learn about the most common pitfalls and how to steer clear of them.",
+    "name": "Michael Johnson",
+    "date": "2024-02-23",
+    "read_time": "6 min"
+  },
+  {
+    "blog_img": "https://i.ibb.co/WvxwSFX/jo-szczepanska-5ai-Rb5f464-A-unsplash.jpg",
+    "title": "Tips for Navigating the Remote Job Market",
+    "description": "With the rise of remote work, the job market has become more accessible than ever. Here are some tips for finding and succeeding in remote job opportunities.",
+    "name": "Emily Brown",
+    "date": "2024-02-24",
+    "read_time": "8 min"
+  },
+  {
+    "blog_img": "https://i.ibb.co/Zd11RNp/istockphoto-1465568487-170667a.webp",
+    "title": "How to Stay Motivated During a Job Search",
+    "description": "Job searching can be challenging, but maintaining motivation is key. Discover strategies for staying motivated and focused throughout the job search process.",
+    "name": "David Wilson",
+    "date": "2024-02-25",
+    "read_time": "5 min"
+  },
+  {
+    "blog_img": "https://i.ibb.co/7rdK2Ps/handshake.jpg ",
+    "title": "The Benefits of Using Applicant Tracking Systems",
+    "description": "Applicant Tracking Systems (ATS) streamline the hiring process for employers and candidates alike. Learn about the advantages of using an ATS for job applications.",
+    "name": "Jessica Lee",
+    "date": "2024-02-26",
+    "read_time": "6 min"
+  },
+  {
+    "blog_img": "https://i.ibb.co/WvxwSFX/jo-szczepanska-5ai-Rb5f464-A-unsplash.jpg",
+    "title": "How to Write an Effective Cover Letter",
+    "description": "A well-crafted cover letter can make a significant difference in your job application. Follow these tips to write a compelling cover letter that grabs employers' attention.",
+    "name": "Alex Martinez",
+    "date": "2024-02-27",
+    "read_time": "4 min"
+  },
+  {
+    "blog_img": "https://i.ibb.co/Zd11RNp/istockphoto-1465568487-170667a.webp",
+    "title": "Preparing for Behavioral Interview Questions",
+    "description": "Behavioral interview questions are increasingly common in job interviews. Discover how to prepare for and answer these types of questions effectively.",
+    "name": "Samantha Taylor",
+    "date": "2024-02-28",
+    "read_time": "7 min"
+  },
+  {
+    "blog_img": "https://i.ibb.co/7G6692D/jason-goodman-Oalh2-Moj-Uuk-unsplash.jpg",
+    "title": "How to Negotiate a Job Offer Successfully",
+    "description": "Negotiating a job offer can be intimidating, but it's an essential step in securing favorable terms. Learn strategies for negotiating salary, benefits, and more.",
+    "name": "Matthew Clark",
+    "date": "2024-02-29",
+    "read_time": "6 min"
+  },
+  {
+    "blog_img": "https://i.ibb.co/QFNxFcT/towfiqu-barbhuiya-n-Apa-Sgkzaxg-unsplash.jpg",
+    "title": "Tips for Managing Job Search Stress",
+    "description": "Job searching can be stressful, but there are ways to manage stress and maintain a positive mindset. Explore tips for reducing job search-related stress and staying resilient.",
+    "name": "Olivia Anderson",
+    "date": "2024-03-01",
+    "read_time": "5 min"
+  }
+]

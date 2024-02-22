@@ -5,18 +5,50 @@ import { MdDelete } from "react-icons/md";
 import { FaUsers  } from "react-icons/fa";
 import Swal from 'sweetalert2';
 import { FaUser } from 'react-icons/fa6';
+import { useLoaderData } from 'react-router';
+import { useState } from 'react';
 
 const AllUsers = () => {
-    
     const axiosSecure = useAxiosSecure()
+    const [currentPage , setCurrentPage] = useState(0)
+    const {count} = useLoaderData();
+    const [itemsPerPage ,setItemsPerPage]=useState (10)
+    const numberOfPages = Math.ceil(count/itemsPerPage)
+   const pages = [...Array(numberOfPages).keys()] 
 
 const { refetch, data: users = [] } = useQuery({
-    queryKey: ['users'],
+    queryKey: ['users', currentPage, itemsPerPage],
     queryFn: async () => {
-        const res = await axiosSecure.get('/users')
+        const res = await axiosSecure.get(`/users?page=${currentPage}&size=${itemsPerPage}`)
         return res.data
     }
 })
+
+
+const handlePerPage = e => {
+    e.preventDefault()
+    const value = parseInt(e.target.value)
+    setItemsPerPage(value)
+    setCurrentPage(0)
+  }
+
+  const handlePrevPage = ( )=> {
+    
+    if(currentPage > 0) {
+      setCurrentPage((prevPage) => prevPage - 1);
+      refetch(); 
+    }
+  
+  }
+  const handleNextPage = ()=>{
+   
+    if( currentPage < numberOfPages -1) {
+      setCurrentPage((prevPage) => prevPage + 1);
+      refetch();
+      
+    }
+  }
+
   console.log(users);
   const handleMakeAdmin= (user) => {
     console.log('click', user);
@@ -129,6 +161,26 @@ const { refetch, data: users = [] } = useQuery({
             
           </Table.Body>
         </Table>
+        <div className="flex justify-center gap-2 mt-5">
+      <button onClick={handlePrevPage} className=" bg-black text-white text-md px-2 py-1 rounded-md">Prev</button>
+      {
+        pages.map(page => <button 
+          key={page}
+          
+          onClick={()=> setCurrentPage(page)}
+          className={` bg-black text-white text-md px-2 py-1 rounded-md ${currentPage === page ? 'selected' : ''}`}
+      
+        
+        >{page +1}</button>)
+      }
+     
+      <button onClick={handleNextPage} className=" bg-black text-white text-md px-2 py-1 rounded-md">Next</button>
+      <select value={itemsPerPage} onChange={handlePerPage}  name="" id="">
+        <option value="5">5</option>
+        <option value="10">10</option>
+        <option value="20">20</option>
+      </select>
+    </div>
     </div>
         </div>
     );
