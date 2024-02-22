@@ -6,7 +6,7 @@ import { CgMenuRound } from "react-icons/cg";
 import { FiEdit, FiUsers } from "react-icons/fi";
 import { FaUsers } from "react-icons/fa";
 import {
-  AiOutlineCarryOut,
+ 
   AiOutlineHome,
   AiOutlineSchedule,
 } from "react-icons/ai";
@@ -71,15 +71,16 @@ const Dashboard = () => {
           </span> 
         </NavLink>
       </li>
-
       <li>
-        <NavLink to="/dashboard/appointment" className={navLinkStyle}>
-          <span className="flex justify-center items-center gap-2">
-            <AiOutlineCarryOut />
-            Appointment
-          </span>
+        <NavLink to="/dashboard/allCandidates" className={navLinkStyle}>
+        <span className="flex justify-center items-center gap-2">
+            <FaChartSimple />
+            All Candidates
+          </span> 
         </NavLink>
       </li>
+
+  
 
       <li>
         <NavLink to="/dashboard/interviewSchedule" className={navLinkStyle}>
@@ -89,13 +90,7 @@ const Dashboard = () => {
           </span>
         </NavLink>
       </li>
-      <li>
-        <NavLink to="CVmanage" className={navLinkStyle}>
-          <span className="flex justify-center items-center gap-2">
-            <FiEdit></FiEdit>CV Management
-          </span>
-        </NavLink>
-      </li>
+     
       <li>
         <NavLink to="/dashboard/support" className={navLinkStyle}>
           <span className="flex justify-center items-center gap-2">
