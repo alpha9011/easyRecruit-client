@@ -20,7 +20,6 @@ import CandidateForm from "../Page/Circular/ApplyForm/CandidateForm";
 import TermsAndConditions from "../shared/Footer/TermsAndConditions";
 import PrivacyPolicy from "../shared/Footer/PrivacyPolicy";
 import UpdateJob from "../Page/Circular/UpdateJob";
-import MemberShip from "../Page/Membership/Membership";
 import CustomerProfile from "../DashboardLayout/DashboardPage/CustomerProfile/CustomerProfile";
 import AllUsers from "../DashboardLayout/DashboardAdminPage/AllUsers/AllUsers";
 import AllJobs from "../DashboardLayout/DashboardAdminPage/AlCandidates/AllJobs";
@@ -31,7 +30,6 @@ import AllJobsCandidates from "../DashboardLayout/DashboardAdminPage/AlCandidate
 import MyCandidates from "../DashboardLayout/DashboardPage/MyJobs/MyCandidates";
 import ShortListed from "../DashboardLayout/DashboardPage/Appointment/ShortListed";
 import Appointment from "../DashboardLayout/DashboardPage/Appointment/Appointment";
-
 import DemoPage from "../Page/DemoPage/DemoPage";
 import PackDetiles from "../Page/Pricing/PackDetiles";
 import ALLShowJobs from "../DashboardLayout/DashboardAdminPage/AllJobs/ALLShowJobs";
@@ -110,10 +108,7 @@ export const router = createBrowserRouter([
         path: "/whyEasyRecruit",
         element: <WhyEasyRecruit></WhyEasyRecruit>,
       },
-      {
-        path: "/membership",
-        element: <MemberShip></MemberShip>,
-      },
+ 
       {
         path: "/terms",
         element: <TermsAndConditions></TermsAndConditions>
