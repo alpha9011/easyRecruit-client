@@ -30,13 +30,18 @@ import AllJobsCandidates from "../DashboardLayout/DashboardAdminPage/AlCandidate
 import MyCandidates from "../DashboardLayout/DashboardPage/MyJobs/MyCandidates";
 import ShortListed from "../DashboardLayout/DashboardPage/Appointment/ShortListed";
 import Appointment from "../DashboardLayout/DashboardPage/Appointment/Appointment";
-
 import DemoPage from "../Page/DemoPage/DemoPage";
 import PackDetiles from "../Page/Pricing/PackDetiles";
 import ALLShowJobs from "../DashboardLayout/DashboardAdminPage/AllJobs/ALLShowJobs";
 import PaymentSuccess from "../Page/Pricing/PaymentSuccess";
 import PaymentFail from "../Page/Pricing/PaymentFail";
 import CustomerFeedback from "../Page/Home/Reviews/CustomerFeedback";
+import CreateBlog from "../Page/Blogs/CreateBlog";
+import Blogs from "../Page/Blogs/Blogs";
+import BlogDetails from "../Page/Blogs/BlogDetails";
+import UpdateBlog from "../Page/Blogs/UpdateBlog";
+import ResumeMaker from "../Page/ResumeMaker/ResumeMaker";
+import AllResume from "../Page/ResumeMaker/AllResume";
 import Support from "../DashboardLayout/DashboardPage/Support/Support";
 
 export const router = createBrowserRouter([
@@ -75,6 +80,33 @@ export const router = createBrowserRouter([
         loader: () =>fetch(`http://localhost:5000/postJobCount`),
       },
       {
+        path: "/resumeMaker",
+        element: <ResumeMaker/>
+      },
+      {
+        path: "/allResume",
+        element: <AllResume/>
+      },
+      {
+        path: "/blog",
+        element: <Blogs></Blogs>
+      },
+      {
+        path: "/blog/:id",
+        element: <BlogDetails></BlogDetails>,
+        // loader : ({params}) =>  fetch(`http://localhost:5000/blog/${params.id}`) 
+      },
+      {
+        path: "/createBlog",
+        element: <CreateBlog></CreateBlog>
+      },
+      {
+        path: "/updateBlog/:id",
+        element: <UpdateBlog></UpdateBlog>,
+        loader : ({params}) =>  fetch(`http://localhost:5000/blog/${params.id}`) 
+
+      },
+      {
         path: "/jobdetails/:id",
         element: <ApplyForm></ApplyForm>,
         loader: ({ params }) =>
@@ -109,7 +141,6 @@ export const router = createBrowserRouter([
         path: "/whyEasyRecruit",
         element: <WhyEasyRecruit></WhyEasyRecruit>,
       },
-      
       {
         path: "/terms",
         element: <TermsAndConditions></TermsAndConditions>
@@ -143,7 +174,7 @@ export const router = createBrowserRouter([
       {
         path: "allUser",
         element: <AllUsers></AllUsers>,
-      
+        loader: () =>fetch(`http://localhost:5000/userCount`),
       },
       {
         path: "allJobs",

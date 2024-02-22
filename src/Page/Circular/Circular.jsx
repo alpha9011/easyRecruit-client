@@ -81,11 +81,11 @@ const Circular = () => {
                     {
                         postJobs.map(jobs => <JobCard key={jobs._id} jobs={jobs}></JobCard>)
                     }
+                    
                 </div>
 
                 {/* pagination */}
-                
-                <div className="text-center mt-10 flex  justify-center gap-2">
+                <div className="text-center mt-10 flex  justify-center gap-2 relative">
                     
                     <button className=" bg-black text-white text-md px-2 py-1 rounded-md $" onClick={handlePrevPage}>prev</button>
                     {
@@ -98,7 +98,9 @@ const Circular = () => {
                     }
                     <button className=" bg-black text-white text-md px-2 py-1 rounded-md $" onClick={handleNexPage}>Next</button>
                 </div>
+             
             </div>
+           
             <div>
                 <CustomersSlider></CustomersSlider>
                 <Footers></Footers>

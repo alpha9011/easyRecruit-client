@@ -12,7 +12,7 @@ const PostJob = () => {
     const axiospublic = useAxiosPublic()
     const { register, handleSubmit, reset } = useForm()
     const { user } = useContext(AuthContext)
-    // console.log(user?.email);
+   
 
 
 
@@ -35,7 +35,7 @@ const PostJob = () => {
                 'content-type': 'multipart/form-data'
             }
         })
-        //    console.log(res.data.data.display_url );
+        
         const image = res.data.data.display_url
         console.log(image);
         const postjob = {
