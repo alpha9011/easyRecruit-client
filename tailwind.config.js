@@ -5,10 +5,11 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
     "node_modules/flowbite-react/lib/esm/**/*.js",
   ],
+  darkMode: "class",
   theme: {
     extend: {
       colors: {
-        primary: "",
+        primary: "#139BFF",
         primaryLight: "",
         primaryDark: "",
         secondary: "",

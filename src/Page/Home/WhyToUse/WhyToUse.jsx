@@ -1,8 +1,7 @@
 import jobsUsersImg from "../../../../public/Image/easy_home_unlimited.png";
 import fastImplementationImg from "../../../../public/Image/fast_implementation.png";
 import configurableImg from "../../../../public/Image/higly_Configurable.png";
-import PrimaryButton from "../../../shared/PrimaryButton/PrimaryButton";
-
+import PrimaryButton from "../../../shared/SecondaryButton/SecondaryButton";
 
 const WhyToUse = () => {
   return (

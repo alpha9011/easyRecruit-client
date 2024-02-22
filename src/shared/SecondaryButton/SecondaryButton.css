@@ -4,7 +4,7 @@
   --b: 3px;   /* border thickness */
   --s: .45em; /* size of the corner */
   --color: #373B44;
-
+  /* --color2: #139BFF */
   
   padding: calc(.5em + var(--s)) calc(.9em + var(--s));
   color: var(--color);
