@@ -6,7 +6,7 @@ import AllPrices from "./AllPrices";
 
 const Pricing = () => {
     return (
-        <div>
+        <div className="font-roboto">
             <Helmet>
                 <title>EasyRecruit || Pricing</title>
             </Helmet>

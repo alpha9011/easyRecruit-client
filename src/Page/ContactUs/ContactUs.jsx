@@ -11,7 +11,7 @@ import "./contactUs.css"
 import { Helmet } from "react-helmet-async";
 const ContactUs = () => {
     return (
-        <div className="contactPage">
+        <div className="contactPage font-roboto">
             <Helmet>
                 <title>EasyRecruit || Contact Us</title>
             </Helmet>
