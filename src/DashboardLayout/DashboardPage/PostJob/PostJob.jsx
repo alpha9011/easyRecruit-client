@@ -12,7 +12,7 @@ const PostJob = () => {
     const axiospublic = useAxiosPublic()
     const { register, handleSubmit, reset } = useForm()
     const { user } = useContext(AuthContext)
-    // console.log(user?.email);
+   
 
 
 

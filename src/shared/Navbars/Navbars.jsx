@@ -2,7 +2,7 @@ import { Avatar, Button, Dropdown, Navbar } from "flowbite-react";
 // import { CiEdit } from "react-icons/ci";
 import { Link, NavLink } from "react-router-dom";
 // import users from "../../assets/user2.jpg"
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 import { CgMenuGridR } from "react-icons/cg";
@@ -12,6 +12,20 @@ import Drawer from "react-modern-drawer";
 import "react-modern-drawer/dist/index.css";
 
 const Navbars = () => {
+  //Dark mode []
+  const [theme, setTheme] = useState("light")
+
+  useEffect(()=>{
+    if(theme === "dark"){
+      document.documentElement.classList.add("dark");
+    } else{
+      document.documentElement.classList.remove("dark");
+    }
+  })
+  const handleTheme=()=>{
+    setTheme(theme ==="dark" ? "light" : "dark")
+  }  
+  
   const { user, logOut } = useContext(AuthContext);
   const [isOpen, setIsOpen] = useState(false);
   const toggleDrawer = () => {
@@ -72,7 +86,7 @@ const Navbars = () => {
           Register
         </NavLink> */}
 
-        <NavLink to="/circular" className={navLinkStyle}>
+        <NavLink to="/circular" className={navLinkStyle} onClick={handleTheme}>
           Circular
         </NavLink>
 
@@ -103,7 +117,10 @@ const Navbars = () => {
     >
       <Navbar.Brand href="/">
         <div className="flex flex-col items-center">
-          <span className="self-center whitespace-nowrap text-3xl lg:text-4xl   font-bold dark:text-white bg-gradient-to-r from-blue-500 to-sky-500 text-transparent bg-clip-text ">
+          {/* <span className="self-center whitespace-nowrap text-3xl lg:text-4xl   font-bold dark:text-white bg-gradient-to-r from-blue-500 to-sky-500 text-transparent bg-clip-text ">
+            Easy<span className="">Recruit</span>
+          </span> */}
+          <span className="self-center whitespace-nowrap text-3xl lg:text-4xl   font-bold  text-[#139BFF]">
             Easy<span className="">Recruit</span>
           </span>
         </div>
@@ -187,6 +204,7 @@ const Navbars = () => {
           <Navbar.Link>
             <NavLink to="/blog">Blog</NavLink>
           </Navbar.Link>
+         
         </Navbar.Collapse>
       </div>
 

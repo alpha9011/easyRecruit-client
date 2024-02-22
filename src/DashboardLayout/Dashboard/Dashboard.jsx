@@ -1,13 +1,12 @@
 import { useState } from "react";
 import { NavLink, Outlet } from "react-router-dom";
-import { FaChartSimple,FaPeopleGroup } from "react-icons/fa6";
+import { FaChartSimple } from "react-icons/fa6";
 // react icons
 import { CgMenuRound } from "react-icons/cg";
 import { FiEdit, FiUsers } from "react-icons/fi";
 import { FaUsers } from "react-icons/fa";
-
 import {
-  AiOutlineCarryOut,
+ 
   AiOutlineHome,
   AiOutlineSchedule,
 } from "react-icons/ai";
@@ -22,6 +21,7 @@ import "aos/dist/aos.css";
 import useAuth from "../../Hooks/useAuth";
 AOS.init();
 import useAdmin from "../../Hooks/useAdmin";
+import { BiSupport } from "react-icons/bi";
 
 const Dashboard = () => {
   const { user } = useAuth();
@@ -41,14 +41,17 @@ const Dashboard = () => {
   };
 
   const [isAdmin] = useAdmin();
-  const dashBoardMenu = 
-  
-   isAdmin ? 
-   
-   <div>
+  const dashBoardMenu = isAdmin ? (
+    <div>
       <div className="flex flex-col items-center ">
-        <img className="w-24 h-24 mb-3 rounded-full shadow-lg" src={user?.photoURL} alt="Bonnie image" />
-        <h5 className="mb-3 text-xl font-medium bg-gradient-to-r from-gray-300 to-gray-400 inline-block text-transparent bg-clip-text dark:text-white">{user?.displayName}</h5>
+        <img
+          className="w-24 h-24 mb-3 rounded-full shadow-lg"
+          src={user?.photoURL}
+          alt="Bonnie image"
+        />
+        <h5 className="mb-3 text-xl font-medium bg-gradient-to-r from-gray-300 to-gray-400 inline-block text-transparent bg-clip-text dark:text-white">
+          {user?.displayName}
+        </h5>
         <NavLink to="/dashboard/customerProfile" className={navLinkStyle}>
           <span className="flex justify-center items-center gap-2">
             Profile
@@ -57,38 +60,30 @@ const Dashboard = () => {
       </div>
       <li>
         <NavLink to="/dashboard/allUser" className={navLinkStyle}>
-        <span className="flex justify-center items-center gap-2">
+          <span className="flex justify-center items-center gap-2">
             <FaUsers />
             All User
-          </span> 
+          </span>
         </NavLink>
       </li>
       <li>
-        <NavLink to="/dashboard/alljobs" className={navLinkStyle}>
+        <NavLink to="/dashboard/allJobs" className={navLinkStyle}>
           <span className="flex justify-center items-center gap-2">
-            <AiOutlineSchedule />
-            All Jobs
+            <FaChartSimple />
+            All jobs
           </span>
         </NavLink>
       </li>
       <li>
         <NavLink to="/dashboard/allCandidates" className={navLinkStyle}>
         <span className="flex justify-center items-center gap-2">
-            <FaPeopleGroup  />
+            <FaChartSimple />
             All Candidates
           </span> 
         </NavLink>
       </li>
- 
 
-      <li>
-        <NavLink to="/dashboard/appointment" className={navLinkStyle}>
-          <span className="flex justify-center items-center gap-2">
-            <AiOutlineCarryOut />
-            Appointment
-          </span>
-        </NavLink>
-      </li>
+  
 
       <li>
         <NavLink to="/dashboard/interviewSchedule" className={navLinkStyle}>
@@ -98,15 +93,15 @@ const Dashboard = () => {
           </span>
         </NavLink>
       </li>
-  
-      {/* <li>
-        <NavLink to="CVmanage" className={navLinkStyle}>
+     
+      <li>
+        <NavLink to="/dashboard/support" className={navLinkStyle}>
           <span className="flex justify-center items-center gap-2">
-            <FiEdit></FiEdit>CV Management
+            <BiSupport />
+            Support
           </span>
         </NavLink>
-      </li> */}
-
+      </li>
       <div className="border-t  mt-5 "></div>
       <li>
         <NavLink to="/" className={navLinkStyle}>
@@ -116,16 +111,18 @@ const Dashboard = () => {
           </span>
         </NavLink>
       </li>
-
     </div>
-
-   : 
-
+  ) : (
     <div>
-      
       <div className="flex flex-col items-center">
-        <img className="w-24 h-24 mb-3 rounded-full shadow-lg" src={user?.photoURL} alt="Bonnie image" />
-        <h5 className="mb-3 text-xl font-medium bg-gradient-to-r from-gray-300 to-gray-400 inline-block text-transparent bg-clip-text dark:text-white">{user?.displayName}</h5>
+        <img
+          className="w-24 h-24 mb-3 rounded-full shadow-lg"
+          src={user?.photoURL}
+          alt="Bonnie image"
+        />
+        <h5 className="mb-3 text-xl font-medium bg-gradient-to-r from-gray-300 to-gray-400 inline-block text-transparent bg-clip-text dark:text-white">
+          {user?.displayName}
+        </h5>
         <NavLink to="/dashboard/customerProfile" className={navLinkStyle}>
           <span className="flex justify-center items-center gap-2">
             Profile
@@ -143,7 +140,7 @@ const Dashboard = () => {
       <li>
         <NavLink to="/dashboard/myjobs" className={navLinkStyle}>
           <span className="flex justify-center items-center gap-2">
-           <FaChartSimple></FaChartSimple> My Jobs
+            <FaChartSimple></FaChartSimple> My Jobs
           </span>
         </NavLink>
       </li>
@@ -162,7 +159,7 @@ const Dashboard = () => {
           </span>
         </NavLink>
       </li>
-      
+
       <div className="border-t  mt-5 "></div>
       <li>
         <NavLink to="/" className={navLinkStyle}>
@@ -173,6 +170,7 @@ const Dashboard = () => {
         </NavLink>
       </li>
     </div>
+  );
 
   return (
     <>

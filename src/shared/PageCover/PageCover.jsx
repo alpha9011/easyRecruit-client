@@ -4,9 +4,9 @@ import { Parallax } from "react-parallax";
 const PageCover = ({ img, title, desc }) => {
     return (
         <Parallax
-            blur={{ min: -50, max: 50 }}
+            blur={{ min: -15, max: 15 }}
             bgImage={img}
-            strength={200}
+            strength={-200}
             className="bg-cover"
         >
             <div className="h-[91vh]">

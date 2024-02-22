@@ -20,7 +20,6 @@ import CandidateForm from "../Page/Circular/ApplyForm/CandidateForm";
 import TermsAndConditions from "../shared/Footer/TermsAndConditions";
 import PrivacyPolicy from "../shared/Footer/PrivacyPolicy";
 import UpdateJob from "../Page/Circular/UpdateJob";
-import MemberShip from "../Page/Membership/Membership";
 import CustomerProfile from "../DashboardLayout/DashboardPage/CustomerProfile/CustomerProfile";
 import AllUsers from "../DashboardLayout/DashboardAdminPage/AllUsers/AllUsers";
 import AllJobs from "../DashboardLayout/DashboardAdminPage/AlCandidates/AllJobs";
@@ -41,9 +40,9 @@ import CreateBlog from "../Page/Blogs/CreateBlog";
 import Blogs from "../Page/Blogs/Blogs";
 import BlogDetails from "../Page/Blogs/BlogDetails";
 import UpdateBlog from "../Page/Blogs/UpdateBlog";
-import Chatbot from "../Page/ChatBotSimple/Chatbot";
 import ResumeMaker from "../Page/ResumeMaker/ResumeMaker";
 import AllResume from "../Page/ResumeMaker/AllResume";
+import Support from "../DashboardLayout/DashboardPage/Support/Support";
 
 export const router = createBrowserRouter([
   {
@@ -142,10 +141,7 @@ export const router = createBrowserRouter([
         path: "/whyEasyRecruit",
         element: <WhyEasyRecruit></WhyEasyRecruit>,
       },
-      {
-        path: "/membership",
-        element: <MemberShip></MemberShip>,
-      },
+ 
       {
         path: "/terms",
         element: <TermsAndConditions></TermsAndConditions>
@@ -158,10 +154,10 @@ export const router = createBrowserRouter([
         path: "/demoPage",
         element: <DemoPage></DemoPage>
       },
-      {
-        path: "/chatbot",
-        element: <Chatbot></Chatbot>
-      },
+      // {
+      //   path: "/chatbot",
+      //   element: <Chatbot></Chatbot>
+      // },
       {
         path: "/feedback",
         element: 
@@ -224,6 +220,10 @@ export const router = createBrowserRouter([
       {
         path: "myjobs",
         element: <MyJobs></MyJobs>,
+      },
+      {
+        path: "support",
+        element: <Support></Support>
       },
       {
         path: "myCandidate/:id",
