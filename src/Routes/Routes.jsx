@@ -141,6 +141,7 @@ export const router = createBrowserRouter([
         path: "/whyEasyRecruit",
         element: <WhyEasyRecruit></WhyEasyRecruit>,
       },
+      
       {
         path: "/terms",
         element: <TermsAndConditions></TermsAndConditions>
