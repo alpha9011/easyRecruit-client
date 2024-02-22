@@ -38,7 +38,6 @@ import ALLShowJobs from "../DashboardLayout/DashboardAdminPage/AllJobs/ALLShowJo
 import PaymentSuccess from "../Page/Pricing/PaymentSuccess";
 import PaymentFail from "../Page/Pricing/PaymentFail";
 import CustomerFeedback from "../Page/Home/Reviews/CustomerFeedback";
-import Chatbot from "../Page/ChatBotSimple/Chatbot";
 import Support from "../DashboardLayout/DashboardPage/Support/Support";
 
 export const router = createBrowserRouter([
@@ -74,6 +73,7 @@ export const router = createBrowserRouter([
       {
         path: "/circular",
         element: <Circular></Circular>,
+        loader: () =>fetch(`http://localhost:5000/postJobCount`),
       },
       {
         path: "/jobdetails/:id",
@@ -126,10 +126,10 @@ export const router = createBrowserRouter([
         path: "/demoPage",
         element: <DemoPage></DemoPage>
       },
-      {
-        path: "/chatbot",
-        element: <Chatbot></Chatbot>
-      },
+      // {
+      //   path: "/chatbot",
+      //   element: <Chatbot></Chatbot>
+      // },
       {
         path: "/feedback",
         element: 
@@ -152,10 +152,13 @@ export const router = createBrowserRouter([
       {
         path: "allUser",
         element: <AllUsers></AllUsers>,
+      
       },
       {
         path: "allJobs",
-       element:<ALLShowJobs></ALLShowJobs>
+       element:<ALLShowJobs></ALLShowJobs>,
+       loader: () =>fetch(`http://localhost:5000/postJobCount`),
+
       },
       {
         path: "allCandidates/:id",
@@ -165,6 +168,7 @@ export const router = createBrowserRouter([
       {
         path: "allCandidates",
         element: <AllJobs></AllJobs> ,
+        loader: () =>fetch(`http://localhost:5000/postJobCount`),
       },
       {
         path: "shortlisted/:id",

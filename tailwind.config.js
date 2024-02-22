@@ -17,6 +17,9 @@ export default {
         textPrimary: "",
         textSecondary: "#0EA5E9",
       },
+      fontFamily: {
+        roboto: '"Roboto", sans-serif'
+      }
     },
   },
   plugins: [require("flowbite/plugin")],
