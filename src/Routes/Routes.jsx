@@ -147,7 +147,7 @@ export const router = createBrowserRouter([
       {
         path: "allUser",
         element: <AllUsers></AllUsers>,
-      
+        loader: () =>fetch(`http://localhost:5000/userCount`),
       },
       {
         path: "allJobs",
