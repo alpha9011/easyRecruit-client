@@ -37,7 +37,6 @@ import ALLShowJobs from "../DashboardLayout/DashboardAdminPage/AllJobs/ALLShowJo
 import PaymentSuccess from "../Page/Pricing/PaymentSuccess";
 import PaymentFail from "../Page/Pricing/PaymentFail";
 import CustomerFeedback from "../Page/Home/Reviews/CustomerFeedback";
-import Chatbot from "../Page/ChatBotSimple/Chatbot";
 
 export const router = createBrowserRouter([
   {
@@ -125,10 +124,10 @@ export const router = createBrowserRouter([
         path: "/demoPage",
         element: <DemoPage></DemoPage>
       },
-      {
-        path: "/chatbot",
-        element: <Chatbot></Chatbot>
-      },
+      // {
+      //   path: "/chatbot",
+      //   element: <Chatbot></Chatbot>
+      // },
       {
         path: "/feedback",
         element: 

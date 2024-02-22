@@ -4,7 +4,7 @@ import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
 import { SiQuora } from "react-icons/si";
 import Footers from "../../shared/Footer/Footers";
 import CustomerFeedback from "../Home/Reviews/CustomerFeedback";
-import Chatbot from "../ChatBotSimple/Chatbot";
+import ChatbotKit from "../chatbotKit/ChatbotKit";
 
 const DemoPage = () => {
     return (
@@ -70,7 +70,7 @@ const DemoPage = () => {
 
             </div>
             <div className="mt-5">
-                <Chatbot></Chatbot>
+                <ChatbotKit></ChatbotKit>
 
                 <Footers></Footers>
             </div>
