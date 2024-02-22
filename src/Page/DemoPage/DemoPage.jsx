@@ -4,7 +4,6 @@ import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
 import { SiQuora } from "react-icons/si";
 import Footers from "../../shared/Footer/Footers";
 import CustomerFeedback from "../Home/Reviews/CustomerFeedback";
-import ChatbotKit from "../chatbotKit/ChatbotKit";
 
 const DemoPage = () => {
     return (
@@ -45,18 +44,18 @@ const DemoPage = () => {
 
                 <div className="flex items-center justify-center p-8 text-center">
                     <div className="mx-8">
-                        <h1 className="text-3xl font-bold mb-10">Schedule Time Now</h1>
+                        <h1 className="text-3xl font-bold mb-10">Exploring Time Now</h1>
                         <div className="flex flex-col gap-8">
                             <div className="flex items-center gap-4">
                                 <div className="w-1/2 border-r border-gray-300 pr-4">
                                     <h2 className="text-xl font-bold mb-2">Exploring recruiting software for your company?</h2>
                                     <p className="text-lg">I’m a business owner or HR team member looking to learn more about EasyRecruit</p>
-                                    <button className="mt-5 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Speak to an EasyRecruit Rep.</button>
+                                    <button className="mt-5 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">See About Us</button>
                                 </div>
                                 <div className="w-1/2 pl-4">
                                     <h2 className="text-xl font-bold mb-2">Do not have much Idea about Application Tracking system?</h2>
                                     <p className="text-lg mb-12">Explore with EasyRecruit FAQ</p>
-                                    <button className="mt-5 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Explore with Us</button>
+                                    <button className="mt-5 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Explore Our Blog</button>
                                 </div>
                             </div>
                         </div>
@@ -66,12 +65,8 @@ const DemoPage = () => {
             </div>
             <div className="m-10 p-10">
                 <CustomerFeedback></CustomerFeedback>
-
-
             </div>
             <div className="mt-5">
-                <ChatbotKit></ChatbotKit>
-
                 <Footers></Footers>
             </div>
         </div>
