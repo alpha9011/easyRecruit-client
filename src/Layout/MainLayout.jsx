@@ -5,7 +5,7 @@ import Navbars from "../shared/Navbars/Navbars"
 
 const MainLayout = () => {
     return (
-        <div>
+        <div className="font-roboto">
             <Navbars></Navbars>
             <Outlet />
         </div>

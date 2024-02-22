@@ -8,7 +8,7 @@ import WhyUs from "./WhyUs";
 
 const AboutUs = () => {
     return (
-        <div className="my-5">
+        <div className="my-5 font-roboto">
             <Helmet>
                 <title>EasyRecruit || About Us</title>
             </Helmet>

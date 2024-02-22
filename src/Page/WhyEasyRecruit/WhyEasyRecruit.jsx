@@ -14,7 +14,7 @@ import PageCover from '../../shared/PageCover/PageCover';
 
 const WhyEasyRecruit = () => {
     return (
-        <div className='overflow-x-hidden overflow-y-hidden'>
+        <div className='overflow-x-hidden overflow-y-hidden font-roboto'>
             <Helmet>
                 <title>EasyRecruit || Why US</title>
             </Helmet>
