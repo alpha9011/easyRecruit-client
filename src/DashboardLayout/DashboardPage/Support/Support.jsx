@@ -1,14 +1,15 @@
 import { ZegoUIKitPrebuilt } from "@zegocloud/zego-uikit-prebuilt";
 import { APP_ID, SERVER_SECRET } from "./constants";
-import { useContext } from "react";
-import { AuthContext } from "../../../AuthProvider/AuthProvider";
+import useAuth from "../../../Hooks/useAuth";
 
 export function getUrlParams(url = window.location.href) {
   let urlStr = url.split("?")[1];
   return new URLSearchParams(urlStr);
 }
-const meet = () => {
-  const { user } = useContext(AuthContext);
+const Support = () => {
+  // const { user } = useContext(AuthContext);
+  const { user } = useAuth();
+
 
   function randomID(len) {
     let result = "";
@@ -25,15 +26,22 @@ const meet = () => {
   }
 
   const roomID = getUrlParams().get("roomID") || randomID(5);
-  // const roomID = "sazzad";
 
-  let myMeeting = async (element) => {
+
+  let mySupporting = async (element) => {
     // generate Kit Token
-    const appID = APP_ID;
-    const serverSecret = SERVER_SECRET;
+  const appID = 1391604880;
+const serverSecret ="6a2b2e7cd3684ea89570527c0c349ab7";
+
+    // const appID = import.meta.env.VITE_APP_ID;
+    // const serverSecret = import.meta.env.VITE_SERVER_SECRET;
+
+    console.log("appid ", appID);
+    console.log("serverSecret", serverSecret);
 
     // users's name dynamically
-    const userName = user? user.displayName : " ";
+    const userName = user ? user.displayName : " ";
+
     const kitToken = ZegoUIKitPrebuilt.generateKitTokenForTest(
       appID,
       serverSecret,
@@ -45,6 +53,7 @@ const meet = () => {
     );
 
     // Create instance object from Kit Token.
+
     const zp = ZegoUIKitPrebuilt.create(kitToken);
     // start the call
     zp.joinRoom({
@@ -64,6 +73,7 @@ const meet = () => {
       scenario: {
         mode: ZegoUIKitPrebuilt.GroupCall, // To implement 1-on-1 calls, modify the parameter here to [ZegoUIKitPrebuilt.OneONoneCall].
       },
+
       showRoomTimer: "yes",
       showTurnOffRemoteCameraButton: "yes",
       showTurnOffRemoteMicrophoneButton: "yes",
@@ -79,10 +89,10 @@ const meet = () => {
   return (
     <div
       className="myCallContainer"
-      ref={myMeeting}
+      ref={mySupporting}
       style={{ width: "full", height: "full" }}
     ></div>
   );
 };
 
-export default meet;
+export default Support;
