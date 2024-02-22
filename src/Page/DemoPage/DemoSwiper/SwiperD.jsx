@@ -5,7 +5,7 @@ import PrimaryButton from "../../../shared/PrimaryButton/PrimaryButton";
 const SwiperD = () => {
   return (
     <div className="relative ">
-      <div className="absolute w-full flex items-center justify-end  top-0 bottom-0 p-5">
+      <div className="absolute w-full grid justify-center items-center   top-0 bottom-0 p-5">
         <div className="lg:w-1/2 mx-auto space-y-5 grid-flow-col text-center z-10 mb-20">
           <h3 className="text-3xl font-semibold text-white">
             Choose EasyRecruit for Your Company's Hiring.

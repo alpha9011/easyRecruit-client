@@ -19,6 +19,7 @@ const MyJobs = () => {
             return jobs
         }
     })
+    
     if (isLoading) {
         return <div className=" h-screen flex items-center justify-center">
             <Spinner aria-label="Large spinner example" size="lg" />

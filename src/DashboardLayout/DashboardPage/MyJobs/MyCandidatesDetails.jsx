@@ -35,39 +35,20 @@ const MyCandidatesDetails = ({ candidate }) => {
 
       <Table.Cell>
         <button onClick={() => setOpenModal(true)}>See Details</button>
+
         <Modal
           show={openModal}
           onClose={() => setOpenModal(false)}
           className="pt-10 md:pt-0 backdrop-filter backdrop-blur "
         >
-          {/* <Modal.Header >
-           
-            <div className="w-full flex justify-center items-center bg-red-500 ">
-              
-              <div className="w-full bg-green-500 text-center">
-
-                  <img
-                    src={photo}
-                    alt="candidate photo"
-                    className="absolute -top-12 left-0 right-0 w-24 h-24 rounded-full mx-auto"
-                  />
-                  <h1>{name}</h1>
-                  <h4 className="text-sm">Apply Date: {applyDate}</h4>
-              </div>             
-            </div>
-          </Modal.Header> */}
           <Modal.Header className="border-none" />
 
           <div className="text-center ">
-          
-              
-              <img
-                src={photo}
-                alt="candidate photo"
-                className="absolute -top-12 left-0 right-0  w-24 h-24 rounded-full mx-auto hover:shadow-md hover:shadow-[#1D227C]"
-             
-              />
-
+            <img
+              src={photo}
+              alt="candidate photo"
+              className="absolute -top-12 left-0 right-0  w-24 h-24 rounded-full mx-auto hover:shadow-md hover:shadow-[#1D227C]"
+            />
 
             <h1 className="text-xl md:text-2xl font-semibold">{name}</h1>
             <h4 className="text-sm">
@@ -93,7 +74,6 @@ const MyCandidatesDetails = ({ candidate }) => {
                 rel="noreferrer"
                 className="text-blue-500 hover:scale-105 duration-300 hover:translate-x-3"
                 target="_blank"
-                
               >
                 Resume
               </a>

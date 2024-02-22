@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
-import {  Spinner, Table } from "flowbite-react";
+import {  Select, Spinner, Table } from "flowbite-react";
 import { MdDelete } from "react-icons/md";
 import Swal from "sweetalert2";
 import JobDetails from "./Jobdetails";
@@ -138,8 +138,7 @@ const ALLShowJobs = () => {
         
       </Table.Body>
     </Table>
-    <div>pagination: {currentPage}</div>
-    <div className="flex justify-center gap-2">
+    <div className="flex justify-center gap-2 mt-5">
       <button onClick={handlePrevPage} className=" bg-black text-white text-md px-2 py-1 rounded-md">Prev</button>
       {
         pages.map(page => <button 
@@ -151,12 +150,15 @@ const ALLShowJobs = () => {
         
         >{page +1}</button>)
       }
-      <select value={itemsPerPage} onChange={handlePerPage}  name="" id="">
+     
+      <button onClick={handleNextPage} className=" bg-black text-white text-md px-2 py-1 rounded-md">Next</button>
+
+      <Select value={itemsPerPage} onChange={handlePerPage}  name="" id="">
         <option value="5">5</option>
         <option value="10">10</option>
+        <option value="15">15</option>
         <option value="20">20</option>
-      </select>
-      <button onClick={handleNextPage} className=" bg-black text-white text-md px-2 py-1 rounded-md">Next</button>
+      </Select>
     </div>
 </div>
     </div>

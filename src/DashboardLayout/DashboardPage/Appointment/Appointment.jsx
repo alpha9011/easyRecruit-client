@@ -5,8 +5,8 @@ import { Link } from "react-router-dom";
 const Appointment = () => {
 
   // get all the job post
-  const axiosPublic = useAxiosSecure()
-  const [jobPost, setjobPost] = useState([])
+  const axiosPublic = useAxiosSecure();
+  const [jobPost, setjobPost] = useState([]);
 
   useEffect(() => {
     axiosPublic.get('/postjob')
