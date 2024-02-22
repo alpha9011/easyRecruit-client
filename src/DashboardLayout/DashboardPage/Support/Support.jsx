@@ -1,5 +1,5 @@
 import { ZegoUIKitPrebuilt } from "@zegocloud/zego-uikit-prebuilt";
-import { APP_ID, SERVER_SECRET } from "./constants";
+
 import useAuth from "../../../Hooks/useAuth";
 
 export function getUrlParams(url = window.location.href) {
