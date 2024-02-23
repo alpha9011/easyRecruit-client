@@ -243,6 +243,8 @@ export const router = createBrowserRouter([
       {
         path: "appointment",
         element: <Appointment></Appointment>,
+        loader: () =>fetch(`http://localhost:5000/postJobCount`),
+
       },
       {
         path: "CVmanage/:id",
