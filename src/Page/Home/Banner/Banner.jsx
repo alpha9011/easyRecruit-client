@@ -57,7 +57,7 @@ const Banner = () => {
             </p>
           </span>
 
-          <div className="flex justify-center">
+          <div className="flex justify-center relative">
             <SecondaryButton buttonText="Request A Demo"></SecondaryButton>
           </div>
 

@@ -12,7 +12,7 @@ const ALLShowJobs = () => {
     const axiosSecure = useAxiosSecure()
     const [currentPage , setCurrentPage] = useState(0)
     const {count} = useLoaderData();
-     const [itemsPerPage ,setItemsPerPage]=useState (10)
+     const [itemsPerPage ,setItemsPerPage]=useState (5)
      const numberOfPages = Math.ceil(count/itemsPerPage)
     const pages = [...Array(numberOfPages).keys()] 
 

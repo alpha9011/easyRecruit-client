@@ -12,7 +12,7 @@ const AllJobsCandidates = () => {
   const [counts, setCount] = useState({})
 
   const count =counts.count
-  const [itemsPerPage, setItemsPerPage] = useState(10)
+  const [itemsPerPage, setItemsPerPage] = useState(5)
   const [currentPage, setCurrentPage] = useState(0)
   const numberOfPages = Math.ceil(count/itemsPerPage)
 

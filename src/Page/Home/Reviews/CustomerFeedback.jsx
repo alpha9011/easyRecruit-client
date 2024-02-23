@@ -115,7 +115,7 @@ const CustomerFeedback = () => {
                     // opacity: 0.5, 
                 }}
             ></div>
-            <div className="max-w-2xl text-center rounded-tr-3xl transition-transform duration-500 transform origin-center bg-yellow-50 hover:shadow-2xl   border-t-8 border-r-8 border-yellow-300 ">
+            <div className="max-w-2xl text-center rounded-tr-3xl transition-transform duration-500 transform origin-center bg-yellow-50 hover:shadow-2xl   border-t-8 border-r-8 border-sky-300 ">
 
 
 

@@ -141,7 +141,7 @@ export const router = createBrowserRouter([
         path: "/whyEasyRecruit",
         element: <WhyEasyRecruit></WhyEasyRecruit>,
       },
- 
+      
       {
         path: "/terms",
         element: <TermsAndConditions></TermsAndConditions>
@@ -154,16 +154,11 @@ export const router = createBrowserRouter([
         path: "/demoPage",
         element: <DemoPage></DemoPage>
       },
-      // {
-      //   path: "/chatbot",
-      //   element: <Chatbot></Chatbot>
-      // },
+      
       {
         path: "/feedback",
         element: 
-        
           <CustomerFeedback></CustomerFeedback>
-       
       },
 
     ],
@@ -180,7 +175,7 @@ export const router = createBrowserRouter([
       {
         path: "allUser",
         element: <AllUsers></AllUsers>,
-      
+        loader: () =>fetch(`http://localhost:5000/userCount`),
       },
       {
         path: "allJobs",
@@ -248,6 +243,8 @@ export const router = createBrowserRouter([
       {
         path: "appointment",
         element: <Appointment></Appointment>,
+        loader: () =>fetch(`http://localhost:5000/postJobCount`),
+
       },
       {
         path: "CVmanage/:id",
