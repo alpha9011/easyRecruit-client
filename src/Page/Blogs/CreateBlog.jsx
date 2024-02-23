@@ -2,6 +2,8 @@
 import { useForm } from "react-hook-form";
 import useAxiosPublic from "../../Hooks/useAxiosPublic";
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
+import { IoEye } from "react-icons/io5";
 
 const CreateBlog = () => {
 
@@ -63,7 +65,11 @@ const CreateBlog = () => {
 
     return (
         <div className="max-w-4xl my-12 mx-auto">
-            <h3 className="text-4xl  text-center mb-12">Create Post</h3>
+            <div className="flex justify-between">
+            <h3 className="text-4xl  text-center mb-12">Create Blog</h3>
+            <Link to={'/blog'}><div className="flex gap-1 items-center text-xl bg-gray-400 px-4 pr-12 py-2"><IoEye/>See All Blog</div></Link>
+
+            </div>
 
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
 

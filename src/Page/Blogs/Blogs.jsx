@@ -37,7 +37,7 @@ const Blogs = () => {
           </div>
         </div>
 
-      </div>
+      </div> 
 
       <div className="grid grid-cols-3 gap-8 max-w-7xl mx-auto">
         {

@@ -12,7 +12,7 @@ const BlogDetails = () => {
     const axiosSecure = useAxiosSecure()
 
     const { data: blog = [] } = useQuery({
-        queryKey: ['blog'],
+        queryKey: ['singleBlog'],
         queryFn: async () => {
             const res = await axiosSecure.get(`/blog/${id}`)
             const blogItem = res.data;
