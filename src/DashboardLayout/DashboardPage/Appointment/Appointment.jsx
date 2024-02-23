@@ -1,21 +1,48 @@
-import { Avatar, Table } from "flowbite-react";
+import { Avatar, Select, Table } from "flowbite-react";
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 const Appointment = () => {
 
   // get all the job post
   const axiosPublic = useAxiosSecure();
   const [jobPost, setjobPost] = useState([]);
-
+  const {count} = useLoaderData();
+  const [currentPage , setCurrentPage] = useState(0)
+  const [itemsPerPage ,setItemsPerPage]=useState (5)
+  const numberOfPages = Math.ceil(count/itemsPerPage)
+ const pages = [...Array(numberOfPages).keys()] 
   useEffect(() => {
-    axiosPublic.get('/postjob')
+    axiosPublic.get((`/postjob?page=${currentPage}&size=${itemsPerPage}`))
       .then(res => {
         setjobPost(res.data)
       })
-  }, [axiosPublic])
+  }, [axiosPublic, currentPage, itemsPerPage])
   console.log(jobPost);
+  const handlePerPage = e => {
+    e.preventDefault()
+    const value = parseInt(e.target.value)
+    setItemsPerPage(value)
+    setCurrentPage(0)
+  }
 
+  const handlePrevPage = ( )=> {
+    
+    if(currentPage > 0) {
+      setCurrentPage((prevPage) => prevPage - 1);
+     
+    }
+  
+  }
+  const handleNextPage = ()=>{
+   
+    if( currentPage < numberOfPages -1) {
+      setCurrentPage((prevPage) => prevPage + 1);
+      
+      
+    }
+   
+  }
   return (
     <div>
       <h2 className="text-center font-bold text-4xl my-3 text-white">
@@ -55,8 +82,33 @@ const Appointment = () => {
             ))}
           </Table.Body>
         </Table>
+
+
       </div>
       <div className="pt-5 flex justify-center "></div>
+      {/* pagination */}
+      <div className="flex justify-center gap-2 mt-5">
+      <button onClick={handlePrevPage} className=" bg-black text-white text-md px-2 py-1 rounded-md">Prev</button>
+      {
+        pages.map(page => <button 
+          key={page}
+          
+          onClick={()=> setCurrentPage(page)}
+          className={` bg-black text-white text-md px-2 py-1 rounded-md ${currentPage === page ? 'selected' : ''}`}
+      
+        
+        >{page +1}</button>)
+      }
+     
+      <button onClick={handleNextPage} className=" bg-black text-white text-md px-2 py-1 rounded-md">Next</button>
+
+      <Select value={itemsPerPage} onChange={handlePerPage}  name="" id="">
+        <option value="5">5</option>
+        <option value="10">10</option>
+        <option value="15">15</option>
+        <option value="20">20</option>
+      </Select>
+    </div>
     </div>
   );
 };
