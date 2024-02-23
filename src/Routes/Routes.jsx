@@ -141,7 +141,7 @@ export const router = createBrowserRouter([
         path: "/whyEasyRecruit",
         element: <WhyEasyRecruit></WhyEasyRecruit>,
       },
- 
+      
       {
         path: "/terms",
         element: <TermsAndConditions></TermsAndConditions>
@@ -154,16 +154,11 @@ export const router = createBrowserRouter([
         path: "/demoPage",
         element: <DemoPage></DemoPage>
       },
-      // {
-      //   path: "/chatbot",
-      //   element: <Chatbot></Chatbot>
-      // },
+      
       {
         path: "/feedback",
         element: 
-        
           <CustomerFeedback></CustomerFeedback>
-       
       },
 
     ],

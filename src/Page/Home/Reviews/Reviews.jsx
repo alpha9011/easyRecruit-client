@@ -14,7 +14,7 @@ const Reviews = () => {
   }, [])
 
   return (
-    <div className=" p-5 bg-gradient-to-r from-gray-400 to-blue-600 ">
+    <div className=" p-5 bg-gradient-to-r  ">
       <h1 className="text-center text-5xl font-extrabold mb-4 ">What Our <span className="text-yellow-400">Client</span> Said</h1>
       
 
@@ -24,7 +24,7 @@ const Reviews = () => {
             key={review.id}
             src={review.avatar}
             alt={`${review.name}'s Avatar`}
-            className={`h-36 w-36 rounded-full m-2 mt-12 ${hoveredReview === review.id ? '' : 'opacity-40'}`}
+            className={`h-24 w-24 rounded-full m-2 mt-12 ${hoveredReview === review.id ? '' : 'opacity-40'}`}
             onMouseEnter={() => setHoveredReview(review.id)}
             onMouseLeave={() => setHoveredReview(review.id)}
           />
