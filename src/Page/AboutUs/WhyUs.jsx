@@ -3,6 +3,7 @@ import { FaCheck } from "react-icons/fa";
 import person from "../../assets/aboutWomen.jpg";
 import background from "../../assets/aboutCr.jpg";
 import PrimaryButton from "../../shared/PrimaryButton/PrimaryButton";
+import { Link } from "react-router-dom";
 const WhyUs = () => {
   return (
     <div className="bg-slate-100 py-10 rounded-tr-[150px] rounded-bl-[150px]">
@@ -53,8 +54,9 @@ const WhyUs = () => {
             <FaCheck className="text-blue-600 text-lg"></FaCheck>
             <p className="text-lg">Complete Solution</p>
           </div>
-
-          <PrimaryButton buttonText=" Contact Us"></PrimaryButton>
+          <Link to="/contact">
+            <PrimaryButton buttonText=" Contact Us"></PrimaryButton>
+          </Link>
         </div>
       </div>
 
