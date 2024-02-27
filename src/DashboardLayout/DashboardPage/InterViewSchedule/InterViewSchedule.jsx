@@ -43,6 +43,7 @@ const InterViewSchedule = () => {
       return null;
     },
   };
+  
   // console.log(events);
   const handleSelectSlot = ({ start, end }) => {
     setSelectedSlotStyle({

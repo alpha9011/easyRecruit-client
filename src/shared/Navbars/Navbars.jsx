@@ -13,19 +13,19 @@ import "react-modern-drawer/dist/index.css";
 
 const Navbars = () => {
   //Dark mode []
-  const [theme, setTheme] = useState("light")
+  const [theme, setTheme] = useState("light");
 
-  useEffect(()=>{
-    if(theme === "dark"){
+  useEffect(() => {
+    if (theme === "dark") {
       document.documentElement.classList.add("dark");
-    } else{
+    } else {
       document.documentElement.classList.remove("dark");
     }
-  })
-  const handleTheme=()=>{
-    setTheme(theme ==="dark" ? "light" : "dark")
-  }  
-  
+  });
+  const handleTheme = () => {
+    setTheme(theme === "dark" ? "light" : "dark");
+  };
+
   const { user, logOut } = useContext(AuthContext);
   const [isOpen, setIsOpen] = useState(false);
   const toggleDrawer = () => {
@@ -41,6 +41,7 @@ const Navbars = () => {
             : "   hover:border-y hover:border-blue-500 hover:backdrop-blur-3xl"
         }`;
   };
+  
   //  NavMenu Side bar
   const navMenu = (
     <div>
@@ -89,7 +90,9 @@ const Navbars = () => {
         <NavLink to="/circular" className={navLinkStyle} onClick={handleTheme}>
           Circular
         </NavLink>
-
+        <NavLink to="/blog" className={navLinkStyle} onClick={handleTheme}>
+          Blog
+        </NavLink>
         {user ? (
           <Button
             outline
@@ -152,25 +155,26 @@ const Navbars = () => {
               </Navbar.Link>
             </div>
 
-            {
-      user ?     <Button
-      outline
-      gradientDuoTone="purpleToBlue"
-      onClick={() => logOut()}
-      className="inline-block w-full text-center text-xl mt-2"
-    >
-      logout
-    </Button> 
-    : 
-    <Link to='/login'><Button
-    outline
-    gradientDuoTone="purpleToBlue"
-    
-    className="inline-block w-full text-center text-xl mt-2"
-  >
-    login
-  </Button> </Link>
-    }
+            {user ? (
+              <Button
+                outline
+                gradientDuoTone="purpleToBlue"
+                onClick={() => logOut()}
+                className="inline-block w-full text-center text-xl mt-2"
+              >
+                logout
+              </Button>
+            ) : (
+              <Link to="/login">
+                <Button
+                  outline
+                  gradientDuoTone="purpleToBlue"
+                  className="inline-block w-full text-center text-xl mt-2"
+                >
+                  login
+                </Button>{" "}
+              </Link>
+            )}
           </Dropdown.Header>
           <Dropdown.Divider />
         </Dropdown>
@@ -191,7 +195,7 @@ const Navbars = () => {
           <Navbar.Link>
             <NavLink to="/whyEasyRecruit">Why Us</NavLink>
           </Navbar.Link>
-          
+
           <Navbar.Link>
             <NavLink to="/contact">Contact</NavLink>
           </Navbar.Link>
@@ -204,7 +208,6 @@ const Navbars = () => {
           <Navbar.Link>
             <NavLink to="/blog">Blog</NavLink>
           </Navbar.Link>
-         
         </Navbar.Collapse>
       </div>
 

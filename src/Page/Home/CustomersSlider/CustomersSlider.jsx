@@ -71,7 +71,7 @@ const CustomersSlider = () => {
           </SwiperSlide>
         </Swiper>
         <div className="lg:hidden group-hover:block absolute text-xl  md:text-3xl font-bold">
-          <Link to="/" className="pointer text-sky-500 hover:opacity-75"> All our Customers</Link>
+          <Link  className="pointer text-sky-500 hover:opacity-75"> All our Customers</Link>
         </div>
       </div>
     </div>

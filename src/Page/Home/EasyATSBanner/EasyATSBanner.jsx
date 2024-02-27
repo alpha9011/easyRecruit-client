@@ -18,14 +18,13 @@ const EasyATSBanner = () => {
           </p>
         </div>
       </div>
-
       <img
-        className="h-[70vh] w-full object-cover object-center md:object-left lg:object-top  z-0"
+        className="h-[70vh] w-full object-cover object-center md:object-left lg:object-top  z-0 blur-sm"
         src={EasyATSBannerImg}
         alt="EasyATSBanner"
       />
       {/* <div className="absolute inset-0  bg-gradient-to-r from-transparent to-blue-500 "></div> */}
-      <div className="absolute inset-0  bg-gradient-to-r from-transparent to-[#139BFF] "></div>
+      <div className="absolute inset-0  bg-gradient-to-l from-transparent to-[#139BFF] "></div>
       {/* <div className="absolute inset-0  bg-gradient-to-br from-[#191970] via-[#4169e1] to-[#6a5acd] opacity-70"></div> */}
 
       <div className="flex flex-col md:flex-row justify-center items-center bg-sky-500 p-5 ">
@@ -33,12 +32,7 @@ const EasyATSBanner = () => {
           Learn how to recruit employees quickly with EasyRecruit applicant
           tracking software.
         </h4>
-        <Button
-          outline
-          className="bg-gradient-to-br from-[#191970] via-[#4169e1] to-[#6a5acd]"
-        >
-          Request A Demo
-        </Button>
+      
       </div>
     </div>
   );

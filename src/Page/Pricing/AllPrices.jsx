@@ -34,10 +34,11 @@ const AllPrices = () => {
                         >
                             Request a Demo
                         </button>
+                        
                     </Link>
                     <Link to="/register">
                         <button
-                            type="button"
+                        type="button"
                             className="inline-flex w-[150px] justify-center rounded hover:bg-cyan-500 px-5 py-2.5 text-center text-sm font-medium hover:text-white bg-white text-cyan-500 border-2 duration-500 border-cyan-500 focus:outline-none focus:ring-4 focus:ring-cyan-200 dark:focus:ring-cyan-900"
                         >
                             Try it Free
