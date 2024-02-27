@@ -8,7 +8,7 @@ const  SecondaryButton = ({
   display,
   onClick,
 }) => {
-  const buttonClasses = `button-primary 
+  const buttonClasses = `secondary-primary 
   ${textColor}
    ${font}
     ${hover}

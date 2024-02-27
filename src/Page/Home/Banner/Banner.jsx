@@ -1,4 +1,4 @@
-import './Banner.css'
+import "./Banner.css";
 import Lottie from "lottie-react";
 // import bannerAnimation from "../../../Json/Animation-banner.json";
 import bannerAnimation from "../../../Json/Animation-banner2.json";
@@ -17,11 +17,11 @@ const Banner = () => {
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
-        height: "calc(100vh - 65px)"
+        height: "calc(100vh - 65px)",
       }}
     >
       {/* Banner section */}
-      <div className='area'>
+      <div className="area">
         <ul className="circles">
           <li></li>
           <li></li>
@@ -34,7 +34,7 @@ const Banner = () => {
           <li></li>
           <li></li>
         </ul>
-    </div>
+      </div>
       <div className=" container mx-auto h-screen flex flex-col-reverse md:flex-row gap-10 items-center   p-5 md:pb-28 ">
         <div className="md:w-1/2">
           <motion.h2
@@ -70,5 +70,4 @@ const Banner = () => {
     </div>
   );
 };
-
 export default Banner;
