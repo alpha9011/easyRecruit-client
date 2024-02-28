@@ -66,6 +66,7 @@ const MyJobCard = ({ myjob,refetch }) => {
 
     });
   }
+
   return (
     <div>
       <Card>
@@ -90,6 +91,7 @@ const MyJobCard = ({ myjob,refetch }) => {
               
               <Link to={`/dashboard/myCandidate/${_id}`} className=" px-3 py-2 bg-blue-700 text-white  rounded-md hover:bg-slate-800 hover:-translate-y-[2px] duration-75 cursor-pointer flex items-center w-fit gap-2"><FaUsers /></Link>
             </div>
+           
 
 
             <Button onClick={() => setOpenModal(true)} className="px-2 py-1 mt-5 bg-blue-700 hover:bg-blue-900 text-white  rounded-md  hover:-translate-y-[2px] duration-75 cursor-pointer flex items-center w-full gap-2 ">See Details</Button>
