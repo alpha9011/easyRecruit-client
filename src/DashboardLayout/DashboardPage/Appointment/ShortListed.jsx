@@ -15,7 +15,7 @@ const ShortListed = () => {
         queryFn: async () => {
             const res = await axiosSecure.get('/applicantCV/selected')
             const applier = res.data;
-            console.log(applier);
+            
             const candidate = applier.filter(apply =>
                 apply.companyName === companyName && apply.jobTitle === title)
             return candidate
