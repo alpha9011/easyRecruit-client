@@ -41,7 +41,7 @@ const EmailModal = ({ candidate }) => {
                         title: "Email send successFully",
                         showConfirmButton: false,
                         timer: 1500
-                    });
+                    }); zz
                     reset()
                 }
             })
@@ -65,7 +65,8 @@ const EmailModal = ({ candidate }) => {
                                             <Label htmlFor="email" value="Email address" />
                                         </div>
                                         <TextInput id="email" type="email" {...register("email", { required: true })} name='email' placeholder="receveres email address" defaultValue={candidate.email} shadow />
-                                        {errors.email && <span className="text-red-600">Email address is required</span>}
+                                        {errors.email && <span className="text-red-600">
+                                            Email address is required</span>}
                                     </div>
                                     <div>
                                         <div className="mb-2 block">

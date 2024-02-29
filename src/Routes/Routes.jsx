@@ -43,6 +43,8 @@ import UpdateBlog from "../Page/Blogs/UpdateBlog";
 import ResumeMaker from "../Page/ResumeMaker/ResumeMaker";
 import AllResume from "../Page/ResumeMaker/AllResume";
 import Support from "../DashboardLayout/DashboardPage/Support/Support";
+import Dashboard2 from "../DashboardLayout/Dashboard/Dashoard2";
+import Dashboard3 from "../DashboardLayout/Dashboard/Dashboard3";
 
 export const router = createBrowserRouter([
   {
@@ -77,34 +79,34 @@ export const router = createBrowserRouter([
       {
         path: "/circular",
         element: <Circular></Circular>,
-        loader: () =>fetch(`http://localhost:5000/postJobCount`),
+        loader: () => fetch(`http://localhost:5000/postJobCount`),
       },
       {
         path: "/resumeMaker",
-        element: <ResumeMaker/>
+        element: <ResumeMaker />,
       },
       {
         path: "/allResume",
-        element: <AllResume/>
+        element: <AllResume />,
       },
       {
         path: "/blog",
-        element: <Blogs></Blogs>
+        element: <Blogs></Blogs>,
       },
       {
         path: "/blog/:id",
         element: <BlogDetails></BlogDetails>,
-        // loader : ({params}) =>  fetch(`http://localhost:5000/blog/${params.id}`) 
+        // loader : ({params}) =>  fetch(`http://localhost:5000/blog/${params.id}`)
       },
       {
         path: "/createBlog",
-        element: <CreateBlog></CreateBlog>
+        element: <CreateBlog></CreateBlog>,
       },
       {
         path: "/updateBlog/:id",
         element: <UpdateBlog></UpdateBlog>,
-        loader : ({params}) =>  fetch(`http://localhost:5000/blog/${params.id}`) 
-
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/blog/${params.id}`),
       },
       {
         path: "/jobdetails/:id",
@@ -124,7 +126,6 @@ export const router = createBrowserRouter([
         loader: ({ params }) =>
           fetch(`http://localhost:5000/postjob/${params.id}`),
       },
-
       {
         path: "/price",
         element: <Pricing></Pricing>,
@@ -141,26 +142,49 @@ export const router = createBrowserRouter([
         path: "/whyEasyRecruit",
         element: <WhyEasyRecruit></WhyEasyRecruit>,
       },
-      
+
       {
         path: "/terms",
-        element: <TermsAndConditions></TermsAndConditions>
+        element: <TermsAndConditions></TermsAndConditions>,
       },
       {
         path: "/privacy",
-        element: <PrivacyPolicy></PrivacyPolicy>
+        element: <PrivacyPolicy></PrivacyPolicy>,
       },
       {
         path: "/demoPage",
-        element: <DemoPage></DemoPage>
-      },
-      
-      {
-        path: "/feedback",
-        element: 
-          <CustomerFeedback></CustomerFeedback>
+        element: <DemoPage></DemoPage>,
       },
 
+      {
+        path: "/feedback",
+        element: <CustomerFeedback></CustomerFeedback>,
+      },
+      // Live
+
+      {
+        path: "support2",
+        element: <Support></Support>,
+      },
+      // test demo
+      {
+        path: "/dashboard2",
+        element: <Dashboard2></Dashboard2>,
+        children: [
+          { path: "myjobs2", element: <MyJobs></MyJobs> },
+          {
+            path: "allJobs2",
+            element: <ALLShowJobs></ALLShowJobs>,
+            loader: () => fetch(`http://localhost:5000/postJobCount`),
+          },
+          {
+            path: "allCandidates2/:id",
+            element: <AllJobsCandidates></AllJobsCandidates>,
+            loader: ({ params }) =>
+              fetch(`http://localhost:5000/postjob/${params.id}`),
+          },
+        ],
+      },
     ],
   },
   {
@@ -175,30 +199,30 @@ export const router = createBrowserRouter([
       {
         path: "allUser",
         element: <AllUsers></AllUsers>,
-        loader: () =>fetch(`http://localhost:5000/userCount`),
+        loader: () => fetch(`http://localhost:5000/userCount`),
       },
       {
         path: "allJobs",
-       element:<ALLShowJobs></ALLShowJobs>,
-       loader: () =>fetch(`http://localhost:5000/postJobCount`),
-
+        element: <ALLShowJobs></ALLShowJobs>,
+        loader: () => fetch(`http://localhost:5000/postJobCount`),
       },
       {
         path: "allCandidates/:id",
         element: <AllJobsCandidates></AllJobsCandidates>,
-        loader: ({ params }) => fetch(`http://localhost:5000/postjob/${params.id}`),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/postjob/${params.id}`),
       },
       {
         path: "allCandidates",
-        element: <AllJobs></AllJobs> ,
-        loader: () =>fetch(`http://localhost:5000/postJobCount`),
+        element: <AllJobs></AllJobs>,
+        loader: () => fetch(`http://localhost:5000/postJobCount`),
       },
       {
         path: "shortlisted/:id",
         element: <ShortListed></ShortListed>,
-        loader: ({ params }) => fetch(`http://localhost:5000/postjob/${params.id}`),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/postjob/${params.id}`),
       },
-
       // Normal user routs
       {
         path: "customerProfile",
@@ -218,7 +242,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "support",
-        element: <Support></Support>
+        element: <Support></Support>,
       },
       {
         path: "myCandidate/:id",
@@ -243,8 +267,102 @@ export const router = createBrowserRouter([
       {
         path: "appointment",
         element: <Appointment></Appointment>,
-        loader: () =>fetch(`http://localhost:5000/postJobCount`),
+        loader: () => fetch(`http://localhost:5000/postJobCount`),
+      },
+      {
+        path: "CVmanage/:id",
+        element: <CVmanage />,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/applicantCV/${params.id}`),
+      },
+    ],
+  },
 
+  //demo testing
+
+  {
+    path: "/dashboard3",
+    element: (
+      <PrivateRout>
+        {/* <Dashboard></Dashboard> */}
+        <Dashboard3></Dashboard3>
+      </PrivateRout>
+    ),
+    children: [
+      // Admin User routs
+      {
+        path: "allUser",
+        element: <AllUsers></AllUsers>,
+        loader: () => fetch(`http://localhost:5000/userCount`),
+      },
+      {
+        path: "allJobs",
+        element: <ALLShowJobs></ALLShowJobs>,
+        loader: () => fetch(`http://localhost:5000/postJobCount`),
+      },
+      {
+        path: "allCandidates/:id",
+        element: <AllJobsCandidates></AllJobsCandidates>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/postjob/${params.id}`),
+      },
+      {
+        path: "allCandidates",
+        element: <AllJobs></AllJobs>,
+        loader: () => fetch(`http://localhost:5000/postJobCount`),
+      },
+      {
+        path: "shortlisted/:id",
+        element: <ShortListed></ShortListed>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/postjob/${params.id}`),
+      },
+
+      // Normal user routs
+      {
+        path: "customerProfile",
+        element: <CustomerProfile></CustomerProfile>,
+      },
+      {
+        path: "dashboardHome",
+        element: <DashboardHome></DashboardHome>,
+      },
+      {
+        path: "candidates",
+        element: <Candidates></Candidates>,
+      },
+      {
+        path: "myjobs",
+        element: <MyJobs></MyJobs>,
+      },
+      {
+        path: "support",
+        element: <Support></Support>,
+      },
+      {
+        path: "myCandidate/:id",
+        element: <MyCandidates></MyCandidates>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/postjob/${params.id}`),
+      },
+      {
+        path: "updateJob/:id",
+        element: <UpdateJob></UpdateJob>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/postjob/${params.id}`),
+      },
+      {
+        path: "postjob",
+        element: <PostJob></PostJob>,
+      },
+      {
+        path: "interviewSchedule",
+        element: <InterViewSchedule></InterViewSchedule>,
+      },
+      {
+        path: "appointment",
+        element: <Appointment></Appointment>,
+        loader: () => fetch(`http://localhost:5000/postJobCount`),
       },
       {
         path: "CVmanage/:id",

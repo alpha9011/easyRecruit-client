@@ -4,6 +4,7 @@ import appointmentData from "../../../Json/appointmentData.json";
 import PrimaryButton from "../../../shared/PrimaryButton/PrimaryButton";
 
 const AppointedCandidate = () => {
+  
   const handleSendEmails = () => {
     Swal.fire({
       position: "center",

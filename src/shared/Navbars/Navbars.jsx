@@ -41,7 +41,7 @@ const Navbars = () => {
             : "   hover:border-y hover:border-blue-500 hover:backdrop-blur-3xl"
         }`;
   };
-  
+
   //  NavMenu Side bar
   const navMenu = (
     <div>
@@ -62,6 +62,7 @@ const Navbars = () => {
         <NavLink to="/dashboard/dashboardHome" className={navLinkStyle}>
           Dashboard
         </NavLink>
+   
 
         <NavLink to="/" className={navLinkStyle}>
           Home
@@ -93,6 +94,7 @@ const Navbars = () => {
         <NavLink to="/blog" className={navLinkStyle} onClick={handleTheme}>
           Blog
         </NavLink>
+       
         {user ? (
           <Button
             outline
@@ -153,6 +155,12 @@ const Navbars = () => {
                   Dashboard
                 </NavLink>
               </Navbar.Link>
+              {/* testing */}
+              <Navbar.Link>
+                <NavLink to="/dashboard3/dashboardHome" className="text-lg">
+                  Dashboard3
+                </NavLink>
+              </Navbar.Link>
             </div>
 
             {user ? (
@@ -207,6 +215,9 @@ const Navbars = () => {
           </Navbar.Link>
           <Navbar.Link>
             <NavLink to="/blog">Blog</NavLink>
+          </Navbar.Link>
+          <Navbar.Link>
+            <NavLink to="/dashboard2">dashboard2</NavLink>
           </Navbar.Link>
         </Navbar.Collapse>
       </div>

@@ -19,7 +19,7 @@ const EasyATSBanner = () => {
         </div>
       </div>
       <img
-        className="h-[70vh] w-full object-cover object-center md:object-left lg:object-top  z-0 blur-sm"
+        className="h-[70vh] w-full object-cover object-center md:object-left lg:object-top  z-0"
         src={EasyATSBannerImg}
         alt="EasyATSBanner"
       />

@@ -14,7 +14,7 @@ import { Link } from "react-router-dom";
 const CustomersSlider = () => {
 
   return (
-    <div className="group">
+    <div className="group hidden lg:block" >
       <div className="relative flex flex-col md:flex-row items-center justify-center h-20 w-full my-20 ">
         <Swiper
       
