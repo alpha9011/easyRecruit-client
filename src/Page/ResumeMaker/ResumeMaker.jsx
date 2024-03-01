@@ -19,19 +19,28 @@ const ResumeMaker = () => {
     },
     education: {
       degree: '',
-      school: '',
+      college: '',
+      university : '',
       graduationYear: '',
     },
     workExperience: {
       position: '',
+      experience: '',
+      title:'',
       company: '',
       startDate: '',
       endDate: '',
     },
     skills: {
       programming: '',
+      project: '',
+      projectDetails: '',
       communication: '',
       teamwork: '',
+    },
+    language: {
+      native: '',
+      foreign: '',
     },
   });
 
@@ -72,9 +81,11 @@ const ResumeMaker = () => {
         {/* form  */}
         <form onSubmit={handleSubmit}>
 
-          <div className="grid grid-cols-2 space-y-6 mt-12">
+          <div className="grid grid-cols-2 space-y-4 mt-12">
 
             <div>
+              <h2 className="text-2xl font-bold"> Personal Info : </h2>
+
               <label>Name:</label> <br></br>
               <input
                 className="border w-1/2 px-4 py-2 mt-2"
@@ -95,15 +106,7 @@ const ResumeMaker = () => {
             </div>
 
 
-            <div>
-              <label>Vision:</label> <br></br>
-              <input
-                className="border w-1/2 px-4 py-6 mt-2"
-                type="text"
-                value={resumeData.personalInfo.jobDescription}
-                onChange={(e) => handleInputChange('personalInfo', 'jobDescription', e.target.value)}
-              />
-            </div>
+
 
             <div>
               <label>Email:</label> <br></br>
@@ -127,6 +130,21 @@ const ResumeMaker = () => {
 
 
             <div>
+              <h2 className="text-2xl font-bold"> Vision : </h2>
+              <br></br>
+              <textarea
+                cols="10" rows="4"
+                className="border w-2/3 px-4 py-6 mt-2"
+                type="text"
+                value={resumeData.personalInfo.jobDescription}
+                onChange={(e) => handleInputChange('personalInfo', 'jobDescription', e.target.value)}
+              ></textarea>
+            </div>
+
+            <br />
+
+            <div>
+              <h2 className="text-2xl font-bold"> Education : </h2>
               <label>Degree:</label> <br></br>
               <input
                 className="border w-1/2 px-4 py-2 mt-2"
@@ -136,7 +154,19 @@ const ResumeMaker = () => {
               />
             </div>
 
+            
 
+
+
+            <div>
+              <label>College:</label> <br></br>
+              <input
+                className="border w-1/2 px-4 py-2 mt-2"
+                type="text"
+                value={resumeData.education.school}
+                onChange={(e) => handleInputChange('education', 'college', e.target.value)}
+              />
+            </div>
 
             <div>
               <label>University:</label> <br></br>
@@ -144,21 +174,24 @@ const ResumeMaker = () => {
                 className="border w-1/2 px-4 py-2 mt-2"
                 type="text"
                 value={resumeData.education.school}
-                onChange={(e) => handleInputChange('education', 'school', e.target.value)}
+                onChange={(e) => handleInputChange('education', 'university', e.target.value)}
               />
             </div>
 
             <div>
               <label>Graduation Year:</label> <br></br>
               <input
-                className="border w-1/2 px-4 py-2 mt-2"
+                className="border w-1/2 px-4 py-2 mt-3 mb-8"
                 type="date"
                 value={resumeData.education.graduationYear}
                 onChange={(e) => handleInputChange('education', 'graduationYear', e.target.value)}
               />
             </div>
 
+
             <div>
+            <h2 className="text-2xl font-bold"> Experience : </h2>
+              
               <label>Position:</label> <br></br>
               <input
                 className="border w-1/2 px-4 py-2 mt-2"
@@ -168,6 +201,17 @@ const ResumeMaker = () => {
               />
             </div>
 
+            <div >
+              <label >Experience Field:</label> <br></br>
+              <textarea
+              cols="10" rows="4"
+                className="border w-1/2 px-4 py-2 mt-2"
+                type="text"
+                value={resumeData.workExperience.experience}
+                onChange={(e) => handleInputChange('workExperience', 'experience', e.target.value)}
+                ></textarea>
+            </div>
+
             <div>
               <label>Company:</label> <br></br>
               <input
@@ -175,6 +219,16 @@ const ResumeMaker = () => {
                 type="text"
                 value={resumeData.workExperience.company}
                 onChange={(e) => handleInputChange('workExperience', 'company', e.target.value)}
+              />
+            </div>
+
+            <div>
+            <label>Title:</label> <br></br>
+              <input
+                className="border w-1/2 px-4 py-2 mt-2"
+                type="text"
+                value={resumeData.education.title}
+                onChange={(e) => handleInputChange('education', 'title', e.target.value)}
               />
             </div>
 
@@ -201,6 +255,8 @@ const ResumeMaker = () => {
             </div>
 
             <div>
+            <h2 className="text-2xl font-bold"> Skills : </h2>
+
               <label>Programming Skills:</label> <br></br>
               <input
                 className="border w-1/2 px-4 py-2 mt-2"
@@ -210,26 +266,63 @@ const ResumeMaker = () => {
               />
             </div>
 
+           
             <div>
-              <label>Communication Skills:</label> <br></br>
+              <label>Project:</label> <br></br>
               <input
                 className="border w-1/2 px-4 py-2 mt-2"
                 type="text"
-                value={resumeData.skills.communication}
-                onChange={(e) => handleInputChange('skills', 'communication', e.target.value)}
+                value={resumeData.skills.project}
+                onChange={(e) => handleInputChange('skills', 'project', e.target.value)}
               />
             </div>
 
             <div>
+              <label> Project Details :</label> <br></br>
+              <textarea
+
+                className="border w-1/2 px-4 py-2 mt-2"
+                type="text"
+                value={resumeData.skills.projectDetails}
+                onChange={(e) => handleInputChange('skills', 'projectDetails', e.target.value)}
+                name="" id="" cols="10" rows="4"></textarea>
+            </div>
+
+            <div>
               <label>Teamwork Skills:</label> <br></br>
-              <input
+              <textarea
                 className="border w-1/2 px-4 py-5 mt-2"
                 type="text"
                 value={resumeData.skills.teamwork}
                 onChange={(e) => handleInputChange('skills', 'teamwork', e.target.value)}
+              ></textarea>
+            </div>
+
+            <div>
+              <h2 className="mb-2 text-3xl font-bold">Language : </h2>
+              <label>Native : </label> <br></br>
+              <input
+                className="border w-1/2 px-4 py-5 mt-2"
+                type="text"
+                value={resumeData.language.native}
+                onChange={(e) => handleInputChange('language', 'native', e.target.value)}
               />
             </div>
+
+            <div>
+              <label>Foreign : </label> <br></br>
+              <input
+                className="border w-1/2 px-4 py-5 mt-2"
+                type="text"
+                value={resumeData.language.foreign}
+                onChange={(e) => handleInputChange('language', 'foreign', e.target.value)}
+              />
+            </div>
+
+
           </div>
+
+
 
 
           <button className="px-4 py-2 bg-gray-400 my-4 " type="submit">Submit Resume</button>
@@ -240,72 +333,79 @@ const ResumeMaker = () => {
 
       {submittedResume && (
 
-        <div className="max-w-4xl mx-auto  p-24  ">
-          <h2 className="text-3xl font-bold"> Demo Resume____ </h2>
-          <div className="">
-
+        <>
+          <h2 className="text-3xl text-center mb-6 font-bold"> Demo Resume____ </h2>
+          <div className="max-w-4xl mx-auto  p-24  ">
             <div className="">
 
-              <div>
-                <p className="text-3xl font-bold">{submittedResume?.personalInfo.name}</p>
-                <p className="font-bold"> {submittedResume?.personalInfo.job}</p>
-              </div>
+              <div className="">
 
-              <div className="flex justify-between">
-                <p><span className="font-bold">Email:</span> {submittedResume?.personalInfo.email}</p>
-                <p><span className="font-bold">Phone:</span> {submittedResume?.personalInfo.phone}</p>
-              </div>
+                <div>
+                  <p className="text-3xl font-bold">{submittedResume?.personalInfo.name}</p>
+                  <p className="font-bold"> {submittedResume?.personalInfo.job}</p>
+                </div>
 
-              <div className="divider"></div>
+                <div className="flex justify-between">
+                  <p><span className="font-bold">Email:</span> {submittedResume?.personalInfo.email}</p>
+                  <p><span className="font-bold">Phone:</span> {submittedResume?.personalInfo.phone}</p>
+                </div>
 
-              <p><span className="text-2xl font-bold">Vision:</span> <br /> {submittedResume?.personalInfo.jobDescription}</p>
+                <div className="divider my-4 border"></div>
+
+                <p><span className="text-2xl font-bold">Vision:</span> <br /> {submittedResume?.personalInfo.jobDescription}</p>
 
 
-              <div className="flex justify-between">
                 <div className="">
-                  <p className="text-2xl font-bold mt-3">Education : </p>
-                  <p><span className="font-bold">Degree:</span> {submittedResume?.education.degree}</p>
-                  <p><span className="font-bold">School:</span> {submittedResume?.education.school}</p>
-                  <p><span className="font-bold">Graduation Year:</span> {submittedResume?.education.graduationYear}</p>
+                  <div className="">
+                    <p className="text-2xl font-bold mt-3">Education : </p>
+                    <p><span className="font-bold">Degree:</span> {submittedResume?.education.degree}</p>
+                    <p><span className="font-bold">college:</span> {submittedResume?.education.college}</p>
+                    <p><span className="font-bold">University:</span> {submittedResume?.education.university}</p>
+                    <p><span className="font-bold">Graduation Year:</span> {submittedResume?.education.graduationYear}</p>
+                  </div>
+                  <div>
+                    <p className="text-2xl font-bold mt-3">Experience : </p>
+                    <p><span className="font-bold">Position:</span> {submittedResume?.workExperience.position}</p>
+                    <p><span className="font-bold">Details:</span> {submittedResume?.workExperience.experience}</p>
+                    <p><span className="font-bold">Company:</span> {submittedResume?.workExperience.company}</p>
+                    <p><span className="font-bold">Title:</span> {submittedResume?.workExperience.title}</p>
+                    <p><span className="font-bold">Start Date:</span> {submittedResume?.workExperience.startDate}</p>
+                    <p><span className="font-bold">End Date:</span>  {submittedResume?.workExperience.endDate}</p>
+                  </div>
                 </div>
-                <div>
-                  <p className="text-2xl font-bold mt-3">Experience : </p>
-                  <p><span className="font-bold">Position:</span> {submittedResume?.workExperience.position}</p>
-                  <p><span className="font-bold">Company:</span> {submittedResume?.workExperience.company}</p>
-                  <p><span className="font-bold">Start Date:</span> {submittedResume?.workExperience.startDate}</p>
-                  <p><span className="font-bold">End Date:</span>  {submittedResume?.workExperience.endDate}</p>
+
+
+                <div className=" ">
+                  <div>
+                    <p className="text-2xl font-bold mt-3">Skills :</p>
+                    <p><span className="font-bold">Programming Skills:</span> {submittedResume?.skills.programming}</p>
+                    <p><span className="font-bold">Project:</span> {submittedResume?.skills.project}</p>
+                    <p><span className="font-bold">Project Details:</span> {submittedResume?.skills.projectDetails}</p>
+                    <p><span className="font-bold">Teamwork Skills:</span> {submittedResume?.skills.teamwork}</p>
+                  </div>
+
+                  <div>
+                    <p className="text-2xl font-bold mt-3">Language :</p>
+
+                    <p > <span className="font-bold">Native: </span> {submittedResume?.language.native}</p>
+                    <p ><span className="font-bold">Foreign: </span>{submittedResume?.language.foreign}</p>
+                  </div>
                 </div>
+
               </div>
+            </div>
 
 
-              <div className="flex justify-between">
-                <div>
-                  <p className="text-2xl font-bold mt-3">Skills :</p>
-                  <p><span className="font-bold">Programming Skills:</span> {submittedResume?.skills.programming}</p>
-                  <p><span className="font-bold">Communication Skills:</span> {submittedResume?.skills.communication}</p>
-                  <p><span className="font-bold">Teamwork Skills:</span> {submittedResume?.skills.teamwork}</p>
-                </div>
+            <div className="my-4">
 
-                <div>
-                  <p className="text-2xl font-bold mt-3">Language :</p>
-                  <p > <span className="font-bold">Native: </span> Bangla</p>
-                  <p ><span className="font-bold">Foreign: </span>Bangla</p>
-                </div>
-              </div>
+              <PDFDownloadLink document={<ResumePdf resumeData={submittedResume} />} filename="FORM">
+                {({ loading }) => (loading ? <button>Loading Document...</button> : <button className="px-4 py-2 bg-gray-400">Download PDF</button>)}
+              </PDFDownloadLink>
 
             </div>
-          </div>
-
-
-          <div className="my-4">
-
-            <PDFDownloadLink document={<ResumePdf resumeData={submittedResume} />} filename="FORM">
-              {({ loading }) => (loading ? <button>Loading Document...</button> : <button className="px-4 py-2 bg-gray-400">Download PDF</button>)}
-            </PDFDownloadLink>
 
           </div>
-
-        </div>
+        </>
 
 
 
