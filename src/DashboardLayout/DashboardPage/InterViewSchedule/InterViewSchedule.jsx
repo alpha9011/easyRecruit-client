@@ -1,66 +1,57 @@
 import { Calendar, momentLocalizer } from "react-big-calendar";
 import moment from "moment";
-import { useState } from "react";
 
+import useAxiosSecure from "../../../Hooks/useAxiosSecure";
+import { useQuery } from "@tanstack/react-query";
 
-const localizer = momentLocalizer(moment); // or globalizeLocalizer
+const localizer = momentLocalizer(moment);
 
 const InterViewSchedule = () => {
+  // const [selectedData, setSelectedData] = useState({});
 
-  const [selectedData, setSelectedData] = useState({});
+  // const [selectedSlotStyle, setSelectedSlotStyle] = useState({});
 
-  const [selectedSlotStyle, setSelectedSlotStyle] = useState({});
+  // const handleSelectSlot = ({ start, end }) => {
+  //   setSelectedSlotStyle({
+  //     backgroundColor: "rgba(0, 123, 255, 0.5)",
+  //     borderRadius: "3px",
+  //   });
 
-  const [events, setEvents] = useState([
+  //   setSelectedData({ start, end });
+  // };
+  // start 
+  const axiosSecure = useAxiosSecure();
 
-    {
-      start: moment("2024-02-01-18T11:00:00").toDate(),
-      end: moment("2024-02-01-18T12:00:00").toDate(),
-      title: "test event",
+  const { data: appointmentInfo } = useQuery({
+    queryKey: ["appointmentInfo"],
+    queryFn: async () => {
+      const res = await axiosSecure.get(`/interviewMessage`);
+      return res.data;
     },
-    {
-      title: "Inerview 1",
-      start: new Date(2024, 1, 1, 10, 0),
-      end: new Date(2024, 1, 1, 12, 0),
-    },
-    {
-      title: "Interview 2",
-      start: new Date(2024, 1, 2, 14, 0),
-      end: new Date(2024, 1, 2, 16, 0),
-    },
+  });
 
-  ]);
+  const events = appointmentInfo?.map((appointment) => ({
+    title: appointment?.title,
+    start: new Date(appointment?.start),
+    end: new Date(appointment?.end),
+  }));
 
-  const handleSelectSlot = ({ start, end }) => {
-    setSelectedSlotStyle({
-      backgroundColor: "rgba(0, 123, 255, 0.5)", // Adjust the color as needed
-      borderRadius: "3px",
-    });
-
-    setSelectedData({ start, end });
-  };
-  const handleSaveEvent = (title) => {
-    const newEvent = { title, ...selectedData };
-    setEvents([...events, newEvent]);
-
-    // Handle the selected data as needed
-    console.log("Selected Event:", newEvent);
-  };
   return (
     <>
-      <div >
+      <div>
         <h2 className="text-center font-bold text-3xl text-white opacity-90 my-3">
           Interview Schedule
         </h2>
+
         <Calendar
           localizer={localizer}
           events={events}
           startAccessor="start"
           endAccessor="end"
-          style={{ height: 500 }}
+          style={{ height: "70vh" }}
           selectable
-          onSelectSlot={handleSelectSlot}
-          className="bg-white rounded-xl md:p-3 font-bold"
+          // onSelectSlot={handleSelectSlot}
+          className="bg-white rounded-xl md:p-3 font-bold "
         />
       </div>
     </>

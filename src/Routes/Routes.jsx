@@ -42,8 +42,7 @@ import BlogDetails from "../Page/Blogs/BlogDetails";
 import UpdateBlog from "../Page/Blogs/UpdateBlog";
 import ResumeMaker from "../Page/ResumeMaker/ResumeMaker";
 import AllResume from "../Page/ResumeMaker/AllResume";
-import Support from "../DashboardLayout/DashboardPage/Support/Support";
-
+import MeetAndConnect from "../DashboardLayout/DashboardPage/MeetAndConnect/MeetAndConnect";
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -77,34 +76,34 @@ export const router = createBrowserRouter([
       {
         path: "/circular",
         element: <Circular></Circular>,
-        loader: () =>fetch(`http://localhost:5000/postJobCount`),
+        loader: () => fetch(`http://localhost:5000/postJobCount`),
       },
       {
         path: "/resumeMaker",
-        element: <ResumeMaker/>
+        element: <ResumeMaker />,
       },
       {
         path: "/allResume",
-        element: <AllResume/>
+        element: <AllResume />,
       },
       {
         path: "/blog",
-        element: <Blogs></Blogs>
+        element: <Blogs></Blogs>,
       },
       {
         path: "/blog/:id",
         element: <BlogDetails></BlogDetails>,
-        // loader : ({params}) =>  fetch(`http://localhost:5000/blog/${params.id}`) 
+        // loader : ({params}) =>  fetch(`http://localhost:5000/blog/${params.id}`)
       },
       {
         path: "/createBlog",
-        element: <CreateBlog></CreateBlog>
+        element: <CreateBlog></CreateBlog>,
       },
       {
         path: "/updateBlog/:id",
         element: <UpdateBlog></UpdateBlog>,
-        loader : ({params}) =>  fetch(`http://localhost:5000/blog/${params.id}`) 
-
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/blog/${params.id}`),
       },
       {
         path: "/jobdetails/:id",
@@ -124,7 +123,6 @@ export const router = createBrowserRouter([
         loader: ({ params }) =>
           fetch(`http://localhost:5000/postjob/${params.id}`),
       },
-
       {
         path: "/price",
         element: <Pricing></Pricing>,
@@ -141,26 +139,24 @@ export const router = createBrowserRouter([
         path: "/whyEasyRecruit",
         element: <WhyEasyRecruit></WhyEasyRecruit>,
       },
-      
+
       {
         path: "/terms",
-        element: <TermsAndConditions></TermsAndConditions>
+        element: <TermsAndConditions></TermsAndConditions>,
       },
       {
         path: "/privacy",
-        element: <PrivacyPolicy></PrivacyPolicy>
+        element: <PrivacyPolicy></PrivacyPolicy>,
       },
       {
         path: "/demoPage",
-        element: <DemoPage></DemoPage>
-      },
-      
-      {
-        path: "/feedback",
-        element: 
-          <CustomerFeedback></CustomerFeedback>
+        element: <DemoPage></DemoPage>,
       },
 
+      {
+        path: "/feedback",
+        element: <CustomerFeedback></CustomerFeedback>,
+      },
     ],
   },
   {
@@ -175,30 +171,30 @@ export const router = createBrowserRouter([
       {
         path: "allUser",
         element: <AllUsers></AllUsers>,
-        loader: () =>fetch(`http://localhost:5000/userCount`),
+        loader: () => fetch(`http://localhost:5000/userCount`),
       },
       {
         path: "allJobs",
-       element:<ALLShowJobs></ALLShowJobs>,
-       loader: () =>fetch(`http://localhost:5000/postJobCount`),
-
+        element: <ALLShowJobs></ALLShowJobs>,
+        loader: () => fetch(`http://localhost:5000/postJobCount`),
       },
       {
         path: "allCandidates/:id",
         element: <AllJobsCandidates></AllJobsCandidates>,
-        loader: ({ params }) => fetch(`http://localhost:5000/postjob/${params.id}`),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/postjob/${params.id}`),
       },
       {
         path: "allCandidates",
-        element: <AllJobs></AllJobs> ,
-        loader: () =>fetch(`http://localhost:5000/postJobCount`),
+        element: <AllJobs></AllJobs>,
+        loader: () => fetch(`http://localhost:5000/postJobCount`),
       },
       {
         path: "shortlisted/:id",
         element: <ShortListed></ShortListed>,
-        loader: ({ params }) => fetch(`http://localhost:5000/postjob/${params.id}`),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/postjob/${params.id}`),
       },
-
       // Normal user routs
       {
         path: "customerProfile",
@@ -217,8 +213,8 @@ export const router = createBrowserRouter([
         element: <MyJobs></MyJobs>,
       },
       {
-        path: "support",
-        element: <Support></Support>
+        path: "meetAndConnect",
+        element: <MeetAndConnect></MeetAndConnect>,
       },
       {
         path: "myCandidate/:id",
@@ -243,8 +239,7 @@ export const router = createBrowserRouter([
       {
         path: "appointment",
         element: <Appointment></Appointment>,
-        loader: () =>fetch(`http://localhost:5000/postJobCount`),
-
+        loader: () => fetch(`http://localhost:5000/postJobCount`),
       },
       {
         path: "CVmanage/:id",
