@@ -28,9 +28,11 @@ const AppointedCandidate = () => {
             <Table.HeadCell>Name</Table.HeadCell>
             <Table.HeadCell>Email</Table.HeadCell>
             <Table.HeadCell>Phone Number</Table.HeadCell>
+
             {/* <Table.HeadCell>
               <span className="sr-only">Edit</span>
             </Table.HeadCell> */}
+            
           </Table.Head>
 
           <Table.Body className="divide-y ">

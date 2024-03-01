@@ -6,10 +6,9 @@ export function getUrlParams(url = window.location.href) {
   let urlStr = url.split("?")[1];
   return new URLSearchParams(urlStr);
 }
-const Support = () => {
+const MeetAndConnect = () => {
   // const { user } = useContext(AuthContext);
   const { user } = useAuth();
-
 
   function randomID(len) {
     let result = "";
@@ -27,11 +26,10 @@ const Support = () => {
 
   const roomID = getUrlParams().get("roomID") || randomID(5);
 
-
   let mySupporting = async (element) => {
     // generate Kit Token
-  const appID = 1391604880;
-const serverSecret ="6a2b2e7cd3684ea89570527c0c349ab7";
+    const appID = 1391604880;
+    const serverSecret = "6a2b2e7cd3684ea89570527c0c349ab7";
 
     // const appID = import.meta.env.VITE_APP_ID;
     // const serverSecret = import.meta.env.VITE_SERVER_SECRET;
@@ -70,6 +68,7 @@ const serverSecret ="6a2b2e7cd3684ea89570527c0c349ab7";
             roomID,
         },
       ],
+
       scenario: {
         mode: ZegoUIKitPrebuilt.GroupCall, // To implement 1-on-1 calls, modify the parameter here to [ZegoUIKitPrebuilt.OneONoneCall].
       },
@@ -95,4 +94,4 @@ const serverSecret ="6a2b2e7cd3684ea89570527c0c349ab7";
   );
 };
 
-export default Support;
+export default MeetAndConnect;

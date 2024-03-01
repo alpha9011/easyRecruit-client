@@ -42,10 +42,7 @@ import BlogDetails from "../Page/Blogs/BlogDetails";
 import UpdateBlog from "../Page/Blogs/UpdateBlog";
 import ResumeMaker from "../Page/ResumeMaker/ResumeMaker";
 import AllResume from "../Page/ResumeMaker/AllResume";
-import Support from "../DashboardLayout/DashboardPage/Support/Support";
-import Dashboard2 from "../DashboardLayout/Dashboard/Dashoard2";
-import Dashboard3 from "../DashboardLayout/Dashboard/Dashboard3";
-
+import MeetAndConnect from "../DashboardLayout/DashboardPage/MeetAndConnect/MeetAndConnect";
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -160,31 +157,6 @@ export const router = createBrowserRouter([
         path: "/feedback",
         element: <CustomerFeedback></CustomerFeedback>,
       },
-      // Live
-
-      {
-        path: "support2",
-        element: <Support></Support>,
-      },
-      // test demo
-      {
-        path: "/dashboard2",
-        element: <Dashboard2></Dashboard2>,
-        children: [
-          { path: "myjobs2", element: <MyJobs></MyJobs> },
-          {
-            path: "allJobs2",
-            element: <ALLShowJobs></ALLShowJobs>,
-            loader: () => fetch(`http://localhost:5000/postJobCount`),
-          },
-          {
-            path: "allCandidates2/:id",
-            element: <AllJobsCandidates></AllJobsCandidates>,
-            loader: ({ params }) =>
-              fetch(`http://localhost:5000/postjob/${params.id}`),
-          },
-        ],
-      },
     ],
   },
   {
@@ -241,103 +213,8 @@ export const router = createBrowserRouter([
         element: <MyJobs></MyJobs>,
       },
       {
-        path: "support",
-        element: <Support></Support>,
-      },
-      {
-        path: "myCandidate/:id",
-        element: <MyCandidates></MyCandidates>,
-        loader: ({ params }) =>
-          fetch(`http://localhost:5000/postjob/${params.id}`),
-      },
-      {
-        path: "updateJob/:id",
-        element: <UpdateJob></UpdateJob>,
-        loader: ({ params }) =>
-          fetch(`http://localhost:5000/postjob/${params.id}`),
-      },
-      {
-        path: "postjob",
-        element: <PostJob></PostJob>,
-      },
-      {
-        path: "interviewSchedule",
-        element: <InterViewSchedule></InterViewSchedule>,
-      },
-      {
-        path: "appointment",
-        element: <Appointment></Appointment>,
-        loader: () => fetch(`http://localhost:5000/postJobCount`),
-      },
-      {
-        path: "CVmanage/:id",
-        element: <CVmanage />,
-        loader: ({ params }) =>
-          fetch(`http://localhost:5000/applicantCV/${params.id}`),
-      },
-    ],
-  },
-
-  //demo testing
-
-  {
-    path: "/dashboard3",
-    element: (
-      <PrivateRout>
-        {/* <Dashboard></Dashboard> */}
-        <Dashboard3></Dashboard3>
-      </PrivateRout>
-    ),
-    children: [
-      // Admin User routs
-      {
-        path: "allUser",
-        element: <AllUsers></AllUsers>,
-        loader: () => fetch(`http://localhost:5000/userCount`),
-      },
-      {
-        path: "allJobs",
-        element: <ALLShowJobs></ALLShowJobs>,
-        loader: () => fetch(`http://localhost:5000/postJobCount`),
-      },
-      {
-        path: "allCandidates/:id",
-        element: <AllJobsCandidates></AllJobsCandidates>,
-        loader: ({ params }) =>
-          fetch(`http://localhost:5000/postjob/${params.id}`),
-      },
-      {
-        path: "allCandidates",
-        element: <AllJobs></AllJobs>,
-        loader: () => fetch(`http://localhost:5000/postJobCount`),
-      },
-      {
-        path: "shortlisted/:id",
-        element: <ShortListed></ShortListed>,
-        loader: ({ params }) =>
-          fetch(`http://localhost:5000/postjob/${params.id}`),
-      },
-
-      // Normal user routs
-      {
-        path: "customerProfile",
-        element: <CustomerProfile></CustomerProfile>,
-      },
-      {
-        path: "dashboardHome",
-        element: <DashboardHome></DashboardHome>,
-      },
-      {
-        path: "candidates",
-        element: <Candidates></Candidates>,
-      },
-      {
-        path: "myjobs",
-        element: <MyJobs></MyJobs>,
-      },
-      {
-        path: "support",
-        element: <Support></Support>,
+        path: "meetAndConnect",
+        element: <MeetAndConnect></MeetAndConnect>,
       },
       {
         path: "myCandidate/:id",

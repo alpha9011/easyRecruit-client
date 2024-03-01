@@ -62,7 +62,6 @@ const Navbars = () => {
         <NavLink to="/dashboard/dashboardHome" className={navLinkStyle}>
           Dashboard
         </NavLink>
-   
 
         <NavLink to="/" className={navLinkStyle}>
           Home
@@ -94,7 +93,7 @@ const Navbars = () => {
         <NavLink to="/blog" className={navLinkStyle} onClick={handleTheme}>
           Blog
         </NavLink>
-       
+
         {user ? (
           <Button
             outline
@@ -130,7 +129,7 @@ const Navbars = () => {
           </span>
         </div>
       </Navbar.Brand>
-      <div className=" md:order-2  hidden lg:block">
+      <div className=" md:order-2  hidden lg:block ">
         <Dropdown
           arrowIcon={false}
           inline
@@ -138,7 +137,7 @@ const Navbars = () => {
             // here we will display user image and other info dynamically
             <Avatar alt="User settings" img={user?.photoURL} rounded />
           }
-          className=""
+          className="border-none"
         >
           <Dropdown.Header>
             {user && (
@@ -156,11 +155,6 @@ const Navbars = () => {
                 </NavLink>
               </Navbar.Link>
               {/* testing */}
-              <Navbar.Link>
-                <NavLink to="/dashboard3/dashboardHome" className="text-lg">
-                  Dashboard3
-                </NavLink>
-              </Navbar.Link>
             </div>
 
             {user ? (
@@ -216,9 +210,7 @@ const Navbars = () => {
           <Navbar.Link>
             <NavLink to="/blog">Blog</NavLink>
           </Navbar.Link>
-          <Navbar.Link>
-            <NavLink to="/dashboard2">dashboard2</NavLink>
-          </Navbar.Link>
+  
         </Navbar.Collapse>
       </div>
 

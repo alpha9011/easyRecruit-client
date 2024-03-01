@@ -25,12 +25,12 @@ const MyJobs = () => {
             <Spinner aria-label="Large spinner example" size="lg" />
         </div>
     }
-    console.log(myJobs);
+
     return (
         <div>
             {
                 myJobs.length > 0 ?
-                    <div className="grid grid-cols-3 gap-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-6 border-none">
                         {
                             myJobs.map(myjob => <MyJobCard key={myjob._id} myjob={myjob} refetch={refetch}></MyJobCard>)
                         }
