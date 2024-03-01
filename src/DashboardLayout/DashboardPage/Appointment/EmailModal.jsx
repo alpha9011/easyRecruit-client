@@ -33,8 +33,8 @@ const EmailModal = ({ candidate }) => {
             message: data.message,
             link: data.link,
             title: data.title,
-            strating: start,
-            ending: end,
+            start: start,
+            end: end,
         }
         console.log(mailInfo);
         axiosSecure.post('/interviewMessage', mailInfo)

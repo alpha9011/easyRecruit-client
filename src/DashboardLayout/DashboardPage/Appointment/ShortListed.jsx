@@ -3,6 +3,8 @@ import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 import { useQuery } from "@tanstack/react-query";
 import { Avatar, Spinner, Table } from "flowbite-react";
 import EmailModal from "./EmailModal";
+import Lottie from "lottie-react";
+import search from "../../../Json/search.json"
 // import CandidatesDetail from "../../DashboardAdminPage/AllJobs/CandidatesDetail";
 
 const ShortListed = () => {
@@ -69,8 +71,13 @@ const ShortListed = () => {
 
                     :
 
-                    <div className='flex h-[50vh] justify-center items-center '>
-                        <h1>This post do not have any short-listed candidate yet</h1>
+                    <div>
+                        <div>
+                            <Lottie animationData={search} className="max-w-screen-sm max-h-[500px] -mt-2 md:mb-10 mx-auto"></Lottie>
+                        </div>
+                        <div className="text-center text-3xl md:text-5xl font-medium">
+                            <span className="text-white italic font-bold text-4xl md:text-6xl">No Shortlisted Candidate found!!!!</span>
+                        </div>
                     </div>
 
             }
