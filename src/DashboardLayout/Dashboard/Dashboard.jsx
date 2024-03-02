@@ -5,11 +5,7 @@ import { FaChartSimple } from "react-icons/fa6";
 import { CgMenuRound } from "react-icons/cg";
 import { FiEdit, FiUsers } from "react-icons/fi";
 import { FaUsers } from "react-icons/fa";
-import {
- 
-  AiOutlineHome,
-  AiOutlineSchedule,
-} from "react-icons/ai";
+import { AiOutlineHome, AiOutlineSchedule } from "react-icons/ai";
 import { LuLayoutDashboard } from "react-icons/lu";
 // drawer component
 import Drawer from "react-modern-drawer";
@@ -76,22 +72,20 @@ const Dashboard = () => {
       </li>
       <li>
         <NavLink to="/dashboard/allCandidates" className={navLinkStyle}>
-        <span className="flex justify-center items-center gap-2">
+          <span className="flex justify-center items-center gap-2">
             <FaChartSimple />
             All Candidates
-          </span> 
+          </span>
         </NavLink>
       </li>
       <li>
         <NavLink to="/dashboard/appointment" className={navLinkStyle}>
-        <span className="flex justify-center items-center gap-2">
+          <span className="flex justify-center items-center gap-2">
             <FaChartSimple />
             Appointment
-          </span> 
+          </span>
         </NavLink>
       </li>
-
-  
 
       <li>
         <NavLink to="/dashboard/interviewSchedule" className={navLinkStyle}>
@@ -101,15 +95,16 @@ const Dashboard = () => {
           </span>
         </NavLink>
       </li>
-     
+
       <li>
-        <NavLink to="/dashboard/support" className={navLinkStyle}>
+        <NavLink to="/dashboard/meetAndConnect" className={navLinkStyle}>
           <span className="flex justify-center items-center gap-2">
             <BiSupport />
-            Support
+            Meet & Connect
           </span>
         </NavLink>
       </li>
+      
       <div className="border-t  mt-5 "></div>
       <li>
         <NavLink to="/" className={navLinkStyle}>
@@ -201,6 +196,7 @@ const Dashboard = () => {
 
         <div className=" container  p-5 lg:p-0 mt-10 lg:mt-20 mb-10">
           <div className="grid grid-cols-5 gap-10   min-h-[80vh] ">
+            
             <div
               className=" hidden lg:block lg:col-span-1  rounded-xl backdrop-filter backdrop-blur-xl bg-opacity-10 border border-gray-100 bg-white p-5 sticky top-20"
               data-aos={"fade-right"}

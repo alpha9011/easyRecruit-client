@@ -9,7 +9,7 @@ import Countdown from "../Home/Countdown/Countdown";
 
 const AboutUs = () => {
     return (
-        <div className="my-5 font-roboto overflow-x-hidden overflow-y-hidden ">
+        <div className="my-5 font-roboto overflow-x-hidden overflow-y-hidden">
             <Helmet>
                 <title>EasyRecruit || About Us</title>
             </Helmet>

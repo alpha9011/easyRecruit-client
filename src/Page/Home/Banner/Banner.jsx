@@ -1,4 +1,4 @@
-import './Banner.css'
+import "./Banner.css";
 import Lottie from "lottie-react";
 // import bannerAnimation from "../../../Json/Animation-banner.json";
 import bannerAnimation from "../../../Json/Animation-banner2.json";
@@ -7,21 +7,24 @@ import { motion } from "framer-motion";
 ("react-router-dom");
 
 import SecondaryButton from "../../../shared/SecondaryButton/SecondaryButton";
+import { Link } from "react-router-dom";
 
 const Banner = () => {
   return (
     <div
       className=" h-screen overflow-hidden"
+
       style={{
         background: `url('https://i.ibb.co/LrMJbrv/bg.jpg')`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
-        height: "calc(100vh - 65px)"
+        // height: "calc(100vh - 65px)",
+        height: '100vh'
       }}
     >
       {/* Banner section */}
-      <div className='area'>
+      <div className="area">
         <ul className="circles">
           <li></li>
           <li></li>
@@ -34,8 +37,8 @@ const Banner = () => {
           <li></li>
           <li></li>
         </ul>
-    </div>
-      <div className=" container mx-auto h-screen flex flex-col-reverse md:flex-row gap-10 items-center   p-5 md:pb-28 ">
+      </div>
+      <div className=" container mx-auto h-screen flex flex-col-reverse md:flex-row gap-10 items-center  p-5 pb-28 ">
         <div className="md:w-1/2">
           <motion.h2
             className=" text-center text-4xl md:text-5xl lg:text-6xl font-bold text-wrap "
@@ -57,8 +60,15 @@ const Banner = () => {
             </p>
           </span>
 
-          <div className="flex justify-center relative">
+          <div className="flex justify-center relative gap-2">
+            <Link to="/demoPage">
+            
             <SecondaryButton buttonText="Request A Demo"></SecondaryButton>
+            </Link>
+            <Link to="/register">
+            
+            <SecondaryButton buttonText="Try it Free"></SecondaryButton>
+            </Link>
           </div>
 
           <div className="flex justify-center items-center "></div>
@@ -70,5 +80,4 @@ const Banner = () => {
     </div>
   );
 };
-
 export default Banner;

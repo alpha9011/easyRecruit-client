@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import jobsUsersImg from "../../../../public/Image/easy_home_unlimited.png";
 import fastImplementationImg from "../../../../public/Image/fast_implementation.png";
 import configurableImg from "../../../../public/Image/higly_Configurable.png";
@@ -80,7 +81,10 @@ const WhyToUse = () => {
           data-aos-duration="1500"
           // data-aos-offset="200"
         >
+          <Link to="/about">
+          
           <PrimaryButton buttonText={"Learn More"}></PrimaryButton>
+          </Link>
         </div>
       </div>
     </div>

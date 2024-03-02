@@ -14,7 +14,7 @@ import { Link } from "react-router-dom";
 const CustomersSlider = () => {
 
   return (
-    <div className="group">
+    <div className="group hidden lg:block" >
       <div className="relative flex flex-col md:flex-row items-center justify-center h-20 w-full my-20 ">
         <Swiper
       
@@ -71,7 +71,7 @@ const CustomersSlider = () => {
           </SwiperSlide>
         </Swiper>
         <div className="lg:hidden group-hover:block absolute text-xl  md:text-3xl font-bold">
-          <Link to="/" className="pointer text-sky-500 hover:opacity-75"> All our Customers</Link>
+          <Link  className="pointer text-sky-500 hover:opacity-75"> All our Customers</Link>
         </div>
       </div>
     </div>
