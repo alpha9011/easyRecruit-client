@@ -1,7 +1,7 @@
 // import { Button } from "flowbite-react";
 import { FaCheck } from "react-icons/fa";
-import person from "../../assets/aboutWomen.jpg";
-import background from "../../assets/aboutCr.jpg";
+// import person from "../../assets/aboutWomen.jpg";
+// import background from "../../assets/aboutCr.jpg";
 import PrimaryButton from "../../shared/PrimaryButton/PrimaryButton";
 import { Link } from "react-router-dom";
 const WhyUs = () => {
@@ -13,9 +13,9 @@ const WhyUs = () => {
           data-aos="fade-right"
           data-aos-duration="1000"
         >
-          <img src={background} className="w-3/4 rounded-lg shadow-2xl" />
+          <img src={"https://i.ibb.co/xFSJmsy/aboutCr.jpg"} className="w-3/4 rounded-lg shadow-2xl" />
           <img
-            src={person}
+            src={"https://i.ibb.co/q5BvgV5/about-Women.jpg"}
             className="w-3/4 absolute top-1/3 right-5 rounded-lg shadow-2xl"
           />
         </div>

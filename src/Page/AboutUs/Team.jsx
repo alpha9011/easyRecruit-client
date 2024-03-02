@@ -7,14 +7,14 @@ import { SlSocialInstagram } from "react-icons/sl";
 import { CiLinkedin } from "react-icons/ci";
 import { RiTwitterXLine } from "react-icons/ri";
 import "./Team.css"
-import teamBg from "../../assets/teamWork.jpg"
+// import teamBg from "../../assets/teamWork.jpg"
 import { Parallax } from "react-parallax";
 const Team = () => {
     return (
         <div className="mx-auto" data-aos="fade-up" data-aos-duration="1000">
             <Parallax
                 blur={{ min: -30, max: 30 }}
-                bgImage={teamBg}
+                bgImage={"https://i.ibb.co/5KLPkTg/price-Cover.jpg"}
                 strength={100}
                 className="bg-cover"
             >
