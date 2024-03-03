@@ -35,11 +35,10 @@ const Navbars = () => {
   const navLinkStyle = ({ isActive, isPending }) => {
     return isPending
       ? "pending"
-      : `inline-block w-full  text-center py-2  bg-transparent text rounded font-semibold ${
-          isActive
-            ? "border-blue-500   border-y backdrop-filter backdrop-blur-3xl "
-            : "   hover:border-y hover:border-blue-500 hover:backdrop-blur-3xl"
-        }`;
+      : `inline-block w-full  text-center py-2  bg-transparent text rounded font-semibold ${isActive
+        ? "border-blue-500   border-y backdrop-filter backdrop-blur-3xl "
+        : "   hover:border-y hover:border-blue-500 hover:backdrop-blur-3xl"
+      }`;
   };
 
   //  NavMenu Side bar
@@ -114,7 +113,7 @@ const Navbars = () => {
     <Navbar
       fluid
       rounded
-      className="px-10 sticky top-0 z-50 shadow p-4 bg-white bg-opacity-50"
+      className="px-10 sticky top-0 z-50 shadow p-4 bg-blue-100 bg-opacity-50"
       style={{
         backdropFilter: "blur(10px)",
       }}
@@ -210,7 +209,7 @@ const Navbars = () => {
           <Navbar.Link>
             <NavLink to="/blog">Blog</NavLink>
           </Navbar.Link>
-  
+
         </Navbar.Collapse>
       </div>
 

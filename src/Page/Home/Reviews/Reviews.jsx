@@ -1,8 +1,4 @@
-
-
 import { useEffect, useState } from "react";
-
-
 const Reviews = () => {
   const [reviews, setReviews] = useState([]);
   const [hoveredReview, setHoveredReview] = useState(null);
@@ -15,9 +11,7 @@ const Reviews = () => {
 
   return (
     <div className=" p-5 bg-gradient-to-r  ">
-      <h1 className="text-center text-5xl font-extrabold mb-4 ">What Our <span className="text-yellow-400">Client</span> Said</h1>
-      
-
+      <h1 className="text-center text-5xl font-extrabold mb-4 ">What Our <span className="text-[#139BFF]">Client Said</span></h1>
       <div className="flex justify-center">
         {reviews.map(review => (
           <img

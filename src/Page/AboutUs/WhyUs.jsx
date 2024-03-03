@@ -30,7 +30,7 @@ const WhyUs = () => {
           <h1 className="text-5xl font-bold mb-2">
             Get over 50.000+
             <br /> talented experts in{" "}
-            <span className="text-yellow-400">EasyRecruit.</span>
+            <span className="text-[#139BFF]">EasyRecruit.</span>
           </h1>
           <p className="text-[#737373] py-6">
             the majority have suffered alteration in some form, by injected
@@ -72,7 +72,7 @@ const WhyUs = () => {
           </p>
           <h1 className="text-5xl font-bold mb-2">
             Manage the complete <br /> talent acquisition{" "}
-            <span className="text-yellow-400">lifecycle.</span>
+            <span className="text-[#139BFF]">lifecycle.</span>
           </h1>
           <p className="text-[#737373] py-6">
             A full hybrid workforce management tools are yours to use, as well
