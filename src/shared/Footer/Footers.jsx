@@ -85,17 +85,17 @@ const Footers = () => {
 
             <Footer.Title className='text-black font-bold text-xl' title="Our Blogs" />
             <Footer.LinkGroup col className=''>
-              <Footer.Link className='hover:text-pink-500' target="_blank" rel="noopener noreferrer" href="https://medium.com/@fasunan">Blog About Tech</Footer.Link>
-              <Footer.Link className='hover:text-pink-500' href="#">Blog About "ATS Website"</Footer.Link>
-              <Footer.Link className='hover:text-pink-500' href="#">Blog About Hiring Process</Footer.Link>
+              <Footer.Link className='hover:text-[#139BFF]' target="_blank" rel="noopener noreferrer" href="https://medium.com/@fasunan">Blog About Tech</Footer.Link>
+              <Footer.Link className='hover:text-[#139BFF]' href="#">Blog About "ATS Website"</Footer.Link>
+              <Footer.Link className='hover:text-[#139BFF]' href="#">Blog About Hiring Process</Footer.Link>
             </Footer.LinkGroup>
           </div>
           <div>
             <Footer.Title className='text-black font-bold text-xl' title="About" />
             <Footer.LinkGroup col className=''>
-              <Link to={"whyEasyRecruit"} target="_blank" rel="noopener noreferrer" className='hover:text-pink-500'>Why Choose Us</Link>
-              <Link to={"about"} target="_blank" rel="noopener noreferrer" className='hover:text-pink-500'>Our Team</Link>
-              <Link to={"/"} target="_blank" rel="noopener noreferrer" className='hover:text-pink-500'>Contact Us</Link>
+              <Link to={"whyEasyRecruit"} target="_blank" rel="noopener noreferrer" className='hover:text-[#139BFF]'>Why Choose Us</Link>
+              <Link to={"about"} target="_blank" rel="noopener noreferrer" className='hover:text-[#139BFF]'>Our Team</Link>
+              <Link to={"/"} target="_blank" rel="noopener noreferrer" className='hover:text-[#139BFF]'>Contact Us</Link>
 
             </Footer.LinkGroup>
           </div>
@@ -103,11 +103,11 @@ const Footers = () => {
           <div>
             <Footer.Title className='text-black font-bold text-xl' title="Company" />
             <Footer.LinkGroup col className=''>
-              {/* <Link to={"privacy"} target="_blank" rel="noopener noreferrer" className='hover:text-pink-500'>Privacy Policy</Link>
-              <Link to={"terms"} target="_blank" rel="noopener noreferrer" className='hover:text-pink-500'>Terms &amp; Conditions</Link> */}
-              <Link to={"/"} className='hover:text-pink-500'>Careers</Link>
-              <Link to={"/"} className='hover:text-pink-500'>Customers</Link>
-              <Link to={"/"} className='hover:text-pink-500'>Case Studies</Link>
+              {/* <Link to={"privacy"} target="_blank" rel="noopener noreferrer" className='hover:text-[#139BFF]'>Privacy Policy</Link>
+              <Link to={"terms"} target="_blank" rel="noopener noreferrer" className='hover:text-[#139BFF]'>Terms &amp; Conditions</Link> */}
+              <Link to={"/"} className='hover:text-[#139BFF]'>Careers</Link>
+              <Link to={"/"} className='hover:text-[#139BFF]'>Customers</Link>
+              <Link to={"/"} className='hover:text-[#139BFF]'>Case Studies</Link>
 
             </Footer.LinkGroup>
           </div>
@@ -120,11 +120,11 @@ const Footers = () => {
           {/* Copyright */}
           <Footer.Copyright href="#" by="easyRecruit™" year={2024} />
           <Footer.LinkGroup col className=''>
-            <Link to={"privacy"} target="_blank" rel="noopener noreferrer" className='hover:text-pink-500'>Privacy Policy</Link>
+            <Link to={"privacy"} target="_blank" rel="noopener noreferrer" className='hover:text-[#139BFF]'>Privacy Policy</Link>
 
           </Footer.LinkGroup>
           <Footer.LinkGroup col className=''>
-            <Link to={"terms"} target="_blank" rel="noopener noreferrer" className='hover:text-pink-500'>Terms &amp; Conditions</Link>
+            <Link to={"terms"} target="_blank" rel="noopener noreferrer" className='hover:text-[#139BFF]'>Terms &amp; Conditions</Link>
 
           </Footer.LinkGroup>
 

@@ -11,14 +11,14 @@ import "./Team.css"
 import { Parallax } from "react-parallax";
 const Team = () => {
     return (
-        <div className="mx-auto" data-aos="fade-up" data-aos-duration="1000">
+        <div className="mx-auto">
             <Parallax
                 blur={{ min: -30, max: 30 }}
                 bgImage={"https://i.ibb.co/5KLPkTg/price-Cover.jpg"}
                 strength={100}
                 className="bg-cover"
             >
-                <h1 className="text-center text-6xl font-bold my-8 text-gray-200">Meet Our <span className="text-yellow-400">Team</span></h1>
+                <h1 className="text-center text-7xl font-bold my-8 text-gray-200">Meet Our <span className="text-[#139BFF]">Team</span></h1>
                 <div className="body">
                     <div className="cardContainer">
                         {/* card 1 */}
