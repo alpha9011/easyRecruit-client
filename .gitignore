@@ -27,3 +27,6 @@ package-lock.json
 
 # Contentlayer
 .contentlayer
+
+# Secret
+.env
