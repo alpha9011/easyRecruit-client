@@ -5,8 +5,7 @@ import Reviews from "../Home/Reviews/Reviews";
 import OurMission from "./OurMission";
 import Team from "./Team";
 import WhyUs from "./WhyUs";
-import Countdown from "../Home/Countdown/Countdown";
-import CountOnScroll from "../../shared/CountOnScroll/CountOnScroll";
+// import Countdown from "../Home/Countdown/Countdown";
 
 const AboutUs = () => {
     return (
@@ -15,8 +14,7 @@ const AboutUs = () => {
                 <title>EasyRecruit || About Us</title>
             </Helmet>
             <OurMission></OurMission>
-            <Countdown></Countdown>
-            <CountOnScroll></CountOnScroll>
+            {/* <Countdown></Countdown> */}
             <WhyUs></WhyUs>
             <Team></Team>
             <Reviews></Reviews>

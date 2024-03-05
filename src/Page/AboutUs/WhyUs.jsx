@@ -4,6 +4,7 @@ import { FaCheck } from "react-icons/fa";
 // import background from "../../assets/aboutCr.jpg";
 import PrimaryButton from "../../shared/PrimaryButton/PrimaryButton";
 import { Link } from "react-router-dom";
+import CountOnScroll from "../../shared/CountOnScroll/CountOnScroll";
 const WhyUs = () => {
   return (
     <div className="bg-slate-100 py-10 rounded-tr-[150px] rounded-bl-[150px]">
@@ -39,19 +40,19 @@ const WhyUs = () => {
           </p>
 
           <div className="flex gap-3 items-center mb-1">
-            <FaCheck className="text-blue-600 text-lg"></FaCheck>
+            <FaCheck className="text-[#4193ff] text-lg"></FaCheck>
             <p className="text-lg">Seamless searching</p>
           </div>
           <div className="flex gap-3 items-center mb-1">
-            <FaCheck className="text-blue-600 text-lg"></FaCheck>
+            <FaCheck className="text-[#4193ff] text-lg"></FaCheck>
             <p className="text-lg">Smarter System</p>
           </div>
           <div className="flex gap-3 items-center mb-1">
-            <FaCheck className="text-blue-600 text-lg"></FaCheck>
+            <FaCheck className="text-[#4193ff] text-lg"></FaCheck>
             <p className="text-lg">The Talent Container</p>
           </div>
           <div className="flex gap-3 items-center mb-5">
-            <FaCheck className="text-blue-600 text-lg"></FaCheck>
+            <FaCheck className="text-[#4193ff] text-lg"></FaCheck>
             <p className="text-lg">Complete Solution</p>
           </div>
           <Link to="/contact">
@@ -59,6 +60,9 @@ const WhyUs = () => {
           </Link>
         </div>
       </div>
+
+      {/* coundown part */}
+      <CountOnScroll></CountOnScroll>
 
       {/* Video section */}
       <div className="max-w-screen-xl mx-auto my-20 flex flex-col-reverse lg:flex-row gap-60 lg:gap-16 lg:mb-40">
@@ -71,8 +75,8 @@ const WhyUs = () => {
             A PLATFORM FOR ALL
           </p>
           <h1 className="text-5xl font-bold mb-2">
-            Manage the complete <br /> talent acquisition{" "}
-            <span className="text-[#139BFF]">lifecycle.</span>
+            Manage the complete <br /> talent{" "}
+            <span className="text-[#139BFF]">acquisition lifecycle.</span>
           </h1>
           <p className="text-[#737373] py-6">
             A full hybrid workforce management tools are yours to use, as well
