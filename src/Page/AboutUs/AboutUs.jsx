@@ -6,6 +6,7 @@ import OurMission from "./OurMission";
 import Team from "./Team";
 import WhyUs from "./WhyUs";
 import Countdown from "../Home/Countdown/Countdown";
+import CountOnScroll from "../../shared/CountOnScroll/CountOnScroll";
 
 const AboutUs = () => {
     return (
@@ -15,6 +16,7 @@ const AboutUs = () => {
             </Helmet>
             <OurMission></OurMission>
             <Countdown></Countdown>
+            <CountOnScroll></CountOnScroll>
             <WhyUs></WhyUs>
             <Team></Team>
             <Reviews></Reviews>
