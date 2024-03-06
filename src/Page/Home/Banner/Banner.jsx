@@ -13,14 +13,13 @@ const Banner = () => {
   return (
     <div
       className=" h-screen overflow-hidden"
-
       style={{
         background: `url('https://i.ibb.co/LrMJbrv/bg.jpg')`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
         // height: "calc(100vh - 65px)",
-        height: '100vh'
+        height: "100vh",
       }}
     >
       {/* Banner section */}
@@ -62,12 +61,10 @@ const Banner = () => {
 
           <div className="flex justify-center relative gap-2">
             <Link to="/demoPage">
-            
-            <SecondaryButton buttonText="Request A Demo"></SecondaryButton>
+              <SecondaryButton buttonText="Request A Demo"></SecondaryButton>
             </Link>
             <Link to="/register">
-            
-            <SecondaryButton buttonText="Try it Free"></SecondaryButton>
+              <SecondaryButton buttonText="Try it Free"></SecondaryButton>
             </Link>
           </div>
 

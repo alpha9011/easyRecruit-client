@@ -6,8 +6,8 @@ export function getUrlParams(url = window.location.href) {
   let urlStr = url.split("?")[1];
   return new URLSearchParams(urlStr);
 }
+
 const MeetAndConnect = () => {
-  // const { user } = useContext(AuthContext);
   const { user } = useAuth();
 
   function randomID(len) {
@@ -34,8 +34,9 @@ const MeetAndConnect = () => {
     // const appID = import.meta.env.VITE_APP_ID;
     // const serverSecret = import.meta.env.VITE_SERVER_SECRET;
 
-    console.log("appid ", appID);
-    console.log("serverSecret", serverSecret);
+
+
+
 
     // users's name dynamically
     const userName = user ? user.displayName : " ";
@@ -45,8 +46,7 @@ const MeetAndConnect = () => {
       serverSecret,
       roomID,
       randomID(5),
-      // Date.now().toString(),
-      // randomID(5),
+
       userName
     );
 
@@ -54,6 +54,7 @@ const MeetAndConnect = () => {
 
     const zp = ZegoUIKitPrebuilt.create(kitToken);
     // start the call
+
     zp.joinRoom({
       container: element,
       sharedLinks: [
@@ -68,20 +69,27 @@ const MeetAndConnect = () => {
             roomID,
         },
       ],
-
+     
       scenario: {
         mode: ZegoUIKitPrebuilt.GroupCall, // To implement 1-on-1 calls, modify the parameter here to [ZegoUIKitPrebuilt.OneONoneCall].
       },
 
-      showRoomTimer: "yes",
-      showTurnOffRemoteCameraButton: "yes",
-      showTurnOffRemoteMicrophoneButton: "yes",
-      showRemoveUserButton: "yes",
+      showRoomTimer: true,
+      // showTurnOffRemoteCameraButton: "yes",
+      // showTurnOffRemoteMicrophoneButton: "yes",
+      // showRemoveUserButton: "no",
 
-      showInviteToCohostButton: "yes",
-      showRemoveCohostButton: "yes",
+      showInviteToCohostButton: true,
+      showRemoveCohostButton: true,
 
-      enableUserSearch: "yes",
+      enableUserSearch: true,
+      turnOnMicrophoneWhenJoining: false,
+      // turnOnCameraWhenJoining: false,
+      enableStereo: true,
+
+      // autoHideFooter: true,
+
+      isSmallViewDraggable: true,
     });
   };
 
@@ -89,9 +97,9 @@ const MeetAndConnect = () => {
     <div
       className="myCallContainer"
       ref={mySupporting}
-      style={{ width: "full", height: "full" }}
+
+
     ></div>
   );
 };
-
 export default MeetAndConnect;

@@ -2,7 +2,7 @@ import { useState } from "react";
 import { NavLink, Outlet } from "react-router-dom";
 import { FaChartSimple } from "react-icons/fa6";
 // react icons
-import { CgMenuRound } from "react-icons/cg";
+import { CgMenuRound, CgProfile } from "react-icons/cg";
 import { FiEdit, FiUsers } from "react-icons/fi";
 import { FaUsers } from "react-icons/fa";
 import { AiOutlineHome, AiOutlineSchedule } from "react-icons/ai";
@@ -29,10 +29,10 @@ const Dashboard = () => {
   const navLinkStyle = ({ isActive, isPending }) => {
     return isPending
       ? "pending"
-      : `inline-block w-full text-center py-2  bg-transparent text-white rounded font-semibold ${
+      : `inline-block w-full text-center py-2  bg-transparent text-white rounded font-semibold hover:animate-pulse ${
           isActive
-            ? "border-white border-y backdrop-filter backdrop-blur-3xl "
-            : "  hover:border-y hover:backdrop-blur-3xl"
+            ? "border-white border-y backdrop-filter backdrop-blur-3xl"
+            : "  hover:border-y hover:backdrop-blur-3xl "
         }`;
   };
 
@@ -50,6 +50,7 @@ const Dashboard = () => {
         </h5>
         <NavLink to="/dashboard/customerProfile" className={navLinkStyle}>
           <span className="flex justify-center items-center gap-2">
+            <CgProfile />
             Profile
           </span>
         </NavLink>
@@ -104,7 +105,7 @@ const Dashboard = () => {
           </span>
         </NavLink>
       </li>
-      
+
       <div className="border-t  mt-5 "></div>
       <li>
         <NavLink to="/" className={navLinkStyle}>
@@ -117,7 +118,7 @@ const Dashboard = () => {
     </div>
   ) : (
     <div>
-      <div className="flex flex-col items-center">
+      <div className="flex flex-col items-center ">
         <img
           className="w-24 h-24 mb-3 rounded-full shadow-lg"
           src={user?.photoURL}
@@ -177,7 +178,7 @@ const Dashboard = () => {
 
   return (
     <>
-      {/* gradient blue 3 */}
+      {/* gradient bg*/}
       <div className="flex flex-col items-center min-h-screen  bg-gradient-to-br from-[#191970] via-[#4169e1] to-[#6a5acd]">
         <Drawer
           open={isOpen}
@@ -196,7 +197,6 @@ const Dashboard = () => {
 
         <div className=" container  p-5 lg:p-0 mt-10 lg:mt-20 mb-10">
           <div className="grid grid-cols-5 gap-10   min-h-[80vh] ">
-            
             <div
               className=" hidden lg:block lg:col-span-1  rounded-xl backdrop-filter backdrop-blur-xl bg-opacity-10 border border-gray-100 bg-white p-5 sticky top-20"
               data-aos={"fade-right"}
@@ -213,11 +213,11 @@ const Dashboard = () => {
               data-aos-duration="2000"
             >
               <CgMenuRound
-                className="text-white absolute top-1 left-1 text-2xl bg-opacity-100 backdrop-filter-none border rounded-full border-[#1D227C] bg-[#1D227C] lg:hidden "
+                className=" text-white absolute top-1 left-1 text-2xl bg-opacity-100 backdrop-filter-none border rounded-full border-[#1D227C] bg-[#1D227C] lg:hidden "
                 onClick={toggleDrawer}
-                data-aos={"flip-right"}
-                data-aos-duration="2000"
-                data-aos-delay="1500"
+                // data-aos={"flip-right"}
+                // data-aos-duration="2000"
+                // data-aos-delay="1500"
               />
 
               <Outlet></Outlet>
