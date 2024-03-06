@@ -4,11 +4,11 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import ResumePdf from './ResumePdf';
 import { PDFDownloadLink } from "@react-pdf/renderer";
+import Swal from "sweetalert2";
 
 
 const ResumeMaker = () => {
   const [submittedResume, setSubmittedResume] = useState(null);
-  // const user = useAuth();
 
   const [resumeData, setResumeData] = useState({
     personalInfo: {
@@ -60,7 +60,18 @@ const ResumeMaker = () => {
 
     await axios.post('http://localhost:5000/resumes', resumeData)
       .then(res => {
-        console.log(res.data)
+
+        // console.log(res.data)
+
+        if(res.data.insertedId){
+          Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: "Resume created successfully || See Demo Resume in below",
+            showConfirmButton: false,
+            timer: 1500
+        });
+        }
       })
     setSubmittedResume(resumeData);
 
@@ -79,29 +90,29 @@ const ResumeMaker = () => {
       <div >
 
         {/* form  */}
-        <form onSubmit={handleSubmit}>
+        <form className="max-w-6xl mx-auto" onSubmit={handleSubmit}>
 
-          <div className="grid grid-cols-2 space-y-4 mt-12">
+          <div className="mt-12 ">
 
             <div>
               <h2 className="text-2xl font-bold"> Personal Info : </h2>
 
               <label>Name:</label> <br></br>
               <input
-                className="border w-1/2 px-4 py-2 mt-2"
+                className="border w-full px-4 py-2 mt-2"
                 type="text"
-                value={resumeData.personalInfo.name}
-                onChange={(e) => handleInputChange('personalInfo', 'name', e.target.value)}
+               placeholder="eg. John Doe" value={resumeData.personalInfo.name}
+                onChange={(e) => handleInputChange('personalInfo', 'name', e.target.value)} required
               />
             </div>
 
             <div>
               <label>Job Title:</label> <br></br>
               <input
-                className="border w-1/2 px-4 py-2 mt-2"
+                className="border w-full px-4 py-2 mt-2"
                 type="text"
-                value={resumeData.personalInfo.job}
-                onChange={(e) => handleInputChange('personalInfo', 'job', e.target.value)}
+               placeholder="eg. Frontend Developer" value={resumeData.personalInfo.job}
+                onChange={(e) => handleInputChange('personalInfo', 'job', e.target.value)} required
               />
             </div>
 
@@ -111,33 +122,32 @@ const ResumeMaker = () => {
             <div>
               <label>Email:</label> <br></br>
               <input
-                className="border w-1/2 px-4 py-2 mt-2"
+                className="border w-full px-4 py-2 mt-2"
                 type="email"
-                value={resumeData.personalInfo.email}
-                onChange={(e) => handleInputChange('personalInfo', 'email', e.target.value)}
+               placeholder="john123@gmail.com" value={resumeData.personalInfo.email}
+                onChange={(e) => handleInputChange('personalInfo', 'email', e.target.value)} required
               />
             </div>
 
             <div>
               <label>Phone:</label> <br></br>
               <input
-                className="border w-1/2 px-4 py-2 mt-2"
+                className="border w-full px-4 py-2 mt-2"
                 type="tel"
-                value={resumeData.personalInfo.phone}
-                onChange={(e) => handleInputChange('personalInfo', 'phone', e.target.value)}
+               placeholder="017xxxxxxxx" value={resumeData.personalInfo.phone}
+                onChange={(e) => handleInputChange('personalInfo', 'phone', e.target.value)} required
               />
             </div>
 
 
             <div>
-              <h2 className="text-2xl font-bold"> Vision : </h2>
-              <br></br>
+              <h2 className="text-2xl font-bold mt-8"> Vision : </h2>
               <textarea
-                cols="10" rows="4"
-                className="border w-2/3 px-4 py-6 mt-2"
+                cols="10" rows="2"
+                className="border  w-full px-4 py-6 mt-2"
                 type="text"
-                value={resumeData.personalInfo.jobDescription}
-                onChange={(e) => handleInputChange('personalInfo', 'jobDescription', e.target.value)}
+               placeholder="eg. As a frontend developer, my vision is to create seamless and delightful user experiences that not only meet but exceed user expectations. I aim to stay at the forefront of emerging technologies and design trends to deliver visually appealing and highly performant web applications...." value={resumeData.personalInfo.jobDescription}
+                onChange={(e) => handleInputChange('personalInfo', 'jobDescription', e.target.value)} required
               ></textarea>
             </div>
 
@@ -147,10 +157,10 @@ const ResumeMaker = () => {
               <h2 className="text-2xl font-bold"> Education : </h2>
               <label>Degree:</label> <br></br>
               <input
-                className="border w-1/2 px-4 py-2 mt-2"
+                className="border w-full px-4 py-2 mt-2"
                 type="text"
-                value={resumeData.education.degree}
-                onChange={(e) => handleInputChange('education', 'degree', e.target.value)}
+               placeholder="eg. BSc" value={resumeData.education.degree}
+                onChange={(e) => handleInputChange('education', 'degree', e.target.value)} required
               />
             </div>
 
@@ -161,30 +171,30 @@ const ResumeMaker = () => {
             <div>
               <label>College:</label> <br></br>
               <input
-                className="border w-1/2 px-4 py-2 mt-2"
+                className="border w-full px-4 py-2 mt-2"
                 type="text"
-                value={resumeData.education.school}
-                onChange={(e) => handleInputChange('education', 'college', e.target.value)}
+               placeholder="eg. Dhaka College" value={resumeData.education.school}
+                onChange={(e) => handleInputChange('education', 'college', e.target.value)} required
               />
             </div>
 
             <div>
               <label>University:</label> <br></br>
               <input
-                className="border w-1/2 px-4 py-2 mt-2"
+                className="border w-full px-4 py-2 mt-2"
                 type="text"
-                value={resumeData.education.school}
-                onChange={(e) => handleInputChange('education', 'university', e.target.value)}
+               placeholder="eg. Dhaka University" value={resumeData.education.school}
+                onChange={(e) => handleInputChange('education', 'university', e.target.value)} required
               />
             </div>
 
             <div>
               <label>Graduation Year:</label> <br></br>
               <input
-                className="border w-1/2 px-4 py-2 mt-3 mb-8"
-                type="date"
-                value={resumeData.education.graduationYear}
-                onChange={(e) => handleInputChange('education', 'graduationYear', e.target.value)}
+                className="border w-full px-4 py-2 mt-3 mb-8"
+                type="number"
+               placeholder="2025" value={resumeData.education.graduationYear}
+                onChange={(e) => handleInputChange('education', 'graduationYear', e.target.value)} required
               />
             </div>
 
@@ -194,75 +204,79 @@ const ResumeMaker = () => {
               
               <label>Position:</label> <br></br>
               <input
-                className="border w-1/2 px-4 py-2 mt-2"
+                className="border w-full px-4 py-2 mt-2"
                 type="text"
-                value={resumeData.workExperience.position}
-                onChange={(e) => handleInputChange('workExperience', 'position', e.target.value)}
-              />
-            </div>
-
-            <div >
-              <label >Experience Field:</label> <br></br>
-              <textarea
-              cols="10" rows="4"
-                className="border w-1/2 px-4 py-2 mt-2"
-                type="text"
-                value={resumeData.workExperience.experience}
-                onChange={(e) => handleInputChange('workExperience', 'experience', e.target.value)}
-                ></textarea>
-            </div>
-
-            <div>
-              <label>Company:</label> <br></br>
-              <input
-                className="border w-1/2 px-4 py-2 mt-2"
-                type="text"
-                value={resumeData.workExperience.company}
-                onChange={(e) => handleInputChange('workExperience', 'company', e.target.value)}
+               placeholder="eg. Frontend Developer" value={resumeData.workExperience.position}
+                onChange={(e) => handleInputChange('workExperience', 'position', e.target.value)} required
               />
             </div>
 
             <div>
             <label>Title:</label> <br></br>
               <input
-                className="border w-1/2 px-4 py-2 mt-2"
+                className="border w-full px-4 py-2 mt-2"
                 type="text"
-                value={resumeData.education.title}
-                onChange={(e) => handleInputChange('education', 'title', e.target.value)}
+               placeholder="eg. junior/Senior" value={resumeData.education.title}
+                onChange={(e) => handleInputChange('education', 'title', e.target.value)} required
               />
             </div>
 
+
+            <div >
+              <label >Experience Field:</label> <br></br>
+              <textarea
+              cols="10" rows="4"
+                className="border w-full px-4 py-2 mt-2"
+                type="text"
+               placeholder="eg. Experience with CSS preprocessors such as Sass or Less. Responsive design and mobile development. Strong problem-solving and debugging skills. Knowledge and expertise in front-end frameworks and libraries such as React, Angular and Vue." value={resumeData.workExperience.experience}
+                onChange={(e) => handleInputChange('workExperience', 'experience', e.target.value)} required
+                ></textarea>
+            </div>
+
+            <div>
+              <label>Company:</label> <br></br>
+              <input
+                className="border w-full px-4 py-2 mt-2"
+                type="text"
+               placeholder="eg. ABC Company" value={resumeData.workExperience.company}
+                onChange={(e) => handleInputChange('workExperience', 'company', e.target.value)} required
+              />
+            </div>
+
+            
+            <div className="flex justify-between">
             <div>
               <label>Start Date:</label> <br></br>
               <input
-                className="border w-1/2 px-4 py-2 mt-2"
+                className="border w-full pr-48 py-2 mt-2"
                 type="date"
 
-                value={resumeData.workExperience.startDate}
-                onChange={(e) => handleInputChange('workExperience', 'startDate', e.target.value)}
+               placeholder="12/12/2012" value={resumeData.workExperience.startDate}
+                onChange={(e) => handleInputChange('workExperience', 'startDate', e.target.value)} required
               />
             </div>
 
             <div>
               <label>End Date:</label> <br></br>
               <input
-                className="border w-1/2 px-4 py-2 mt-2"
+                className="border w-full pr-48 py-2 mt-2"
                 type="date"
 
-                value={resumeData.workExperience.endDate}
-                onChange={(e) => handleInputChange('workExperience', 'endDate', e.target.value)}
+               placeholder="12/12/2013" value={resumeData.workExperience.endDate}
+                onChange={(e) => handleInputChange('workExperience', 'endDate', e.target.value)} required
               />
+            </div>
             </div>
 
             <div>
-            <h2 className="text-2xl font-bold"> Skills : </h2>
+            <h2 className="text-2xl font-bold mt-8"> Skills : </h2>
 
               <label>Programming Skills:</label> <br></br>
               <input
-                className="border w-1/2 px-4 py-2 mt-2"
+                className="border w-full px-4 py-2 mt-2"
                 type="text"
-                value={resumeData.skills.programming}
-                onChange={(e) => handleInputChange('skills', 'programming', e.target.value)}
+               placeholder="eg. JavaScript, Python, C#" value={resumeData.skills.programming}
+                onChange={(e) => handleInputChange('skills', 'programming', e.target.value)} required
               />
             </div>
 
@@ -270,10 +284,10 @@ const ResumeMaker = () => {
             <div>
               <label>Project:</label> <br></br>
               <input
-                className="border w-1/2 px-4 py-2 mt-2"
+                className="border w-full px-4 py-2 mt-2"
                 type="text"
-                value={resumeData.skills.project}
-                onChange={(e) => handleInputChange('skills', 'project', e.target.value)}
+               placeholder="eg. easyRecruit" value={resumeData.skills.project}
+                onChange={(e) => handleInputChange('skills', 'project', e.target.value)} required
               />
             </div>
 
@@ -281,41 +295,42 @@ const ResumeMaker = () => {
               <label> Project Details :</label> <br></br>
               <textarea
 
-                className="border w-1/2 px-4 py-2 mt-2"
+                className="border w-full px-4 py-2 mt-2"
                 type="text"
-                value={resumeData.skills.projectDetails}
-                onChange={(e) => handleInputChange('skills', 'projectDetails', e.target.value)}
+               placeholder="eg. An applicant tracking system (ATS) helps companies organize candidates for hiring and recruitment purposes. These systems allow businesses of all sizes and across industries to collect candidate information, organize prospects based on experience and skill set, and filter applicants.........." value={resumeData.skills.projectDetails}
+                onChange={(e) => handleInputChange('skills', 'projectDetails', e.target.value)} required
                 name="" id="" cols="10" rows="4"></textarea>
             </div>
 
             <div>
               <label>Teamwork Skills:</label> <br></br>
               <textarea
-                className="border w-1/2 px-4 py-5 mt-2"
+                className="border w-full px-4 py-5 mt-2"
                 type="text"
-                value={resumeData.skills.teamwork}
-                onChange={(e) => handleInputChange('skills', 'teamwork', e.target.value)}
+               placeholder="eg. In my professional experience, I have consistently demonstrated strong teamwork skills, recognizing the value of collaborative efforts in achieving successful outcomes....." value={resumeData.skills.teamwork}
+                onChange={(e) => handleInputChange('skills', 'teamwork', e.target.value)} required
               ></textarea>
             </div>
 
+              <h2 className="mb-2 text-3xl font-bold mt-8">Language : </h2>
+
             <div>
-              <h2 className="mb-2 text-3xl font-bold">Language : </h2>
               <label>Native : </label> <br></br>
               <input
-                className="border w-1/2 px-4 py-5 mt-2"
+                className="border w-full px-4 py-2 mt-2"
                 type="text"
-                value={resumeData.language.native}
-                onChange={(e) => handleInputChange('language', 'native', e.target.value)}
+               placeholder="eg. Bangla" value={resumeData.language.native}
+                onChange={(e) => handleInputChange('language', 'native', e.target.value)} required
               />
             </div>
 
             <div>
               <label>Foreign : </label> <br></br>
               <input
-                className="border w-1/2 px-4 py-5 mt-2"
+                className="border w-full px-4 py-2 mt-2"
                 type="text"
-                value={resumeData.language.foreign}
-                onChange={(e) => handleInputChange('language', 'foreign', e.target.value)}
+               placeholder="eg. English" value={resumeData.language.foreign}
+                onChange={(e) => handleInputChange('language', 'foreign', e.target.value)} required
               />
             </div>
 
@@ -325,7 +340,7 @@ const ResumeMaker = () => {
 
 
 
-          <button className="px-4 py-2 bg-gray-400 my-4 " type="submit">Submit Resume</button>
+          <button className="px-4 py-2 bg-gray-400 my-8 " type="submit">Submit Resume</button>
         </form>
       </div>
 
@@ -335,10 +350,11 @@ const ResumeMaker = () => {
 
         <>
           <h2 className="text-3xl text-center mb-6 font-bold"> Demo Resume____ </h2>
-          <div className="max-w-4xl mx-auto  p-24  ">
+          <div className="w-[1100px]   mx-auto my-12 border p-20  ">
             <div className="">
 
               <div className="">
+          
 
                 <div>
                   <p className="text-3xl font-bold">{submittedResume?.personalInfo.name}</p>
@@ -353,7 +369,7 @@ const ResumeMaker = () => {
                 <div className="divider my-4 border"></div>
 
                 <p><span className="text-2xl font-bold">Vision:</span> <br /> {submittedResume?.personalInfo.jobDescription}</p>
-
+                <div className="divider my-4 border"></div>
 
                 <div className="">
                   <div className="">
@@ -363,6 +379,7 @@ const ResumeMaker = () => {
                     <p><span className="font-bold">University:</span> {submittedResume?.education.university}</p>
                     <p><span className="font-bold">Graduation Year:</span> {submittedResume?.education.graduationYear}</p>
                   </div>
+                  <div className="divider my-4 border"></div>
                   <div>
                     <p className="text-2xl font-bold mt-3">Experience : </p>
                     <p><span className="font-bold">Position:</span> {submittedResume?.workExperience.position}</p>
@@ -374,7 +391,7 @@ const ResumeMaker = () => {
                   </div>
                 </div>
 
-
+                <div className="divider my-4 border"></div>
                 <div className=" ">
                   <div>
                     <p className="text-2xl font-bold mt-3">Skills :</p>
@@ -383,7 +400,7 @@ const ResumeMaker = () => {
                     <p><span className="font-bold">Project Details:</span> {submittedResume?.skills.projectDetails}</p>
                     <p><span className="font-bold">Teamwork Skills:</span> {submittedResume?.skills.teamwork}</p>
                   </div>
-
+                  <div className="divider my-4 border"></div>
                   <div>
                     <p className="text-2xl font-bold mt-3">Language :</p>
 
@@ -398,7 +415,7 @@ const ResumeMaker = () => {
 
             <div className="my-4">
 
-              <PDFDownloadLink document={<ResumePdf resumeData={submittedResume} />} filename="FORM">
+              <PDFDownloadLink document={<ResumePdf resumeData={submittedResume}  />} filename="FORM">
                 {({ loading }) => (loading ? <button>Loading Document...</button> : <button className="px-4 py-2 bg-gray-400">Download PDF</button>)}
               </PDFDownloadLink>
 

@@ -204,7 +204,6 @@ const Navbars = () => {
           <Navbar.Link>
             <NavLink to="/blog">Blog</NavLink>
           </Navbar.Link>
-         
         </Navbar.Collapse>
       </div>
 

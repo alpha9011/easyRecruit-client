@@ -15,7 +15,6 @@ import Footers from "../../shared/Footer/Footers";
 import { Helmet } from 'react-helmet-async';
 import SocialIcon from "../../shared/SocialIcon/SocialIcon";
 import CustomerFeedback from "./Reviews/CustomerFeedback";
-import SocialShare from "../../shared/SocialShare/SocialShare";
 
 const Home = () => {
 
@@ -34,7 +33,6 @@ const Home = () => {
       <CustomersSlider></CustomersSlider>
       <MakingHiresBanner></MakingHiresBanner>
       <SocialIcon></SocialIcon>
-      <SocialShare/>
       <CustomerFeedback></CustomerFeedback>
       <Footers></Footers>
     </div>
