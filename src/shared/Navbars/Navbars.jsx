@@ -209,10 +209,7 @@ const Navbars = () => {
           <Navbar.Link>
             <NavLink className="text-base" to="/blog">Blog</NavLink>
           </Navbar.Link>
-<<<<<<< HEAD
-=======
 
->>>>>>> e1223e062e952bd0aa0daa436627f318de04dede
         </Navbar.Collapse>
       </div>
 

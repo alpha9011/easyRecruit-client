@@ -32,10 +32,6 @@ const Home = () => {
       <CustomersSlider></CustomersSlider>
       <MakingHiresBanner></MakingHiresBanner>
       <SocialIcon></SocialIcon>
-<<<<<<< HEAD
-=======
-      <SocialShare />
->>>>>>> e1223e062e952bd0aa0daa436627f318de04dede
       <CustomerFeedback></CustomerFeedback>
       <Footers></Footers>
     </div>

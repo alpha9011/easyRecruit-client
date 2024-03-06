@@ -93,10 +93,7 @@ export const router = createBrowserRouter([
       {
         path: "/blog/:id",
         element: <BlogDetails></BlogDetails>,
-<<<<<<< HEAD
-=======
         // loader : ({params}) =>  fetch(`http://localhost:5000/blog/${params.id}`)
->>>>>>> e1223e062e952bd0aa0daa436627f318de04dede
       },
       {
         path: "/createBlog",
