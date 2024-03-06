@@ -40,7 +40,7 @@ const Banner = () => {
       <div className=" container mx-auto h-screen flex flex-col-reverse md:flex-row gap-10 items-center  p-5 pb-28 ">
         <div className="md:w-1/2">
           <motion.h2
-            className=" text-center text-4xl md:text-5xl lg:text-6xl font-bold text-wrap "
+            className=" text-center text-5xl lg:text-7xl font-bold text-wrap "
             animate={{ x: [-1000, 100, 0] }}
             transition={{
               duration: 2,
@@ -61,9 +61,17 @@ const Banner = () => {
 
           <div className="flex justify-center relative gap-2">
             <Link to="/demoPage">
+<<<<<<< HEAD
               <SecondaryButton buttonText="Request A Demo"></SecondaryButton>
             </Link>
             <Link to="/register">
+=======
+
+              <SecondaryButton buttonText="Request A Demo"></SecondaryButton>
+            </Link>
+            <Link to="/register">
+
+>>>>>>> 5c282640a4964b7f32a18e70cf7db380a9bc66bc
               <SecondaryButton buttonText="Try it Free"></SecondaryButton>
             </Link>
           </div>

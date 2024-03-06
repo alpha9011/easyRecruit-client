@@ -8,8 +8,6 @@ import CustomersSlider from "../Home/CustomersSlider/CustomersSlider";
 import { useLoaderData } from "react-router-dom";
 import './style.css'
 
-
-
 const Circular = () => {
     const axiosPublic = useAxiosPublic()
     const [postJobs, setPostJob] = useState([])
@@ -57,9 +55,7 @@ const Circular = () => {
                 //     backgroundSize: 'cover',
                 //     backgroundPosition: 'center',
                 //     backgroundRepeat: 'no-repeat',
-                //     backdropFilter:'blur(10px)'
-
-                    
+                //     backdropFilter:'blur(10px)'    
                 // }}
                 >
                     <div

@@ -1,12 +1,12 @@
-import bgImg from '../../../src/assets/whyUs3.jpg';
-import growth from "../../../src/assets/growth.jpg"
-import background from "../../../src/assets/women_with_laptop.jpg"
-import marketPlace from "../../../src/assets/background.jpg"
-import support from "../../../src/assets/callCenter.jpg"
-import team from "../../../src/assets/teamWork.jpg"
-import responsive from "../../../src/assets/responsive.jpg"
+// import bgImg from '../../../src/assets/whyUs3.jpg';
+// import growth from "../../../src/assets/growth.jpg"
+// import background from "../../../src/assets/women_with_laptop.jpg"
+// import marketPlace from "../../../src/assets/background.jpg"
+// import support from "../../../src/assets/callCenter.jpg"
+// import team from "../../../src/assets/teamWork.jpg"
+// import responsive from "../../../src/assets/responsive.jpg"
+// import job from "../../../src/assets/19209.jpg"
 import supports from "../../../src/assets/support.jpg"
-import job from "../../../src/assets/19209.jpg"
 import Footers from '../../shared/Footer/Footers';
 import { Helmet } from 'react-helmet-async';
 import PageCover from '../../shared/PageCover/PageCover';
@@ -20,7 +20,7 @@ const WhyEasyRecruit = () => {
                 <title>EasyRecruit || Why US</title>
             </Helmet>
             {/* Banner */}
-            <PageCover img={bgImg} title={'We help build tomorrows greatest companies'} desc={'EasyRecriut is powerful, user-friendly recruitment software that scales your ability to find and hire great talent'}></PageCover>
+            <PageCover img={"https://i.ibb.co/cb12NJ5/whyUs3.jpg"} title={'We help build tomorrows greatest companies'} desc={'EasyRecriut is powerful, user-friendly recruitment software that scales your ability to find and hire great talent'}></PageCover>
             {/* <div className='bg-gradient-to-r from-purple-800 to-green-500 h-[91vh] w-full relative'>
                 <img src={bgImg} alt="bgImage" className='w-full h-full object-cover absolute mix-blend-overlay' />
                 <div className='max-w-screen-md mx-auto h-full flex justify-center items-center px-10'>
@@ -49,8 +49,8 @@ const WhyEasyRecruit = () => {
                 </div>
                 {/* image column */}
                 <div className="relative w-1/2 lg:pt-20" data-aos="fade-up-left" data-aos-duration="1000">
-                    <img src={marketPlace} className="shadow-2xl lg:h-full lg:w-1/2 lg:float-end border" />
-                    <img src={growth} className="absolute rounded-3xl top-1/3 right-32 md:right-56 shadow-2xl h-2/4 max-w-[350px]" />
+                    <img src={"https://i.ibb.co/JktG1Vw/background.jpg"} className="shadow-2xl lg:h-full lg:w-1/2 lg:float-end border" />
+                    <img src={"https://i.ibb.co/FV1MRnK/growth.jpg"} className="absolute rounded-3xl top-1/3 right-32 md:right-56 shadow-2xl h-2/4 max-w-[350px]" />
                 </div>
             </div>
             {/* part-2 */}
@@ -71,14 +71,14 @@ const WhyEasyRecruit = () => {
                 </div>
                 {/* image column */}
                 <div className="relative w-1/2 lg:pt-20" data-aos="fade-up-right" data-aos-duration="1000">
-                    <img src={responsive} alt="" />
+                    <img src={"https://i.ibb.co/F6v3hfs/responsive.jpg"} alt="" />
                     {/* <img src={background} className="shadow-2xl lg:h-full lg:w-1/2 lg:float-start" />
                     <img src={graph} className="absolute top-1/3 right-32 md:right-44 shadow-2xl h-2/4 max-w-[350px]" /> */}
                 </div>
             </div>
             {/* team work banner */}
             <div className='bg-gradient-to-l from-gray-600 to-gray-600 h-[90vh] w-full relative' data-aos="fade-up" data-aos-duration="1000">
-                <img src={team} alt="bgImage" className='w-full h-full object-cover absolute mix-blend-overlay' />
+                <img src={"https://i.ibb.co/qry2jbx/teamWork.jpg"} alt="bgImage" className='w-full h-full object-cover absolute mix-blend-overlay' />
                 <div className='max-w-screen-md mx-auto h-full flex justify-center items-center px-10'>
                     <div>
                         <h1 className='text-yellow-100 text-5xl md:text-6xl font-bold text-center mx-auto'>
@@ -106,8 +106,8 @@ const WhyEasyRecruit = () => {
                 </div>
                 {/* image column */}
                 <div className="relative w-1/2 lg:pt-20" data-aos="fade-up-right" data-aos-duration="1000">
-                    <img src={background} className="shadow-2xl lg:h-full lg:w-1/2 lg:float-start" />
-                    <img src={job} className="absolute rounded-3xl top-1/3 right-32 md:right-44 shadow-2xl h-2/4 max-w-[350px]" />
+                    <img src={"https://i.ibb.co/QMZv250/women-with-laptop.jpg"} className="shadow-2xl lg:h-full lg:w-1/2 lg:float-start" />
+                    <img src={"https://i.ibb.co/4FLb7Fx/job.jpg"} className="absolute rounded-3xl top-1/3 right-32 md:right-44 shadow-2xl h-2/4 max-w-[350px]" />
                 </div>
             </div>
             {/* part-4 */}
@@ -128,7 +128,7 @@ const WhyEasyRecruit = () => {
                 </div>
                 {/* image column */}
                 <div className="relative w-1/2 lg:pt-20" data-aos="fade-up-left" data-aos-duration="1000">
-                    <img src={support} className="shadow-2xl lg:h-full lg:w-1/2 lg:float-end" />
+                    <img src={"https://i.ibb.co/R9sj09z/call-Center.jpg"} className="shadow-2xl lg:h-full lg:w-1/2 lg:float-end" />
                     <img src={supports} className="absolute rounded-3xl top-1/3 right-32 md:right-44 shadow-2xl h-2/4 max-w-[350px]" />
                 </div>
             </div>

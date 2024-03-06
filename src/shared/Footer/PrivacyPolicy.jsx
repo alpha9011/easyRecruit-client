@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 const PrivacyPolicy = () => {
     return (
@@ -29,7 +30,7 @@ const PrivacyPolicy = () => {
 
 
       <p className="mt-4">
-        If you have any questions about this Privacy Policy, please contact us at <strong>[social link]</strong>.
+        If you have any questions about this Privacy Policy, please contact us at <strong> <Link to={"https://www.facebook.com/profile.php?id=61555929885285"}>Facebook</Link> or <Link to={"/contact"}>Direct Message</Link></strong>.
       </p>
 
       <p className="mt-4">*This Privacy Policy was last updated on [2024].</p>

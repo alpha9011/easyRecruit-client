@@ -35,11 +35,10 @@ const Navbars = () => {
   const navLinkStyle = ({ isActive, isPending }) => {
     return isPending
       ? "pending"
-      : `inline-block w-full  text-center py-2  bg-transparent text rounded font-semibold ${
-          isActive
-            ? "border-blue-500   border-y backdrop-filter backdrop-blur-3xl "
-            : "   hover:border-y hover:border-blue-500 hover:backdrop-blur-3xl"
-        }`;
+      : `inline-block w-full  text-center text-lg py-2  bg-transparent text rounded font-semibold ${isActive
+        ? "border-blue-500   border-y backdrop-filter backdrop-blur-3xl "
+        : "   hover:border-y hover:border-blue-500 hover:text-gray-600 hover:backdrop-blur-3xl"
+      }`;
   };
 
   //  NavMenu Side bar
@@ -114,7 +113,7 @@ const Navbars = () => {
     <Navbar
       fluid
       rounded
-      className="px-10 sticky top-0 z-50 shadow p-4 bg-white bg-opacity-50"
+      className="px-10 sticky top-0 z-50 shadow p-4 bg-blue-100 bg-opacity-50"
       style={{
         backdropFilter: "blur(10px)",
       }}
@@ -182,35 +181,35 @@ const Navbars = () => {
         </Dropdown>
         <Navbar.Toggle />
       </div>
-      <div className="hidden lg:block ">
+      <div className="hidden lg:block">
         <Navbar.Collapse>
           <Navbar.Link>
-            <NavLink to="/">Home</NavLink>
+            <NavLink to="/" className="text-base">Home</NavLink>
           </Navbar.Link>
           <Navbar.Link>
-            <NavLink to="/price">Pricing</NavLink>
+            <NavLink className="text-base" to="/price">Pricing</NavLink>
           </Navbar.Link>
           <Navbar.Link>
-            <NavLink to="/about">About Us</NavLink>
-          </Navbar.Link>
-
-          <Navbar.Link>
-            <NavLink to="/whyEasyRecruit">Why Us</NavLink>
+            <NavLink className="text-base" to="/about">About Us</NavLink>
           </Navbar.Link>
 
           <Navbar.Link>
-            <NavLink to="/contact">Contact</NavLink>
+            <NavLink className="text-base" to="/whyEasyRecruit">Why Us</NavLink>
+          </Navbar.Link>
+
+          <Navbar.Link>
+            <NavLink className="text-base" to="/contact">Contact</NavLink>
           </Navbar.Link>
           {/* <Navbar.Link>
-            <NavLink to="/register">Register</NavLink>
+            <NavLink className="text-base" to="/register">Register</NavLink>
           </Navbar.Link> */}
           <Navbar.Link>
-            <NavLink to="/circular">Circular</NavLink>
+            <NavLink className="text-base" to="/circular">Circular</NavLink>
           </Navbar.Link>
           <Navbar.Link>
-            <NavLink to="/blog">Blog</NavLink>
+            <NavLink className="text-base" to="/blog">Blog</NavLink>
           </Navbar.Link>
-  
+
         </Navbar.Collapse>
       </div>
 

@@ -42,8 +42,7 @@ const CvManagement = () => {
 
     const handleCompare = () => {
         // Perform comparison logic here
-        // For example, compare job requirements with candidate profile
-        // You can customize this logic based on your requirements
+        
         const newMatchingResult = {
             education: jobRequirements.education === candidateProfile.education,
             skills: jobRequirements.skills <= candidateProfile.skills,

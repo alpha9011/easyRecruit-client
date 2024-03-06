@@ -6,13 +6,13 @@ import phillosophy from "../../Json/light.json"
 import mission from "../../Json/mission.json"
 import vission from "../../Json/vission.json"
 import progress from "../../Json/progress.json"
-// import bgImage from "../../assets/mission.jpg"
 import bgImg from "../../assets/pattern.jpg"
 import { Parallax } from 'react-parallax';
 const OurMission = () => {
     return (
-        <div className="mx-5">
-            <Parallax blur={5} bgImage={bgImg} strength={200} className="rounded-xl">
+        <div>
+            <Parallax blur={5} bgImage={bgImg} strength={200}>
+                <h2 className="text-7xl text-center font-bold my-10 text-white">About <span className='text-[#139BFF]'>Us</span></h2>
                 <div className="grid grid-cols-1 min-[600px]:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-14 max-w-screen-xl mx-auto my-5 shadow-2xl rounded-lg">
                     <div className="flex flex-col p-5 cursor-pointer hover:shadow-md">
                         <Lottie animationData={phillosophy} className="mt-12"></Lottie>
