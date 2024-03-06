@@ -47,7 +47,7 @@ const EmailModal = ({ candidate }) => {
                         title: "Email send successFully",
                         showConfirmButton: false,
                         timer: 1500
-                    }); zz
+                    }); 
                     reset()
                 }
             })

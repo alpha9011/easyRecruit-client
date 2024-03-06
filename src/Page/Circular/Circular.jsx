@@ -41,7 +41,7 @@ const Circular = () => {
 
 
     return (
-        <div className="max-w-screen-xl mx-auto mb-8">
+        <div className="mb-8">
             <Helmet>
                 <title>EasyRecruit || Circular</title>
             </Helmet>

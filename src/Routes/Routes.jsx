@@ -43,6 +43,7 @@ import UpdateBlog from "../Page/Blogs/UpdateBlog";
 import ResumeMaker from "../Page/ResumeMaker/ResumeMaker";
 import AllResume from "../Page/ResumeMaker/AllResume";
 import MeetAndConnect from "../DashboardLayout/DashboardPage/MeetAndConnect/MeetAndConnect";
+
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -216,6 +217,7 @@ export const router = createBrowserRouter([
         path: "meetAndConnect",
         element: <MeetAndConnect></MeetAndConnect>,
       },
+
       {
         path: "myCandidate/:id",
         element: <MyCandidates></MyCandidates>,
