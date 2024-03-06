@@ -161,7 +161,8 @@ const PostJob = () => {
                             <select {...register("skills")} required className="mt-1 input border-none w-full">
 
                                 <option value="HTML">HTML</option>
-                                <option value="HTML">CSS</option>
+                                <option value="CSS">CSS</option>
+                                <option value="JS">JS</option>
                                
                                
 

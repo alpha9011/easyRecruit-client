@@ -16,15 +16,24 @@ const MakingHiresBanner = () => {
             faster.
           </p>
           <div className="flex justify-center gap-5 items-center">
-            <PrimaryButton
-              buttonText={"Watch Demo"}
-              textColor={"text-white"}
-              font={"font-bold"}
-              hoverTextColor={"text-black"}
-              hover={"hover:text-black"}
-            ></PrimaryButton>
-            <Link className="text-white hover:border-b">
-              Try EasyRecruit Free
+            <Link to="/register">
+              <PrimaryButton
+                buttonText={"Watch Demo"}
+                textColor={"text-white"}
+                font={"font-bold"}
+                hoverTextColor={"text-black"}
+                hover={"hover:text-black"}
+              ></PrimaryButton>
+            </Link>
+
+            <Link className="text-white hover:border-b" to="/demoPage">
+              <PrimaryButton
+                buttonText={"Try EasyRecruit Free"}
+                textColor={"text-white"}
+                font={"font-bold"}
+                hoverTextColor={"text-black"}
+                hover={"hover:text-black"}
+              ></PrimaryButton>
             </Link>
           </div>
         </div>
@@ -43,7 +52,6 @@ const MakingHiresBanner = () => {
           tracking software.
         </h4>
 
-        {/* <PrimaryButton className="text-white " buttonText={'Request A Demo'}></PrimaryButton> */}
       </div>
     </div>
   );

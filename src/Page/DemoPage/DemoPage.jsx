@@ -57,18 +57,18 @@ const DemoPage = () => {
                     about EasyRecruit
                   </p>
                   <Link to={"/contact"} className="">
-              <PrimaryButton buttonText={'Contact With Us'} textColor={'text-white'} font={'font-bold'} hoverTextColor={'text-black'} hover={'hover:text-black'}> </PrimaryButton>
-            </Link>
-                  
+                    <PrimaryButton buttonText={'Contact With Us'} textColor={'text-white'} font={'font-bold'} hoverTextColor={'text-black'} hover={'hover:text-black'}> </PrimaryButton>
+                  </Link>
+
                 </div>
                 <div className="w-1/2 pl-4">
                   <h2 className="text-xl font-bold mb-2">
                     Do not have much Idea about Application Tracking system?
                   </h2>
                   <p className="text-lg mb-12">Explore Our Blogs</p>
-                  <Link to={""} className="">
-              <PrimaryButton buttonText={'Explore Our Blog'} textColor={'text-white'} font={'font-bold'} hoverTextColor={'text-black'} hover={'hover:text-black'}> </PrimaryButton>
-            </Link>
+                  <Link to="/blog" className="">
+                    <PrimaryButton buttonText={'Explore Our Blog'} textColor={'text-white'} font={'font-bold'} hoverTextColor={'text-black'} hover={'hover:text-black'}> </PrimaryButton>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -81,7 +81,7 @@ const DemoPage = () => {
       <div className="mt-5">
         <Footers></Footers>
       </div>
-      
+
     </div>
   );
 };

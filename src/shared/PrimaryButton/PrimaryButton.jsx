@@ -1,8 +1,6 @@
-
-const PrimaryButton = ({buttonText, link}) => {
+const PrimaryButton = ({ buttonText, link }) => {
   return (
     <div className="flex  gap-10">
-      
       <a href={link} className="relative inline-block text-lg group">
         <span className="relative z-10 block px-5 py-3 overflow-hidden font-medium leading-tight text-[#139BFF] transition-colors duration-300 ease-out border-2 border-[#139BFF] group-hover:text-white">
           <span className="absolute inset-0 w-full h-full px-5 py-3  bg-gray-50"></span>

@@ -12,12 +12,11 @@ import RecruitingResult from "./RecruitingResult/RecruitingResult";
 
 import WhyToUse from "./WhyToUse/WhyToUse";
 import Footers from "../../shared/Footer/Footers";
-import { Helmet } from 'react-helmet-async';
+import { Helmet } from "react-helmet-async";
 import SocialIcon from "../../shared/SocialIcon/SocialIcon";
 import CustomerFeedback from "./Reviews/CustomerFeedback";
 
 const Home = () => {
-
   return (
     <div>
       <Helmet>
@@ -28,11 +27,15 @@ const Home = () => {
       <WhyToUse></WhyToUse>
       <EasyATSBanner></EasyATSBanner>
       <HrSystems></HrSystems>
-      
+
       <PartnerProgram></PartnerProgram>
       <CustomersSlider></CustomersSlider>
       <MakingHiresBanner></MakingHiresBanner>
       <SocialIcon></SocialIcon>
+<<<<<<< HEAD
+=======
+      <SocialShare />
+>>>>>>> e1223e062e952bd0aa0daa436627f318de04dede
       <CustomerFeedback></CustomerFeedback>
       <Footers></Footers>
     </div>

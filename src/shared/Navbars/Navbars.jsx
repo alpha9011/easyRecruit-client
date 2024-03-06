@@ -13,19 +13,19 @@ import "react-modern-drawer/dist/index.css";
 
 const Navbars = () => {
   //Dark mode []
-  const [theme, setTheme] = useState("light")
+  const [theme, setTheme] = useState("light");
 
-  useEffect(()=>{
-    if(theme === "dark"){
+  useEffect(() => {
+    if (theme === "dark") {
       document.documentElement.classList.add("dark");
-    } else{
+    } else {
       document.documentElement.classList.remove("dark");
     }
-  })
-  const handleTheme=()=>{
-    setTheme(theme ==="dark" ? "light" : "dark")
-  }  
-  
+  });
+  const handleTheme = () => {
+    setTheme(theme === "dark" ? "light" : "dark");
+  };
+
   const { user, logOut } = useContext(AuthContext);
   const [isOpen, setIsOpen] = useState(false);
   const toggleDrawer = () => {
@@ -35,12 +35,12 @@ const Navbars = () => {
   const navLinkStyle = ({ isActive, isPending }) => {
     return isPending
       ? "pending"
-      : `inline-block w-full  text-center py-2  bg-transparent text rounded font-semibold ${
-          isActive
-            ? "border-blue-500   border-y backdrop-filter backdrop-blur-3xl "
-            : "   hover:border-y hover:border-blue-500 hover:backdrop-blur-3xl"
-        }`;
+      : `inline-block w-full  text-center text-lg py-2  bg-transparent text rounded font-semibold ${isActive
+        ? "border-blue-500   border-y backdrop-filter backdrop-blur-3xl "
+        : "   hover:border-y hover:border-blue-500 hover:text-gray-600 hover:backdrop-blur-3xl"
+      }`;
   };
+
   //  NavMenu Side bar
   const navMenu = (
     <div>
@@ -89,6 +89,9 @@ const Navbars = () => {
         <NavLink to="/circular" className={navLinkStyle} onClick={handleTheme}>
           Circular
         </NavLink>
+        <NavLink to="/blog" className={navLinkStyle} onClick={handleTheme}>
+          Blog
+        </NavLink>
 
         {user ? (
           <Button
@@ -110,7 +113,7 @@ const Navbars = () => {
     <Navbar
       fluid
       rounded
-      className="px-10 sticky top-0 z-50 shadow p-4 bg-white bg-opacity-50"
+      className="px-10 sticky top-0 z-50 shadow p-4 bg-blue-100 bg-opacity-50"
       style={{
         backdropFilter: "blur(10px)",
       }}
@@ -125,7 +128,7 @@ const Navbars = () => {
           </span>
         </div>
       </Navbar.Brand>
-      <div className=" md:order-2  hidden lg:block">
+      <div className=" md:order-2  hidden lg:block ">
         <Dropdown
           arrowIcon={false}
           inline
@@ -133,7 +136,7 @@ const Navbars = () => {
             // here we will display user image and other info dynamically
             <Avatar alt="User settings" img={user?.photoURL} rounded />
           }
-          className=""
+          className="border-none"
         >
           <Dropdown.Header>
             {user && (
@@ -150,60 +153,66 @@ const Navbars = () => {
                   Dashboard
                 </NavLink>
               </Navbar.Link>
+              {/* testing */}
             </div>
 
-            {
-      user ?     <Button
-      outline
-      gradientDuoTone="purpleToBlue"
-      onClick={() => logOut()}
-      className="inline-block w-full text-center text-xl mt-2"
-    >
-      logout
-    </Button> 
-    : 
-    <Link to='/login'><Button
-    outline
-    gradientDuoTone="purpleToBlue"
-    
-    className="inline-block w-full text-center text-xl mt-2"
-  >
-    login
-  </Button> </Link>
-    }
+            {user ? (
+              <Button
+                outline
+                gradientDuoTone="purpleToBlue"
+                onClick={() => logOut()}
+                className="inline-block w-full text-center text-xl mt-2"
+              >
+                logout
+              </Button>
+            ) : (
+              <Link to="/login">
+                <Button
+                  outline
+                  gradientDuoTone="purpleToBlue"
+                  className="inline-block w-full text-center text-xl mt-2"
+                >
+                  login
+                </Button>{" "}
+              </Link>
+            )}
           </Dropdown.Header>
           <Dropdown.Divider />
         </Dropdown>
         <Navbar.Toggle />
       </div>
-      <div className="hidden lg:block ">
+      <div className="hidden lg:block">
         <Navbar.Collapse>
           <Navbar.Link>
-            <NavLink to="/">Home</NavLink>
+            <NavLink to="/" className="text-base">Home</NavLink>
           </Navbar.Link>
           <Navbar.Link>
-            <NavLink to="/price">Pricing</NavLink>
+            <NavLink className="text-base" to="/price">Pricing</NavLink>
           </Navbar.Link>
           <Navbar.Link>
-            <NavLink to="/about">About Us</NavLink>
+            <NavLink className="text-base" to="/about">About Us</NavLink>
           </Navbar.Link>
 
           <Navbar.Link>
-            <NavLink to="/whyEasyRecruit">Why Us</NavLink>
+            <NavLink className="text-base" to="/whyEasyRecruit">Why Us</NavLink>
           </Navbar.Link>
-          
+
           <Navbar.Link>
-            <NavLink to="/contact">Contact</NavLink>
+            <NavLink className="text-base" to="/contact">Contact</NavLink>
           </Navbar.Link>
           {/* <Navbar.Link>
-            <NavLink to="/register">Register</NavLink>
+            <NavLink className="text-base" to="/register">Register</NavLink>
           </Navbar.Link> */}
           <Navbar.Link>
-            <NavLink to="/circular">Circular</NavLink>
+            <NavLink className="text-base" to="/circular">Circular</NavLink>
           </Navbar.Link>
           <Navbar.Link>
-            <NavLink to="/blog">Blog</NavLink>
+            <NavLink className="text-base" to="/blog">Blog</NavLink>
           </Navbar.Link>
+<<<<<<< HEAD
+=======
+
+>>>>>>> e1223e062e952bd0aa0daa436627f318de04dede
         </Navbar.Collapse>
       </div>
 
