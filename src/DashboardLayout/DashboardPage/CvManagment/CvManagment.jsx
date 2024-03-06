@@ -141,11 +141,11 @@ const CvManagement = () => {
 
 
     return (
-        <div className="container mx-auto py-8 text-black w-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+        <div className="container mx-auto py-8 text-black w-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 p-2">
 
             <h2 className="text-center font-semibold mb-10 text-3xl">CV Review of { }candidate name</h2>
 
-            <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-2 ml-8">
+            <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-2 ">
                 
                 {/* Job Requirements Box */}
                 <div className="w-full max-w-sm  p-8 border border-gray-200 rounded-lg   hover:shadow-lg  ">

@@ -61,17 +61,9 @@ const Banner = () => {
 
           <div className="flex justify-center relative gap-2">
             <Link to="/demoPage">
-<<<<<<< HEAD
               <SecondaryButton buttonText="Request A Demo"></SecondaryButton>
             </Link>
             <Link to="/register">
-=======
-
-              <SecondaryButton buttonText="Request A Demo"></SecondaryButton>
-            </Link>
-            <Link to="/register">
-
->>>>>>> 5c282640a4964b7f32a18e70cf7db380a9bc66bc
               <SecondaryButton buttonText="Try it Free"></SecondaryButton>
             </Link>
           </div>

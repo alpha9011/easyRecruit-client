@@ -4,7 +4,7 @@ import CvManagement from "../CvManagment/CvManagment";
 
 const CVmanage = () => {
   return (
-    <div className="text-white p-10 space-y-8">
+    <div className="text-white">
       {/* <UploadCV/> */}
       <CvManagement></CvManagement>
     </div>
