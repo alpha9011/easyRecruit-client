@@ -5,6 +5,7 @@ import Reviews from "../Home/Reviews/Reviews";
 import OurMission from "./OurMission";
 import Team from "./Team";
 import WhyUs from "./WhyUs";
+// import Testimonial from "../../shared/Testimonial/Testimonial";
 // import Countdown from "../Home/Countdown/Countdown";
 
 const AboutUs = () => {
@@ -18,6 +19,7 @@ const AboutUs = () => {
             <WhyUs></WhyUs>
             <Team></Team>
             <Reviews></Reviews>
+            {/* <Testimonial></Testimonial> */}
             <SocialIcon></SocialIcon>
             <Footers></Footers>
         </div>
