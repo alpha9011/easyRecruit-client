@@ -2,7 +2,7 @@ import { useState } from "react";
 import { NavLink, Outlet } from "react-router-dom";
 import { FaChartSimple } from "react-icons/fa6";
 // react icons
-import { CgMenuRound, CgProfile } from "react-icons/cg";
+import { CgMenuRound } from "react-icons/cg";
 import { FiEdit, FiUsers } from "react-icons/fi";
 import { FaUsers } from "react-icons/fa";
 import { AiOutlineHome, AiOutlineSchedule } from "react-icons/ai";
@@ -48,12 +48,12 @@ const Dashboard = () => {
         <h5 className="mb-3 text-xl font-medium bg-gradient-to-r from-gray-300 to-gray-400 inline-block text-transparent bg-clip-text dark:text-white">
           {user?.displayName}
         </h5>
-        <NavLink to="/dashboard/customerProfile" className={navLinkStyle}>
+        {/* <NavLink to="/dashboard/customerProfile" className={navLinkStyle}>
           <span className="flex justify-center items-center gap-2">
             <CgProfile />
             Profile
           </span>
-        </NavLink>
+        </NavLink> */}
       </div>
       <li>
         <NavLink to="/dashboard/allUser" className={navLinkStyle}>

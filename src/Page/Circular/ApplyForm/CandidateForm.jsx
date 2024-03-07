@@ -1,7 +1,8 @@
+/* eslint-disable react/no-unescaped-entities */
 import { useForm } from "react-hook-form";
 import useAxiosPublic from "../../../Hooks/useAxiosPublic";
 import Swal from "sweetalert2";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 
 
@@ -96,11 +97,19 @@ const imageBBApi =`https://api.imgbb.com/1/upload?key=${imageBBKey}`
     
     return (
         <div className="px-10">
-            <img src={logo} alt="" className="w-20"/>
+      <div className="max-w-screen-md mx-auto flex justify-between items-center"> 
+      <div className="my-5">
+      <img src={logo} alt="" className="w-20"/>
         <h1>{companyName}</h1>
         <h1>{title}</h1>
+      </div>
+      <div>
+        <p>Don't you have resume? <Link className="text-blue-600" to='/resumeMaker'>Make Resume</Link> </p>
+      </div>
+      </div>
+       
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 max-w-screen-md mx-auto bg-green-50 p-5 rounded-md">
-
+    
                 <div>
                     <label >Full Name<span className="text-red-600">*</span></label>
                     <input type="text" id="name" className="mt-1 input input-bordered w-full"  {...register("name", { required: true })} name='name' placeholder="Full Name" />
