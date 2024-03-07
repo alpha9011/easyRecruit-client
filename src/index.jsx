@@ -1,5 +1,4 @@
 
-
 const index = () => {
     return (
         <div>
@@ -7,5 +6,4 @@ const index = () => {
         </div>
     );
 };
-
 export default index;
