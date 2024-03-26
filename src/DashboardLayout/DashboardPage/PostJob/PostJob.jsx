@@ -75,7 +75,7 @@ const PostJob = () => {
 
                     });
 
-                    // reset()
+                    reset()
                 }
             })
     }

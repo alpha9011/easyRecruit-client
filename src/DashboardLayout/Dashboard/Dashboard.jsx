@@ -4,8 +4,8 @@ import { FaChartSimple } from "react-icons/fa6";
 // react icons
 import { CgMenuRound } from "react-icons/cg";
 import { FiEdit, FiUsers } from "react-icons/fi";
-import { FaUsers } from "react-icons/fa";
-import { AiOutlineHome, AiOutlineSchedule } from "react-icons/ai";
+import { FaUserTie, FaUsers } from "react-icons/fa";
+import { AiFillDatabase, AiOutlineHome, AiOutlineSchedule } from "react-icons/ai";
 import { LuLayoutDashboard } from "react-icons/lu";
 // drawer component
 import Drawer from "react-modern-drawer";
@@ -17,7 +17,7 @@ import "aos/dist/aos.css";
 import useAuth from "../../Hooks/useAuth";
 AOS.init();
 import useAdmin from "../../Hooks/useAdmin";
-import { BiSupport } from "react-icons/bi";
+import { BiSolidMessageSquareCheck, BiSupport } from "react-icons/bi";
 
 const Dashboard = () => {
   const { user } = useAuth();
@@ -29,7 +29,7 @@ const Dashboard = () => {
   const navLinkStyle = ({ isActive, isPending }) => {
     return isPending
       ? "pending"
-      : `inline-block w-full text-center py-2  bg-transparent text-white rounded font-semibold hover:animate-pulse ${
+      : `inline-block w-full py-2  bg-transparent text-white rounded font-semibold hover:animate-pulse ${
           isActive
             ? "border-white border-y backdrop-filter backdrop-blur-3xl"
             : "  hover:border-y hover:backdrop-blur-3xl "
@@ -59,30 +59,30 @@ const Dashboard = () => {
         <NavLink to="/dashboard/allUser" className={navLinkStyle}>
           <span className="flex justify-center items-center gap-2">
             <FaUsers />
-            All User
+             Users
           </span>
         </NavLink>
       </li>
       <li>
         <NavLink to="/dashboard/allJobs" className={navLinkStyle}>
           <span className="flex justify-center items-center gap-2">
-            <FaChartSimple />
-            All jobs
+          <AiFillDatabase />
+           All Job
           </span>
         </NavLink>
       </li>
       <li>
         <NavLink to="/dashboard/allCandidates" className={navLinkStyle}>
           <span className="flex justify-center items-center gap-2">
-            <FaChartSimple />
-            All Candidates
+          <FaUserTie />
+           Candidates
           </span>
         </NavLink>
       </li>
       <li>
         <NavLink to="/dashboard/appointment" className={navLinkStyle}>
           <span className="flex justify-center items-center gap-2">
-            <FaChartSimple />
+          <BiSolidMessageSquareCheck />
             Appointment
           </span>
         </NavLink>

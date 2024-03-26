@@ -58,7 +58,7 @@ const ResumeMaker = () => {
     event.preventDefault();
 
 
-    await axios.post('http://localhost:5000/resumes', resumeData)
+    await axios.post('https://easy-recruit-server.vercel.app/resumes', resumeData)
       .then(res => {
 
         // console.log(res.data)
@@ -107,7 +107,7 @@ const ResumeMaker = () => {
             </div>
 
             <div>
-              <label>Job Title:</label> <br></br>
+              <label>Designation:</label> <br></br>
               <input
                 className="border w-full px-4 py-2 mt-2"
                 type="text"

@@ -66,7 +66,7 @@ const MyJobCard = ({ myjob, refetch }) => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/postjob/${_id}`, {
+        fetch(`https://easy-recruit-server.vercel.app/postjob/${_id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

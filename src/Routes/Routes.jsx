@@ -77,7 +77,7 @@ export const router = createBrowserRouter([
       {
         path: "/circular",
         element: <Circular></Circular>,
-        loader: () => fetch(`http://localhost:5000/postJobCount`),
+        loader: () => fetch(`https://easy-recruit-server.vercel.app/postJobCount`),
       },
       {
         path: "/resumeMaker",
@@ -94,7 +94,7 @@ export const router = createBrowserRouter([
       {
         path: "/blog/:id",
         element: <BlogDetails></BlogDetails>,
-        // loader : ({params}) =>  fetch(`http://localhost:5000/blog/${params.id}`)
+        // loader : ({params}) =>  fetch(`https://easy-recruit-server.vercel.app/blog/${params.id}`)
       },
       {
         path: "/createBlog",
@@ -104,25 +104,25 @@ export const router = createBrowserRouter([
         path: "/updateBlog/:id",
         element: <UpdateBlog></UpdateBlog>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/blog/${params.id}`),
+          fetch(`https://easy-recruit-server.vercel.app/blog/${params.id}`),
       },
       {
         path: "/jobdetails/:id",
         element: <ApplyForm></ApplyForm>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/postjob/${params.id}`),
+          fetch(`https://easy-recruit-server.vercel.app/postjob/${params.id}`),
       },
       {
         path: "/packdetails/:id",
         element: <PackDetiles></PackDetiles>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/packs/${params.id}`),
+          fetch(`https://easy-recruit-server.vercel.app/packs/${params.id}`),
       },
       {
         path: "/applyform/:id",
         element: <CandidateForm></CandidateForm>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/postjob/${params.id}`),
+          fetch(`https://easy-recruit-server.vercel.app/postjob/${params.id}`),
       },
       {
         path: "/price",
@@ -172,29 +172,29 @@ export const router = createBrowserRouter([
       {
         path: "allUser",
         element: <AllUsers></AllUsers>,
-        loader: () => fetch(`http://localhost:5000/userCount`),
+        loader: () => fetch(`https://easy-recruit-server.vercel.app/userCount`),
       },
       {
         path: "allJobs",
         element: <ALLShowJobs></ALLShowJobs>,
-        loader: () => fetch(`http://localhost:5000/postJobCount`),
+        loader: () => fetch(`https://easy-recruit-server.vercel.app/postJobCount`),
       },
       {
         path: "allCandidates/:id",
         element: <AllJobsCandidates></AllJobsCandidates>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/postjob/${params.id}`),
+          fetch(`https://easy-recruit-server.vercel.app/postjob/${params.id}`),
       },
       {
         path: "allCandidates",
         element: <AllJobs></AllJobs>,
-        loader: () => fetch(`http://localhost:5000/postJobCount`),
+        loader: () => fetch(`https://easy-recruit-server.vercel.app/postJobCount`),
       },
       {
         path: "shortlisted/:id",
         element: <ShortListed></ShortListed>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/postjob/${params.id}`),
+          fetch(`https://easy-recruit-server.vercel.app/postjob/${params.id}`),
       },
       // Normal user routs
       {
@@ -222,13 +222,13 @@ export const router = createBrowserRouter([
         path: "myCandidate/:id",
         element: <MyCandidates></MyCandidates>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/postjob/${params.id}`),
+          fetch(`https://easy-recruit-server.vercel.app/postjob/${params.id}`),
       },
       {
         path: "updateJob/:id",
         element: <UpdateJob></UpdateJob>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/postjob/${params.id}`),
+          fetch(`https://easy-recruit-server.vercel.app/postjob/${params.id}`),
       },
       {
         path: "postjob",
@@ -241,13 +241,13 @@ export const router = createBrowserRouter([
       {
         path: "appointment",
         element: <Appointment></Appointment>,
-        loader: () => fetch(`http://localhost:5000/postJobCount`),
+        loader: () => fetch(`https://easy-recruit-server.vercel.app/postJobCount`),
       },
       {
         path: "CVmanage/:id",
         element: <CVmanage />,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/applicantCV/${params.id}`),
+          fetch(`https://easy-recruit-server.vercel.app/applicantCV/${params.id}`),
       },
     ],
   },

@@ -25,7 +25,7 @@ const Blog = ({ item, refetch }) => {
       confirmButtonText: "Yes, delete it!"
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/blog/${_id}`, {
+        fetch(`https://easy-recruit-server.vercel.app/blog/${_id}`, {
           method: 'DELETE',
         })
           .then(res => res.json())

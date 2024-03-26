@@ -50,7 +50,7 @@ console.log(aboutCompany);
             vacancy: data.vacancy
         }
      
-        fetch(`http://localhost:5000/postjob/${_id}`, {
+        fetch(`https://easy-recruit-server.vercel.app/postjob/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
